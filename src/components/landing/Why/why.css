@@ -1,0 +1,101 @@
+.why-background {
+    height: 80vh;
+    width: 100vw;
+    background-color: #FFFFFF;
+    transform: skewY(5deg);
+}
+
+.why-background-unskewed {
+    height: 100%;
+    width: 100%;
+    transform: skewY(-5deg);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.why-top-part {
+    height: 10%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    color: #000000;
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.why-main-part {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.why-main-left {
+    flex: 3;
+    min-width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-main-right {
+    flex: 2;
+    min-width: 400px;
+}
+
+.why-span-green-text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    /* identical to box height */
+
+    text-align: center;
+    text-decoration-line: underline;
+    color: #E4FFB7;
+    -webkit-text-fill-color: #E4FFB7; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+
+.why-main-text-box {
+    border-left: 10px solid #E4FFB7;
+    width: 90%;
+    margin-top: 5%;
+
+}
+
+.why-img {
+    size: 30vw;
+    height: 30vw;
+}
+
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 600px) {
+    .why-background {
+        transform: skewY(10deg);
+    }
+
+    .why-background-unskewed {
+        transform: skewY(-10deg);
+    }
+    .why-top-part {
+        margin-top: 5%;
+        font-size: 30px;
+    }
+
+    .why-span-green-text {
+        font-size: 30px;
+    }
+    .why-main-text-box{
+        font-size: 12px;
+        width: 80%;
+    }
+}
