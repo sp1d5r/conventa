@@ -1,0 +1,21 @@
+
+.button-primary {
+    background: #FFFFFF;
+    border: 1px solid #E4FFB7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    min-height: 80%;
+    width: 70%;
+}
+
+.button-primary:hover {
+    background: #B3C29A;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-text {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 10px;
+}
