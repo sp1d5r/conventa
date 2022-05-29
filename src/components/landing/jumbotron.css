@@ -1,0 +1,50 @@
+.jumbo-wrapper {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.jumbo-text-black {
+    margin-top: 5%;
+    width: 80vw;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    text-align: center;
+    color: #222222;
+}
+
+.jumbo-text-white{
+    color: #FFFFFF;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.jumbo-sub-text {
+    margin-top: 5%;
+    width: 80%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #363636;
+}
+
+
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 600px) {
+    .jumbo-text-black {
+        font-size: 50px;
+    }
+    .jumbo-sub-text {
+        font-size: 15px;
+    }
+}

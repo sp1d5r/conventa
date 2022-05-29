@@ -5,7 +5,6 @@ import Button from "../button/button";
 function NavBar() {
     const [opened, updateOpened] = useState(false);
 
-
     return (
         <div className={"navbar"}>
             <div className={"brand"}>
