@@ -10,7 +10,7 @@ jobs:
           URL="${{ secrets.WEBHOOK_URL }}"
           curl -X POST -d {} "$URL" -H "Content-Type: application/json"
   deploy:
-    runs-on: ubuntu-latestt
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Deploy Production
