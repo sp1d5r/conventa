@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/jumbotron.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1653826456003</updated>
       <workItem from="1653826457826" duration="11551000" />
-      <workItem from="1653936221555" duration="8974000" />
+      <workItem from="1653936221555" duration="9909000" />
     </task>
     <servers />
   </component>

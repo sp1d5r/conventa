@@ -15,7 +15,7 @@ function Help() {
             <div className={"help-bottom-div"}>
                 <div className={"help-card"}>
                     <div className={"help-card-top"}>
-                        <img src={require("../../../assets/Illustrations/why1.png")} alt={"Illusatration part 1"} />
+                        <img className={"help-top-image"} src={require("../../../assets/Illustrations/why1.png")} alt={"Illusatration part 1"} />
                     </div>
                     <div className={"help-card-bottom"}>
                         This is going to be about using the
@@ -24,7 +24,7 @@ function Help() {
                 </div>
                 <div className={"help-card"}>
                     <div className={"help-card-top"}>
-                        <img src={require("../../../assets/Illustrations/why2.png")} alt={"Illusatration part 2"} />
+                        <img className={"help-top-image"} src={require("../../../assets/Illustrations/why2.png")} alt={"Illusatration part 2"} />
                     </div>
                     <div className={"help-card-bottom"}>
                         This one is more about using the
@@ -34,7 +34,7 @@ function Help() {
                 </div>
                 <div className={"help-card"}>
                     <div className={"help-card-top"}>
-                        <img src={require("../../../assets/Illustrations/why3.png")} alt={"Illusatration part 3"} />
+                        <img className={"help-top-image"} src={require("../../../assets/Illustrations/why3.png")} alt={"Illusatration part 3"} />
                     </div>
                     <div className={"help-card-bottom"}>
                         This one is more about using the
