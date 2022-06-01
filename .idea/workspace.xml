@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lint-staged.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/jumbotron.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/jumbotron.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,17 +48,38 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/github" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.prepare">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="lint-staged" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint-staged" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -56,6 +92,45 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="prepare" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prepare" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prettier-write" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier-write" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prettier" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.prepare" />
+        <item itemvalue="npm.lint-staged" />
+        <item itemvalue="npm.prettier-write" />
+        <item itemvalue="npm.prettier" />
+        <item itemvalue="npm.lint" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -88,6 +163,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1419" height="464" key="GridCell.Tab.0.bottom" timestamp="1654101160580">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="464" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1654101160580" />
+    <state width="1419" height="464" key="GridCell.Tab.0.center" timestamp="1654101160576">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="464" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1654101160576" />
+    <state width="1419" height="464" key="GridCell.Tab.0.left" timestamp="1654101160575">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="464" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1654101160575" />
+    <state width="1419" height="464" key="GridCell.Tab.0.right" timestamp="1654101160578">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="464" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1654101160578" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1653945685657">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

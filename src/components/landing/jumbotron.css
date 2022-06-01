@@ -1,85 +1,83 @@
 .jumbo-wrapper {
-    width: 100vw;
-    height: 70vh;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
 }
 
 .jumbo-main {
-    height: 80%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .jumbo-bottom {
-    display: flex;
-    justify-content: flex-end;
-    text-align: center;
-    width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  width: 100%;
 }
 
 .jumbo-small-wrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .jumbo-small-image {
-    margin-left: 5px;
-    margin-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .jumbo-small-text {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    margin-left: 20px;
-    margin-right: 20px;
-    color: #989898;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #989898;
 }
 
 .jumbo-text-black {
-    margin-top: 5%;
-    width: 80vw;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 80px;
-    text-align: center;
-    color: #222222;
+  margin-top: 5%;
+  width: 80vw;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  text-align: center;
+  color: #222222;
 }
 
-.jumbo-text-white{
-    color: #FFFFFF;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+.jumbo-text-white {
+  color: #ffffff;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .jumbo-sub-text {
-    margin-top: 5%;
-    width: 80%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    text-decoration-line: underline;
-    color: #363636;
+  margin-top: 5%;
+  width: 80%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #363636;
 }
-
-
 
 /* If the display is less than 600 it's a mobile device*/
 @media only screen and (max-width: 600px) {
-    .jumbo-text-black {
-        font-size: 50px;
-    }
-    .jumbo-sub-text {
-        font-size: 15px;
-    }
+  .jumbo-text-black {
+    font-size: 50px;
+  }
+  .jumbo-sub-text {
+    font-size: 15px;
+  }
 }
