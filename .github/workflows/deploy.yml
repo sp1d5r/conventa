@@ -1,15 +1,15 @@
 name: Deployment
 on: push
 jobs:
-  test:
+  deploy-dev:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Development
         if: github.ref == 'refs/heads/development'
         run: |
-          URL="${{ secrets.WEBHOOK_URL }}"
+          URL="${{ secrets.DEVELOPMENT_URL }}"
           curl -X POST -d {} "$URL" -H "Content-Type: application/json"
-  deploy:
+  deploy-production:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
