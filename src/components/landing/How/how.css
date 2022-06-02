@@ -36,11 +36,12 @@
 }
 
 .how-bottom-div {
-  min-height: 500px;
   width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .how-bottom-right {

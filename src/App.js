@@ -6,6 +6,7 @@ import Why from "./components/landing/Why/why";
 import Help from "./components/landing/Help/help";
 import How from "./components/landing/How/how";
 import PricingPlan from "./components/landing/Pricing/pricing-plan";
+import EmotionalIntelligence from "./components/landing/Emotional Intelligence/emotional_intelligence";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Help />
       <How />
       <PricingPlan />
+      <EmotionalIntelligence />
     </div>
   );
 }

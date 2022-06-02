@@ -11,6 +11,10 @@
       <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/How/how.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
