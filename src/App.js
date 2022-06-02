@@ -7,6 +7,7 @@ import Help from "./components/landing/Help/help";
 import How from "./components/landing/How/how";
 import PricingPlan from "./components/landing/Pricing/pricing-plan";
 import EmotionalIntelligence from "./components/landing/Emotional Intelligence/emotional_intelligence";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -16,8 +17,12 @@ function App() {
       <Why />
       <Help />
       <How />
-      <PricingPlan />
       <EmotionalIntelligence />
+      <PricingPlan />`
+      <div className={"what-are-you-waiting-for"}>
+        <p>What are you waiting for?</p>
+      </div>
+      <Footer />
     </div>
   );
 }
