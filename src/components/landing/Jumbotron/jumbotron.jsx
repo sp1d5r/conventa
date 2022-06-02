@@ -1,8 +1,8 @@
 import "./jumbotron.css";
 import React from "react";
-import Windows from "../../assets/Icons/Windows XP.png";
-import Apple from "../../assets/Icons/Apple Logo.png";
-import Google from "../../assets/Icons/Google.png";
+import Windows from "../../../assets/Icons/Windows XP.png";
+import Apple from "../../../assets/Icons/Apple Logo.png";
+import Google from "../../../assets/Icons/Google.png";
 
 function Jumbotron() {
   return (
