@@ -1,0 +1,96 @@
+.pricing-main {
+  background-image: url("../../../assets/background-rectangle.svg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pricing-top {
+  width: 90%;
+  min-height: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: left;
+  color: #000000;
+}
+
+.pricing-subtext {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.pricing-bottom {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  min-width: 300px;
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 2%;
+  align-items: flex-start;
+}
+
+.subscription-type {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+}
+
+.per-month {
+  font-weight: 600;
+  font-size: 20px;
+  color: #868686;
+}
+
+.subscription-benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  min-height: 300px;
+}
+
+.single-benefit {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: left;
+  align-items: center;
+  font-weight: 400;
+  font-size: 15px;
+  color: #a7a7a7;
+}
+
+.benefit-icon {
+  height: 25px;
+  width: 25px;
+  margin: 2%;
+}
+
+.subscription-cost {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 0;
+}

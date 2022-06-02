@@ -1,10 +1,25 @@
-.button-primary {
+.button-primary,
+.button-blue {
   background: #ffffff;
   border: 1px solid #e4ffb7;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   min-height: 80%;
   width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-blue {
+  background: #d9edff;
+  border: 0px;
+  color: #4a5bb5;
+}
+
+.button-blue:hover {
+  background: #9dd0ff;
+  border: 0px;
+  color: #ffffff;
 }
 
 .button-primary:hover {
@@ -16,5 +31,10 @@
 .button-text {
   font-weight: 700;
   font-size: 18px;
+  margin: 10px;
+}
+
+.button-blue-text {
+  font-size: 15px;
   margin: 10px;
 }

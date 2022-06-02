@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/button/blue-button.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/How/how.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/jumbotron.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -38,6 +47,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/landing/Jumbotron" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/github" />
     </key>
