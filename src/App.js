@@ -4,6 +4,7 @@ import React from "react";
 import Jumbotron from "./components/landing/jumbotron";
 import Why from "./components/landing/Why/why";
 import Help from "./components/landing/Help/help";
+import How from "./components/landing/How/how";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Jumbotron />
       <Why />
       <Help />
+      <How />
     </div>
   );
 }
