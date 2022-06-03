@@ -107,7 +107,7 @@
   transition: 0.2s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
-/* Position the content inside the overlay */
+/* Position the academy inside the overlay */
 .overlay-content {
   position: relative;
   top: 5%;

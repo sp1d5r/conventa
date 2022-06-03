@@ -5,6 +5,7 @@ import Footer from "./components/footer/footer";
 import Landing from "./components/landing/landing";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Authenticate from "./components/auth/authenticate";
+import Academy from "./components/academy/academy";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/auth" element={<Authenticate />} />
+          <Route path="/academy" element={<Academy loggedIn={false} />} />
           <Route path="/" element={<Landing />} />
         </Routes>
         <Footer />
