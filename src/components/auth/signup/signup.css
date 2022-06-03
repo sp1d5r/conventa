@@ -1,0 +1,199 @@
+.sign-in-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sign-in-top {
+  width: 100%;
+  min-height: 100px;
+  height: 20%;
+  box-sizing: border-box;
+  padding-left: 5%;
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--black);
+  text-align: left;
+}
+
+.sign-in-bottom {
+  width: 90%;
+  min-height: 500px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.sign-in-left {
+  min-width: 300px;
+  flex: 6;
+  display: flex;
+  align-items: flex-start;
+  min-height: 400px;
+  flex-direction: column;
+}
+
+.sign-in-right {
+  min-width: 300px;
+  flex: 4;
+  display: flex;
+  border-left: 3px solid rgba(0, 0, 0, 0.12);
+  min-height: 400px;
+}
+
+.sign-in-main-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+}
+
+.sign-in-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 300;
+  font-size: 13px;
+  text-align: center;
+  color: #b7b7b7;
+}
+
+.sign-in-forum {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+}
+
+.sign-in-bar {
+  width: 30%;
+  height: 0;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+}
+
+.alternative-sign-in {
+  width: 25%;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alternative-sign-in-image {
+  width: 50px;
+  height: 50px;
+}
+
+.sign-in-right-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sign-in-span-switch {
+  font-size: 12px;
+}
+
+.switch-text-bold {
+  font-weight: 600;
+  font-size: 15px;
+  color: #000000;
+}
+
+.sign-in-page-illustration {
+  width: 50%;
+  margin: auto;
+}
+
+.payment-details-split {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.payment-details-split:first-child,
+.payment-details-split:nth-child(2) {
+  width: 50%;
+}
+
+.payment-details-split-child {
+  width: 50%;
+}
+
+.pricing-options-sign-up {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.pricing-card-sign-up,
+.pricing-card-sign-up-selected {
+  width: 30%;
+  min-height: 150px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+}
+
+.pricing-card-sign-up-selected {
+  border: 1px solid var(--green);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.alternative-sign-in-image {
+  width: 50px;
+  height: 50px;
+}
+
+.pricing-sign-in-image {
+  width: 80%;
+}
+
+.sign-up-pricing-type {
+  margin: 0;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: left;
+}
+
+.sign-up-pricing-per-month {
+  font-weight: 700;
+  font-size: 5px;
+  color: #5f5f5f;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .sign-in-page-illustration {
+    width: 0;
+    height: 0;
+  }
+}
