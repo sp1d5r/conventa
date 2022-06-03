@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +37,15 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/landing/Jumbotron" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/github" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/auth/login" />
+      <recent name="$PROJECT_DIR$/src/components/landing/Jumbotron" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/github" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders a navbar link">
@@ -157,6 +156,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1654255432028">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1654255432028" />
     <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1654163102518">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

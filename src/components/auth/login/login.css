@@ -1,0 +1,112 @@
+.login-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-top {
+  width: 100%;
+  min-height: 100px;
+  height: 20%;
+  box-sizing: border-box;
+  padding-left: 5%;
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--black);
+  text-align: left;
+}
+
+.login-bottom {
+  width: 90%;
+  min-height: 500px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.login-left {
+  min-width: 300px;
+  flex: 2;
+  display: flex;
+  align-items: flex-start;
+  min-height: 400px;
+  flex-direction: column;
+}
+
+.login-right {
+  min-width: 300px;
+  flex: 1;
+  display: flex;
+  border-left: 3px solid rgba(0, 0, 0, 0.12);
+  min-height: 400px;
+}
+
+.login-main-text {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--black);
+}
+
+.login-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 300;
+  font-size: 13px;
+  text-align: center;
+  color: var(--light-grey);
+}
+
+.login-forum {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+}
+
+.login-bar {
+  width: 30%;
+  height: 0;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+}
+
+.alternative-sign-in {
+  width: 25%;
+  height: 50px;
+  background: var(--white);
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alternative-sign-in-image {
+  width: 50px;
+  height: 50px;
+}
+
+.login-right-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+.switch-text-bold {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--black);
+}
