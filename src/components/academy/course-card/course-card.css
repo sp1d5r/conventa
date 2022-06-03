@@ -38,7 +38,7 @@
   display: flex;
   align-items: flex-end;
   margin: 0;
-  color: #000000;
+  color: var(--black);
 }
 
 .academy-content-course-title > p {
@@ -55,5 +55,5 @@
   padding: 2% 10%;
   font-weight: 500;
   font-size: 10px;
-  color: #000000;
+  color: var(--black);
 }

@@ -38,7 +38,7 @@
 .academy-content-title {
   font-size: 20px;
   text-align: left;
-  color: #000000;
+  color: var(--black);
 }
 
 .academy-content-section-child,
