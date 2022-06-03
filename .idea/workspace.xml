@@ -5,15 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/How/how.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

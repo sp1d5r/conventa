@@ -141,5 +141,5 @@
 }
 
 .overlay-link {
-  border-top: 2px solid #a3a3a3;
+  border-top: 2px solid var(--light-grey);
 }
