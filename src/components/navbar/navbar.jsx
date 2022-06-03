@@ -17,7 +17,7 @@ function NavBar() {
             <Link to="/" className={"navbar-link"}>
               Documentation
             </Link>
-            <Link to="/" className={"navbar-link"}>
+            <Link to="/academy" className={"navbar-link"}>
               Academy
             </Link>
             <Link to="/" className={"navbar-link"}>
@@ -51,7 +51,7 @@ function NavBar() {
             <Link className={"overlay-link"} to="/">
               Documentation
             </Link>
-            <Link className={"overlay-link"} to="/">
+            <Link to="/academy" className={"overlay-link"}>
               Academy
             </Link>
             <Link className={"overlay-link"} to="/">
