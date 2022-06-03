@@ -1,7 +1,27 @@
 import React from "react";
 import "./minigame-card.css";
 
-function MiniGameCard({ imagePath, title, time }) {
+function MiniGameCard({ imagePath, title, time, academy }) {
+  const _get_difficulty = () => {
+    if (academy === 0) {
+      return require("../../../assets/Icons/difficulty/easy.png");
+    } else if (academy === 1) {
+      return require("../../../assets/Icons/difficulty/medium.png");
+    } else {
+      return require("../../../assets/Icons/difficulty/hard.png");
+    }
+  };
+
+  const _get_difficulty_name = () => {
+    if (academy === 0) {
+      return "easy";
+    } else if (academy === 1) {
+      return "medium";
+    } else {
+      return "hard";
+    }
+  };
+
   return (
     <div className={"academy-content-minigame"}>
       <div className={"academy-content-minigame-image"}>
@@ -14,26 +34,19 @@ function MiniGameCard({ imagePath, title, time }) {
       <div className={"academy-content-minigame-title"}>
         <p>{title}</p>
       </div>
-      <div className={"academy-content-minigame-info"}>
+      <div className={"academy-content-course-info"}>
         <img
           src={require("../../../assets/Icons/time.png")}
-          alt={"This minigame is expected to take 30 minutes"}
+          alt={"This course is expected to take 30 minutes"}
         />
         <p>{time} minutes</p>
       </div>
       <div className={"academy-content-minigame-info"}>
         <img
-          src={require("../../../assets/Icons/time.png")}
+          src={_get_difficulty()}
           alt={"This minigame is expected to take 30 minutes"}
         />
-        <p>{time} minutes</p>
-      </div>
-      <div className={"academy-content-minigame-info"}>
-        <img
-          src={require("../../../assets/Icons/time.png")}
-          alt={"This minigame is expected to take 30 minutes"}
-        />
-        <p>{time} minutes</p>
+        <p>{_get_difficulty_name()}</p>
       </div>
     </div>
   );

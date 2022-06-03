@@ -53,6 +53,7 @@
   row-gap: 20px;
   column-gap: 50px;
   grid-auto-rows: minmax(100px, auto);
+  justify-content: flex-start;
 }
 
 .academy-content-section-child-minigame {

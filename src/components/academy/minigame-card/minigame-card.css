@@ -16,7 +16,7 @@
 }
 
 .academy-content-minigame-image {
-  flex: 3;
+  flex: 8;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@
 }
 
 .academy-content-minigame-title {
-  flex: 2;
+  flex: 4;
   width: 90%;
   padding-left: 5%;
   padding-right: 5%;

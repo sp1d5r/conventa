@@ -46,29 +46,22 @@ function Academy({ loggedIn }) {
           <p className={"academy-content-title"}>minigames</p>
           <div className={"academy-content-section-child-minigame"}>
             <MiniGameCard
-              imagePath={require("../../assets/courses-notational/course1.png")}
+              imagePath={require("../../assets/minigame-notational/minigame1.png")}
               title={"Expressing Emotions"}
               time={30}
+              difficulty={1}
             />
             <MiniGameCard
-              imagePath={require("../../assets/courses-notational/course2.png")}
+              imagePath={require("../../assets/minigame-notational/minigame2.png")}
               title={"Fundamentals"}
               time={30}
+              difficulty={2}
             />
             <MiniGameCard
-              imagePath={require("../../assets/courses-notational/course3.png")}
+              imagePath={require("../../assets/minigame-notational/minigame3.png")}
               title={"Self Control"}
               time={30}
-            />
-            <MiniGameCard
-              imagePath={require("../../assets/courses-notational/course4.png")}
-              title={"Recognising Danger"}
-              time={30}
-            />
-            <MiniGameCard
-              imagePath={require("../../assets/courses-notational/course5.png")}
-              title={"Manipulating People"}
-              time={30}
+              difficulty={3}
             />
           </div>
         </div>
