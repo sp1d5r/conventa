@@ -1,21 +1,21 @@
-.academy-content-course {
+.academy-content-minigame {
   background: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  height: 240px;
-  aspect-ratio: 1 / 1;
+  height: 350px;
+  aspect-ratio: 5 / 7;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.academy-content-course:hover {
+.academy-content-minigame:hover {
   background: var(--green);
-  height: 260px;
+  height: 370px;
 }
 
-.academy-content-course-image {
+.academy-content-minigame-image {
   flex: 3;
   width: 100%;
   display: flex;
@@ -23,11 +23,11 @@
   align-items: center;
 }
 
-.academy-content-course-image-data {
+.academy-content-minigame-image-data {
   aspect-ratio: 1/1;
 }
 
-.academy-content-course-title {
+.academy-content-minigame-title {
   flex: 2;
   width: 90%;
   padding-left: 5%;
@@ -41,11 +41,11 @@
   color: #000000;
 }
 
-.academy-content-course-title > p {
+.academy-content-minigame-title > p {
   margin: 5px;
 }
 
-.academy-content-course-info {
+.academy-content-minigame-info {
   flex: 1;
   width: 100%;
   display: flex;
