@@ -1,6 +1,6 @@
 .jumbo-wrapper {
   width: 100vw;
-  height: 70vh;
+  min-height: 70vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -40,7 +40,7 @@
   line-height: 18px;
   margin-left: 20px;
   margin-right: 20px;
-  color: #989898;
+  color: var(--light-grey);
 }
 
 .jumbo-text-black {
@@ -54,10 +54,12 @@
 }
 
 .jumbo-text-white {
-  color: #ffffff;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  color: var(--white);
+  -webkit-text-fill-color: var(
+    --white
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--black);
 }
 
 .jumbo-sub-text {
@@ -73,7 +75,7 @@
 }
 
 /* If the display is less than 600 it's a mobile device*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .jumbo-text-black {
     font-size: 50px;
   }

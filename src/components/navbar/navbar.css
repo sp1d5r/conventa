@@ -3,6 +3,7 @@
   min-height: 50px;
   width: 100vw;
   position: sticky;
+  top: 0;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -21,7 +22,7 @@
   font-weight: 800;
   font-size: 20px;
   text-align: left;
-  color: #000000;
+  color: var(--black);
   padding-left: 2%;
   display: flex;
   align-items: center;
@@ -34,7 +35,6 @@
 .navbar-items {
   width: 80%;
   height: 60%;
-
   display: flex;
   justify-content: space-between;
 }
@@ -47,7 +47,8 @@
   align-items: center;
 }
 
-.navbar-button {
+.navbar-button,
+.navbar-button-mobile {
   width: 20%;
   height: 100%;
   display: flex;
@@ -55,12 +56,18 @@
   justify-content: center;
 }
 
+.navbar-button-mobile {
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+}
+
 .navbar-link {
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   text-align: center;
-  color: #000000;
+  color: var(--black);
 }
 
 .image-button {
@@ -95,9 +102,9 @@
   z-index: 1; /* Sit on top */
   left: 0;
   top: 8vh;
-  background-color: white;
+  background-color: var(--white);
   overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.8s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  transition: 0.2s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
 /* Position the content inside the overlay */
@@ -114,7 +121,7 @@
   padding: 8px;
   text-decoration: none;
   font-size: 20px;
-  color: #000;
+  color: var(--black);
   display: block; /* Display block instead of inline */
   transition: 0.5s; /* Transition effects on hover (color) */
 }
@@ -122,7 +129,7 @@
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover,
 .overlay a:focus {
-  color: #000000;
+  color: var(--black);
 }
 
 /* Position the close button (top right corner) */
@@ -134,5 +141,5 @@
 }
 
 .overlay-link {
-  border-top: 2px solid #a3a3a3;
+  border-top: 2px solid var(--light-grey);
 }

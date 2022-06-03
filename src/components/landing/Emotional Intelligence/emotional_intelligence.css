@@ -1,6 +1,6 @@
 .emotional-main-div {
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
 }
 
 .emotional-title {
@@ -10,7 +10,7 @@
   font-weight: 700;
   font-size: 50px;
   text-align: center;
-  color: #000000;
+  color: var(--black);
   justify-content: left;
 }
 
@@ -18,10 +18,12 @@
   /* identical to box height */
   text-align: center;
   text-decoration-line: underline;
-  color: #e4ffb7;
-  -webkit-text-fill-color: #e4ffb7; /* Will override color (regardless of order) */
+  color: var(--green);
+  -webkit-text-fill-color: var(
+    --green
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--black);
 }
 
 .emotional-title-text {
@@ -34,15 +36,17 @@
   min-width: 100px;
   font-size: 20px;
   text-decoration: none;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff; /* Will override color (regardless of order) */
+  color: var(--white);
+  -webkit-text-fill-color: var(
+    --white
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  background-color: #e4ffb7;
+  -webkit-text-stroke-color: var(--black);
+  background-color: var(--green);
   border-radius: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  border: #000000 1px solid;
+  border: var(--black) 1px solid;
 }
 
 .emotional-cards {
@@ -80,13 +84,13 @@
 }
 
 .green-box {
-  background-color: #e4ffb7;
+  background-color: var(--green);
 }
 
 .emotional-text-1,
 .emotional-text-2,
 .emotional-text-3 {
-  background: #ffffff;
+  background: var(--white);
   font-weight: 600;
   font-size: 15px;
   text-align: center;
@@ -111,6 +115,7 @@
   .emotional-title {
     margin: auto;
     justify-content: center;
+    font-size: 40px;
   }
 
   .emotional-title-text {

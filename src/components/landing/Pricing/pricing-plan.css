@@ -15,7 +15,7 @@
   font-weight: 700;
   font-size: 50px;
   text-align: left;
-  color: #000000;
+  color: var(--black);
 }
 
 .pricing-subtext {
@@ -41,7 +41,7 @@
   margin-top: 2%;
   margin-bottom: 2%;
   min-width: 300px;
-  background: #ffffff;
+  background: var(--white);
   border: 1px solid #d6d6d6;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -59,7 +59,7 @@
 .per-month {
   font-weight: 600;
   font-size: 20px;
-  color: #868686;
+  color: var(--light-grey);
 }
 
 .subscription-benefits {
@@ -80,7 +80,7 @@
   align-items: center;
   font-weight: 400;
   font-size: 15px;
-  color: #a7a7a7;
+  color: var(--light-grey);
 }
 
 .benefit-icon {
@@ -97,6 +97,6 @@
 
 @media only screen and (max-width: 500px) {
   .pricing-card {
-    padding: 10%;
+    padding: 5%;
   }
 }
