@@ -9,14 +9,14 @@ import Authenticate from "./components/auth/authenticate";
 function App() {
   return (
     <div className="App">
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/auth" element={<Authenticate />} />
           <Route path="/" element={<Landing />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

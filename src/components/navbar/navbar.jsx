@@ -14,22 +14,22 @@ function NavBar() {
       {window.innerWidth > 600 ? (
         <div className={"navbar-items"}>
           <div className={"navbar-links"}>
-            <a href={"/"} className={"navbar-link"}>
+            <Link to="/" className={"navbar-link"}>
               Documentation
-            </a>
-            <a href={"/"} className={"navbar-link"}>
+            </Link>
+            <Link to="/" className={"navbar-link"}>
               Academy
-            </a>
-            <a href={"/"} className={"navbar-link"}>
+            </Link>
+            <Link to="/" className={"navbar-link"}>
               Contact Us
-            </a>
-            <a href={"/"} className={"navbar-link"}>
+            </Link>
+            <Link to="/" className={"navbar-link"}>
               About Us
-            </a>
+            </Link>
           </div>
-          <div className={"navbar-button"}>
+          <Link className={"navbar-button"} to={"/auth"}>
             <Button text={"Login"} />
-          </div>
+          </Link>
         </div>
       ) : (
         <div className={"navbar-items"}>
@@ -48,18 +48,19 @@ function NavBar() {
       {opened ? (
         <div id="myNav" className="overlay">
           <div className="overlay-content">
-            <a className={"overlay-link"} href="/">
+            <Link className={"overlay-link"} to="/">
               Documentation
-            </a>
-            <a className={"overlay-link"} href="/">
+            </Link>
+            <Link className={"overlay-link"} to="/">
               Academy
-            </a>
-            <a className={"overlay-link"} href="/">
+            </Link>
+            <Link className={"overlay-link"} to="/">
               Contact Us
-            </a>
-            <a className={"overlay-link"} href="/">
+            </Link>
+            <Link className={"overlay-link"} to="/">
               About Us
-            </a>
+            </Link>
+
             <Link className={"navbar-button-mobile"} to="/auth">
               <Button text={"Login"} />
             </Link>
