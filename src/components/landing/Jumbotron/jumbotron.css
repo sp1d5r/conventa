@@ -1,6 +1,6 @@
 .jumbo-wrapper {
   width: 100vw;
-  height: 70vh;
+  min-height: 70vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -73,7 +73,7 @@
 }
 
 /* If the display is less than 600 it's a mobile device*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .jumbo-text-black {
     font-size: 50px;
   }
