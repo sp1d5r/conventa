@@ -1,6 +1,7 @@
 import "./navbar.css";
 import React, { useState } from "react";
 import Button from "../button/button";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const [opened, updateOpened] = useState(false);
@@ -59,9 +60,9 @@ function NavBar() {
             <a className={"overlay-link"} href="/">
               About Us
             </a>
-            <div className={"navbar-button-mobile"}>
+            <Link className={"navbar-button-mobile"} to="/auth">
               <Button text={"Login"} />
-            </div>
+            </Link>
           </div>
         </div>
       ) : (

@@ -142,11 +142,14 @@ function SignUp({ changeObjective }) {
                   <input></input>
                   <div className={"payment-details-split"}>
                     <p className={"payment-details-split-child"}>CSV</p>
-                    <p> Expiration Date</p>
+                    <p className={"payment-details-split-child"}>
+                      {" "}
+                      Expiration Date
+                    </p>
                   </div>
-                  <div>
-                    <input></input>
-                    <input></input>
+                  <div className={"payment-details-split"}>
+                    <input className={"payment-details-split-child"}></input>
+                    <input className={"payment-details-split-child"}></input>
                   </div>
                 </>
               ) : (

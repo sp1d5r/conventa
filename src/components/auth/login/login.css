@@ -51,7 +51,7 @@
 .login-main-text {
   font-weight: 700;
   font-size: 18px;
-  color: #000000;
+  color: var(--black);
 }
 
 .login-button {
@@ -61,7 +61,7 @@
   font-weight: 300;
   font-size: 13px;
   text-align: center;
-  color: #b7b7b7;
+  color: var(--light-grey);
 }
 
 .login-forum {
@@ -84,7 +84,7 @@
 .alternative-sign-in {
   width: 25%;
   height: 50px;
-  background: #ffffff;
+  background: var(--white);
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   display: flex;
@@ -108,5 +108,5 @@
 .switch-text-bold {
   font-weight: 600;
   font-size: 15px;
-  color: #000000;
+  color: var(--black);
 }

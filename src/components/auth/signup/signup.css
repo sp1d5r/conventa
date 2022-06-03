@@ -51,7 +51,7 @@
 .sign-in-main-text {
   font-weight: 700;
   font-size: 18px;
-  color: #000000;
+  color: var(--black);
 }
 
 .sign-in-button {
@@ -61,7 +61,7 @@
   font-weight: 300;
   font-size: 13px;
   text-align: center;
-  color: #b7b7b7;
+  color: var(--light-grey);
 }
 
 .sign-in-forum {
@@ -111,7 +111,7 @@
 .switch-text-bold {
   font-weight: 600;
   font-size: 15px;
-  color: #000000;
+  color: var(--black);
 }
 
 .sign-in-page-illustration {
@@ -122,6 +122,7 @@
 .payment-details-split {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 .payment-details-split:first-child,
@@ -130,12 +131,12 @@
 }
 
 .payment-details-split-child {
-  width: 50%;
+  width: 40%;
 }
 
 .pricing-options-sign-up {
   width: 100%;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
@@ -147,7 +148,7 @@
 .pricing-card-sign-up-selected {
   width: 30%;
   min-height: 150px;
-  background: #ffffff;
+  background: var(--white);
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   display: flex;
@@ -156,7 +157,7 @@
   align-items: center;
   font-weight: 700;
   font-size: 18px;
-  color: #000000;
+  color: var(--black);
 }
 
 .pricing-card-sign-up-selected {
