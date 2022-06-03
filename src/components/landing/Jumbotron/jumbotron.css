@@ -40,7 +40,7 @@
   line-height: 18px;
   margin-left: 20px;
   margin-right: 20px;
-  color: #989898;
+  color: var(--light-grey);
 }
 
 .jumbo-text-black {
@@ -54,10 +54,12 @@
 }
 
 .jumbo-text-white {
-  color: #ffffff;
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  color: var(--white);
+  -webkit-text-fill-color: var(
+    --white
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--black);
 }
 
 .jumbo-sub-text {

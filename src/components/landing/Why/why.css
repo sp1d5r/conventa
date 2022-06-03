@@ -22,7 +22,7 @@
   font-weight: 700;
   font-size: 50px;
   text-align: center;
-  color: #000000;
+  color: var(--black);
   width: 90%;
   display: flex;
   justify-content: left;
@@ -60,14 +60,16 @@
 
   text-align: center;
   text-decoration-line: underline;
-  color: #e4ffb7;
-  -webkit-text-fill-color: #e4ffb7; /* Will override color (regardless of order) */
+  color: var(--green);
+  -webkit-text-fill-color: var(
+    --green
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--black);
 }
 
 .why-main-text-box {
-  border-left: 10px solid #e4ffb7;
+  border-left: 10px solid var(--green);
   width: 90%;
   margin-top: 5%;
   font-size: 18px;

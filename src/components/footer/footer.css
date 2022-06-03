@@ -1,7 +1,7 @@
 .footer-main {
   width: 100%;
   min-height: 30%;
-  background-color: #e4ffb7;
+  background-color: var(--green);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,11 +39,11 @@
 .footer-information-heading {
   font-weight: 700;
   font-size: 20px;
-  color: #000000;
+  color: var(--black);
 }
 
 .footer-information-links {
-  border-left: 3px solid #d8d8d8;
+  border-left: 3px solid var(--light-grey);
   padding-left: 5%;
 }
 
@@ -64,7 +64,7 @@
   justify-content: space-around;
   font-weight: 400;
   font-size: 15px;
-  color: #989898;
+  color: var(--light-grey);
 }
 
 .footer-main-bottom {
@@ -83,5 +83,5 @@
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
-  color: #000000;
+  color: var(--black);
 }

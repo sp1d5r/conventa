@@ -22,8 +22,8 @@
   font-style: normal;
   font-weight: 700;
   font-size: 50px;
-  color: #000000;
-  -webkit-text-fill-color: #000000;
+  color: var(--black);
+  -webkit-text-fill-color: var(--black);
 }
 
 .help-top-text-reverse {
@@ -31,10 +31,12 @@
   text-decoration-line: underline;
   font-weight: 700;
   font-size: 50px;
-  color: #e4ffb7;
-  -webkit-text-fill-color: #e4ffb7; /* Will override color (regardless of order) */
+  color: var(--green);
+  -webkit-text-fill-color: var(
+    --green
+  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: var(--black);
 }
 
 .help-top-bottom {
@@ -55,7 +57,7 @@
 }
 
 .help-card {
-  background: #ffffff;
+  background: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 25vw;
   min-width: 300px;
@@ -79,7 +81,7 @@
   align-items: center;
   font-weight: 500;
   font-size: 20px;
-  color: #000000;
+  color: var(--black);
   margin-right: auto;
   margin-left: auto;
 }
