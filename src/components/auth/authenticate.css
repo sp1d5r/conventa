@@ -1,0 +1,7 @@
+.authenticate-home {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../../assets/LoginBackground.svg");
+  background-size: cover;
+  background-position: center;
+}

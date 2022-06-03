@@ -1,5 +1,6 @@
 .button-primary,
-.button-blue {
+.button-blue,
+.button-green {
   background: var(--white);
   border: 1px solid var(--green);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -37,4 +38,17 @@
 .button-blue-text {
   font-size: 15px;
   margin: 10px;
+}
+
+.button-green {
+  background: var(--green);
+  border: 0px;
+  color: var(--light-blue);
+  width: 30%;
+}
+
+.button-green:hover {
+  background: var(--green-dark);
+  border: 0px;
+  color: var(--white);
 }
