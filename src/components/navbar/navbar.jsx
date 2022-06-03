@@ -59,6 +59,9 @@ function NavBar() {
             <a className={"overlay-link"} href="/">
               About Us
             </a>
+            <div className={"navbar-button-mobile"}>
+              <Button text={"Login"} />
+            </div>
           </div>
         </div>
       ) : (
