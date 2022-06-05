@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
