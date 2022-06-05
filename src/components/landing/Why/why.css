@@ -6,6 +6,8 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   background-image: url("../../../assets/rectangle.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .why-background-unskewed {
