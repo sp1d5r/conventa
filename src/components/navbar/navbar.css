@@ -18,7 +18,7 @@
   width: 5%;
   min-width: 120px;
   font-family: "arial";
-  border-right: 2px solid #a3a3a3;
+  border-right: 2px solid var(--light-grey);
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
