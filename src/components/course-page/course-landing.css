@@ -1,0 +1,65 @@
+.course-landing-main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.course-landing-title {
+  min-height: 5vh;
+  width: 90%;
+  padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--black);
+}
+
+.course-content-lessons {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--white);
+  padding: 5% 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+}
+
+.course-landing-content-section {
+  /* This is the section i.e. courses*/
+  width: 65%;
+}
+
+.course-landing-content-title {
+  font-size: 20px;
+  text-align: left;
+  color: var(--black);
+}
+
+.course-landing-content-section-child {
+  /* This is the thing with the left border  */
+  min-width: 350px;
+  padding-right: 5%;
+  border-right: 3px solid var(--light-grey);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fit, 360px);
+  row-gap: 20px;
+  column-gap: 50px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-content: flex-start;
+}
+
+.course-content-card-right {
+  min-width: 300px;
+  width: 35%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
