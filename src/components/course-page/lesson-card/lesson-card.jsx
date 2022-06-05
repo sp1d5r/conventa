@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function LessonCard({ lesson_id }) {
   const get_lesson_information = () => {
@@ -34,7 +35,10 @@ function LessonCard({ lesson_id }) {
   };
 
   return (
-    <div className={"academy-content-minigame"}>
+    <Link
+      className={"academy-content-minigame"}
+      to={`/lesson/?lesson_id=${lesson_id}`}
+    >
       <div className={"academy-content-minigame-image"}>
         <img
           className={"academy-content-minigame-image-data"}
@@ -59,7 +63,7 @@ function LessonCard({ lesson_id }) {
         />
         <p>{_get_difficulty_name()}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
