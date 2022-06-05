@@ -6,6 +6,7 @@ import Landing from "./components/landing/landing";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Authenticate from "./components/auth/authenticate";
 import Academy from "./components/academy/academy";
+import CourseLanding from "./components/course-page/course-landing";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/auth" element={<Authenticate />} />
           <Route path="/academy" element={<Academy loggedIn={false} />} />
+          <Route path="/course/" element={<CourseLanding />} />
           <Route path="/" element={<Landing />} />
         </Routes>
         <Footer />
