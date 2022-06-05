@@ -1,9 +1,13 @@
 import React from "react";
 import "./course-card.css";
+import { Link } from "react-router-dom";
 
 function CourseCard({ imagePath, title, time }) {
   return (
-    <div className={"academy-content-course"}>
+    <Link
+      className={"academy-content-course"}
+      to={`/course/?course_id=${title}`}
+    >
       <div className={"academy-content-course-image"}>
         <img
           className={"academy-content-course-image-data"}
@@ -21,7 +25,7 @@ function CourseCard({ imagePath, title, time }) {
         />
         <p>{time} minutes</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

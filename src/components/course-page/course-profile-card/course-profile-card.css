@@ -1,0 +1,65 @@
+.course-card-profile-with-progress {
+  margin-top: 30%;
+  background: var(--white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 80%;
+  height: 40%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card-profile-image {
+  flex: 4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-card-profile-image > img {
+  height: 80%;
+  aspect-ratio: 1/1;
+}
+
+.course-card-profile-title {
+  /* This is for the title of the course */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: var(--black);
+}
+
+.course-card-profile-additional-info {
+  /* This is for the timer and the difficulty */
+  flex: 1;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--black);
+}
+
+.course-card-profile-call-to-action {
+  /* This is the call to action */
+  flex: 2;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-card-profile-call-to-action > button {
+  width: 60%;
+  font-weight: 700;
+}

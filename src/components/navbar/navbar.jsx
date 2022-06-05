@@ -8,9 +8,9 @@ function NavBar() {
 
   return (
     <div className={"navbar"}>
-      <div className={"brand"}>
-        <p>My Logo</p>
-      </div>
+      <Link className={"brand"} to={"/"}>
+        <p>convento</p>
+      </Link>
       {window.innerWidth > 600 ? (
         <div className={"navbar-items"}>
           <div className={"navbar-links"}>
