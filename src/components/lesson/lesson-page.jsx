@@ -1,8 +1,9 @@
 import React from "react";
+import { Breadcrumb } from "react-bootstrap";
 import "./lesson-page.css";
 import { useSearchParams } from "react-router-dom";
-import LessonCard from "../course-page/lesson-card/lesson-card";
 import CourseProfileCard from "../course-page/course-profile-card/course-profile-card";
+import Markdown from "markdown-to-jsx";
 
 function LessonPage() {
   /* The URL looks like : http://localhost:3000/lesson/?lesson_id=gvhvgvhv&course_id=course_name
@@ -11,7 +12,29 @@ function LessonPage() {
   const searchParams = useSearchParams()[0];
   const lesson_id = searchParams.get("lesson_id");
   const course_id = searchParams.get("course_id");
+
   const get_course_information = () => {
+    return {
+      lessons: [
+        "lesson_id_1",
+        "lesson_id_2",
+        "lesson_id_3",
+        "lesson_id_4",
+        "lesson_id_5",
+        "lesson_id_6",
+        "lesson_id_7",
+      ],
+      course_name: course_id,
+      course_image: require("../../assets/courses-notational/course1.png"),
+      course_image_path: "../../assets/courses-notational/course1.png",
+      difficulty: 3,
+      duration: 180,
+    };
+  };
+
+  const course_information = get_course_information();
+
+  const get_lesson_information = () => {
     return {
       lesson_title: "Extrapolating the Big Idea!",
       lesson_body:
@@ -26,23 +49,29 @@ function LessonPage() {
     };
   };
 
-  const course_information = get_course_information();
+  const lesson_information = get_lesson_information();
   console.log(course_id);
+  console.log(lesson_id);
 
   return (
     <div className={"course-landing-main"}>
-      <div className={"course-landing-title"}>
-        {course_information.course_name}
+      <div className={"lesson-breadcrumbs"}>
+        <Breadcrumb className={"lesson-breadcrumb-bar"}>
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item href={`/course/?course_id= ${course_id}`}>
+            {course_information.course_name}
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>
+            {lesson_information.lesson_title}
+          </Breadcrumb.Item>
+        </Breadcrumb>
       </div>
       <div className={"course-content-lessons"}>
         <div className={"course-landing-content-section"}>
-          <p className={"course-landing-content-title"}>lessons</p>
           <div className={"course-landing-content-section-child"}>
-            <LessonCard lesson_id={lesson_id} />
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
+            <Markdown className={"lesson-landing-body-markdown"}>
+              {lesson_information.lesson_body}
+            </Markdown>
           </div>
         </div>
         <div className={"course-content-card-right"}>
