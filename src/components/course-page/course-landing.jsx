@@ -42,11 +42,11 @@ function CourseLanding() {
         <div className={"course-landing-content-section"}>
           <p className={"course-landing-content-title"}>lessons</p>
           <div className={"course-landing-content-section-child"}>
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
-            <LessonCard lesson_id={"lessson 1243"} />
+            <LessonCard lesson_id={"lessson 1243"} course_id={course_id} />
+            <LessonCard lesson_id={"lessson 1243"} course_id={course_id} />
+            <LessonCard lesson_id={"lessson 1243"} course_id={course_id} />
+            <LessonCard lesson_id={"lessson 1243"} course_id={course_id} />
+            <LessonCard lesson_id={"lessson 1243"} course_id={course_id} />
           </div>
         </div>
         <div className={"course-content-card-right"}>
