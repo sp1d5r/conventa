@@ -1,0 +1,11 @@
+.lesson-breadcrumbs {
+  min-height: 5vh;
+  width: 90%;
+  padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.lesson-landing-body-markdown {
+  text-align: left;
+}

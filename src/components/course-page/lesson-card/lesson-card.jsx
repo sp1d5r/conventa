@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function LessonCard({ lesson_id }) {
+function LessonCard({ lesson_id, course_id }) {
   const get_lesson_information = () => {
     console.log({ lesson_id });
     return {
@@ -37,7 +37,7 @@ function LessonCard({ lesson_id }) {
   return (
     <Link
       className={"academy-content-minigame"}
-      to={`/lesson/?lesson_id=${lesson_id}`}
+      to={`/lesson/?lesson_id=${lesson_id}&course_id=${course_id}`}
     >
       <div className={"academy-content-minigame-image"}>
         <img
