@@ -3,7 +3,7 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <div className={"footer-main"}>
+    <div id={"footer-main"} className={"footer-main"}>
       <div className={"footer-main-top"}>
         <div className={"footer-information"}>
           <div className={"footer-information-box"}>

@@ -52,3 +52,53 @@
   border: 0px;
   color: var(--white);
 }
+
+.button-primary-green,
+.button-primary-blue,
+.button-primary-red {
+  background-color: #d0f98d;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  width: 161px;
+  height: 69px;
+}
+
+.button-primary-blue {
+  background: #8ddff9;
+}
+
+.button-primary-red {
+  background: #f9938d;
+}
+
+.button-primary-green:hover {
+  background: #5f753c;
+}
+
+.button-primary-blue:hover {
+  background: #456c78;
+}
+
+.button-primary-red:hover {
+  background: #573330;
+}
+
+.button-primary-green > p,
+.button-primary-blue > p,
+.button-primary-red > p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+}
+
+.button-primary-green:hover > p,
+.button-primary-blue:hover > p,
+.button-primary-red:hover > p {
+  color: var(--white);
+}

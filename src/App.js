@@ -21,7 +21,7 @@ function App() {
           <Route path="/course/" element={<CourseLanding />} />
           <Route path="/lesson/" element={<LessonPage />} />
           <Route
-            path="/mini-games/first-impressions/"
+            path="/minigame/First%20Impressions"
             element={<FirstImpressions />}
           />
           <Route path="/" element={<Landing />} />

@@ -24,10 +24,7 @@ function MiniGameCard({ imagePath, title, time, academy }) {
   };
 
   return (
-    <Link
-      className={"academy-content-minigame"}
-      to={`/minigame/?minigame_id=${title}`}
-    >
+    <Link className={"academy-content-minigame"} to={`/minigame/${title}`}>
       <div className={"academy-content-minigame-image"}>
         <img
           className={"academy-content-minigame-image-data"}
