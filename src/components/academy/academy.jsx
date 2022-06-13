@@ -47,7 +47,7 @@ function Academy({ loggedIn }) {
           <div className={"academy-content-section-child-minigame"}>
             <MiniGameCard
               imagePath={require("../../assets/minigame-notational/minigame1.png")}
-              title={"Expressing Emotions"}
+              title={"First Impressions"}
               time={30}
               difficulty={1}
             />

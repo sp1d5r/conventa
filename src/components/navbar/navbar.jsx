@@ -7,7 +7,7 @@ function NavBar() {
   const [opened, updateOpened] = useState(false);
 
   return (
-    <div className={"navbar"}>
+    <div className={"navbar"} id={"navbar"}>
       <Link className={"brand"} to={"/"}>
         <p>convento</p>
       </Link>

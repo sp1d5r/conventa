@@ -1,5 +1,6 @@
 import React from "react";
 import "../first-impressions.css";
+import MinigameButton from "../../../button/minigame-button";
 
 function StartFirstImpressions() {
   const get_last_score = () => {
@@ -29,12 +30,10 @@ function StartFirstImpressions() {
       <p>{get_last_score()}</p>
       <div className={"first-impressions-line"} />
       <b>Let's Begin!</b>
-      <div>
-        <button>easy</button>
-
-        <button>medium</button>
-
-        <button>hard</button>
+      <div className={"first-impression-button-div"}>
+        <MinigameButton text={"Easy"} color={"green"} />
+        <MinigameButton text={"Medium"} color={"blue"} />
+        <MinigameButton text={"Hard"} color={"red"} />
       </div>
     </div>
   );
