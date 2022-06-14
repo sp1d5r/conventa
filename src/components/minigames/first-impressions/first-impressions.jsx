@@ -8,7 +8,7 @@ function FirstImpressions() {
   const from_minigame_state = () => {
     if (state === 0) {
       /* This is the intro state */
-      return <StartFirstImpressions />;
+      return <StartFirstImpressions setState={setState} />;
     } else if (state === 1) {
       /* This is the game state */
       setState(1);

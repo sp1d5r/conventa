@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/navbar-color.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/button/minigame-button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/minigame.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/end-first-impressions/end-first-impressions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/minigame-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/minigame-button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/start-first-impressions/start-first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/start-first-impressions/start-first-impressions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +151,7 @@
       <updated>1653826456003</updated>
       <workItem from="1653826457826" duration="11551000" />
       <workItem from="1653936221555" duration="9909000" />
-      <workItem from="1655060924548" duration="5486000" />
+      <workItem from="1655060924548" duration="6429000" />
     </task>
     <servers />
   </component>
