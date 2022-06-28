@@ -34,7 +34,7 @@ function StartFirstImpressions({ setState }) {
         <MinigameButton
           text={"Easy"}
           color={"green"}
-          onClick={() => () => setState(1)}
+          onClick={() => setState(1)}
         />
         <MinigameButton text={"Medium"} color={"blue"} />
         <MinigameButton text={"Hard"} color={"red"} />

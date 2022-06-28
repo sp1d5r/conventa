@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./first-impressions.css";
 import StartFirstImpressions from "./start-first-impressions/start-first-impressions";
+import FirstImpressionsGame from "./first-impressions-game/first-impressions-game";
 
 function FirstImpressions() {
   const [state, setState] = useState(0);
@@ -11,7 +12,7 @@ function FirstImpressions() {
       return <StartFirstImpressions setState={setState} />;
     } else if (state === 1) {
       /* This is the game state */
-      setState(1);
+      return <FirstImpressionsGame setState={setState} />;
     } else {
       /* This is the game complete state */
     }
