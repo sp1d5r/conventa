@@ -22,11 +22,35 @@ function FirstImpressionsGame({  }) {
 
 
   return (
-    <div className={"first-impressions-card"}>
-      <p className={"first-impressions-title"}>Minigame - First Impressions</p>
-      <div className={"first-impressions-info"}>
-      <p>{text}</p>
+    <div>
+    <div className={"first-impressions-game-title"}>
+    <p>Minigame - First Impressions</p>
+    <button> pause </button>
+    </div>
+    <div className={"first-impressions-game-cards"}>
+      <div className={"first-impressions-card-main"}>
+        <div className={"first-impressions-image"}>
+
+        </div>
+        <div className={"first-impressions-infobox"}>
+        <p>Time remaining: <b>{timeRef.current}</b></p>
+        </div>
       </div>
+      <div className={"first-impressions-cards-right"}>
+        <div className={"first-impressions-card-right"}>
+
+        </div>
+        <div className={"first-impressions-card-right"}>
+
+        </div>
+        <div className={"first-impressions-card-right"}>
+
+        </div>
+        <div className={"first-impressions-card-right"}>
+
+        </div>
+      </div>
+    </div>
     </div>
   );
 }
