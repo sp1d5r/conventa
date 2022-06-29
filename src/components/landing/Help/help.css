@@ -35,8 +35,8 @@
   -webkit-text-fill-color: var(
     --green
   ); /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--black);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
 }
 
 .help-top-bottom {
