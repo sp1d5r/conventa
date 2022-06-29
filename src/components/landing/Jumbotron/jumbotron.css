@@ -55,11 +55,12 @@
 
 .jumbo-text-white {
   color: var(--white);
-  -webkit-text-fill-color: var(
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  /*-webkit-text-fill-color: var(
     --white
-  ); /* Will override color (regardless of order) */
+  );
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--black);
+  -webkit-text-stroke-color: var(--black);*/
 }
 
 .jumbo-sub-text {
