@@ -42,7 +42,15 @@ function FirstImpressionsGame({  }) {
     <div className={"first-impressions-game-cards"}>
       <div className={"first-impressions-card-main"}>
         <div className={"first-impressions-image"}>
-
+          <img
+            src="//www.jquery-az.com/html/images/banana.jpg"
+            alt="Girl in a jacket"
+            className={"first-impression-image-act"}
+          >
+          </img>
+          <div className={"image-source"}>
+          <p style={{paddingRight: 20}}>Source</p>
+          </div>
         </div>
         <div className={"first-impressions-infobox"}>
           <div className={"infobox-left"}>
