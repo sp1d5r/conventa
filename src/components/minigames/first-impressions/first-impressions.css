@@ -114,6 +114,21 @@
   background-color: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.first-impressions-card-right:hover {
+  background-color: #e8e8e8;
+  outline: 1px;
+}
+
+.first-impressions-card-right:active {
+  background-color: #B7F6FF;
 }
 
 .first-impressions-image {
@@ -132,8 +147,36 @@
   padding: 2%;
   box-sizing: border-box;
   background: blue;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
+.infobox-left {
+  width: 40%;
+  height: 100%;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.inline-objects {
+  width: 100%;
+  background: pink;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.first-impressions-menu {
+  width: 30%;
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  height: 20%;
+}
 /* State 2 - End First Impressions */
 
 @media only screen and (max-width: 600px) {
