@@ -8,6 +8,11 @@ function FirstImpressionsGame({  }) {
   const paused = useRef(false);
   const [text, setText] = useState("")
 
+  const pressPause = () => {
+    paused.current = !paused.current;
+    var button = document.getElementById("pause-button-first-impressions");
+    button.innerHTML = paused.current ? "Resume" : "Pause";
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,7 +35,7 @@ function FirstImpressionsGame({  }) {
     <div className={"first-impressions-game-title"}>
     <p>Minigame - First Impressions</p>
     <div className={"first-impressions-menu"}>
-      <button onClick={() => {paused.current = !paused.current}}> Pause</button>
+      <button id="pause-button-first-impressions" onClick={() => {pressPause()}}> Pause</button>
       <button> skip </button>
     </div>
     </div>
