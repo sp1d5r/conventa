@@ -132,8 +132,9 @@
 }
 
 .first-impression-image-act {
+    transition: 0.3s cubic-bezier(0.3, 0, 0.4, 1) opacity;
+    opacity: 0;
     height: 100%;  width: 100%;
-
     object-fit: fill;
     z-index: -2;
     position: absolute;
@@ -152,6 +153,10 @@
   box-sizing: border-box;
   z-index: 3;
   position: relative;
+}
+
+.first-impression-image-act {
+  opacity: 1;
 }
 
 .image-source {
