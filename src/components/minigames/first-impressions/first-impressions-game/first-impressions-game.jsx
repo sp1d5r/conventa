@@ -2,6 +2,23 @@ import React, {useState, useEffect, useRef} from "react";
 import "../first-impressions.css";
 import MinigameButton from "../../../button/minigame-button";
 
+const useImage = ({ src }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => setLoaded(true);
+  }, [src]);
+  return loaded
+}
+
+const MinigameImage = ({ src, alt }) => {
+  const { loaded } = useImage({src});
+  return (
+    <img className={`first-impression-image-act ${loaded}`} src={src} alt={alt}/>
+  )
+}
 
 function FirstImpressionsGame({  }) {
   const timeRef = useRef(10);
@@ -12,7 +29,7 @@ function FirstImpressionsGame({  }) {
     let qs = {
       questions: [
         {
-          imageUrl: "www.jquery-az.com/html/images/banana.jpg",
+          imageUrl: "../../../../assets/first-impressions/peaky-blinders.jpeg",
           option1: "Options 1",
           option2: "Options 2",
           option3: "Options 3",
@@ -20,7 +37,7 @@ function FirstImpressionsGame({  }) {
           correctOption: 3
         },
         {
-          imageUrl: "www.jquery-az.com/html/images/banana1.jpg",
+          imageUrl: "https://ichef.bbci.co.uk/news/976/cpsprodpb/73C2/production/_122743692_4e7c0805-6e29-4caf-af85-e4e451db69af.png",
           option1: "Options 2",
           option2: "Options 3",
           option3: "Options 4",
@@ -28,7 +45,7 @@ function FirstImpressionsGame({  }) {
           correctOption: 1
         },
         {
-          imageUrl: "www.jquery-az.com/html/images/banana2.jpg",
+          imageUrl: "https://cdn.mos.cms.futurecdn.net/XR4xMcbi2Bv65Fuf2fMAJX.jpeg",
           option1: "Options 4",
           option2: "Options 3",
           option3: "Options 2",
@@ -36,7 +53,7 @@ function FirstImpressionsGame({  }) {
           correctOption: 4
         },
         {
-          imageUrl: "www.jquery-az.com/html/images/banana3.jpg",
+          imageUrl: "https://variety.com/wp-content/uploads/2019/09/peaky-blinders-season-5.jpg?w=681&h=383&crop=1",
           option1: "Options 2",
           option2: "Options 3",
           option3: "Options 1",
@@ -114,11 +131,10 @@ function FirstImpressionsGame({  }) {
     <div className={"first-impressions-game-cards"}>
       <div className={"first-impressions-card-main"}>
         <div className={"first-impressions-image"}>
-          <img
-            src="www.jquery-az.com/html/images/banana.jpg"
+          <MinigameImage
+            src={currentQuestion.imageUrl}
             id="first-impressions-images"
             alt="Girl in a jacket"
-            className={"first-impression-image-act"}
           />
 
           <div className={"image-source"}>
