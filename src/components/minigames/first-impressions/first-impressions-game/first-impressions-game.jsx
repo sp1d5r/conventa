@@ -21,8 +21,6 @@ const MinigameImage = ({ src, alt }) => {
 }
 
 function FirstImpressionsGame({  }) {
-  const timeRef = useRef(10);
-  const paused = useRef(false);
   const [text, setText] = useState("")
 
   const getQuestions = () => {
@@ -90,6 +88,9 @@ function FirstImpressionsGame({  }) {
   }
 
   /* Tracking Game State */
+  const timeRef = useRef(10);
+  const paused = useRef(false);
+  const quit = useRef(false);
   const currentQuestionIndex = useRef(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   const [score, setScore] = useState(0);
@@ -102,6 +103,20 @@ function FirstImpressionsGame({  }) {
     paused.current = !paused.current;
     var button = document.getElementById("pause-button-first-impressions");
     button.innerHTML = paused.current ? "Resume" : "Pause";
+    var pausedMessage = document.getElementById("paused-message");
+    if (paused.current){
+      pausedMessage.hidden = false;
+    } else {
+      pausedMessage.hidden = true;
+    }
+  }
+
+  const quitGame = () => {
+    /* Pause any current game */
+    paused.current = true;
+    var errorMessage = document.getElementById("error-message");
+    errorMessage.hidden = true;
+
   }
 
   const updateQuestions = () => {
@@ -114,6 +129,8 @@ function FirstImpressionsGame({  }) {
 
         console.log('question',localQuestions.splice(0, 1))
         setQuestions(localQuestions)
+      }else {
+        /* Game Over */
       }
   }
 
@@ -159,11 +176,62 @@ function FirstImpressionsGame({  }) {
     <div className={"first-impressions-game-title"}>
     <p>Minigame - First Impressions</p>
     <div className={"first-impressions-menu"}>
-      <button id="pause-button-first-impressions" onClick={() => {pressPause()}}> Pause</button>
+      <button id="pause-button-first-impressions" className={"pause-button"}
+      onClick={() => {pressPause()}}> Pause</button>
       <button> skip </button>
     </div>
     </div>
     <div className={"first-impressions-game-cards"}>
+      { /* This is the Paused Screen */
+        <div id="paused-message" className="error-message" hidden>
+        <div className={"first-impressions-card"}>
+          <p className={"first-impressions-title"}>First Impressions - Paused!</p>
+          <div className={"first-impressions-info"}>
+            <p>
+              The goal is to quickly scan the image, read the promt and try to find
+              relevant body language techniques.
+            </p>
+            <p>
+              For Example:
+              <span style={{ fontStyle: "italic" }}>
+                “Find body language techniques this person is using to portray
+                composure.”
+              </span>
+            </p>
+            <p>
+              You will be presented with 10 images and 4 potential techniques.
+              Select the relevant techniques.
+            </p>
+          </div>
+          <div className={"first-impressions-info"}>
+            <span>
+            <img
+              style={{height: 20, width:20}}
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/TimeSpan.png")}
+            />
+              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
+            </span>
+            <span>
+            <img
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/Action.png")}
+            />
+            <p>Score: <b>{score}</b> / {totalQuestions}</p>
+            </span>
+
+          </div>
+
+          <div className={"first-impressions-line"} />
+          <b>Press the button to begin</b>
+          <button className={"pause-button"}
+          onClick={() => {pressPause()}}> Resume</button>
+          <button className={"quit-button"}
+          onClick={() => {quitGame()}}> Quit</button>
+        </div>
+
+        </div>
+      }
       <div className={"first-impressions-card-main"}>
         <div className={"first-impressions-image"}>
           <MinigameImage
@@ -186,11 +254,11 @@ function FirstImpressionsGame({  }) {
               <p>Time remaining: <b>{timeRef.current}</b></p>
             </div>
             <div className={"inline-objects"}>
-            <img
-              style={{height: 20, width:20}}
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/TimeSpan.png")}
-            />
+              <img
+                style={{height: 20, width:20}}
+                alt="Actions"
+                src={require("../../../../assets/first-impressions/TimeSpan.png")}
+              />
               <p>Total Time Spent: <b>{timeSpent.current}</b></p>
             </div>
           </div>
@@ -203,7 +271,7 @@ function FirstImpressionsGame({  }) {
                 alt="Actions"
                 src={require("../../../../assets/first-impressions/Action.png")}
               />
-              <p><b>{score}</b> / {totalQuestions}</p>
+              <p>Score: <b>{score}</b> / {totalQuestions}</p>
             </div>
           </div>
         </div>
