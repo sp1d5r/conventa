@@ -67,6 +67,17 @@
   color: #000000;
 }
 
+.error-message {
+  width: 100vw;
+  height: 130vh;
+  top: -30vh;
+  background-color: rgba(255,255,255,0.7);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .first-impressions-game-title  > button {
   font-weight: 500;
   font-size: 20px;
@@ -77,6 +88,8 @@
   width: 100vw;
   display: flex;
   justify-content: space-around;
+  position: relative;
+  z-index: 0;
 }
 
 .first-impressions-card-main {
@@ -92,6 +105,8 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 2%;
+  position: relative;
+  z-index: -2;
 }
 
 .first-impressions-cards-right {
