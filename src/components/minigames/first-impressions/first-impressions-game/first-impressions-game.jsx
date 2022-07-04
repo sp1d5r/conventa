@@ -34,7 +34,8 @@ function FirstImpressionsGame({  }) {
           option2: "Options 2",
           option3: "Options 3",
           option4: "Options 4",
-          correctOption: 3
+          correctOption: 3,
+          source: "Peaky Blinders - BBC - Episode 3"
         },
         {
           imageUrl: "https://ichef.bbci.co.uk/news/976/cpsprodpb/73C2/production/_122743692_4e7c0805-6e29-4caf-af85-e4e451db69af.png",
@@ -42,7 +43,8 @@ function FirstImpressionsGame({  }) {
           option2: "Options 3",
           option3: "Options 4",
           option4: "Options 1",
-          correctOption: 1
+          correctOption: 1,
+          source: "Peaky Blinders - BBC - Episode 12"
         },
         {
           imageUrl: "https://cdn.mos.cms.futurecdn.net/XR4xMcbi2Bv65Fuf2fMAJX.jpeg",
@@ -50,7 +52,8 @@ function FirstImpressionsGame({  }) {
           option2: "Options 3",
           option3: "Options 2",
           option4: "Options 1",
-          correctOption: 4
+          correctOption: 4,
+          source: "Peaky Blinders - BBC - Episode 30"
         },
         {
           imageUrl: "https://variety.com/wp-content/uploads/2019/09/peaky-blinders-season-5.jpg?w=681&h=383&crop=1",
@@ -58,16 +61,43 @@ function FirstImpressionsGame({  }) {
           option2: "Options 3",
           option3: "Options 1",
           option4: "Options 4",
-          correctOption: 2
+          correctOption: 2,
+          source: "Peaky Blinders - BBC - Episode 312"
         }
-      ]
+      ],
+      length: 10,
     }
-    return qs.questions
+    return qs
   }
 
-  const [questions, setQuestions] = useState(getQuestions());
+  const quotes = [
+    "Wow, learning is so fun!",
+    "Keep going!",
+    "You are doing great!",
+    "Unlucky...",
+    "We're almost there!",
+    "keep going!!",
+    "YES!!!",
+    "Channel the observer!"
+  ]
+
+  const [questions, setQuestions] = useState(getQuestions().questions);
+  const totalQuestions = getQuestions().length;
+  const increaseScore = () => setScore(score + 1);
+  const increaseTime = () =>  timeSpent.current ++;
+  const updateQoute = () => {
+    goodAdvice.current = quotes[Math.floor(Math.random() * 8)]
+  }
+
+  /* Tracking Game State */
   const currentQuestionIndex = useRef(0);
-  const [currentQuestion, setCurrentQuestion] = useState(questions[0])
+  const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
+  const [score, setScore] = useState(0);
+  const timeSpent = useRef(0)
+  const goodAdvice = useRef("Good Luck!")
+
+
+
   const pressPause = () => {
     paused.current = !paused.current;
     var button = document.getElementById("pause-button-first-impressions");
@@ -90,7 +120,7 @@ function FirstImpressionsGame({  }) {
   const clickOption = (optionNumber) => {
     if (optionNumber == currentQuestion.correctOption) {
       /* Successful Option Pressed */
-      console.log("success")
+      increaseScore();
     } else {
       console.log("failure")
     }
@@ -100,13 +130,18 @@ function FirstImpressionsGame({  }) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused.current) {
+        if (timeRef.current % 5 == 0) {
+          updateQoute();
+        }
         if (timeRef.current == 0){
-          timeRef.current = 11;
+          timeRef.current = 21; /* Time Per Question */
+          updateQuestions()
           setText("new game")
         } else {
           setText(`Time remaining ${timeRef.current}`);
         }
         timeRef.current--;
+        increaseTime();
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -138,28 +173,37 @@ function FirstImpressionsGame({  }) {
           />
 
           <div className={"image-source"}>
-          <p style={{paddingRight: 20}}>Source</p>
+          <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
           </div>
         </div>
         <div className={"first-impressions-infobox"}>
           <div className={"infobox-left"}>
             <div className={"inline-objects"}>
-              <p>Image</p>
+              <img
+                alt="Time Remaning"
+                src={require("../../../../assets/first-impressions/ComingSoon.png")}
+              />
               <p>Time remaining: <b>{timeRef.current}</b></p>
             </div>
             <div className={"inline-objects"}>
-              <p>Image</p>
-              <p>Time remaining: <b>{timeRef.current}</b></p>
+            <img
+              style={{height: 20, width:20}}
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/TimeSpan.png")}
+            />
+              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
             </div>
           </div>
-          <div className={"infobox-left"}>
+          <div className={"infobox-left"} >
             <div className={"inline-objects"}>
-              <p>Image</p>
-              <p>Tasks remaining: <b>{timeRef.current}</b></p>
+              <p>{goodAdvice.current}</p>
             </div>
             <div className={"inline-objects"}>
-              <p>Image</p>
-              <p>Tasks remaining: <b>{timeRef.current}</b></p>
+              <img
+                alt="Actions"
+                src={require("../../../../assets/first-impressions/Action.png")}
+              />
+              <p><b>{score}</b> / {totalQuestions}</p>
             </div>
           </div>
         </div>
