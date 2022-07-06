@@ -56,4 +56,9 @@
   font-weight: 500;
   font-size: 10px;
   color: var(--black);
+  margin-bottom: 10px;
+}
+
+.academy-content-minigame-info > p {
+  margin: 0px 10px;
 }

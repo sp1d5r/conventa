@@ -58,6 +58,10 @@
   color: var(--black);
 }
 
+.academy-content-course-info > p {
+  margin: 0px 10px;
+}
+
 .course-card-profile {
   width: 80%;
   height: 80%;
