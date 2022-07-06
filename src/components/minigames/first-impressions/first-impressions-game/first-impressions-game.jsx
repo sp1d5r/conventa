@@ -232,6 +232,56 @@ function FirstImpressionsGame({  }) {
 
         </div>
       }
+      { /* This is the Error Screen */
+        <div id="error-message" className="error-message" hidden>
+        <div className={"first-impressions-card"}>
+          <p className={"first-impressions-title"}>First Impressions - Paused!</p>
+          <div className={"first-impressions-info"}>
+            <p>
+              The goal is to quickly scan the image, read the promt and try to find
+              relevant body language techniques.
+            </p>
+            <p>
+              For Example:
+              <span style={{ fontStyle: "italic" }}>
+                “Find body language techniques this person is using to portray
+                composure.”
+              </span>
+            </p>
+            <p>
+              You will be presented with 10 images and 4 potential techniques.
+              Select the relevant techniques.
+            </p>
+          </div>
+          <div className={"first-impressions-info"}>
+            <span>
+            <img
+              style={{height: 20, width:20}}
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/TimeSpan.png")}
+            />
+              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
+            </span>
+            <span>
+            <img
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/Action.png")}
+            />
+            <p>Score: <b>{score}</b> / {totalQuestions}</p>
+            </span>
+
+          </div>
+
+          <div className={"first-impressions-line"} />
+          <b>Press the button to begin</b>
+          <button className={"pause-button"}
+          onClick={() => {pressPause()}}> Resume</button>
+          <button className={"quit-button"}
+          onClick={() => {quitGame()}}> Quit</button>
+        </div>
+
+        </div>
+      }
       <div className={"first-impressions-card-main"}>
         <div className={"first-impressions-image"}>
           <MinigameImage
