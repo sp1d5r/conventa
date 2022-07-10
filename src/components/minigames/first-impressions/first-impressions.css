@@ -74,9 +74,57 @@
   background-color: rgba(255,255,255,0.7);
   position: absolute;
   display: flex;
+  justify-content: right;
+  align-items: flex-start;
+}
+
+.answer-message {
+  top: -20vh;
+  right: 0;
+  width: 30vw;
+  height: 5vh;
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  align-items: flex-start;
+}
+
+.answer-card {
+  margin: 30px;
+  height: 100%;
+  width: 100%;
+  background: pink;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.answer-card-text {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    color: #000000;
+}
+
+.hidden{
+  opacity: 0;
+  height: 0;
+  width: 0;
+  font-size: 0px;
+}
+
+.answer-card.hide {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  font-size: 0px;
+}
+
+.answer-card.hide > p {
+  opacity: 0;
+}
+
 
 .first-impressions-game-title  > button {
   font-weight: 500;

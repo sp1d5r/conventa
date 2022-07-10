@@ -6,7 +6,7 @@ import MinigameButton from "../../../button/minigame-button";
 /*
 TODO for this part of the project:
   - Finish the reset game variable - DONE
-  - add functionality to leave the game once it's done
+  - add functionality to leave the game once it's done - DONE
   - add the correct and incorrect popup in the top right of the screen
   - add css styling to the buttons
   - add annimation to the different parts of the screen.
@@ -216,11 +216,25 @@ function FirstImpressionsGame({ setGameState }) {
     updateQuestions();
   }
 
+  const hideAnswerScreen = () => {
+    const div = document.getElementById("answer-message");
+    div.classList.add("hidden")
+  }
+
+  const showAnswerScreen = () => {
+    const div = document.getElementById("answer-message");
+    div.classList.remove("hidden")
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused.current) {
+        if (timeRef.current % 3 == 0) {
+          hideAnswerScreen();
+        }
         if (timeRef.current % 5 == 0) {
           updateQoute();
+          showAnswerScreen();
         }
         if (timeRef.current == 0){
           timeRef.current = TIME_PER_QUESTION; /* Time Per Question */
@@ -255,53 +269,10 @@ function FirstImpressionsGame({ setGameState }) {
     </div>
     <div className={"first-impressions-game-cards"}>
       { /* This is the Answer Popup */
-        <div id="paused-message" className="error-message" hidden>
-        <div className={"first-impressions-card"}>
-          <p className={"first-impressions-title"}>First Impressions - Paused!</p>
-          <div className={"first-impressions-info"}>
-            <p>
-              The goal is to quickly scan the image, read the promt and try to find
-              relevant body language techniques.
-            </p>
-            <p>
-              For Example:
-              <span style={{ fontStyle: "italic" }}>
-                “Find body language techniques this person is using to portray
-                composure.”
-              </span>
-            </p>
-            <p>
-              You will be presented with 10 images and 4 potential techniques.
-              Select the relevant techniques.
-            </p>
+        <div id="answer-message" className="answer-message hidden">
+          <div className={"answer-card"}>
+            <p className={"answer-card-text"}>Correct!</p>
           </div>
-          <div className={"first-impressions-info"}>
-            <span>
-            <img
-              style={{height: 20, width:20}}
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/TimeSpan.png")}
-            />
-              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
-            </span>
-            <span>
-            <img
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/Action.png")}
-            />
-            <p>Score: <b>{score}</b> / {totalQuestions}</p>
-            </span>
-
-          </div>
-
-          <div className={"first-impressions-line"} />
-          <b>Press the button to begin</b>
-          <button className={"pause-button"}
-          onClick={() => {pressPause()}}> Resume</button>
-          <button className={"quit-button"}
-          onClick={() => {quitGame()}}> Quit</button>
-        </div>
-
         </div>
       }
       { /* This is the Paused Screen */
