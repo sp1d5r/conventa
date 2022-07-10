@@ -12,7 +12,7 @@ function FirstImpressions() {
       return <StartFirstImpressions setState={setState} />;
     } else if (state === 1) {
       /* This is the game state */
-      return <FirstImpressionsGame setState={setState} />;
+      return <FirstImpressionsGame setGameState={setState} />;
     } else {
       /* This is the game complete state */
     }

@@ -33,7 +33,7 @@ const MinigameImage = ({ src, alt }) => {
 const TIME_PER_QUESTION = 15;
 
 
-function FirstImpressionsGame({  }) {
+function FirstImpressionsGame({ setGameState }) {
   const [text, setText] = useState("")
 
   const getQuestions = () => {
@@ -183,7 +183,10 @@ function FirstImpressionsGame({  }) {
     setScore(0);
     timeSpent.current = 0;
     goodAdvice.current = "Good Luck!";
+  }
 
+  const leaveGame = () => {
+    setGameState(0);
   }
 
   const updateQuestions = () => {
@@ -380,7 +383,7 @@ function FirstImpressionsGame({  }) {
           <button className={"pause-button"}
           onClick={() => {resetGame()}}> Try Again</button>
           <button className={"pause-button"}
-          onClick={() => {pressPause()}}> Leave</button>
+          onClick={() => {leaveGame()}}> Leave</button>
         </div>
 
         </div>
