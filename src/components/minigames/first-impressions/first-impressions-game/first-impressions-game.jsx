@@ -165,8 +165,9 @@ function FirstImpressionsGame({  }) {
     */
 
     saveScoreToUser();
-    setQuestions(getQuestions().questions);
-    setTotalQuestions(questions.length);
+    const qs = getQuestions().questions
+    setQuestions(qs);
+    setTotalQuestions(qs.length);
     timeRef.current = 10;
     paused.current = false;
     quit.current = false;
@@ -175,7 +176,7 @@ function FirstImpressionsGame({  }) {
     hideEndScreen();
 
     currentQuestionIndex.current = 0;
-    setCurrentQuestion(questions[0]);
+    setCurrentQuestion(qs[0]);
     setScore(0);
     timeSpent.current = 0;
     goodAdvice.current = "Good Luck!";
