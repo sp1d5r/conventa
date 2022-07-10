@@ -109,6 +109,9 @@ function FirstImpressionsGame({ setGameState }) {
   const [score, setScore] = useState(0);
   const timeSpent = useRef(0)
   const goodAdvice = useRef("Good Luck!")
+  const answerTime = useRef(2);
+  const [showAnswer, setShowAnswer] = useState(true);
+  const [answerText, setAnswerText] = useState("");
 
   /* Unhide/Hide the Pause Screen */
   const hidePauseScreen = () => {
@@ -191,6 +194,7 @@ function FirstImpressionsGame({ setGameState }) {
 
   const updateQuestions = () => {
       // Make a local copy of the questions
+      timeRef.current = TIME_PER_QUESTION; /* Time Per Question */
       let localQuestions = [... questions]
       if (localQuestions.length != 0) {
         currentQuestionIndex.current++;
@@ -210,10 +214,12 @@ function FirstImpressionsGame({ setGameState }) {
     if (optionNumber == currentQuestion.correctOption) {
       /* Successful Option Pressed */
       increaseScore();
+      setAnswerText("Correct Answer!")
     } else {
-      console.log("failure")
+      setAnswerText("Incorrect!")
     }
     updateQuestions();
+    showAnswerScreen()
   }
 
   const hideAnswerScreen = () => {
@@ -224,20 +230,29 @@ function FirstImpressionsGame({ setGameState }) {
   const showAnswerScreen = () => {
     const div = document.getElementById("answer-message");
     div.classList.remove("hidden")
+    answerTime.current = 2;
+  }
+
+
+  const handleAnswerResult = () => {
+    if (answerTime.current == 0) {
+      hideAnswerScreen();
+    }
+    if (answerTime.current > 0) {
+      answerTime.current --;
+    }
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused.current) {
-        if (timeRef.current % 3 == 0) {
-          hideAnswerScreen();
-        }
+        handleAnswerResult();
+
         if (timeRef.current % 5 == 0) {
           updateQoute();
-          showAnswerScreen();
+          /*showAnswerScreen();*/
         }
         if (timeRef.current == 0){
-          timeRef.current = TIME_PER_QUESTION; /* Time Per Question */
           updateQuestions()
           setText("new game")
         } else {
@@ -264,14 +279,14 @@ function FirstImpressionsGame({ setGameState }) {
     <div className={"first-impressions-menu"}>
       <button id="pause-button-first-impressions" className={"pause-button"}
       onClick={() => {pressPause()}}> Pause</button>
-      <button> skip </button>
+      <button onClick={() => {updateQuestions()}}> skip </button>
     </div>
     </div>
     <div className={"first-impressions-game-cards"}>
       { /* This is the Answer Popup */
-        <div id="answer-message" className="answer-message hidden">
+        <div id="answer-message" className="answer-message">
           <div className={"answer-card"}>
-            <p className={"answer-card-text"}>Correct!</p>
+            <p className={"answer-card-text"}>{answerText}</p>
           </div>
         </div>
       }
