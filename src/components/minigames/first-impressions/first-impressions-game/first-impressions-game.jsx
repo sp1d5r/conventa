@@ -30,6 +30,9 @@ const MinigameImage = ({ src, alt }) => {
   )
 }
 
+const TIME_PER_QUESTION = 15;
+
+
 function FirstImpressionsGame({  }) {
   const [text, setText] = useState("")
 
@@ -98,7 +101,7 @@ function FirstImpressionsGame({  }) {
   /* Tracking Game State */
   const [questions, setQuestions] = useState(getQuestions().questions);
   const [totalQuestions, setTotalQuestions] = useState(questions.length);
-  const timeRef = useRef(10);
+  const timeRef = useRef(TIME_PER_QUESTION);
   const paused = useRef(false);
   const quit = useRef(false);
   const currentQuestionIndex = useRef(0);
@@ -168,7 +171,7 @@ function FirstImpressionsGame({  }) {
     const qs = getQuestions().questions
     setQuestions(qs);
     setTotalQuestions(qs.length);
-    timeRef.current = 10;
+    timeRef.current = TIME_PER_QUESTION;
     paused.current = false;
     quit.current = false;
     /* Hide any additional screens */
@@ -190,9 +193,10 @@ function FirstImpressionsGame({  }) {
         currentQuestionIndex.current++;
         let currentQuestionTemp = localQuestions[0];
         setCurrentQuestion(currentQuestionTemp);
-
         console.log('question',localQuestions.splice(0, 1))
         setQuestions(localQuestions)
+        /* Update Time Remaining  */
+        timeRef.current = TIME_PER_QUESTION;
       }else {
         /* Game Over */
         quitGame();
@@ -216,7 +220,7 @@ function FirstImpressionsGame({  }) {
           updateQoute();
         }
         if (timeRef.current == 0){
-          timeRef.current = 21; /* Time Per Question */
+          timeRef.current = TIME_PER_QUESTION; /* Time Per Question */
           updateQuestions()
           setText("new game")
         } else {
