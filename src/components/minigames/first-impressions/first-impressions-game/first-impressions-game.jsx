@@ -7,7 +7,7 @@ import MinigameButton from "../../../button/minigame-button";
 TODO for this part of the project:
   - Finish the reset game variable - DONE
   - add functionality to leave the game once it's done - DONE
-  - add the correct and incorrect popup in the top right of the screen
+  - add the correct and incorrect popup in the top right of the screen - Done
   - add css styling to the buttons
   - add annimation to the different parts of the screen.
 */
@@ -211,6 +211,7 @@ function FirstImpressionsGame({ setGameState }) {
   }
 
   const clickOption = (optionNumber) => {
+    hideAnswerScreen()
     if (optionNumber == currentQuestion.correctOption) {
       /* Successful Option Pressed */
       increaseScore();
@@ -283,7 +284,7 @@ function FirstImpressionsGame({ setGameState }) {
     <div className={"first-impressions-menu"}>
       <button id="pause-button-first-impressions" className={"pause-button"}
       onClick={() => {pressPause()}}> Pause</button>
-      <button onClick={() => {updateQuestions()}}> skip </button>
+      <button onClick={() => {updateQuestions()}} className={"skip-button"}>Skip </button>
     </div>
     </div>
     <div className={"first-impressions-game-cards"}>
@@ -370,9 +371,9 @@ function FirstImpressionsGame({ setGameState }) {
 
           <div className={"first-impressions-line"} />
           <b>Press the button to begin</b>
-          <button className={"pause-button"}
+          <button className={"skip-button"}
           onClick={() => {resetGame()}}> Try Again</button>
-          <button className={"pause-button"}
+          <button className={"quit-button"}
           onClick={() => {leaveGame()}}> Leave</button>
         </div>
 
