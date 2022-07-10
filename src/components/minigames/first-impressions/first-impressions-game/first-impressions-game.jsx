@@ -2,6 +2,16 @@ import React, {useState, useEffect, useRef} from "react";
 import "../first-impressions.css";
 import MinigameButton from "../../../button/minigame-button";
 
+
+/*
+TODO for this part of the project:
+  - Finish the reset game variable - DONE
+  - add functionality to leave the game once it's done
+  - add the correct and incorrect popup in the top right of the screen
+  - add css styling to the buttons
+  - add annimation to the different parts of the screen.
+*/
+
 const useImage = ({ src }) => {
   const [loaded, setLoaded] = useState(false);
 
@@ -79,8 +89,6 @@ function FirstImpressionsGame({  }) {
     "Channel the observer!"
   ]
 
-  const [questions, setQuestions] = useState(getQuestions().questions);
-  const totalQuestions = getQuestions().length;
   const increaseScore = () => setScore(score + 1);
   const increaseTime = () =>  timeSpent.current ++;
   const updateQoute = () => {
@@ -88,6 +96,8 @@ function FirstImpressionsGame({  }) {
   }
 
   /* Tracking Game State */
+  const [questions, setQuestions] = useState(getQuestions().questions);
+  const [totalQuestions, setTotalQuestions] = useState(questions.length);
   const timeRef = useRef(10);
   const paused = useRef(false);
   const quit = useRef(false);
@@ -97,25 +107,78 @@ function FirstImpressionsGame({  }) {
   const timeSpent = useRef(0)
   const goodAdvice = useRef("Good Luck!")
 
+  /* Unhide/Hide the Pause Screen */
+  const hidePauseScreen = () => {
+    var button = document.getElementById("pause-button-first-impressions");
+    button.innerHTML = "Pause";
+    var pausedMessage = document.getElementById("paused-message");
+    pausedMessage.hidden = true;
+  }
+
+  const unhidePauseScreen = () => {
+    var button = document.getElementById("pause-button-first-impressions");
+    button.innerHTML = "Resume";
+    var pausedMessage = document.getElementById("paused-message");
+    pausedMessage.hidden = false;
+  }
+
+    /* Unhide/Hide the End Screen */
+    const hideEndScreen = () => {
+      var endMessage = document.getElementById("end-message");
+      endMessage.hidden = true;
+    }
+
+    const unhideEndScreen = () => {
+      var endMessage = document.getElementById("end-message");
+      endMessage.hidden = false;
+    }
 
 
   const pressPause = () => {
     paused.current = !paused.current;
-    var button = document.getElementById("pause-button-first-impressions");
-    button.innerHTML = paused.current ? "Resume" : "Pause";
-    var pausedMessage = document.getElementById("paused-message");
     if (paused.current){
-      pausedMessage.hidden = false;
+      unhidePauseScreen();
     } else {
-      pausedMessage.hidden = true;
+      hidePauseScreen();
     }
   }
 
   const quitGame = () => {
     /* Pause any current game */
     paused.current = true;
-    var errorMessage = document.getElementById("error-message");
-    errorMessage.hidden = true;
+    hidePauseScreen();
+    unhideEndScreen();
+  }
+
+  const saveScoreToUser = () => {
+    /* TODO:// Add user functionality here */
+    console.log("Saving score to user placeholder");
+  }
+
+  const resetGame = () => {
+    /*
+      Steps to reset game:
+        * reset initial array variables
+        * make sure the time is reset
+        * reset the scores and stuff
+        * try again.
+    */
+
+    saveScoreToUser();
+    setQuestions(getQuestions().questions);
+    setTotalQuestions(questions.length);
+    timeRef.current = 10;
+    paused.current = false;
+    quit.current = false;
+    /* Hide any additional screens */
+    hidePauseScreen();
+    hideEndScreen();
+
+    currentQuestionIndex.current = 0;
+    setCurrentQuestion(questions[0]);
+    setScore(0);
+    timeSpent.current = 0;
+    goodAdvice.current = "Good Luck!";
 
   }
 
@@ -131,6 +194,7 @@ function FirstImpressionsGame({  }) {
         setQuestions(localQuestions)
       }else {
         /* Game Over */
+        quitGame();
       }
   }
 
@@ -182,6 +246,56 @@ function FirstImpressionsGame({  }) {
     </div>
     </div>
     <div className={"first-impressions-game-cards"}>
+      { /* This is the Answer Popup */
+        <div id="paused-message" className="error-message" hidden>
+        <div className={"first-impressions-card"}>
+          <p className={"first-impressions-title"}>First Impressions - Paused!</p>
+          <div className={"first-impressions-info"}>
+            <p>
+              The goal is to quickly scan the image, read the promt and try to find
+              relevant body language techniques.
+            </p>
+            <p>
+              For Example:
+              <span style={{ fontStyle: "italic" }}>
+                “Find body language techniques this person is using to portray
+                composure.”
+              </span>
+            </p>
+            <p>
+              You will be presented with 10 images and 4 potential techniques.
+              Select the relevant techniques.
+            </p>
+          </div>
+          <div className={"first-impressions-info"}>
+            <span>
+            <img
+              style={{height: 20, width:20}}
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/TimeSpan.png")}
+            />
+              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
+            </span>
+            <span>
+            <img
+              alt="Actions"
+              src={require("../../../../assets/first-impressions/Action.png")}
+            />
+            <p>Score: <b>{score}</b> / {totalQuestions}</p>
+            </span>
+
+          </div>
+
+          <div className={"first-impressions-line"} />
+          <b>Press the button to begin</b>
+          <button className={"pause-button"}
+          onClick={() => {pressPause()}}> Resume</button>
+          <button className={"quit-button"}
+          onClick={() => {quitGame()}}> Quit</button>
+        </div>
+
+        </div>
+      }
       { /* This is the Paused Screen */
         <div id="paused-message" className="error-message" hidden>
         <div className={"first-impressions-card"}>
@@ -232,27 +346,11 @@ function FirstImpressionsGame({  }) {
 
         </div>
       }
-      { /* This is the Error Screen */
-        <div id="error-message" className="error-message" hidden>
+      { /* This is the End Screen */
+        <div id="end-message" className="error-message" hidden>
         <div className={"first-impressions-card"}>
-          <p className={"first-impressions-title"}>First Impressions - Paused!</p>
-          <div className={"first-impressions-info"}>
-            <p>
-              The goal is to quickly scan the image, read the promt and try to find
-              relevant body language techniques.
-            </p>
-            <p>
-              For Example:
-              <span style={{ fontStyle: "italic" }}>
-                “Find body language techniques this person is using to portray
-                composure.”
-              </span>
-            </p>
-            <p>
-              You will be presented with 10 images and 4 potential techniques.
-              Select the relevant techniques.
-            </p>
-          </div>
+          <p className={"first-impressions-title"}>Game Over!</p>
+
           <div className={"first-impressions-info"}>
             <span>
             <img
@@ -275,9 +373,9 @@ function FirstImpressionsGame({  }) {
           <div className={"first-impressions-line"} />
           <b>Press the button to begin</b>
           <button className={"pause-button"}
-          onClick={() => {pressPause()}}> Resume</button>
-          <button className={"quit-button"}
-          onClick={() => {quitGame()}}> Quit</button>
+          onClick={() => {resetGame()}}> Try Again</button>
+          <button className={"pause-button"}
+          onClick={() => {pressPause()}}> Leave</button>
         </div>
 
         </div>
