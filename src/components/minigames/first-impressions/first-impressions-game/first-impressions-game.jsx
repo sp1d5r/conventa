@@ -215,21 +215,25 @@ function FirstImpressionsGame({ setGameState }) {
       /* Successful Option Pressed */
       increaseScore();
       setAnswerText("Correct Answer!")
+      showAnswerScreen(true)
     } else {
       setAnswerText("Incorrect!")
+      showAnswerScreen(false)
     }
     updateQuestions();
-    showAnswerScreen()
   }
 
   const hideAnswerScreen = () => {
     const div = document.getElementById("answer-message");
     div.classList.add("hidden")
+    div.classList.remove("correct-answer")
+    div.classList.remove("incorrect-answer")
   }
 
-  const showAnswerScreen = () => {
+  const showAnswerScreen = (correct) => {
     const div = document.getElementById("answer-message");
     div.classList.remove("hidden")
+    div.classList.add(correct ? "correct-answer" : "incorrect-answer")
     answerTime.current = 2;
   }
 
