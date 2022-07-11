@@ -2,7 +2,7 @@ import React from "react";
 import "../first-impressions.css";
 import MinigameButton from "../../../button/minigame-button";
 
-function StartFirstImpressions({ setState }) {
+function StartFirstImpressions({ setState, setDifficulty }) {
   const get_last_score = () => {
     return "Your last best score has been 250";
   };
@@ -34,10 +34,18 @@ function StartFirstImpressions({ setState }) {
         <MinigameButton
           text={"Easy"}
           color={"green"}
-          onClick={() => setState(1)}
+          onClick={() => {setDifficulty(1);setState(1)}}
         />
-        <MinigameButton text={"Medium"} color={"blue"} />
-        <MinigameButton text={"Hard"} color={"red"} />
+        <MinigameButton
+          text={"Medium"}
+          color={"blue"}
+          onClick={() => {setDifficulty(2);setState(1)}}
+        />
+        <MinigameButton
+          text={"Hard"}
+          color={"red"}
+          onClick={() => {setDifficulty(3);setState(1)}}
+        />
       </div>
     </div>
   );

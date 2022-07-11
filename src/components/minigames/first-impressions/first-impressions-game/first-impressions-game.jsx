@@ -8,8 +8,9 @@ TODO for this part of the project:
   - Finish the reset game variable - DONE
   - add functionality to leave the game once it's done - DONE
   - add the correct and incorrect popup in the top right of the screen - Done
-  - add css styling to the buttons
+  - add css styling to the buttons - DONE
   - add annimation to the different parts of the screen.
+  - add easy medium hard - change time per questions.
 */
 
 const useImage = ({ src }) => {
@@ -30,11 +31,22 @@ const MinigameImage = ({ src, alt }) => {
   )
 }
 
-const TIME_PER_QUESTION = 15;
 
 
-function FirstImpressionsGame({ setGameState }) {
-  const [text, setText] = useState("")
+
+function FirstImpressionsGame({ setGameState, difficulty }) {
+  const [text, setText] = useState("");
+  const timePerQuestion = () => {
+    if (difficulty == 1) {
+      return 10;
+    } else if (difficulty == 2) {
+      return 5;
+    } else {
+      return 3;
+    }
+  };
+
+  const TIME_PER_QUESTION = timePerQuestion();
 
   const getQuestions = () => {
     let qs = {
@@ -110,7 +122,7 @@ function FirstImpressionsGame({ setGameState }) {
   const timeSpent = useRef(0)
   const goodAdvice = useRef("Good Luck!")
   const answerTime = useRef(2);
-  const [showAnswer, setShowAnswer] = useState(true);
+  const [showAnswer, setShowAnswer] = useState(false);
   const [answerText, setAnswerText] = useState("");
 
   /* Unhide/Hide the Pause Screen */
@@ -289,7 +301,7 @@ function FirstImpressionsGame({ setGameState }) {
     </div>
     <div className={"first-impressions-game-cards"}>
       { /* This is the Answer Popup */
-        <div id="answer-message" className="answer-message">
+        <div id="answer-message" className="answer-message hidden">
           <div className={"answer-card"}>
             <p className={"answer-card-text"}>{answerText}</p>
           </div>
