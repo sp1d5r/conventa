@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import "../first-impressions.css";
 import MinigameButton from "../../../button/minigame-button";
+import LoadingBar from "../../../loading-bar/loading";
 
 
 /*
@@ -391,21 +392,16 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
         </div>
       }
       <div className={"first-impressions-card-main"}>
+        <LoadingBar width={((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}/>
+
         <div className={"first-impressions-image"}>
           <MinigameImage
             src={currentQuestion.imageUrl}
             id="first-impressions-images"
             alt="Girl in a jacket"
           />
-          <div className={
-            "hvdfhjvdjhfbvjdhfv"
-          } style={{
-            width: `${((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}%`,
-            border: "5px solid red"
-          }}>
-          </div>
           <div className={"image-source"}>
-          <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
+            <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
           </div>
         </div>
         <div className={"first-impressions-infobox"}>
