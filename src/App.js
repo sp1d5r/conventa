@@ -9,12 +9,14 @@ import Academy from "./components/academy/academy";
 import CourseLanding from "./components/course-page/course-landing";
 import LessonPage from "./components/lesson/lesson-page";
 import FirstImpressions from "./components/minigames/first-impressions/first-impressions";
+import ScrollToTop from "./components/routing/scroll-to-top";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
+        <ScrollToTop />
         <Routes>
           <Route path="/auth" element={<Authenticate />} />
           <Route path="/academy" element={<Academy loggedIn={false} />} />

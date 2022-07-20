@@ -204,7 +204,8 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     setGameState(0);
   }
 
-  const updateQuestions = () => {
+
+  const updateQuestions = async() => {
       // Make a local copy of the questions
       timeRef.current = TIME_PER_QUESTION; /* Time Per Question */
       let localQuestions = [... questions]
@@ -263,19 +264,17 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused.current) {
-        handleAnswerResult();
-
+        if (timeRef.current == 0){
+          updateQuestions().then(() => {timeRef.current--; console.log("updated the questions")});
+        } else {
+          setText(`Time remaining ${timeRef.current}`);
+          timeRef.current--;
+        }
         if (timeRef.current % 5 == 0) {
           updateQoute();
           /*showAnswerScreen();*/
         }
-        if (timeRef.current == 0){
-          updateQuestions()
-          setText("new game")
-        } else {
-          setText(`Time remaining ${timeRef.current}`);
-        }
-        timeRef.current--;
+        handleAnswerResult();
         increaseTime();
       }
     }, 1000);
@@ -398,7 +397,13 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
             id="first-impressions-images"
             alt="Girl in a jacket"
           />
-
+          <div className={
+            "hvdfhjvdjhfbvjdhfv"
+          } style={{
+            width: `${((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}%`,
+            border: "5px solid red"
+          }}>
+          </div>
           <div className={"image-source"}>
           <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
           </div>
