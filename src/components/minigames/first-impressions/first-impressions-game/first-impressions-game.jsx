@@ -94,6 +94,12 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     return qs
   }
 
+  const getQuestionsFirst = () => {
+      let tempQuestions = [... getQuestions().questions];
+      tempQuestions.shift();
+      return tempQuestions;
+    }
+
   const quotes = [
     "Wow, learning is so fun!",
     "Keep going!",
@@ -112,13 +118,14 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   }
 
   /* Tracking Game State */
-  const [questions, setQuestions] = useState(getQuestions().questions);
-  const [totalQuestions, setTotalQuestions] = useState(questions.length);
+  const [questions, setQuestions] = useState(getQuestionsFirst());
+  const [totalQuestions, setTotalQuestions] = useState(getQuestions().length);
+  const questionsRef = useRef(getQuestionsFirst())
   const timeRef = useRef(TIME_PER_QUESTION);
   const paused = useRef(false);
   const quit = useRef(false);
   const currentQuestionIndex = useRef(0);
-  const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
+  const [currentQuestion, setCurrentQuestion] = useState(getQuestions().questions[0]);
   const [score, setScore] = useState(0);
   const timeSpent = useRef(0)
   const goodAdvice = useRef("Good Luck!")
@@ -184,9 +191,12 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     */
 
     saveScoreToUser();
-    const qs = getQuestions().questions
+    let qs = getQuestions().questions;
+    setCurrentQuestion(qs[0]);
+    qs.shift();
     setQuestions(qs);
-    setTotalQuestions(qs.length);
+    setTotalQuestions(getQuestions().length);
+    questionsRef.current = getQuestionsFirst();
     timeRef.current = TIME_PER_QUESTION;
     paused.current = false;
     quit.current = false;
@@ -195,7 +205,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     hideEndScreen();
 
     currentQuestionIndex.current = 0;
-    setCurrentQuestion(qs[0]);
     setScore(0);
     timeSpent.current = 0;
     goodAdvice.current = "Good Luck!";
@@ -208,17 +217,15 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
 
   const updateQuestions = async() => {
       // Make a local copy of the questions
-      timeRef.current = TIME_PER_QUESTION; /* Time Per Question */
-      let localQuestions = [... questions]
-      if (localQuestions.length != 0) {
+      // TIME_PER_QUESTION; /* Time Per Question */
+      const [first, ...remainingQuestions] = [... questionsRef.current]
+      if (first !== undefined) {
         currentQuestionIndex.current++;
-        let currentQuestionTemp = localQuestions[0];
-        setCurrentQuestion(currentQuestionTemp);
-        console.log('question',localQuestions.splice(0, 1))
-        setQuestions(localQuestions)
-        /* Update Time Remaining  */
-        timeRef.current = TIME_PER_QUESTION;
-      }else {
+        setCurrentQuestion(first);
+        setQuestions(remainingQuestions)
+        questionsRef.current = remainingQuestions;
+        console.log('question',remainingQuestions)
+      } else {
         /* Game Over */
         quitGame();
       }
@@ -236,6 +243,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
       showAnswerScreen(false)
     }
     updateQuestions();
+    timeRef.current = TIME_PER_QUESTION;
   }
 
   const hideAnswerScreen = () => {
@@ -266,7 +274,10 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     const interval = setInterval(() => {
       if (!paused.current) {
         if (timeRef.current == 0){
-          updateQuestions().then(() => {timeRef.current--; console.log("updated the questions")});
+          updateQuestions().then(() => {
+            console.log("Time ran out"); /* Update Time Remaining  */
+            timeRef.current = TIME_PER_QUESTION;
+          });
         } else {
           setText(`Time remaining ${timeRef.current}`);
           timeRef.current--;
@@ -281,13 +292,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-      let tempQuestions = [... questions];
-      tempQuestions.shift();
-      setQuestions(tempQuestions);
-   }, [])
-
 
   return (
     <div>
