@@ -2,16 +2,13 @@ import React, {useState, useEffect, useRef} from "react";
 import "../first-impressions.css";
 import MinigameButton from "../../../button/minigame-button";
 import LoadingBar from "../../../loading-bar/loading";
-
+import PausedScreen from "../../minigame-components/paused-screen/paused-screen"
+import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen"
 
 /*
 TODO for this part of the project:
-  - Finish the reset game variable - DONE
-  - add functionality to leave the game once it's done - DONE
-  - add the correct and incorrect popup in the top right of the screen - Done
-  - add css styling to the buttons - DONE
   - add annimation to the different parts of the screen.
-  - add easy medium hard - change time per questions.
+  - Extract out components
 */
 
 const useImage = ({ src }) => {
@@ -31,9 +28,6 @@ const MinigameImage = ({ src, alt }) => {
     <img className={`first-impression-image-act ${loaded}`} src={src} alt={alt}/>
   )
 }
-
-
-
 
 function FirstImpressionsGame({ setGameState, difficulty }) {
   const [text, setText] = useState("");
@@ -312,88 +306,26 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
         </div>
       }
       { /* This is the Paused Screen */
-        <div id="paused-message" className="error-message" hidden>
-        <div className={"first-impressions-card"}>
-          <p className={"first-impressions-title"}>First Impressions - Paused!</p>
-          <div className={"first-impressions-info"}>
-            <p>
-              The goal is to quickly scan the image, read the promt and try to find
-              relevant body language techniques.
-            </p>
-            <p>
-              For Example:
-              <span style={{ fontStyle: "italic" }}>
-                “Find body language techniques this person is using to portray
-                composure.”
-              </span>
-            </p>
-            <p>
-              You will be presented with 10 images and 4 potential techniques.
-              Select the relevant techniques.
-            </p>
-          </div>
-          <div className={"first-impressions-info"}>
-            <span>
-            <img
-              style={{height: 20, width:20}}
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/TimeSpan.png")}
-            />
-              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
-            </span>
-            <span>
-            <img
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/Action.png")}
-            />
-            <p>Score: <b>{score}</b> / {totalQuestions}</p>
-            </span>
-
-          </div>
-
-          <div className={"first-impressions-line"} />
-          <b>Press the button to begin</b>
-          <button className={"pause-button"}
-          onClick={() => {pressPause()}}> Resume</button>
-          <button className={"quit-button"}
-          onClick={() => {quitGame()}}> Quit</button>
-        </div>
-
-        </div>
+        <PausedScreen
+          gameTitle={"First Impressions"}
+          text1={"The goal is to quickly scan the image, read the promt and try to find relevant body language techniques."}
+          example={"“Find body language techniques this person is using to portray composure.”"}
+          text2={"You will be presented with 10 images and 4 potential techniques. Select the relevant techniques."}
+          timeSpent={timeSpent}
+          score={score}
+          totalQuestions={totalQuestions}
+          pressPause={pressPause}
+          quitGame={quitGame}
+        />
       }
       { /* This is the End Screen */
-        <div id="end-message" className="error-message" hidden>
-        <div className={"first-impressions-card"}>
-          <p className={"first-impressions-title"}>Game Over!</p>
-
-          <div className={"first-impressions-info"}>
-            <span>
-            <img
-              style={{height: 20, width:20}}
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/TimeSpan.png")}
-            />
-              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
-            </span>
-            <span>
-            <img
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/Action.png")}
-            />
-            <p>Score: <b>{score}</b> / {totalQuestions}</p>
-            </span>
-
-          </div>
-
-          <div className={"first-impressions-line"} />
-          <b>Press the button to begin</b>
-          <button className={"skip-button"}
-          onClick={() => {resetGame()}}> Try Again</button>
-          <button className={"quit-button"}
-          onClick={() => {leaveGame()}}> Leave</button>
-        </div>
-
-        </div>
+        <GameOverScreen
+          timeSpent={timeSpent}
+          score={score}
+          totalQuestions={totalQuestions}
+          resetGame={resetGame}
+          leaveGame={leaveGame}
+        />
       }
       <div className={"first-impressions-card-main"}>
         <LoadingBar width={((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}/>

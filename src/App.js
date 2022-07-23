@@ -9,6 +9,7 @@ import Academy from "./components/academy/academy";
 import CourseLanding from "./components/course-page/course-landing";
 import LessonPage from "./components/lesson/lesson-page";
 import FirstImpressions from "./components/minigames/first-impressions/first-impressions";
+import CatchALiar from "./components/minigames/to-catch-a-liar/catch-a-liar";
 import ScrollToTop from "./components/routing/scroll-to-top";
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
           <Route
             path="/minigame/First%20Impressions"
             element={<FirstImpressions />}
+          />
+          <Route
+            path="/minigame/Catch%20a%20Liar"
+            element={<CatchALiar />}
           />
           <Route path="/" element={<Landing />} />
         </Routes>
