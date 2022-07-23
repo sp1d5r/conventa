@@ -1,0 +1,14 @@
+.catch-a-liar-main-div {
+  background-image: url("../../../assets/catch-a-liar/CatchALiar.svg");
+  background-color: var(--white);
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
