@@ -14,6 +14,7 @@
         -ms-animation: boxshadowin 5s; /* Internet Explorer */
          -o-animation: boxshadowin 5s; /* Opera < 12.1 */
             animation: boxshadowin 5s;
+  text-decoration: none;
 }
 
 .academy-content-course:hover {
