@@ -23,3 +23,11 @@
   align-items: flex-end;
   color: white;
 }
+
+.client-emotions-prompt {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

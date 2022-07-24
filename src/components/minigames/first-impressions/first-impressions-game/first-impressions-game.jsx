@@ -35,6 +35,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           option3: "Options 3",
           option4: "Options 4",
           correctOption: 3,
+          correctPrompt: "The clients hands where still which indicates she's sad",
           source: "Peaky Blinders - BBC - Episode 3"
         },
         {
@@ -44,6 +45,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           option3: "Options 4",
           option4: "Options 1",
           correctOption: 1,
+          correctPrompt: "The clients hands where still which indicates she's sad",
           source: "Peaky Blinders - BBC - Episode 12"
         },
         {
@@ -53,6 +55,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           option3: "Options 2",
           option4: "Options 1",
           correctOption: 4,
+          correctPrompt: "The clients hands where still which indicates she's sad",
           source: "Peaky Blinders - BBC - Episode 30"
         },
         {
@@ -62,6 +65,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           option3: "Options 1",
           option4: "Options 4",
           correctOption: 2,
+          correctPrompt: "The clients hands where still which indicates she's sad",
           source: "Peaky Blinders - BBC - Episode 312"
         }
       ],
@@ -102,6 +106,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   const quit = useRef(false);
   const currentQuestionIndex = useRef(0);
   const [currentQuestion, setCurrentQuestion] = useState(getQuestions().questions[0]);
+  const lastAnswer = useRef(getQuestions().questions[0].correctPrompt);
   const [score, setScore] = useState(0);
   const timeSpent = useRef(0)
   const goodAdvice = useRef("Good Luck!")
@@ -194,6 +199,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   const updateQuestions = async() => {
       // Make a local copy of the questions
       // TIME_PER_QUESTION; /* Time Per Question */
+      lastAnswer.current = currentQuestion.correctPrompt;
       const [first, ...remainingQuestions] = [... questionsRef.current]
       if (first !== undefined) {
         currentQuestionIndex.current++;
@@ -284,6 +290,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
         <div id="answer-message" className="answer-message hidden">
           <div className={"answer-card"}>
             <p className={"answer-card-text"}>{answerText}</p>
+            <p>{lastAnswer.current}</p>
           </div>
         </div>
       }
