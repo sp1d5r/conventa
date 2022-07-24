@@ -1,6 +1,8 @@
 function change_color(color) {
   let navbar;
   let footer;
+  let root;
+  root = document.querySelector(':root');
   navbar = document.getElementById("root");
   if (navbar) {
     navbar.style.backgroundColor = color;
@@ -13,11 +15,15 @@ function change_color(color) {
   if (footer) {
     footer.style.backgroundColor = color;
   }
+  root.style.setProperty('--green', color);
+  root.style.setProperty('--green-dark', color);
 }
 
 function check_nav() {
   if (window.location.href.includes("First%20Impressions")) {
     change_color("#B7F6FF");
+  } else if (window.location.href.includes("Catch%20a%20Liar")){
+    change_color("#FFB7B7");
   } else {
     change_color("#e4ffb7");
   }

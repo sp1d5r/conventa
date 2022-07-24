@@ -1,0 +1,21 @@
+.loading-bar {
+  border: 5px solid #85c6ff;
+  border-radius: 5px;
+  z-index: -1;
+  position: absolute;
+}
+
+.loading-bar-background {
+  border: 5px solid #edf7ff;
+  border-radius: 5px;
+  width: 100%;
+  z-index: -2;
+  position: absolute;
+}
+
+.loading-bar-back {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+  margin: 15px;
+}

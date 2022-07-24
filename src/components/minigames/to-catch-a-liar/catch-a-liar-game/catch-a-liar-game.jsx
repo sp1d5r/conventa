@@ -1,14 +1,19 @@
 import React, {useState, useEffect, useRef} from "react";
-import "../first-impressions.css";
+import "../catch-a-liar.css";
 import MinigameButton from "../../../button/minigame-button";
 import LoadingBar from "../../../loading-bar/loading";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
-
 /*
-TODO for this part of the project:
-  - add annimation to the different parts of the screen.
-  - Extract out components
+Task list for this one
+- remove the time countdown - DONE
+- Make front-end similar to before but instead of four options it should be two - DONE
+- Update the template video json functions getQuestions - DONE
+- Present a prompt underneath the video
+- Add correct answer explanation to the answer prompt
+- Add a video playing feature - DONE
+- Add a loop limit to the video - DONE
+- Make the answer prompt look cleaner
 */
 
 
@@ -20,17 +25,39 @@ const useImage = ({ src }) => {
     img.src = src;
     img.onload = () => setLoaded(true);
   }, [src]);
+
   return loaded
 }
 
-const MinigameImage = ({ src, alt }) => {
+const MinigameVideo = ({ src, alt, updateQuestions, loopTimes }) => {
   const { loaded } = useImage({src});
+  const iterations = useRef(0);
+
+  const videoEnded = () => {
+    if (iterations.current < loopTimes) {
+      iterations.current ++;
+      var video = document.getElementById('myVideo');
+      video.currentTime = 0;
+      video.play();
+    } else {
+      updateQuestions();
+    }
+  }
+
   return (
-    <img className={`first-impression-image-act ${loaded}`} src={src} alt={alt}/>
+    <video
+      className={`first-impression-image-act ${loaded}`} alt={alt}
+      controls autoPlay={"autoplay"} id="myVideo"
+      key={src} onEnded={() => {videoEnded()}}
+    >
+      <source src={src} type="video/mp4"/>
+      This browser doesn't support video tag.
+    </video>
   )
 }
 
-function FirstImpressionsGame({ setGameState, difficulty }) {
+
+function CatchALiarGame({ setGameState, difficulty }) {
   const [text, setText] = useState("");
   const timePerQuestion = () => {
     if (difficulty == 1) {
@@ -48,43 +75,27 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     let qs = {
       questions: [
         {
-          imageUrl: "../../../../assets/first-impressions/peaky-blinders.jpeg",
-          option1: "Options 1",
-          option2: "Options 2",
-          option3: "Options 3",
-          option4: "Options 4",
-          correctOption: 3,
-          source: "Peaky Blinders - BBC - Episode 3"
+          videoUrl: "/video/LieExample1.mp4",
+          correctOption: false,
+          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit"
         },
         {
-          imageUrl: "https://ichef.bbci.co.uk/news/976/cpsprodpb/73C2/production/_122743692_4e7c0805-6e29-4caf-af85-e4e451db69af.png",
-          option1: "Options 2",
-          option2: "Options 3",
-          option3: "Options 4",
-          option4: "Options 1",
-          correctOption: 1,
-          source: "Peaky Blinders - BBC - Episode 12"
+          videoUrl: "/video/LieExample2.mp4",
+          correctOption: true,
+          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit"
         },
         {
-          imageUrl: "https://cdn.mos.cms.futurecdn.net/XR4xMcbi2Bv65Fuf2fMAJX.jpeg",
-          option1: "Options 4",
-          option2: "Options 3",
-          option3: "Options 2",
-          option4: "Options 1",
-          correctOption: 4,
+          videoUrl: "/video/LieExample1.mp4",
+          correctOption: false,
           source: "Peaky Blinders - BBC - Episode 30"
         },
         {
-          imageUrl: "https://variety.com/wp-content/uploads/2019/09/peaky-blinders-season-5.jpg?w=681&h=383&crop=1",
-          option1: "Options 2",
-          option2: "Options 3",
-          option3: "Options 1",
-          option4: "Options 4",
-          correctOption: 2,
+          videoUrl: "/video/LieExample1.mp4",
+          correctOption: true,
           source: "Peaky Blinders - BBC - Episode 312"
         }
       ],
-      length: 10,
+      length: 4,
     }
     return qs
   }
@@ -106,7 +117,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     "Channel the observer!"
   ]
 
-
   const increaseScore = () => setScore(score + 1);
   const increaseTime = () =>  timeSpent.current ++;
   const updateQoute = () => {
@@ -114,7 +124,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   }
 
   /* Tracking Game State */
-
   const [questions, setQuestions] = useState(getQuestionsFirst());
   const [totalQuestions, setTotalQuestions] = useState(getQuestions().length);
   const questionsRef = useRef(getQuestionsFirst())
@@ -270,15 +279,9 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused.current) {
-        if (timeRef.current == 0){
-          updateQuestions().then(() => {
-            console.log("Time ran out"); /* Update Time Remaining  */
-            timeRef.current = TIME_PER_QUESTION;
-          });
-        } else {
-          setText(`Time remaining ${timeRef.current}`);
-          timeRef.current--;
-        }
+        setText(`Time remaining ${timeRef.current}`);
+        timeRef.current--;
+
         if (timeRef.current % 5 == 0) {
           updateQoute();
           /*showAnswerScreen();*/
@@ -290,10 +293,20 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     return () => clearInterval(interval);
   }, []);
 
+  const loopTimes = () => {
+    if (difficulty===1){
+      return 2;
+    } else if (difficulty===2) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
   return (
     <div>
     <div className={"first-impressions-game-title"}>
-    <p>Minigame - First Impressions</p>
+    <p>Minigame - To Catch A Liar</p>
     <div className={"first-impressions-menu"}>
       <button id="pause-button-first-impressions" className={"pause-button"}
       onClick={() => {pressPause()}}> Pause</button>
@@ -310,10 +323,10 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
       }
       { /* This is the Paused Screen */
         <PausedScreen
-          gameTitle={"First Impressions"}
-          text1={"The goal is to quickly scan the image, read the promt and try to find relevant body language techniques."}
-          example={"“Find body language techniques this person is using to portray composure.”"}
-          text2={"You will be presented with 10 images and 4 potential techniques. Select the relevant techniques."}
+          gameTitle={"To Catch A Liar"}
+          text1={"You will have a looping video playing, your job is to determine if the person in the video is telling the truth or not."}
+          example={"“I never once *rubs nose* lied in my life.”"}
+          text2={"You will be presented with `Truth` and `Lie` pick the correct option for a point"}
           timeSpent={timeSpent}
           score={score}
           totalQuestions={totalQuestions}
@@ -331,16 +344,16 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
         />
       }
       <div className={"first-impressions-card-main"}>
-        <LoadingBar width={((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}/>
         <div className={"first-impressions-image"}>
-          <MinigameImage
-            src={currentQuestion.imageUrl}
+          <MinigameVideo
+            src={currentQuestion.videoUrl}
             id="first-impressions-images"
             alt="Girl in a jacket"
+            updateQuestions={updateQuestions}
+            loopTimes={loopTimes()}
           />
-          <div className={"image-source"}>
+          <div className={"overlay-source"}>
             <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
-
           </div>
         </div>
         <div className={"first-impressions-infobox"}>
@@ -376,22 +389,17 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
         </div>
       </div>
       <div className={"first-impressions-cards-right"}>
-        <div className={"first-impressions-card-right"} onClick={() => {clickOption(1)}}>
-          <p>{currentQuestion.option1}</p>
+        <div className={"first-impressions-card-right"} onClick={() => {clickOption(true)}}>
+          <p>Truth</p>
         </div>
-        <div className={"first-impressions-card-right"} onClick={() => {clickOption(2)}}>
-          <p>{currentQuestion.option2}</p>
+        <div className={"first-impressions-card-right"} onClick={() => {clickOption(false)}}>
+          <p>Lie</p>
         </div>
-        <div className={"first-impressions-card-right"}  onClick={() => {clickOption(3)}}>
-          <p>{currentQuestion.option3}</p>
-        </div>
-        <div className={"first-impressions-card-right"}  onClick={() => {clickOption(4)}}>
-          <p>{currentQuestion.option4}</p>
-        </div>
+
       </div>
     </div>
     </div>
   );
 }
 
-export default FirstImpressionsGame;
+export default CatchALiarGame;

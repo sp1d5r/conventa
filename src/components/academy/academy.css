@@ -47,13 +47,14 @@
   width: 95%;
   padding-left: 5%;
   border-left: 3px solid var(--light-grey);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, 300px);
   grid-template-rows: repeat(auto-fit, 240px);
   row-gap: 20px;
   column-gap: 50px;
   grid-auto-rows: minmax(100px, auto);
-  justify-content: flex-start;
+  justify-items: flex-start;
+  align-items: center;
 }
 
 .academy-content-section-child-minigame {
@@ -61,10 +62,12 @@
   width: 95%;
   padding-left: 5%;
   border-left: 3px solid var(--light-grey);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, 300px);
   grid-template-rows: repeat(auto-fit, 400px);
   grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 600px) {

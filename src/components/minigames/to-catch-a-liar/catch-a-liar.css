@@ -1,0 +1,25 @@
+.catch-a-liar-main-div {
+  background-image: url("../../../assets/catch-a-liar/CatchALiar.svg");
+  background-color: var(--white);
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.overlay-source {
+  width: 100%;
+  height: 10%;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: white;
+}

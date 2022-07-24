@@ -53,7 +53,7 @@ function Academy({ loggedIn }) {
             />
             <MiniGameCard
               imagePath={require("../../assets/minigame-notational/minigame2.png")}
-              title={"Fundamentals"}
+              title={"Catch a Liar"}
               time={30}
               difficulty={2}
             />
