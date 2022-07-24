@@ -4,31 +4,12 @@ import MinigameButton from "../../../button/minigame-button";
 import LoadingBar from "../../../loading-bar/loading";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
-
+import MinigameImage from "../../minigame-components/minigame-image/minigame-image";
 /*
 TODO for this part of the project:
   - add annimation to the different parts of the screen.
   - Extract out components
 */
-
-
-const useImage = ({ src }) => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => setLoaded(true);
-  }, [src]);
-  return loaded
-}
-
-const MinigameImage = ({ src, alt }) => {
-  const { loaded } = useImage({src});
-  return (
-    <img className={`first-impression-image-act ${loaded}`} src={src} alt={alt}/>
-  )
-}
 
 function FirstImpressionsGame({ setGameState, difficulty }) {
   const [text, setText] = useState("");
@@ -106,7 +87,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     "Channel the observer!"
   ]
 
-
   const increaseScore = () => setScore(score + 1);
   const increaseTime = () =>  timeSpent.current ++;
   const updateQoute = () => {
@@ -114,7 +94,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   }
 
   /* Tracking Game State */
-
   const [questions, setQuestions] = useState(getQuestionsFirst());
   const [totalQuestions, setTotalQuestions] = useState(getQuestions().length);
   const questionsRef = useRef(getQuestionsFirst())
@@ -332,6 +311,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
       }
       <div className={"first-impressions-card-main"}>
         <LoadingBar width={((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}/>
+
         <div className={"first-impressions-image"}>
           <MinigameImage
             src={currentQuestion.imageUrl}
@@ -340,7 +320,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           />
           <div className={"image-source"}>
             <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
-
           </div>
         </div>
         <div className={"first-impressions-infobox"}>

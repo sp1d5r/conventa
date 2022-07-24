@@ -59,7 +59,7 @@ function Academy({ loggedIn }) {
             />
             <MiniGameCard
               imagePath={require("../../assets/minigame-notational/minigame3.png")}
-              title={"Self Control"}
+              title={"Tracking Client Emotions"}
               time={30}
               difficulty={3}
             />

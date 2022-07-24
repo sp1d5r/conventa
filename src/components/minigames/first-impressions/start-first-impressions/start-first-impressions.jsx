@@ -4,7 +4,6 @@ import MinigameButton from "../../../button/minigame-button";
 import StartMinigame from "../../minigame-components/start-screen/start-screen"
 
 function StartFirstImpressions({ setState, setDifficulty }) {
-
   const get_last_score = () => {
     return "Your last best score has been 250";
   };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./catch-a-liar.css";
+import "./tracking-client-emotions.css";
 import StartMinigame from "../minigame-components/start-screen/start-screen"
-import CatchALiarGame from "./catch-a-liar-game/catch-a-liar-game";
+import TrackingClientEmotionsGame from "./tracking-client-emotions-game/tracking-client-emotions-game";
 
 /*
   The minigame
@@ -12,7 +12,7 @@ import CatchALiarGame from "./catch-a-liar-game/catch-a-liar-game";
       - hard = 1 time
 */
 
-function CatchALiar() {
+function TrackingClientEmotions() {
   const [state, setState] = useState(0);
   const [difficulty, setDifficulty] = useState(0)
 
@@ -22,16 +22,16 @@ function CatchALiar() {
       return <StartMinigame
             setState={setState}
             setDifficulty={setDifficulty}
-            minigameId={"catch-a-liar"}
-            title={"To Catch A Liar"}
-            text1={"You will have a looping video playing, your job is to determine if the person in the video is telling the truth or not."}
-            example={"I never once *rubs nose* lied in my life."}
-            text2={"You will be presented with `Truth` and `Lie` pick the correct option for a point"}
+            minigameId={"tracking-client-emotions"}
+            title={"Tracking Client Emotions"}
+            text1={"You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."}
+            example={"“We will get back to you with an email soon.”"}
+            text2={"You will be presented with options to choose from, explaining an emotion with a certain body language."}
 
         />;
     } else if (state === 1) {
       /* This is the game state */
-      return <CatchALiarGame setGameState={setState} difficulty={difficulty}/>
+      return <TrackingClientEmotionsGame setGameState={setState} difficulty={difficulty}/>
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
     } else {
       /* This is the game complete state */
@@ -39,8 +39,8 @@ function CatchALiar() {
   };
 
   return (
-    <div className={"catch-a-liar-main-div"}>{from_minigame_state()}</div>
+    <div className={"tracking-client-emotions-main-div"}>{from_minigame_state()}</div>
   );
 }
 
-export default CatchALiar;
+export default TrackingClientEmotions;

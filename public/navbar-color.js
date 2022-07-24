@@ -24,6 +24,8 @@ function check_nav() {
     change_color("#B7F6FF");
   } else if (window.location.href.includes("Catch%20a%20Liar")){
     change_color("#FFB7B7");
+  } else if (window.location.href.includes("Tracking%20Client%20Emotions")){
+    change_color("#E5B7FF");
   } else {
     change_color("#e4ffb7");
   }
