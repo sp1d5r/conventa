@@ -17,7 +17,6 @@
 
 /* State 0 - Start First Impressions */
 
-
 .first-impression-button-div {
   width: 100%;
   display: flex;
@@ -108,6 +107,7 @@
   position: relative;
   z-index: 0;
 }
+
 
 .first-impressions-card-main {
   min-width: 60vw;
@@ -241,11 +241,42 @@
   height: 20%;
 }
 
-/* State 2 - End First Impressions */
-
 
 @media only screen and (max-width: 600px) {
   .first-impressions-title {
     font-size: 30px;
+  }
+
+  .first-impressions-game-title {
+    flex-direction: column;
+  }
+
+  .first-impressions-card-main {
+    width: 90%;
+    height: 50vh;
+  }
+
+  .first-impressions-game-cards {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 0;
+  }
+
+  .first-impressions-cards-right{
+    width: 100vw;
+    min-height: 5vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 0vw;
+    max-width: 100vw;
+
+  }
+
+  .first-impressions-card-right {
+    margin: 20px;
   }
 }

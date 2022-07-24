@@ -2,7 +2,7 @@ import React from "react";
 import "./start-screen.css";
 import MinigameButton from "../../../button/minigame-button";
 
-function StartMinigame({ setState, setDifficulty, minigameId, title, introText, example, text2 }) {
+function StartMinigame({ setState, setDifficulty, minigameId, title, text1, example, text2 }) {
   const get_last_score = ( minigameId ) => {
     console.log(minigameId)
     return "Your last best score has been 250";
@@ -13,7 +13,7 @@ function StartMinigame({ setState, setDifficulty, minigameId, title, introText, 
       <p className={"minigame-start-title"}>Minigame - {title}</p>
       <div className={"minigame-start-info"}>
         <p>
-          {introText}
+          {text1}
         </p>
         <p>
           For Example:

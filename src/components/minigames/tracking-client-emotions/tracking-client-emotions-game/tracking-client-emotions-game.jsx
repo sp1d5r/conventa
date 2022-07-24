@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
-import "../catch-a-liar.css";
+import "../tracking-client-emotions.css";
 import MinigameButton from "../../../button/minigame-button";
 import LoadingBar from "../../../loading-bar/loading";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
@@ -20,7 +20,7 @@ Task list for this one
 
 
 
-function CatchALiarGame({ setGameState, difficulty }) {
+function TrackingClientEmotionsGame({ setGameState, difficulty }) {
   const [text, setText] = useState("");
   const timePerQuestion = () => {
     if (difficulty == 1) {
@@ -327,7 +327,11 @@ function CatchALiarGame({ setGameState, difficulty }) {
         <div className={"first-impressions-infobox"}>
           <div className={"infobox-left"}>
             <div className={"inline-objects"}>
-
+              <img
+                alt="Time Remaning"
+                src={require("../../../../assets/first-impressions/ComingSoon.png")}
+              />
+              <p>Time remaining: <b>{timeRef.current}</b></p>
             </div>
             <div className={"inline-objects"}>
               <img
@@ -366,4 +370,4 @@ function CatchALiarGame({ setGameState, difficulty }) {
   );
 }
 
-export default CatchALiarGame;
+export default TrackingClientEmotionsGame;

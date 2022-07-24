@@ -11,6 +11,8 @@ import LessonPage from "./components/lesson/lesson-page";
 import FirstImpressions from "./components/minigames/first-impressions/first-impressions";
 import CatchALiar from "./components/minigames/to-catch-a-liar/catch-a-liar";
 import ScrollToTop from "./components/routing/scroll-to-top";
+import TrackingClientEmotions from "./components/minigames/tracking-client-emotions/tracking-client-emotions";
+
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
           <Route
             path="/minigame/Catch%20a%20Liar"
             element={<CatchALiar />}
+          />
+          <Route
+            path="/minigame/Tracking%20Client%20Emotions"
+            element={<TrackingClientEmotions />}
           />
           <Route path="/" element={<Landing />} />
         </Routes>
