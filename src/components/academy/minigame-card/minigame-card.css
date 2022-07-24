@@ -16,7 +16,7 @@
 }
 
 .academy-content-minigame:hover {
-  background: var(--green);
+  background: var(--light-green);
   height: 370px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
 }
