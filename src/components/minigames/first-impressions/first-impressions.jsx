@@ -7,6 +7,7 @@ function FirstImpressions() {
   const [state, setState] = useState(0);
   const [difficulty, setDifficulty] = useState(0)
 
+
   const from_minigame_state = () => {
     if (state === 0) {
       /* This is the intro state */

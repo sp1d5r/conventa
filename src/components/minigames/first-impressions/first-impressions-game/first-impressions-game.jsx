@@ -11,6 +11,7 @@ TODO for this part of the project:
   - Extract out components
 */
 
+
 const useImage = ({ src }) => {
   const [loaded, setLoaded] = useState(false);
 
@@ -105,6 +106,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
     "Channel the observer!"
   ]
 
+
   const increaseScore = () => setScore(score + 1);
   const increaseTime = () =>  timeSpent.current ++;
   const updateQoute = () => {
@@ -112,6 +114,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   }
 
   /* Tracking Game State */
+
   const [questions, setQuestions] = useState(getQuestionsFirst());
   const [totalQuestions, setTotalQuestions] = useState(getQuestions().length);
   const questionsRef = useRef(getQuestionsFirst())
@@ -329,7 +332,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
       }
       <div className={"first-impressions-card-main"}>
         <LoadingBar width={((TIME_PER_QUESTION - timeRef.current) / TIME_PER_QUESTION)*100}/>
-
         <div className={"first-impressions-image"}>
           <MinigameImage
             src={currentQuestion.imageUrl}
@@ -338,6 +340,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           />
           <div className={"image-source"}>
             <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
+
           </div>
         </div>
         <div className={"first-impressions-infobox"}>

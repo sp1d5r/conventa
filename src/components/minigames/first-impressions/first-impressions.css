@@ -17,6 +17,7 @@
 
 /* State 0 - Start First Impressions */
 
+
 .first-impression-button-div {
   width: 100%;
   display: flex;
@@ -239,6 +240,8 @@
   font-size: 20px;
   height: 20%;
 }
+
+/* State 2 - End First Impressions */
 
 
 @media only screen and (max-width: 600px) {
