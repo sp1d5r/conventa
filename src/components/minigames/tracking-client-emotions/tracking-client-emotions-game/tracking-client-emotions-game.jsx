@@ -39,23 +39,31 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
       questions: [
         {
           videoUrl: "/video/LieExample1.mp4",
-          correctOption: false,
-          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit"
+          correctOption: 1,
+          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
+          prompt: "You are trying to get a client to use new software.",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample2.mp4",
-          correctOption: true,
-          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit"
+          correctOption: 2,
+          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
+          prompt: "You are getting feedback from a client about your work.",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample1.mp4",
-          correctOption: false,
-          source: "Peaky Blinders - BBC - Episode 30"
+          correctOption: 2,
+          source: "Peaky Blinders - BBC - Episode 30",
+          prompt: "You are getting feedback from a client about your work.",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample1.mp4",
-          correctOption: true,
-          source: "Peaky Blinders - BBC - Episode 312"
+          correctOption: 1,
+          source: "Peaky Blinders - BBC - Episode 312",
+          prompt: "You are getting feedback from a client about your work.",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         }
       ],
       length: 4,
@@ -99,6 +107,7 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
   const timeSpent = useRef(0)
   const goodAdvice = useRef("Good Luck!")
   const answerTime = useRef(2);
+  const lastAnswer = useRef(getQuestions().questions[0].correctPrompt)
   const [showAnswer, setShowAnswer] = useState(false);
   const [answerText, setAnswerText] = useState("");
   const [pause, setPause] = useState(false);
@@ -191,6 +200,7 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
   const updateQuestions = async() => {
       // Make a local copy of the questions
       // TIME_PER_QUESTION; /* Time Per Question */
+      lastAnswer.current = currentQuestion.correctPrompt;
       const [first, ...remainingQuestions] = [... questionsRef.current]
       if (first !== undefined) {
         currentQuestionIndex.current++;
@@ -273,7 +283,7 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
   return (
     <div>
     <div className={"first-impressions-game-title"}>
-    <p>Minigame - To Catch A Liar</p>
+    <p>Minigame - Tracking Client Emotions</p>
     <div className={"first-impressions-menu"}>
       <button id="pause-button-first-impressions" className={"pause-button"}
       onClick={() => {pressPause()}}> Pause</button>
@@ -285,15 +295,16 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
         <div id="answer-message" className="answer-message hidden">
           <div className={"answer-card"}>
             <p className={"answer-card-text"}>{answerText}</p>
+            <p className={""}>{lastAnswer.current}</p>
           </div>
         </div>
       }
       { /* This is the Paused Screen */
         <PausedScreen
-          gameTitle={"To Catch A Liar"}
-          text1={"You will have a looping video playing, your job is to determine if the person in the video is telling the truth or not."}
-          example={"“I never once *rubs nose* lied in my life.”"}
-          text2={"You will be presented with `Truth` and `Lie` pick the correct option for a point"}
+          gameTitle={"Tracking Client Emotions"}
+          text1={"You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."}
+          example={"“We will get back to you with an email soon.”"}
+          text2={"You will be presented with options to choose from, explaining an emotion with a certain body language."}
           timeSpent={timeSpent}
           score={score}
           totalQuestions={totalQuestions}
@@ -324,14 +335,15 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
             <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
           </div>
         </div>
+        <div className={"client-emotions-prompt"}>
+          <p>
+            {currentQuestion.prompt}
+          </p>
+        </div>
         <div className={"first-impressions-infobox"}>
           <div className={"infobox-left"}>
             <div className={"inline-objects"}>
-              <img
-                alt="Time Remaning"
-                src={require("../../../../assets/first-impressions/ComingSoon.png")}
-              />
-              <p>Time remaining: <b>{timeRef.current}</b></p>
+
             </div>
             <div className={"inline-objects"}>
               <img
@@ -357,11 +369,11 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
         </div>
       </div>
       <div className={"first-impressions-cards-right"}>
-        <div className={"first-impressions-card-right"} onClick={() => {clickOption(true)}}>
-          <p>Truth</p>
+        <div className={"first-impressions-card-right"} onClick={() => {clickOption(1)}}>
+          <p>Client is Happy</p>
         </div>
-        <div className={"first-impressions-card-right"} onClick={() => {clickOption(false)}}>
-          <p>Lie</p>
+        <div className={"first-impressions-card-right"} onClick={() => {clickOption(2)}}>
+          <p>Client is Sad</p>
         </div>
 
       </div>

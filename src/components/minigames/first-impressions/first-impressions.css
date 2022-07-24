@@ -62,6 +62,8 @@
   margin: 50px;
   height: 100%;
   width: 100%;
+  min-height: 200px;
+  min-width: 200px;
   background: #FFFFFF;
   border: 1px solid #E5E6EA;
   border-radius: 5px;
@@ -69,6 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .answer-card-text {
@@ -87,11 +90,11 @@
 }
 
 .correct-answer > div{
-  background-color: #8de3a4;
+  border: 5px solid #8de3a4;
 }
 
 .incorrect-answer > div{
-  background-color: #e3978d;
+  border: 5px solid #e3978d;
 }
 
 .first-impressions-game-title  > button {

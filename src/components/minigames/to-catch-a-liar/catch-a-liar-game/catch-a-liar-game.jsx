@@ -40,22 +40,26 @@ function CatchALiarGame({ setGameState, difficulty }) {
         {
           videoUrl: "/video/LieExample1.mp4",
           correctOption: false,
-          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit"
+          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample2.mp4",
           correctOption: true,
-          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit"
+          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample1.mp4",
           correctOption: false,
-          source: "Peaky Blinders - BBC - Episode 30"
+          source: "Peaky Blinders - BBC - Episode 30",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample1.mp4",
           correctOption: true,
-          source: "Peaky Blinders - BBC - Episode 312"
+          source: "Peaky Blinders - BBC - Episode 312",
+          correctPrompt: "The clients hands where still which indicates she's sad",
         }
       ],
       length: 4,
@@ -102,6 +106,7 @@ function CatchALiarGame({ setGameState, difficulty }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [answerText, setAnswerText] = useState("");
   const [pause, setPause] = useState(false);
+  const lastAnswer = useRef(getQuestions().questions[0].correctPrompt)
 
   /* Unhide/Hide the Pause Screen */
   const hidePauseScreen = () => {
@@ -191,6 +196,7 @@ function CatchALiarGame({ setGameState, difficulty }) {
   const updateQuestions = async() => {
       // Make a local copy of the questions
       // TIME_PER_QUESTION; /* Time Per Question */
+      lastAnswer.current = currentQuestion.correctPrompt;
       const [first, ...remainingQuestions] = [... questionsRef.current]
       if (first !== undefined) {
         currentQuestionIndex.current++;
@@ -285,6 +291,7 @@ function CatchALiarGame({ setGameState, difficulty }) {
         <div id="answer-message" className="answer-message hidden">
           <div className={"answer-card"}>
             <p className={"answer-card-text"}>{answerText}</p>
+            <p className={""}>{lastAnswer.current}</p>
           </div>
         </div>
       }
