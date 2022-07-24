@@ -2,8 +2,8 @@ import React, {useState, useEffect, useRef} from "react";
 import "../first-impressions.css";
 import MinigameButton from "../../../button/minigame-button";
 import LoadingBar from "../../../loading-bar/loading";
-import PausedScreen from "../../minigame-components/paused-screen/paused-screen"
-import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen"
+import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
+import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 
 /*
 TODO for this part of the project:

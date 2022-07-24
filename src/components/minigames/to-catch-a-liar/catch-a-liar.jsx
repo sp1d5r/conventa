@@ -28,14 +28,13 @@ function CatchALiar() {
             minigameId={"catch-a-liar"}
             title={"To Catch A Liar"}
             text1={"You will have a looping video playing, your job is to determine if the person in the video is telling the truth or not."}
-            example={"I never once *rubs nose* lied in my life. "}
+            example={"I never once *rubs nose* lied in my life."}
             text2={"You will be presented with `Truth` and `Lie` pick the correct option for a point"}
+
         />;
     } else if (state === 1) {
       /* This is the game state */
-      return <CatchALiarGame
-                setState={setState}
-                setDifficulty={setDifficulty}/>
+      return <CatchALiarGame setGameState={setState} difficulty={difficulty}/>
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
     } else {
       /* This is the game complete state */

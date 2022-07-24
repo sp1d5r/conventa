@@ -1,6 +1,8 @@
 function change_color(color) {
   let navbar;
   let footer;
+  let root;
+  root = document.querySelector(':root');
   navbar = document.getElementById("root");
   if (navbar) {
     navbar.style.backgroundColor = color;
@@ -13,6 +15,8 @@ function change_color(color) {
   if (footer) {
     footer.style.backgroundColor = color;
   }
+  root.style.setProperty('--green', color);
+  root.style.setProperty('--green-dark', color);
 }
 
 function check_nav() {
