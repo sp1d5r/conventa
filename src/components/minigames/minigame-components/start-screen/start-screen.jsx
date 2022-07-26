@@ -2,9 +2,17 @@ import React from "react";
 import "./start-screen.css";
 import MinigameButton from "../../../button/minigame-button";
 
-function StartMinigame({ setState, setDifficulty, minigameId, title, text1, example, text2 }) {
-  const get_last_score = ( minigameId ) => {
-    console.log(minigameId)
+function StartMinigame({
+  setState,
+  setDifficulty,
+  minigameId,
+  title,
+  text1,
+  example,
+  text2,
+}) {
+  const get_last_score = (minigameId) => {
+    console.log(minigameId);
     return "Your last best score has been 250";
   };
 
@@ -12,18 +20,12 @@ function StartMinigame({ setState, setDifficulty, minigameId, title, text1, exam
     <div className={"minigame-start-card"}>
       <p className={"minigame-start-title"}>Minigame - {title}</p>
       <div className={"minigame-start-info"}>
-        <p>
-          {text1}
-        </p>
+        <p>{text1}</p>
         <p>
           For Example:
-          <span style={{ fontStyle: "italic" }}>
-            {example}
-          </span>
+          <span style={{ fontStyle: "italic" }}>{example}</span>
         </p>
-        <p>
-          {text2}
-        </p>
+        <p>{text2}</p>
       </div>
       <p>{get_last_score()}</p>
       <div className={"minigame-start-line"} />
@@ -32,17 +34,26 @@ function StartMinigame({ setState, setDifficulty, minigameId, title, text1, exam
         <MinigameButton
           text={"Easy"}
           color={"green"}
-          onClick={() => {setDifficulty(1);setState(1)}}
+          onClick={() => {
+            setDifficulty(1);
+            setState(1);
+          }}
         />
         <MinigameButton
           text={"Medium"}
           color={"blue"}
-          onClick={() => {setDifficulty(2);setState(1)}}
+          onClick={() => {
+            setDifficulty(2);
+            setState(1);
+          }}
         />
         <MinigameButton
           text={"Hard"}
           color={"red"}
-          onClick={() => {setDifficulty(3);setState(1)}}
+          onClick={() => {
+            setDifficulty(3);
+            setState(1);
+          }}
         />
       </div>
     </div>

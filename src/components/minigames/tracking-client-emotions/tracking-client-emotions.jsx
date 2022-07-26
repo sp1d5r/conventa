@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./tracking-client-emotions.css";
-import StartMinigame from "../minigame-components/start-screen/start-screen"
+import StartMinigame from "../minigame-components/start-screen/start-screen";
 import TrackingClientEmotionsGame from "./tracking-client-emotions-game/tracking-client-emotions-game";
 
 /*
@@ -14,24 +14,34 @@ import TrackingClientEmotionsGame from "./tracking-client-emotions-game/tracking
 
 function TrackingClientEmotions() {
   const [state, setState] = useState(0);
-  const [difficulty, setDifficulty] = useState(0)
+  const [difficulty, setDifficulty] = useState(0);
 
   const from_minigame_state = () => {
     if (state === 0) {
       /* This is the intro state */
-      return <StartMinigame
-            setState={setState}
-            setDifficulty={setDifficulty}
-            minigameId={"tracking-client-emotions"}
-            title={"Tracking Client Emotions"}
-            text1={"You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."}
-            example={"“We will get back to you with an email soon.”"}
-            text2={"You will be presented with options to choose from, explaining an emotion with a certain body language."}
-
-        />;
+      return (
+        <StartMinigame
+          setState={setState}
+          setDifficulty={setDifficulty}
+          minigameId={"tracking-client-emotions"}
+          title={"Tracking Client Emotions"}
+          text1={
+            "You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."
+          }
+          example={"“We will get back to you with an email soon.”"}
+          text2={
+            "You will be presented with options to choose from, explaining an emotion with a certain body language."
+          }
+        />
+      );
     } else if (state === 1) {
       /* This is the game state */
-      return <TrackingClientEmotionsGame setGameState={setState} difficulty={difficulty}/>
+      return (
+        <TrackingClientEmotionsGame
+          setGameState={setState}
+          difficulty={difficulty}
+        />
+      );
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
     } else {
       /* This is the game complete state */
@@ -39,7 +49,9 @@ function TrackingClientEmotions() {
   };
 
   return (
-    <div className={"tracking-client-emotions-main-div"}>{from_minigame_state()}</div>
+    <div className={"tracking-client-emotions-main-div"}>
+      {from_minigame_state()}
+    </div>
   );
 }
 

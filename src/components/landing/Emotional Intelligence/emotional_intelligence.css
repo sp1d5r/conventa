@@ -22,7 +22,8 @@
   -webkit-text-fill-color: var(
     --green
   ); /* Will override color (regardless of order) */
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .emotional-title-text {
@@ -40,7 +41,8 @@
     --white
   ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   background-color: var(--green);
   border-radius: 15px;
   padding-left: 15px;
