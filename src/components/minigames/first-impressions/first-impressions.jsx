@@ -5,16 +5,22 @@ import FirstImpressionsGame from "./first-impressions-game/first-impressions-gam
 
 function FirstImpressions() {
   const [state, setState] = useState(0);
-  const [difficulty, setDifficulty] = useState(0)
-
+  const [difficulty, setDifficulty] = useState(0);
 
   const from_minigame_state = () => {
     if (state === 0) {
       /* This is the intro state */
-      return <StartFirstImpressions setState={setState} setDifficulty={setDifficulty}/>;
+      return (
+        <StartFirstImpressions
+          setState={setState}
+          setDifficulty={setDifficulty}
+        />
+      );
     } else if (state === 1) {
       /* This is the game state */
-      return <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
+      return (
+        <FirstImpressionsGame setGameState={setState} difficulty={difficulty} />
+      );
     } else {
       /* This is the game complete state */
     }

@@ -1,7 +1,5 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../tracking-client-emotions.css";
-import MinigameButton from "../../../button/minigame-button";
-import LoadingBar from "../../../loading-bar/loading";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameVideo from "../../minigame-components/minigame-video/minigame-video";
@@ -18,14 +16,11 @@ Task list for this one
 - Make the answer prompt look cleaner
 */
 
-
-
 function TrackingClientEmotionsGame({ setGameState, difficulty }) {
-  const [text, setText] = useState("");
   const timePerQuestion = () => {
-    if (difficulty == 1) {
+    if (difficulty === 1) {
       return 10;
-    } else if (difficulty == 2) {
+    } else if (difficulty === 2) {
       return 5;
     } else {
       return 3;
@@ -40,42 +35,48 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
         {
           videoUrl: "/video/LieExample1.mp4",
           correctOption: 1,
-          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
+          source:
+            "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
           prompt: "You are trying to get a client to use new software.",
-          correctPrompt: "The clients hands where still which indicates she's sad",
+          correctPrompt:
+            "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample2.mp4",
           correctOption: 2,
-          source: "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
+          source:
+            "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
           prompt: "You are getting feedback from a client about your work.",
-          correctPrompt: "The clients hands where still which indicates she's sad",
+          correctPrompt:
+            "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample1.mp4",
           correctOption: 2,
           source: "Peaky Blinders - BBC - Episode 30",
           prompt: "You are getting feedback from a client about your work.",
-          correctPrompt: "The clients hands where still which indicates she's sad",
+          correctPrompt:
+            "The clients hands where still which indicates she's sad",
         },
         {
           videoUrl: "/video/LieExample1.mp4",
           correctOption: 1,
           source: "Peaky Blinders - BBC - Episode 312",
           prompt: "You are getting feedback from a client about your work.",
-          correctPrompt: "The clients hands where still which indicates she's sad",
-        }
+          correctPrompt:
+            "The clients hands where still which indicates she's sad",
+        },
       ],
       length: 4,
-    }
-    return qs
-  }
+    };
+    return qs;
+  };
 
   const getQuestionsFirst = () => {
-      let tempQuestions = [... getQuestions().questions];
-      tempQuestions.shift();
-      return tempQuestions;
-    }
+    let tempQuestions = [...getQuestions().questions];
+    tempQuestions.shift();
+    return tempQuestions;
+  };
 
   const quotes = [
     "Wow, learning is so fun!",
@@ -85,30 +86,30 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
     "We're almost there!",
     "keep going!!",
     "YES!!!",
-    "Channel the observer!"
-  ]
+    "Channel the observer!",
+  ];
 
   const increaseScore = () => setScore(score + 1);
-  const increaseTime = () =>  timeSpent.current ++;
+  const increaseTime = () => timeSpent.current++;
   const updateQoute = () => {
-    goodAdvice.current = quotes[Math.floor(Math.random() * 8)]
-  }
+    goodAdvice.current = quotes[Math.floor(Math.random() * 8)];
+  };
 
   /* Tracking Game State */
-  const [questions, setQuestions] = useState(getQuestionsFirst());
   const [totalQuestions, setTotalQuestions] = useState(getQuestions().length);
-  const questionsRef = useRef(getQuestionsFirst())
+  const questionsRef = useRef(getQuestionsFirst());
   const timeRef = useRef(TIME_PER_QUESTION);
   const paused = useRef(false);
   const quit = useRef(false);
   const currentQuestionIndex = useRef(0);
-  const [currentQuestion, setCurrentQuestion] = useState(getQuestions().questions[0]);
+  const [currentQuestion, setCurrentQuestion] = useState(
+    getQuestions().questions[0]
+  );
   const [score, setScore] = useState(0);
-  const timeSpent = useRef(0)
-  const goodAdvice = useRef("Good Luck!")
+  const timeSpent = useRef(0);
+  const goodAdvice = useRef("Good Luck!");
   const answerTime = useRef(2);
-  const lastAnswer = useRef(getQuestions().questions[0].correctPrompt)
-  const [showAnswer, setShowAnswer] = useState(false);
+  const lastAnswer = useRef(getQuestions().questions[0].correctPrompt);
   const [answerText, setAnswerText] = useState("");
   const [pause, setPause] = useState(false);
 
@@ -118,36 +119,35 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
     button.innerHTML = "Pause";
     var pausedMessage = document.getElementById("paused-message");
     pausedMessage.hidden = true;
-  }
+  };
 
   const unhidePauseScreen = () => {
     var button = document.getElementById("pause-button-first-impressions");
     button.innerHTML = "Resume";
     var pausedMessage = document.getElementById("paused-message");
     pausedMessage.hidden = false;
-  }
+  };
 
-    /* Unhide/Hide the End Screen */
-    const hideEndScreen = () => {
-      var endMessage = document.getElementById("end-message");
-      endMessage.hidden = true;
-    }
+  /* Unhide/Hide the End Screen */
+  const hideEndScreen = () => {
+    var endMessage = document.getElementById("end-message");
+    endMessage.hidden = true;
+  };
 
-    const unhideEndScreen = () => {
-      var endMessage = document.getElementById("end-message");
-      endMessage.hidden = false;
-    }
-
+  const unhideEndScreen = () => {
+    var endMessage = document.getElementById("end-message");
+    endMessage.hidden = false;
+  };
 
   const pressPause = () => {
     paused.current = !paused.current;
     setPause(!pause);
-    if (paused.current){
+    if (paused.current) {
       unhidePauseScreen();
     } else {
       hidePauseScreen();
     }
-  }
+  };
 
   const quitGame = () => {
     /* Pause any current game */
@@ -155,12 +155,12 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
     setPause(true);
     hidePauseScreen();
     unhideEndScreen();
-  }
+  };
 
   const saveScoreToUser = () => {
     /* TODO:// Add user functionality here */
     console.log("Saving score to user placeholder");
-  }
+  };
 
   const resetGame = () => {
     /*
@@ -175,7 +175,6 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
     let qs = getQuestions().questions;
     setCurrentQuestion(qs[0]);
     qs.shift();
-    setQuestions(qs);
     setTotalQuestions(getQuestions().length);
     questionsRef.current = getQuestionsFirst();
     timeRef.current = TIME_PER_QUESTION;
@@ -190,76 +189,72 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
     setScore(0);
     timeSpent.current = 0;
     goodAdvice.current = "Good Luck!";
-  }
+  };
 
   const leaveGame = () => {
     setGameState(0);
-  }
+  };
 
-
-  const updateQuestions = async() => {
-      // Make a local copy of the questions
-      // TIME_PER_QUESTION; /* Time Per Question */
-      lastAnswer.current = currentQuestion.correctPrompt;
-      const [first, ...remainingQuestions] = [... questionsRef.current]
-      if (first !== undefined) {
-        currentQuestionIndex.current++;
-        setCurrentQuestion(first);
-        setQuestions(remainingQuestions)
-        questionsRef.current = remainingQuestions;
-        console.log('question',remainingQuestions)
-      } else {
-        /* Game Over */
-        quitGame();
-      }
-  }
+  const updateQuestions = async () => {
+    // Make a local copy of the questions
+    // TIME_PER_QUESTION; /* Time Per Question */
+    lastAnswer.current = currentQuestion.correctPrompt;
+    const [first, ...remainingQuestions] = [...questionsRef.current];
+    if (first !== undefined) {
+      currentQuestionIndex.current++;
+      setCurrentQuestion(first);
+      questionsRef.current = remainingQuestions;
+      console.log("question", remainingQuestions);
+    } else {
+      /* Game Over */
+      quitGame();
+    }
+  };
 
   const clickOption = (optionNumber) => {
-    hideAnswerScreen()
-    if (optionNumber == currentQuestion.correctOption) {
+    hideAnswerScreen();
+    if (optionNumber === currentQuestion.correctOption) {
       /* Successful Option Pressed */
       increaseScore();
-      setAnswerText("Correct Answer!")
-      showAnswerScreen(true)
+      setAnswerText("Correct Answer!");
+      showAnswerScreen(true);
     } else {
-      setAnswerText("Incorrect!")
-      showAnswerScreen(false)
+      setAnswerText("Incorrect!");
+      showAnswerScreen(false);
     }
     updateQuestions();
     timeRef.current = TIME_PER_QUESTION;
-  }
+  };
 
   const hideAnswerScreen = () => {
     const div = document.getElementById("answer-message");
-    div.classList.add("hidden")
-    div.classList.remove("correct-answer")
-    div.classList.remove("incorrect-answer")
-  }
+    div.classList.add("hidden");
+    div.classList.remove("correct-answer");
+    div.classList.remove("incorrect-answer");
+  };
 
   const showAnswerScreen = (correct) => {
     const div = document.getElementById("answer-message");
-    div.classList.remove("hidden")
-    div.classList.add(correct ? "correct-answer" : "incorrect-answer")
+    div.classList.remove("hidden");
+    div.classList.add(correct ? "correct-answer" : "incorrect-answer");
     answerTime.current = 2;
-  }
-
+  };
 
   const handleAnswerResult = () => {
-    if (answerTime.current == 0) {
+    if (answerTime.current === 0) {
       hideAnswerScreen();
     }
     if (answerTime.current > 0) {
-      answerTime.current --;
+      answerTime.current--;
     }
-  }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!paused.current) {
-        setText(`Time remaining ${timeRef.current}`);
         timeRef.current--;
 
-        if (timeRef.current % 5 == 0) {
+        if (timeRef.current % 5 === 0) {
           updateQoute();
           /*showAnswerScreen();*/
         }
@@ -268,116 +263,147 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  });
 
   const loopTimes = () => {
-    if (difficulty===1){
+    if (difficulty === 1) {
       return 2;
-    } else if (difficulty===2) {
+    } else if (difficulty === 2) {
       return 1;
     } else {
       return 0;
     }
-  }
+  };
 
   return (
     <div>
-    <div className={"first-impressions-game-title"}>
-    <p>Minigame - Tracking Client Emotions</p>
-    <div className={"first-impressions-menu"}>
-      <button id="pause-button-first-impressions" className={"pause-button"}
-      onClick={() => {pressPause()}}> Pause</button>
-      <button onClick={() => {updateQuestions()}} className={"skip-button"}>Skip </button>
-    </div>
-    </div>
-    <div className={"first-impressions-game-cards"}>
-      { /* This is the Answer Popup */
-        <div id="answer-message" className="answer-message hidden">
-          <div className={"answer-card"}>
-            <p className={"answer-card-text"}>{answerText}</p>
-            <p className={""}>{lastAnswer.current}</p>
-          </div>
+      <div className={"first-impressions-game-title"}>
+        <p>Minigame - Tracking Client Emotions</p>
+        <div className={"first-impressions-menu"}>
+          <button
+            id="pause-button-first-impressions"
+            className={"pause-button"}
+            onClick={() => {
+              pressPause();
+            }}
+          >
+            {" "}
+            Pause
+          </button>
+          <button
+            onClick={() => {
+              updateQuestions();
+            }}
+            className={"skip-button"}
+          >
+            Skip{" "}
+          </button>
         </div>
-      }
-      { /* This is the Paused Screen */
-        <PausedScreen
-          gameTitle={"Tracking Client Emotions"}
-          text1={"You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."}
-          example={"“We will get back to you with an email soon.”"}
-          text2={"You will be presented with options to choose from, explaining an emotion with a certain body language."}
-          timeSpent={timeSpent}
-          score={score}
-          totalQuestions={totalQuestions}
-          pressPause={pressPause}
-          quitGame={quitGame}
-        />
-      }
-      { /* This is the End Screen */
-        <GameOverScreen
-          timeSpent={timeSpent}
-          score={score}
-          totalQuestions={totalQuestions}
-          resetGame={resetGame}
-          leaveGame={leaveGame}
-        />
-      }
-      <div className={"first-impressions-card-main"}>
-        <div className={"first-impressions-image"}>
-          <MinigameVideo
-            src={currentQuestion.videoUrl}
-            id="first-impressions-images"
-            alt="Girl in a jacket"
-            updateQuestions={updateQuestions}
-            loopTimes={loopTimes()}
-            pause={pause}
+      </div>
+      <div className={"first-impressions-game-cards"}>
+        {
+          /* This is the Answer Popup */
+          <div id="answer-message" className="answer-message hidden">
+            <div className={"answer-card"}>
+              <p className={"answer-card-text"}>{answerText}</p>
+              <p className={""}>{lastAnswer.current}</p>
+            </div>
+          </div>
+        }
+        {
+          /* This is the Paused Screen */
+          <PausedScreen
+            gameTitle={"Tracking Client Emotions"}
+            text1={
+              "You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."
+            }
+            example={"“We will get back to you with an email soon.”"}
+            text2={
+              "You will be presented with options to choose from, explaining an emotion with a certain body language."
+            }
+            timeSpent={timeSpent}
+            score={score}
+            totalQuestions={totalQuestions}
+            pressPause={pressPause}
+            quitGame={quitGame}
           />
-          <div className={"overlay-source"}>
-            <p style={{paddingRight: 20}}>{currentQuestion.source}</p>
+        }
+        {
+          /* This is the End Screen */
+          <GameOverScreen
+            timeSpent={timeSpent}
+            score={score}
+            totalQuestions={totalQuestions}
+            resetGame={resetGame}
+            leaveGame={leaveGame}
+          />
+        }
+        <div className={"first-impressions-card-main"}>
+          <div className={"first-impressions-image"}>
+            <MinigameVideo
+              src={currentQuestion.videoUrl}
+              id="first-impressions-images"
+              alt="Girl in a jacket"
+              updateQuestions={updateQuestions}
+              loopTimes={loopTimes()}
+              pause={pause}
+            />
+            <div className={"overlay-source"}>
+              <p style={{ paddingRight: 20 }}>{currentQuestion.source}</p>
+            </div>
+          </div>
+          <div className={"client-emotions-prompt"}>
+            <p>{currentQuestion.prompt}</p>
+          </div>
+          <div className={"first-impressions-infobox"}>
+            <div className={"infobox-left"}>
+              <div className={"inline-objects"}></div>
+              <div className={"inline-objects"}>
+                <img
+                  style={{ height: 20, width: 20 }}
+                  alt="Actions"
+                  src={require("../../../../assets/first-impressions/TimeSpan.png")}
+                />
+                <p>
+                  Total Time Spent: <b>{timeSpent.current}</b>
+                </p>
+              </div>
+            </div>
+            <div className={"infobox-left"}>
+              <div className={"inline-objects"}>
+                <p>{goodAdvice.current}</p>
+              </div>
+              <div className={"inline-objects"}>
+                <img
+                  alt="Actions"
+                  src={require("../../../../assets/first-impressions/Action.png")}
+                />
+                <p>
+                  Score: <b>{score}</b> / {totalQuestions}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className={"client-emotions-prompt"}>
-          <p>
-            {currentQuestion.prompt}
-          </p>
-        </div>
-        <div className={"first-impressions-infobox"}>
-          <div className={"infobox-left"}>
-            <div className={"inline-objects"}>
-
-            </div>
-            <div className={"inline-objects"}>
-              <img
-                style={{height: 20, width:20}}
-                alt="Actions"
-                src={require("../../../../assets/first-impressions/TimeSpan.png")}
-              />
-              <p>Total Time Spent: <b>{timeSpent.current}</b></p>
-            </div>
+        <div className={"first-impressions-cards-right"}>
+          <div
+            className={"first-impressions-card-right"}
+            onClick={() => {
+              clickOption(1);
+            }}
+          >
+            <p>Client is Happy</p>
           </div>
-          <div className={"infobox-left"} >
-            <div className={"inline-objects"}>
-              <p>{goodAdvice.current}</p>
-            </div>
-            <div className={"inline-objects"}>
-              <img
-                alt="Actions"
-                src={require("../../../../assets/first-impressions/Action.png")}
-              />
-              <p>Score: <b>{score}</b> / {totalQuestions}</p>
-            </div>
+          <div
+            className={"first-impressions-card-right"}
+            onClick={() => {
+              clickOption(2);
+            }}
+          >
+            <p>Client is Sad</p>
           </div>
         </div>
       </div>
-      <div className={"first-impressions-cards-right"}>
-        <div className={"first-impressions-card-right"} onClick={() => {clickOption(1)}}>
-          <p>Client is Happy</p>
-        </div>
-        <div className={"first-impressions-card-right"} onClick={() => {clickOption(2)}}>
-          <p>Client is Sad</p>
-        </div>
-
-      </div>
-    </div>
     </div>
   );
 }

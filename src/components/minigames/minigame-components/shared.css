@@ -1,7 +1,9 @@
 /* Default Buttons */
-.pause-button, .skip-button, .quit-button{
-  background: #FFFFFF;
-  border: 1px solid #E5E6EA;
+.pause-button,
+.skip-button,
+.quit-button {
+  background: #ffffff;
+  border: 1px solid #e5e6ea;
   border-radius: 5px;
   margin: 5px;
   width: 30%;

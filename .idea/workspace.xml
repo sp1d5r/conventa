@@ -2,11 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/end-first-impressions/end-first-impressions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/minigame-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/minigame-button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/How/how.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loading-bar/loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loading-bar/loading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/start-first-impressions/start-first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/start-first-impressions/start-first-impressions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-image/minigame-image.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-image/minigame-image.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-video/minigame-video.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-video/minigame-video.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/catch-a-liar-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/catch-a-liar-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,27 +42,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="29q2mfOUI0tU4n71pFYfscPr7iB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/elijahahmad/e-learning-template&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -50,7 +75,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.renders a navbar link">
+  <component name="RunManager" selected="npm.prettier-write">
     <configuration name="renders a navbar link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -67,11 +92,11 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="lint-staged" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="lint-staged" />
+        <script value="lint" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -87,21 +112,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="prepare" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="prepare" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="prettier-write" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="prettier-write" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prettier" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -119,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.prettier-write" />
+        <item itemvalue="npm.prettier" />
+        <item itemvalue="npm.lint" />
         <item itemvalue="Jest.renders a navbar link" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.prepare" />
-        <item itemvalue="npm.lint-staged" />
-        <item itemvalue="npm.prettier-write" />
       </list>
     </recent_temporary>
   </component>
@@ -139,6 +164,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -152,40 +178,11 @@
       <workItem from="1653826457826" duration="11551000" />
       <workItem from="1653936221555" duration="9909000" />
       <workItem from="1655060924548" duration="6429000" />
+      <workItem from="1658859546424" duration="704000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1655145122324">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1655145122324" />
-    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1654163102518">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1654163102518" />
-    <state width="1419" height="268" key="GridCell.Tab.0.bottom" timestamp="1654102272447">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
-    <state width="1419" height="268" key="GridCell.Tab.0.center" timestamp="1654102272446">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1654102272446" />
-    <state width="1419" height="268" key="GridCell.Tab.0.left" timestamp="1654102272445">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1654102272445" />
-    <state width="1419" height="268" key="GridCell.Tab.0.right" timestamp="1654102272447">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1654440502152">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1654440502152" />
+    <option name="version" value="3" />
   </component>
 </project>
