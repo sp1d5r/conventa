@@ -1,0 +1,138 @@
+.about-us-landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.about-us-gif {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  animation: animate-background 3s none;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../assets/Illustrations/waves-frames/1.png");
+}
+
+.about-us-landing-title {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  z-index: -1;
+  animation: slow-fade 5s none;
+}
+
+.about-us-title-div {
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-top-part {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 120px;
+  text-align: center;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 2%;
+  padding-top: 5%;
+  flex-direction: column;
+}
+
+.how-span-green-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  /* identical to box height */
+
+  text-align: center;
+  text-decoration-line: underline;
+  color: var(--green);
+  -webkit-text-fill-color: var(
+    --green
+  ); /* Will override color (regardless of order) */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+@keyframes slow-fade {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-background {
+  0% {
+  }
+
+  7% {
+    background-image: url("../../assets/Illustrations/waves-frames/1.png");
+  }
+
+  14% {
+    background-image: url("../../assets/Illustrations/waves-frames/2.png");
+  }
+
+  21% {
+    background-image: url("../../assets/Illustrations/waves-frames/3.png");
+  }
+
+  30% {
+    background-image: url("../../assets/Illustrations/waves-frames/4.png");
+  }
+
+  37% {
+    background-image: url("../../assets/Illustrations/waves-frames/5.png");
+  }
+
+  44% {
+    background-image: url("../../assets/Illustrations/waves-frames/6.png");
+  }
+
+  51% {
+    background-image: url("../../assets/Illustrations/waves-frames/7.png");
+  }
+
+  58% {
+    background-image: url("../../assets/Illustrations/waves-frames/8.png");
+  }
+
+  66% {
+    background-image: url("../../assets/Illustrations/waves-frames/9.png");
+  }
+
+  74% {
+    background-image: url("../../assets/Illustrations/waves-frames/10.png");
+  }
+
+  82% {
+    background-image: url("../../assets/Illustrations/waves-frames/11.png");
+  }
+
+  90% {
+    background-image: url("../../assets/Illustrations/waves-frames/12.png");
+  }
+
+  100% {
+    background-image: url("../../assets/Illustrations/waves-frames/13.png");
+  }
+}

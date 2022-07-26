@@ -1,8 +1,13 @@
 import React from "react";
 import "./about-us.css";
+import Landing from "./landing/landing";
 
 function AboutUs() {
-  return <div style={{ width: "100%", height: 200 }}></div>;
+  return (
+    <div className={"about-us-landing"}>
+      <Landing />
+    </div>
+  );
 }
 
 export default AboutUs;
