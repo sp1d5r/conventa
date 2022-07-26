@@ -23,7 +23,7 @@ function NavBar() {
             <Link to="/" className={"navbar-link"}>
               Contact Us
             </Link>
-            <Link to="/" className={"navbar-link"}>
+            <Link to="/about-us/" className={"navbar-link"}>
               About Us
             </Link>
           </div>
