@@ -15,7 +15,7 @@ function Jumbotron() {
         </span>
         <p className={"jumbo-sub-text"}>
           Trusted by experts in the field, backed by research conducted by the
-          FBI and other trusted organisations .... BLAH BLAH BALH
+          FBI and proven to work in the real world.
         </p>
       </div>
       <div className={"jumbo-bottom"}>

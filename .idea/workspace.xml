@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/our-background.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/our-strengths.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/Apple Logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/Apple Logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/Google.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/Google.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/Windows XP.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/Windows XP.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/check.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/check.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/null.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/null.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/landing/landing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/How/how.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

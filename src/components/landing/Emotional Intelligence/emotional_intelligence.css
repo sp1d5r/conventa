@@ -12,6 +12,7 @@
   text-align: center;
   color: var(--black);
   justify-content: left;
+  align-items: center;
 }
 
 .emotional-title-green {
@@ -22,7 +23,8 @@
   -webkit-text-fill-color: var(
     --green
   ); /* Will override color (regardless of order) */
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .emotional-title-text {
@@ -40,12 +42,16 @@
     --white
   ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   background-color: var(--green);
   border-radius: 15px;
   padding-left: 15px;
   padding-right: 15px;
   border: var(--black) 1px solid;
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
 .emotional-cards {
@@ -80,6 +86,9 @@
   margin-bottom: 5%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .green-box {
@@ -90,7 +99,8 @@
 .emotional-text-2,
 .emotional-text-3 {
   background: var(--white);
-  font-weight: 600;
+  padding: 10%;
+  font-weight: 500;
   font-size: 15px;
   text-align: center;
   width: 100%;
@@ -104,6 +114,10 @@
 .emotional-text-2,
 .emotional-text-3 {
   flex: 1;
+}
+
+.emotional-brand-pill-text {
+  margin: 0;
 }
 
 @media screen and (max-width: 500px) {

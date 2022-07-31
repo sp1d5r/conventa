@@ -14,7 +14,7 @@ function PricingPlan() {
       </div>
       <div className={"pricing-bottom"}>
         <div className={"pricing-card"}>
-          <p className={"subscription-type"}>Hobbiest</p>
+          <p className={"subscription-type"}>Hobbyist</p>
           <p className={"subscription-cost"}>Free</p>
           <div className={"subscription-benefits"}>
             <div className={"single-benefit"}>
@@ -39,7 +39,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Access to the first lesson of all course</p>
+              <p>Access to the first lesson of all courses</p>
             </div>
             <div className={"single-benefit"}>
               <img
@@ -47,7 +47,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/null.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the course</p>
+              <p>Full access to all the courses</p>
             </div>
             <div className={"single-benefit"}>
               <img
@@ -63,13 +63,13 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/null.png")}
                 alt={"price includes"}
               />
-              <p>Full acccess to manual</p>
+              <p>Full acccess to the manual</p>
             </div>
           </div>
           <BlueButton text={"Sign Up"} />
         </div>
         <div className={"pricing-card"}>
-          <p className={"subscription-type"}>Amature</p>
+          <p className={"subscription-type"}>Amateur</p>
           <span className={"subscription-cost"}>
             £5.99 <span className={"per-month"}>per month</span>
           </span>
@@ -80,7 +80,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the courses</p>
+              <p>Full access to all of the courses</p>
             </div>
             <div className={"single-benefit"}>
               <img
@@ -88,7 +88,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the minigames</p>
+              <p>Full access to all of the minigames</p>
             </div>
             <div className={"single-benefit"}>
               <img
@@ -96,7 +96,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the manuel</p>
+              <p>Full access to the manuel</p>
             </div>
           </div>
           <BlueButton text={"Sign Up"} />
@@ -113,7 +113,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the courses</p>
+              <p>Full access to all of the courses</p>
             </div>
             <div className={"single-benefit"}>
               <img
@@ -121,7 +121,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the minigames</p>
+              <p>Full access to all of the minigames</p>
             </div>
             <div className={"single-benefit"}>
               <img
@@ -129,7 +129,7 @@ function PricingPlan() {
                 src={require("../../../assets/Icons/check.png")}
                 alt={"price includes"}
               />
-              <p>Full access to all the manuel</p>
+              <p>Full access to the manuel</p>
             </div>
           </div>
           <BlueButton text={"Sign Up"} />

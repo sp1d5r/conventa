@@ -9,7 +9,9 @@ function Help() {
           WE ARE HERE TO <span className={"help-top-text"}>HELP</span>!
         </span>
         <p className={"help-top-bottom"}>
-          “Quote about reading body language efficiently” - Einshien
+          "80% of what you understand in a conversation is read through body
+          language - not word choice, tone, or facial expressions" - Tony
+          Robbins
         </p>
       </div>
       <div className={"help-bottom-div"}>
@@ -22,7 +24,7 @@ function Help() {
             />
           </div>
           <div className={"help-card-bottom"}>
-            This is going to be about using the courses to develop a solid basis
+            Our courses help you develop a solid understanding of body language.
           </div>
         </div>
         <div className={"help-card"}>
@@ -34,8 +36,7 @@ function Help() {
             />
           </div>
           <div className={"help-card-bottom"}>
-            This one is more about using the minigames to consolidate your
-            material
+            Then, our interactive mini games consolidate your knowledge.
           </div>
         </div>
         <div className={"help-card"}>
@@ -47,8 +48,7 @@ function Help() {
             />
           </div>
           <div className={"help-card-bottom"}>
-            This one is more about using the reminders to do a game once a day
-            to build up the goal
+            We'll send you daily reminders to keep you progressing.
           </div>
         </div>
       </div>

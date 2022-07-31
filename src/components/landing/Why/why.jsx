@@ -15,24 +15,23 @@ function Why() {
           <div className={"why-main-left"}>
             <div className={"why-main-text-box"}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt
+                Have you ever had someone <b>betray</b> you, <b>cheat</b> on
+                you, or <b>lie</b> to you? The first question you ask yourself
+                is usually, <b>"Why didn't I know?" </b>
+                The answer is simple: because{" "}
+                <b>nonverbal communication makes up 80%</b> of all human
+                communication, and you weren't reading their body language
+                correctly. After the event you probably realised all the signs
+                were there, so why didn't you notice?
+                <b> It's not your fault, and we're here to help!</b>
               </p>
-            </div>
-            <div className={"why-main-text-box"}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt
+                Still not interest? Body language is a proven way to{" "}
+                <b>relax</b> and <b>de-stress</b> yourself. It can also help you
+                understand people better, and help you <b>find a partner</b> or{" "}
+                <b>progress in your career</b>. In a world where we are
+                constantly surrounded by people, learning to read and understand
+                body language can make you <b>feel less lonely</b>.
               </p>
             </div>
           </div>
