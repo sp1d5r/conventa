@@ -9,3 +9,8 @@
 .lesson-landing-body-markdown {
   text-align: left;
 }
+
+.lesson-landing-content-section {
+  /* This is the section i.e. courses*/
+  width: auto;
+}

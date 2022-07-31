@@ -11,7 +11,8 @@ function CourseLanding() {
   */
   const searchParams = useSearchParams()[0];
   const course_id = searchParams.get("course_id");
-  const get_course_information = () => {
+  const get_course_information = (course_id) => {
+    console.log(course_id);
     return {
       lessons: [
         "lesson_id_1",
@@ -22,7 +23,7 @@ function CourseLanding() {
         "lesson_id_6",
         "lesson_id_7",
       ],
-      course_name: course_id,
+      course_name: "Course Name",
       course_image: require("../../assets/courses-notational/course1.png"),
       course_image_path: "../../assets/courses-notational/course1.png",
       difficulty: 3,
@@ -30,8 +31,7 @@ function CourseLanding() {
     };
   };
 
-  const course_information = get_course_information();
-  console.log(course_id);
+  const course_information = get_course_information(course_id);
 
   return (
     <div className={"course-landing-main"}>
