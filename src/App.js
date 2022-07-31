@@ -14,7 +14,6 @@ import ScrollToTop from "./components/routing/scroll-to-top";
 import TrackingClientEmotions from "./components/minigames/tracking-client-emotions/tracking-client-emotions";
 import AboutUs from "./components/about-us/about-us";
 
-
 function App() {
   return (
     <div className="App">
