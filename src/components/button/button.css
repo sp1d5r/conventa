@@ -11,6 +11,12 @@
   margin-right: auto;
 }
 
+.button-primary > p,
+.button-blue > p,
+.button-green > p {
+  margin: 0;
+}
+
 .button-blue {
   background: #d9edff;
   border: 0px;

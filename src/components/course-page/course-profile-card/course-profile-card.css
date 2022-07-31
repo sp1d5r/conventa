@@ -19,8 +19,8 @@
 }
 
 .course-card-profile-image > img {
-  height: 80%;
   aspect-ratio: 1/1;
+  width: 200px;
 }
 
 .course-card-profile-title {
@@ -51,7 +51,7 @@
 
 .course-card-profile-call-to-action {
   /* This is the call to action */
-  flex: 2;
+  flex: 3;
   width: 70%;
   margin: auto;
   display: flex;
