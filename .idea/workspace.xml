@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +26,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "prettierjs.PrettierConfiguration.Package": "/Users/elijahahmad/e-learning-template/node_modules/prettier"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;
   }
-}]]></component>
-
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -189,6 +191,5 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1654440502152" />
-
   </component>
 </project>

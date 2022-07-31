@@ -4,6 +4,58 @@ import CourseCard from "./course-card/course-card";
 import MiniGameCard from "./minigame-card/minigame-card";
 
 function Academy({ loggedIn }) {
+  const courseItems = () => {
+    return [
+      {
+        imagePath: require("../../assets/courses-notational/course1.png"),
+        title: "Expressing Emotions",
+        id: "12345",
+        time: 30,
+      },
+      {
+        imagePath: require("../../assets/courses-notational/course2.png"),
+        title: "Self Control",
+        id: "123456",
+        time: 30,
+      },
+      {
+        imagePath: require("../../assets/courses-notational/course3.png"),
+        title: "Recognising Danger",
+        id: "1234567",
+        time: 30,
+      },
+      {
+        imagePath: require("../../assets/courses-notational/course4.png"),
+        title: "Manipulating People",
+        id: "12345678",
+        time: 30,
+      },
+    ];
+  };
+
+  const minigameItems = () => {
+    return [
+      {
+        imagePath: require("../../assets/minigame-notational/minigame1.png"),
+        title: "First Impressions",
+        time: 30,
+        difficulty: 1,
+      },
+      {
+        imagePath: require("../../assets/minigame-notational/minigame2.png"),
+        title: "Catch a Liar",
+        time: 30,
+        difficulty: 2,
+      },
+      {
+        imagePath: require("../../assets/minigame-notational/minigame3.png"),
+        title: "Tracking Client Emotions",
+        time: 30,
+        difficulty: 3,
+      },
+    ];
+  };
+
   return (
     <div className={"academy-main"}>
       <div className={"academy-title"}>
@@ -13,31 +65,16 @@ function Academy({ loggedIn }) {
         <div className={"academy-content-section"}>
           <p className={"academy-content-title"}>courses</p>
           <div className={"academy-content-section-child"}>
-            <CourseCard
-              imagePath={require("../../assets/courses-notational/course1.png")}
-              title={"Expressing Emotions"}
-              time={30}
-            />
-            <CourseCard
-              imagePath={require("../../assets/courses-notational/course2.png")}
-              title={"Fundamentals"}
-              time={30}
-            />
-            <CourseCard
-              imagePath={require("../../assets/courses-notational/course3.png")}
-              title={"Self Control"}
-              time={30}
-            />
-            <CourseCard
-              imagePath={require("../../assets/courses-notational/course4.png")}
-              title={"Recognising Danger"}
-              time={30}
-            />
-            <CourseCard
-              imagePath={require("../../assets/courses-notational/course5.png")}
-              title={"Manipulating People"}
-              time={30}
-            />
+            {courseItems().map((item, index) => {
+              return (
+                <CourseCard
+                  imagePath={item.imagePath}
+                  title={item.title}
+                  id={item.id}
+                  time={item.time}
+                />
+              );
+            })}
           </div>
         </div>
         <br />
@@ -45,24 +82,16 @@ function Academy({ loggedIn }) {
         <div className={"academy-content-section"}>
           <p className={"academy-content-title"}>minigames</p>
           <div className={"academy-content-section-child-minigame"}>
-            <MiniGameCard
-              imagePath={require("../../assets/minigame-notational/minigame1.png")}
-              title={"First Impressions"}
-              time={30}
-              difficulty={1}
-            />
-            <MiniGameCard
-              imagePath={require("../../assets/minigame-notational/minigame2.png")}
-              title={"Catch a Liar"}
-              time={30}
-              difficulty={2}
-            />
-            <MiniGameCard
-              imagePath={require("../../assets/minigame-notational/minigame3.png")}
-              title={"Tracking Client Emotions"}
-              time={30}
-              difficulty={3}
-            />
+            {minigameItems().map((item, index) => {
+              return (
+                <MiniGameCard
+                  imagePath={item.imagePath}
+                  title={item.title}
+                  time={item.time}
+                  difficulty={item.difficulty}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

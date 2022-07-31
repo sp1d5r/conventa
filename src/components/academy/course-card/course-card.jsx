@@ -2,12 +2,9 @@ import React from "react";
 import "./course-card.css";
 import { Link } from "react-router-dom";
 
-function CourseCard({ imagePath, title, time }) {
+function CourseCard({ imagePath, title, time, id }) {
   return (
-    <Link
-      className={"academy-content-course"}
-      to={`/course/?course_id=${title}`}
-    >
+    <Link className={"academy-content-course"} to={`/course/?course_id=${id}`}>
       <div className={"academy-content-course-image"}>
         <img
           className={"academy-content-course-image-data"}
