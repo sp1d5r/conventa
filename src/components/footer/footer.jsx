@@ -68,7 +68,7 @@ function Footer() {
       </div>
       <div className={"footer-main-bottom"}>
         <div className={"footer-bottom-div"}>
-          <p>My Brand Name - Copyright 2022 © - All rights reserved</p>
+          <p>Convento - Copyright 2022 © - All rights reserved</p>
         </div>
       </div>
     </div>
