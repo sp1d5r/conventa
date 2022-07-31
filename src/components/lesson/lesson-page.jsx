@@ -23,7 +23,7 @@ function LessonPage() {
         "lesson_id_6",
         "lesson_id_7",
       ],
-      course_name: course_id,
+      course_name: "Course Name",
       course_image: require("../../assets/courses-notational/course1.png"),
       course_image_path: "../../assets/courses-notational/course1.png",
       difficulty: 3,

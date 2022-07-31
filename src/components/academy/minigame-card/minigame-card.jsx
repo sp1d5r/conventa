@@ -2,11 +2,11 @@ import React from "react";
 import "./minigame-card.css";
 import { Link } from "react-router-dom";
 
-function MiniGameCard({ imagePath, title, time, academy }) {
+function MiniGameCard({ imagePath, title, time, difficulty }) {
   const _get_difficulty = () => {
-    if (academy === 0) {
+    if (difficulty === 0) {
       return require("../../../assets/Icons/difficulty/easy.png");
-    } else if (academy === 1) {
+    } else if (difficulty === 1) {
       return require("../../../assets/Icons/difficulty/medium.png");
     } else {
       return require("../../../assets/Icons/difficulty/hard.png");
@@ -14,9 +14,9 @@ function MiniGameCard({ imagePath, title, time, academy }) {
   };
 
   const _get_difficulty_name = () => {
-    if (academy === 0) {
+    if (difficulty === 0) {
       return "easy";
-    } else if (academy === 1) {
+    } else if (difficulty === 1) {
       return "medium";
     } else {
       return "hard";

@@ -3,7 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/difficulty/easy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/difficulty/easy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/difficulty/hard.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/difficulty/hard.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/difficulty/medium.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/difficulty/medium.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Icons/time.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Icons/time.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/courses-notational/course1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/courses-notational/course1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/courses-notational/course2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/courses-notational/course2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/courses-notational/course3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/courses-notational/course3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/courses-notational/course4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/courses-notational/course4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/courses-notational/course5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/courses-notational/course5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/minigame-notational/minigame1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/minigame-notational/minigame1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/minigame-notational/minigame2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/minigame-notational/minigame2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/minigame-notational/minigame3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/minigame-notational/minigame3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

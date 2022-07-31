@@ -41,6 +41,7 @@
 
 .academy-content-course-image-data {
   aspect-ratio: 1/1;
+  width: 150px;
 }
 
 .academy-content-course-title {
@@ -75,6 +76,11 @@
 
 .academy-content-course-info > p {
   margin: 0px 10px;
+}
+
+.academy-content-course-info > img {
+  height: 20px;
+  width: 20px;
 }
 
 .course-card-profile {
