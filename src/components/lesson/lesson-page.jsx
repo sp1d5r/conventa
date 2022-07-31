@@ -66,7 +66,7 @@ function LessonPage() {
         </Breadcrumb>
       </div>
       <div className={"course-content-lessons"}>
-        <div className={"course-landing-content-section"}>
+        <div className={"lesson-landing-content-section"}>
           <div className={"course-landing-content-section-child"}>
             <Markdown className={"lesson-landing-body-markdown"}>
               {lesson_information.lesson_body}
