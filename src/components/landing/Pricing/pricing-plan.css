@@ -1,4 +1,4 @@
-.pricing-main {
+single-benefit.pricing-main {
   background-image: url("../../../assets/background-rectangle.svg");
   background-size: cover;
   display: flex;
@@ -82,6 +82,10 @@
   font-weight: 400;
   font-size: 15px;
   color: var(--light-grey);
+}
+
+.single-benefit > p {
+  margin: 0;
 }
 
 .benefit-icon {

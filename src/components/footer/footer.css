@@ -45,6 +45,12 @@
 .footer-information-links {
   border-left: 3px solid var(--light-grey);
   padding-left: 5%;
+  text-align: left;
+}
+
+.footer-information-links > a {
+  text-decoration: none;
+  color: var(--black);
 }
 
 .footer-available-on {
@@ -65,6 +71,16 @@
   font-weight: 400;
   font-size: 15px;
   color: var(--light-grey);
+  align-items: center;
+}
+
+.footer-available-on-items > img {
+  height: 50px;
+  width: 50px;
+}
+
+.footer-available-on-items > p {
+  margin: 0px;
 }
 
 .footer-main-bottom {
@@ -84,4 +100,10 @@
   font-weight: 300;
   font-size: 18px;
   color: var(--black);
+  margin: 10px 0px;
+  box-sizing: border-box;
+}
+
+.footer-bottom-div > p {
+  margin: 10px;
 }

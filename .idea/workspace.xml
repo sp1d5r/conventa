@@ -3,36 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/How/how.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loading-bar/loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loading-bar/loading.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/start-first-impressions/start-first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/start-first-impressions/start-first-impressions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-image/minigame-image.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-image/minigame-image.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-video/minigame-video.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-video/minigame-video.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/catch-a-liar-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/catch-a-liar-game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,28 +23,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/elijahahmad/e-learning-template&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "prettierjs.PrettierConfiguration.Package": "/Users/elijahahmad/e-learning-template/node_modules/prettier"
   }
-}</component>
+}]]></component>
+
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/Illustrations/waves-frames" />
+      <recent name="$PROJECT_DIR$/src/assets/Illustrations" />
       <recent name="$PROJECT_DIR$/src/components/minigames/first-impressions" />
       <recent name="$PROJECT_DIR$/src/components/lesson" />
       <recent name="$PROJECT_DIR$/src/components/auth/login" />
-      <recent name="$PROJECT_DIR$/src/components/landing/Jumbotron" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunManager" selected="npm.prettier-write">
@@ -182,7 +149,46 @@
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1655145122324">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1655145122324" />
+    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1654163102518">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1654163102518" />
+    <state width="1419" height="268" key="GridCell.Tab.0.bottom" timestamp="1654102272447">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
+    <state width="1419" height="268" key="GridCell.Tab.0.center" timestamp="1654102272446">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="268" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1654102272446" />
+    <state width="1419" height="268" key="GridCell.Tab.0.left" timestamp="1654102272445">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="268" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1654102272445" />
+    <state width="1419" height="268" key="GridCell.Tab.0.right" timestamp="1654102272447">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="268" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1654440502152">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1654440502152" />
+
   </component>
 </project>

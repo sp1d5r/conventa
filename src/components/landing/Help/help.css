@@ -16,6 +16,7 @@
 
 .help-top-image {
   width: 50%;
+  margin: 10px 0px;
 }
 
 .help-top-text {
@@ -61,7 +62,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 25vw;
   min-width: 300px;
-  min-height: 300px;
+  min-height: 400px;
   margin: 2%;
   margin-left: auto;
   margin-right: auto;

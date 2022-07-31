@@ -21,24 +21,18 @@ function How() {
           <div className={"how-bottom-right"}>
             <div className={"how-bottom-top"}>
               <p className={"how-main-text-body"}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Getting started is easy! Just sign up for a free account and
+                start reading some courses. Then, have a go at the mini game.
+                But that's never enough. You'll also need to consistently
+                complete the courses regularly.
               </p>
             </div>
             <div className={"how-bottom-bottom"}>
               <p className={"how-main-text-body"}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                To make the most out of the resources available, we recommend
+                downloading the app (coming soon). This will give you regular
+                notifications to play 5 min mini games and keep your skills up
+                to date.
               </p>
             </div>
           </div>
