@@ -14,7 +14,6 @@
   align-items: center;
 }
 
-
 /* State 0 - Start First Impressions */
 
 .first-impression-button-div {
@@ -40,7 +39,7 @@
   width: 100vw;
   height: 130vh;
   top: -30vh;
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   display: flex;
   justify-content: center;
@@ -64,8 +63,8 @@
   width: 100%;
   min-height: 200px;
   min-width: 200px;
-  background: #FFFFFF;
-  border: 1px solid #E5E6EA;
+  background: #ffffff;
+  border: 1px solid #e5e6ea;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -75,33 +74,32 @@
 }
 
 .answer-card-text {
-    font-weight: 500;
-    font-size: 20px;
-    text-align: center;
-    margin: 0;
-    color: #000000;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  color: #000000;
 }
 
-.hidden{
+.hidden {
   opacity: 0;
   height: 0;
   width: 0;
   font-size: 0px;
 }
 
-.correct-answer > div{
+.correct-answer > div {
   border: 5px solid #8de3a4;
 }
 
-.incorrect-answer > div{
+.incorrect-answer > div {
   border: 5px solid #e3978d;
 }
 
-.first-impressions-game-title  > button {
+.first-impressions-game-title > button {
   font-weight: 500;
   font-size: 20px;
 }
-
 
 .first-impressions-game-cards {
   width: 100vw;
@@ -110,7 +108,6 @@
   position: relative;
   z-index: 0;
 }
-
 
 .first-impressions-card-main {
   min-width: 60vw;
@@ -138,7 +135,6 @@
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
-
 }
 
 .first-impressions-card-right {
@@ -163,21 +159,22 @@
 }
 
 .first-impressions-card-right:active {
-  background-color: #B7F6FF;
+  background-color: #b7f6ff;
 }
 
 .first-impression-image-act {
-    transition: 0.3s cubic-bezier(0.3, 0, 0.4, 1) opacity;
-    opacity: 0;
-    height: 100%;  width: 100%;
-    object-fit: cover;
-    z-index: -2;
-    position: absolute;
-    padding: 2%;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    border-radius: 25px;
+  transition: 0.3s cubic-bezier(0.3, 0, 0.4, 1) opacity;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+  position: absolute;
+  padding: 2%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
 }
 
 .first-impressions-image {
@@ -197,7 +194,11 @@
 .image-source {
   width: 100%;
   height: 100%;
-  background: linear-gradient(2.64deg, rgba(0, 0, 0, 0.6) 12.92%, rgba(0, 0, 0, 0) 19.48%);
+  background: linear-gradient(
+    2.64deg,
+    rgba(0, 0, 0, 0.6) 12.92%,
+    rgba(0, 0, 0, 0) 19.48%
+  );
   z-index: 3;
   display: flex;
   justify-content: flex-end;
@@ -244,7 +245,6 @@
   height: 20%;
 }
 
-
 @media only screen and (max-width: 600px) {
   .first-impressions-title {
     font-size: 30px;
@@ -269,14 +269,13 @@
     z-index: 0;
   }
 
-  .first-impressions-cards-right{
+  .first-impressions-cards-right {
     width: 100vw;
     min-height: 5vh;
     flex-direction: row;
     flex-wrap: wrap;
     min-width: 0vw;
     max-width: 100vw;
-
   }
 
   .first-impressions-card-right {

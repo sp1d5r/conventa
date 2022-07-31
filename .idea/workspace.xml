@@ -14,6 +14,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="29q2mfOUI0tU4n71pFYfscPr7iB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -25,6 +28,7 @@
     "prettierjs.PrettierConfiguration.Package": "/Users/elijahahmad/e-learning-template/node_modules/prettier"
   }
 }]]></component>
+
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -38,7 +42,7 @@
       <recent name="$PROJECT_DIR$/src/components/auth/login" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.renders a navbar link">
+  <component name="RunManager" selected="npm.prettier-write">
     <configuration name="renders a navbar link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -55,11 +59,11 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="lint-staged" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="lint-staged" />
+        <script value="lint" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -75,21 +79,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="prepare" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="prepare" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="prettier-write" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="prettier-write" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prettier" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prettier" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -107,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.prettier-write" />
+        <item itemvalue="npm.prettier" />
+        <item itemvalue="npm.lint" />
         <item itemvalue="Jest.renders a navbar link" />
         <item itemvalue="npm.test" />
-        <item itemvalue="npm.prepare" />
-        <item itemvalue="npm.lint-staged" />
-        <item itemvalue="npm.prettier-write" />
       </list>
     </recent_temporary>
   </component>
@@ -127,6 +131,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -140,6 +145,7 @@
       <workItem from="1653826457826" duration="11551000" />
       <workItem from="1653936221555" duration="9909000" />
       <workItem from="1655060924548" duration="6429000" />
+      <workItem from="1658859546424" duration="704000" />
     </task>
     <servers />
   </component>
@@ -183,5 +189,6 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1654440502152" />
+
   </component>
 </project>

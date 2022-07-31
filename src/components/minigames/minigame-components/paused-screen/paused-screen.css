@@ -13,7 +13,7 @@
   padding: 5%;
 }
 
-.paused-title{
+.paused-title {
   width: 100%;
   font-weight: 700;
   font-size: 50px;
@@ -22,11 +22,10 @@
   color: #000000;
 }
 
-.paused-info{
+.paused-info {
   width: 80%;
   text-align: center;
 }
-
 
 .paused-line {
   width: 100%;

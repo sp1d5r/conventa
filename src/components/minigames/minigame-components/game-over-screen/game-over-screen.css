@@ -13,7 +13,7 @@
   padding: 5%;
 }
 
-.game-over-title{
+.game-over-title {
   width: 100%;
   font-weight: 700;
   font-size: 50px;
@@ -22,11 +22,10 @@
   color: #000000;
 }
 
-.game-over-info{
+.game-over-info {
   width: 80%;
   text-align: center;
 }
-
 
 .game-over-line {
   width: 100%;
