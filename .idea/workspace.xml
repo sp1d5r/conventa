@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/wave-effect.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Illustrations/waves-frames/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/our-background.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/our-strengths.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" afterDir="false" />

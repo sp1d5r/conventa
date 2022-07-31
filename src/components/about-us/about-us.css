@@ -3,6 +3,23 @@
   width: 100vw;
   height: 100vh;
   z-index: 1;
+  overflow: hidden;
+}
+
+.background-sand {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: #b6cc91;
+  mask: url("../../assets/sand-mask.png");
+  mask-size: cover;
+  transform: rotate(-20deg) scale(2);
+  overflow: hidden;
+}
+
+.about-us-title-div > p {
+  margin: 0;
 }
 
 .about-us-gif {
@@ -78,6 +95,21 @@
   100% {
     opacity: 1;
   }
+}
+
+.our-strength-grid {
+  /* This is the thing with the left border  */
+  width: 95%;
+  padding-left: 5%;
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, 30%);
+  grid-template-rows: repeat(auto-fit, 240px);
+  row-gap: 20px;
+  column-gap: 50px;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+  align-items: center;
+  margin: auto;
 }
 
 @keyframes animate-background {
