@@ -68,6 +68,11 @@
   grid-auto-rows: minmax(100px, auto);
   justify-items: center;
   align-items: center;
+  -webkit-transition: height 5s ease;
+  -moz-transition: height 5s ease;
+  -o-transition: height 5s ease;
+  -ms-transition: height 5s ease;
+  transition: height 5s ease;
 }
 
 @media screen and (max-width: 600px) {

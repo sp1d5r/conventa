@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/core-values.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/the-roadmap.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/landing/the-team.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-profile-card/course-profile-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-profile-card/course-profile-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/our-background.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/landing/our-background.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/our-strengths.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/landing/our-strengths.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +30,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "prettierjs.PrettierConfiguration.Package": "/Users/elijahahmad/e-learning-template/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -158,35 +166,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1655145122324">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1655145122324" />
-    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1654163102518">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1654163102518" />
-    <state width="1419" height="268" key="GridCell.Tab.0.bottom" timestamp="1654102272447">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
-    <state width="1419" height="268" key="GridCell.Tab.0.center" timestamp="1654102272446">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1654102272446" />
-    <state width="1419" height="268" key="GridCell.Tab.0.left" timestamp="1654102272445">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1654102272445" />
-    <state width="1419" height="268" key="GridCell.Tab.0.right" timestamp="1654102272447">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1654440502152">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1654440502152" />
   </component>
 </project>
