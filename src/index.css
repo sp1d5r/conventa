@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -116,5 +124,54 @@ Use annimation like so
   }
   to {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes height {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes height {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes height {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes height {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes height {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 2000px;
   }
 }

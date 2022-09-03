@@ -14,14 +14,14 @@ function NavBar() {
       {window.innerWidth > 600 ? (
         <div className={"navbar-items"}>
           <div className={"navbar-links"}>
-            <Link to="/" className={"navbar-link"}>
+            {/*<Link to="/" className={"navbar-link"}>
               Documentation
-            </Link>
+            </Link>*/}
             <Link to="/academy" className={"navbar-link"}>
               Academy
             </Link>
-            <Link to="/" className={"navbar-link"}>
-              Contact Us
+            <Link to="/news-room/" className={"navbar-link"}>
+              News Room
             </Link>
             <Link to="/about-us/" className={"navbar-link"}>
               About Us
@@ -48,20 +48,51 @@ function NavBar() {
       {opened ? (
         <div id="myNav" className="overlay">
           <div className="overlay-content">
-            <Link className={"overlay-link"} to="/">
+            {/*<Link className={"overlay-link"} to="/">
               Documentation
+            </Link>*/}
+            <Link
+              to="/academy"
+              className={"overlay-link"}
+              onClick={() => updateOpened(!opened)}
+            >
+              <p>Academy</p>
+              <img
+                className={"overlay-image"}
+                src={require("../../assets/Icons/books.png")}
+                alt={"stack"}
+              />
             </Link>
-            <Link to="/academy" className={"overlay-link"}>
-              Academy
+            <Link
+              className={"overlay-link"}
+              to="/news-room/"
+              onClick={() => updateOpened(!opened)}
+            >
+              <p>News Room</p>
+              <img
+                className={"overlay-image"}
+                src={require("../../assets/Icons/news-room.png")}
+                alt={"stack"}
+              />
             </Link>
-            <Link className={"overlay-link"} to="/">
-              Contact Us
-            </Link>
-            <Link className={"overlay-link"} to="/">
-              About Us
+            <Link
+              className={"overlay-link"}
+              to="/about-us/"
+              onClick={() => updateOpened(!opened)}
+            >
+              <p>About Us</p>
+              <img
+                className={"overlay-image"}
+                src={require("../../assets/Icons/Info.png")}
+                alt={"stack"}
+              />
             </Link>
 
-            <Link className={"navbar-button-mobile"} to="/auth">
+            <Link
+              className={"navbar-button-mobile"}
+              to="/auth"
+              onClick={() => updateOpened(!opened)}
+            >
               <Button text={"Login"} />
             </Link>
           </div>

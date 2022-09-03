@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/books.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/news-room.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-profile-card/course-profile-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-profile-card/course-profile-card.css" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-headline/news-headline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-headline/news-headline.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-stories/news-card-small.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-stories/news-card-small.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-stories/news-stories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-stories/news-stories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +34,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -36,11 +47,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/Icons" />
       <recent name="$PROJECT_DIR$/src/assets/Illustrations/waves-frames" />
       <recent name="$PROJECT_DIR$/src/assets/Illustrations" />
       <recent name="$PROJECT_DIR$/src/components/minigames/first-impressions" />
       <recent name="$PROJECT_DIR$/src/components/lesson" />
-      <recent name="$PROJECT_DIR$/src/components/auth/login" />
     </key>
   </component>
   <component name="RunManager" selected="npm.prettier-write">
@@ -147,8 +158,12 @@
       <workItem from="1653936221555" duration="9909000" />
       <workItem from="1655060924548" duration="6429000" />
       <workItem from="1658859546424" duration="704000" />
+      <workItem from="1661081980492" duration="10486000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -160,35 +175,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1655145122324">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="446" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1655145122324" />
-    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1654163102518">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="460" y="295" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1654163102518" />
-    <state width="1419" height="268" key="GridCell.Tab.0.bottom" timestamp="1654102272447">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
-    <state width="1419" height="268" key="GridCell.Tab.0.center" timestamp="1654102272446">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1654102272446" />
-    <state width="1419" height="268" key="GridCell.Tab.0.left" timestamp="1654102272445">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1654102272445" />
-    <state width="1419" height="268" key="GridCell.Tab.0.right" timestamp="1654102272447">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1419" height="268" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1654102272447" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1654440502152">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1654440502152" />
   </component>
 </project>

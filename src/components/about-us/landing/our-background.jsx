@@ -7,8 +7,8 @@ function OurBackground() {
       <div className={""}>
         <div className={"why-top-part"}>
           <span>
-            The <span className={"why-span-green-text"}>history </span> of body
-            language
+            the <span className={"why-span-green-text"}>history </span> of
+            convento
           </span>
         </div>
         <div className={"why-main-part"}>

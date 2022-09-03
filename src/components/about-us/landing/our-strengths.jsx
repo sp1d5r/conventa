@@ -1,4 +1,5 @@
 import React from "react";
+import "../about-us.css";
 
 function OurStrength() {
   return (
@@ -6,22 +7,21 @@ function OurStrength() {
       <div className={""}>
         <div className={"why-top-part"}>
           <span>
-            Our <span className={"why-span-green-text"}>Strengths </span> of
-            body language
+            our <span className={"why-span-green-text"}>strengths </span>
           </span>
         </div>
         <div className={"why-main-part"}>
           {/* Here we want a 3x3 grid and in the center we need it to say Convento*/}
           <div className={"our-strength-grid"}>
-            <div>Text 1</div>
-            <div>Text 2</div>
-            <div>Text 3</div>
-            <div>Text 4</div>
-            <div>Convento</div>
-            <div>Text 6</div>
-            <div>Text 7</div>
-            <div>Text 8</div>
-            <div>Text 9</div>
+            <div className={"div-box"}>Software Engineers</div>
+            <div className={"div-box"}>Empaths</div>
+            <div className={"div-box"}>High Functioners</div>
+            <div className={"div-box"}>Crazy</div>
+            <div className={"div-box-main"}>Convento</div>
+            <div className={"div-box"}>Stoners</div>
+            <div className={"div-box"}>Hippies</div>
+            <div className={"div-box"}>Lovers</div>
+            <div className={"div-box"}>Fighters</div>
           </div>
         </div>
       </div>
