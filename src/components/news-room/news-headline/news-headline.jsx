@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import "../news-room.css";
@@ -13,6 +13,8 @@ TODO list:
  */
 
 function NewsHeadline() {
+  const [content, setContent] = useState({});
+
   async function seomthing() {
     try {
       return await axios.get(
@@ -27,7 +29,7 @@ function NewsHeadline() {
 
   useEffect(() => {
     seomthing().then((result) => {
-      console.log(result.data.items[0]);
+      setContent(result.data.items[0]);
     });
   }, []);
 
@@ -36,9 +38,13 @@ function NewsHeadline() {
       <div className={"news-headline-container"}>
         <p className={"news-headline-todays-headline-text"}>TODAYS HEADLINE</p>
         <a href={"/"} className={"news-headline-todays-story"}>
-          <div className={"news-headline-image"}></div>
+          <img
+            className={"news-headline-image"}
+            src={content.thumbnail}
+            alt={"This is the thumbnail for the first article."}
+          />
           <div className={"news-headline-content"}>
-            <p className={"news-headline-title"}>title</p>
+            <p className={"news-headline-title"}>{content.title}</p>
             <p className={"news-headline-description"}>description</p>
             <div className={"news-headline-div-options"}>
               <button className={"share-button"}></button>

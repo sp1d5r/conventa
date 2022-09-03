@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NewsCardSmall from "./news-card-small";
 import "../news-room.css";
 import NewsPagination from "./news-pagination";
+import axios from "axios";
 
 /*
 TODO list:
@@ -23,6 +24,25 @@ const news_stories = [
 
 function NewsStories() {
   const [_news_stories, setNewsStories] = useState(news_stories);
+
+  async function seomthing() {
+    try {
+      return await axios.get(
+        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@almazahmad03"
+      );
+    } catch (error) {
+      console.log("error" + error);
+    } finally {
+      console.log("Retrieved posts");
+    }
+  }
+
+  useEffect(() => {
+    seomthing().then((result) => {
+      console.log(result.data.items[0]);
+      setNewsStories(result.data.items);
+    });
+  }, []);
 
   const get_total_pages = () => {
     return 3;

@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/books.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/news-room.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-headline/news-headline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-headline/news-headline.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-stories/news-card-small.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-stories/news-card-small.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-stories/news-stories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-stories/news-stories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +47,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/Icons" />
       <recent name="$PROJECT_DIR$/src/assets/Illustrations/waves-frames" />
       <recent name="$PROJECT_DIR$/src/assets/Illustrations" />
       <recent name="$PROJECT_DIR$/src/components/minigames/first-impressions" />
       <recent name="$PROJECT_DIR$/src/components/lesson" />
-      <recent name="$PROJECT_DIR$/src/components/auth/login" />
     </key>
   </component>
   <component name="RunManager" selected="npm.prettier-write">
@@ -149,7 +158,7 @@
       <workItem from="1653936221555" duration="9909000" />
       <workItem from="1655060924548" duration="6429000" />
       <workItem from="1658859546424" duration="704000" />
-      <workItem from="1661081980492" duration="7435000" />
+      <workItem from="1661081980492" duration="10486000" />
     </task>
     <servers />
   </component>

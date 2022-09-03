@@ -59,7 +59,7 @@ function NavBar() {
               <p>Academy</p>
               <img
                 className={"overlay-image"}
-                src={require("../../assets/Icons/time.png")}
+                src={require("../../assets/Icons/books.png")}
                 alt={"stack"}
               />
             </Link>
@@ -71,7 +71,7 @@ function NavBar() {
               <p>News Room</p>
               <img
                 className={"overlay-image"}
-                src={require("../../assets/Icons/time.png")}
+                src={require("../../assets/Icons/news-room.png")}
                 alt={"stack"}
               />
             </Link>
@@ -83,7 +83,7 @@ function NavBar() {
               <p>About Us</p>
               <img
                 className={"overlay-image"}
-                src={require("../../assets/Icons/time.png")}
+                src={require("../../assets/Icons/info.png")}
                 alt={"stack"}
               />
             </Link>

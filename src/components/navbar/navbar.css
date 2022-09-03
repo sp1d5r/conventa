@@ -104,11 +104,12 @@
 .overlay {
   width: 100vw;
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 0; /* Sit on top */
   left: 0;
   top: calc(8vh + 1rem);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--white);
+  animation: slideNews 1s;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.2s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -132,7 +133,7 @@
   display: flex; /* Display block instead of inline */
   justify-content: space-evenly;
   align-items: center;
-  transition: 0.5s; /* Transition effects on hover (color) */
+  transition: 0.2s; /* Transition effects on hover (color) */
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -158,4 +159,14 @@
   margin: 0;
   width: 30%;
   text-align: left;
+}
+
+@keyframes slideNews {
+  0% {
+    left: 100vw;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

@@ -19,7 +19,7 @@ function NewsHeading() {
       <div className={"news-room-stock-text"}></div>
       <div className={"news-room-heading-annimation"}>
         <p className={"news-room-heading-title after-intro-animation"}>
-          The news room
+          THE NEWS ROOM
         </p>
       </div>
 
