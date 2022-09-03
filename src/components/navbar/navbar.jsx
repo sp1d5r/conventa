@@ -20,8 +20,8 @@ function NavBar() {
             <Link to="/academy" className={"navbar-link"}>
               Academy
             </Link>
-            <Link to="/" className={"navbar-link"}>
-              Contact Us
+            <Link to="/news-room/" className={"navbar-link"}>
+              News Room
             </Link>
             <Link to="/about-us/" className={"navbar-link"}>
               About Us
@@ -54,10 +54,10 @@ function NavBar() {
             <Link to="/academy" className={"overlay-link"}>
               Academy
             </Link>
-            <Link className={"overlay-link"} to="/">
-              Contact Us
+            <Link className={"overlay-link"} to="/news-room/">
+              News Room
             </Link>
-            <Link className={"overlay-link"} to="/">
+            <Link className={"overlay-link"} to="/about-us/">
               About Us
             </Link>
 
