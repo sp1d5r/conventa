@@ -83,7 +83,7 @@ function NavBar() {
               <p>About Us</p>
               <img
                 className={"overlay-image"}
-                src={require("../../assets/Icons/info.png")}
+                src={require("../../assets/Icons/Info.png")}
                 alt={"stack"}
               />
             </Link>
