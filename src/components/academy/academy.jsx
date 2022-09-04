@@ -1,36 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./academy.css";
 import CourseCard from "./course-card/course-card";
 import MiniGameCard from "./minigame-card/minigame-card";
+import {
+  getCourses,
+  logAcademyStart,
+} from "../../cloud-infrastructure/firebase/firebase";
 
 function Academy({ loggedIn }) {
+  const [courses, setCourses] = useState([]);
+
   const courseItems = () => {
-    return [
-      {
-        imagePath: require("../../assets/courses-notational/course1.png"),
-        title: "Expressing Emotions",
-        id: "12345",
-        time: 30,
-      },
-      {
-        imagePath: require("../../assets/courses-notational/course2.png"),
-        title: "Self Control",
-        id: "123456",
-        time: 30,
-      },
-      {
-        imagePath: require("../../assets/courses-notational/course3.png"),
-        title: "Recognising Danger",
-        id: "1234567",
-        time: 30,
-      },
-      {
-        imagePath: require("../../assets/courses-notational/course4.png"),
-        title: "Manipulating People",
-        id: "12345678",
-        time: 30,
-      },
-    ];
+    getCourses().then((_courses) => {
+      setCourses(_courses);
+    });
   };
 
   const minigameItems = () => {
@@ -56,6 +39,11 @@ function Academy({ loggedIn }) {
     ];
   };
 
+  useEffect(() => {
+    courseItems();
+    logAcademyStart();
+  }, []);
+
   return (
     <div className={"academy-main"}>
       <div className={"academy-title"}>
@@ -65,13 +53,14 @@ function Academy({ loggedIn }) {
         <div className={"academy-content-section"}>
           <p className={"academy-content-title"}>courses</p>
           <div className={"academy-content-section-child"}>
-            {courseItems().map((item, index) => {
+            {courses.map((item, index) => {
               return (
                 <CourseCard
-                  imagePath={item.imagePath}
-                  title={item.title}
+                  imagePath={item.thumbnail}
+                  title={item.courseName}
                   id={item.id}
                   time={item.time}
+                  key={index}
                 />
               );
             })}

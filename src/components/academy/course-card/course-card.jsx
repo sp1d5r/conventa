@@ -1,10 +1,21 @@
 import React from "react";
 import "./course-card.css";
 import { Link } from "react-router-dom";
+import { logCourseClicked } from "../../../cloud-infrastructure/firebase/firebase";
 
 function CourseCard({ imagePath, title, time, id }) {
+  const logCourseInteraction = () => {
+    logCourseClicked(id, title);
+  };
+
   return (
-    <Link className={"academy-content-course"} to={`/course/?course_id=${id}`}>
+    <Link
+      className={"academy-content-course"}
+      to={`/course/?course_id=${id}`}
+      onClick={() => {
+        logCourseInteraction();
+      }}
+    >
       <div className={"academy-content-course-image"}>
         <img
           className={"academy-content-course-image-data"}
