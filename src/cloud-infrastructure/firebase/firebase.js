@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -16,6 +22,7 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const analytics = getAnalytics(app);
 
+/* Courses */
 export async function getCourses() {
   const courseCollection = collection(firestore, "courses");
   const courseItems = await getDocs(courseCollection);
@@ -23,6 +30,12 @@ export async function getCourses() {
     return { id: doc.id, ...doc.data() };
   });
   return courses;
+}
+
+export async function getCourse(id) {
+  const courseDoc = doc(firestore, "courses", id);
+  const courseItems = await getDoc(courseDoc);
+  return courseItems.data();
 }
 
 export function logCourseClicked(id, courseName) {
