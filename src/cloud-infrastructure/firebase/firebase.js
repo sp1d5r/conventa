@@ -84,7 +84,7 @@ export async function getLesson(lesson_ref) {
   const lesson_id = lesson_ref.id;
   const lessonDoc = doc(firestore, "lessons", lesson_id);
   const lessonItems = await getDoc(lessonDoc);
-  return lessonItems.data();
+  return { id: lesson_id, ...lessonItems.data() };
 }
 
 export function logCourseClicked(id, courseName) {

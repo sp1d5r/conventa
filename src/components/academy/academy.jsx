@@ -6,6 +6,7 @@ import {
   getCourses,
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
+import Loading from "../loading/loading";
 
 function Academy({ loggedIn }) {
   const [courses, setCourses] = useState([]);
@@ -52,15 +53,7 @@ function Academy({ loggedIn }) {
         {loggedIn ? <p>Welcome Back!</p> : <p>Academy</p>}
       </div>
       {loading ? (
-        <div className={"academy-content"}>
-          <div className={"academy-loading-container"}>
-            <img
-              src={require("../../assets/Icons/loading.gif")}
-              alt={"loading your content"}
-            />
-            <p>Loading ...</p>
-          </div>
-        </div>
+        <Loading />
       ) : (
         <div className={"academy-content"}>
           <div className={"academy-content-section"}>

@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getLesson } from "../../../cloud-infrastructure/firebase/firebase";
 
 function LessonCard({ lesson_ref, course_id }) {
   const [lesson, setLesson] = useState({});
 
-  const get_lesson_information = (lesson_ref) => {
+  const get_lesson_information = useCallback(() => {
     getLesson(lesson_ref).then((item) => {
-      console.log(item);
       setLesson(item);
     });
-  };
+  }, [lesson_ref]);
 
   const _get_difficulty = () => {
     if (lesson.difficulty === 0) {
@@ -33,8 +32,8 @@ function LessonCard({ lesson_ref, course_id }) {
   };
 
   useEffect(() => {
-    get_lesson_information(lesson_ref);
-  }, [lesson_ref]);
+    get_lesson_information();
+  }, [get_lesson_information]);
 
   return (
     <Link
