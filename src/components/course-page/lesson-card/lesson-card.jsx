@@ -1,23 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getLesson } from "../../../cloud-infrastructure/firebase/firebase";
 
 function LessonCard({ lesson_id, course_id }) {
-  const get_lesson_information = () => {
-    console.log({ lesson_id });
-    return {
-      lesson_name: "Lesson 1",
-      lesson_image: require("../../../assets/Illustrations/lesson.png"),
-      lesson_time: 10,
-      difficulty: 3,
-    };
+  const [lesson, setLesson] = useState({});
+
+  const get_lesson_information = (id) => {
+    getLesson(lesson_id).then((item) => {
+      console.log(item);
+      setLesson(item);
+    });
   };
 
-  const lesson_information = get_lesson_information();
-
   const _get_difficulty = () => {
-    if (lesson_information.difficulty === 0) {
+    if (lesson.difficulty === 0) {
       return require("../../../assets/Icons/difficulty/easy.png");
-    } else if (lesson_information.difficulty === 1) {
+    } else if (lesson.difficulty === 1) {
       return require("../../../assets/Icons/difficulty/medium.png");
     } else {
       return require("../../../assets/Icons/difficulty/hard.png");
@@ -25,14 +23,18 @@ function LessonCard({ lesson_id, course_id }) {
   };
 
   const _get_difficulty_name = () => {
-    if (lesson_information.difficulty === 0) {
+    if (lesson.difficulty === 0) {
       return "easy";
-    } else if (lesson_information.difficulty === 1) {
+    } else if (lesson.difficulty === 1) {
       return "medium";
     } else {
       return "hard";
     }
   };
+
+  useEffect(() => {
+    get_lesson_information(lesson_id);
+  });
 
   return (
     <Link
@@ -42,19 +44,19 @@ function LessonCard({ lesson_id, course_id }) {
       <div className={"academy-content-minigame-image"}>
         <img
           className={"academy-content-minigame-image-data"}
-          src={lesson_information.lesson_image}
+          src={require("../../../assets/Illustrations/lesson.png")}
           alt={"minigame Notational Data 1"}
         />
       </div>
       <div className={"academy-content-minigame-title"}>
-        <p>{lesson_information.lesson_name}</p>
+        <p>{lesson.title}</p>
       </div>
       <div className={"academy-content-course-info"}>
         <img
           src={require("../../../assets/Icons/time.png")}
           alt={"This course is expected to take 30 minutes"}
         />
-        <p>{lesson_information.lesson_time} minutes</p>
+        <p>{lesson.time} minutes</p>
       </div>
       <div className={"academy-content-minigame-info"}>
         <img

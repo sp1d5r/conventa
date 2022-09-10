@@ -38,6 +38,13 @@ export async function getCourse(id) {
   return courseItems.data();
 }
 
+/* Lessons */
+export async function getLesson(id) {
+  const lessonDoc = doc(firestore, "lessons", id);
+  const lessonItems = await getDoc(lessonDoc);
+  return lessonItems.data();
+}
+
 export function logCourseClicked(id, courseName) {
   logEvent(analytics, "select_course", {
     content_type: "course",
