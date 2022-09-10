@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getLesson } from "../../../cloud-infrastructure/firebase/firebase";
 
-function LessonCard({ lesson_id, course_id }) {
+function LessonCard({ lesson_ref, course_id }) {
   const [lesson, setLesson] = useState({});
 
-  const get_lesson_information = (id) => {
-    getLesson(lesson_id).then((item) => {
+  const get_lesson_information = (lesson_ref) => {
+    getLesson(lesson_ref).then((item) => {
       console.log(item);
       setLesson(item);
     });
@@ -33,13 +33,13 @@ function LessonCard({ lesson_id, course_id }) {
   };
 
   useEffect(() => {
-    get_lesson_information(lesson_id);
-  });
+    get_lesson_information(lesson_ref);
+  }, [lesson_ref]);
 
   return (
     <Link
       className={"academy-content-minigame"}
-      to={`/lesson/?lesson_id=${lesson_id}&course_id=${course_id}`}
+      to={`/lesson/?lesson_id=${lesson.id}&course_id=${course_id}`}
     >
       <div className={"academy-content-minigame-image"}>
         <img

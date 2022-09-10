@@ -80,8 +80,9 @@ export async function getCourse(id) {
 }
 
 /* Lessons */
-export async function getLesson(id) {
-  const lessonDoc = doc(firestore, "lessons", id);
+export async function getLesson(lesson_ref) {
+  const lesson_id = lesson_ref.id;
+  const lessonDoc = doc(firestore, "lessons", lesson_id);
   const lessonItems = await getDoc(lessonDoc);
   return lessonItems.data();
 }

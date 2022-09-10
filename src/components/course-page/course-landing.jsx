@@ -23,7 +23,7 @@ function CourseLanding() {
 
   useEffect(() => {
     get_course_information(course_id);
-  });
+  }, [course_id]);
 
   return (
     <div className={"course-landing-main"}>
