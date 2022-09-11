@@ -87,6 +87,12 @@ export async function getLesson(lesson_ref) {
   return { id: lesson_id, ...lessonItems.data() };
 }
 
+export async function getLessonFromID(lesson_id) {
+  const lessonDoc = doc(firestore, "lessons", lesson_id);
+  const lessonItems = await getDoc(lessonDoc);
+  return { id: lesson_id, ...lessonItems.data() };
+}
+
 export function logCourseClicked(id, courseName) {
   logEvent(analytics, "select_course", {
     content_type: "course",
