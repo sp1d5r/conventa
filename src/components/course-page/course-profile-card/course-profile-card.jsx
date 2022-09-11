@@ -45,10 +45,7 @@ function CourseProfileCard({
   return (
     <div className={"course-card-profile-with-progress"}>
       <div className={"course-card-profile-image"}>
-        <img
-          src={require("../../../assets/courses-notational/course1.png")}
-          alt={"Course phot"}
-        />
+        <img src={course_img} alt={"Course phot"} />
       </div>
       <div className={"course-card-profile-title"}>
         <p>{course_name}</p>
@@ -57,7 +54,7 @@ function CourseProfileCard({
         <div className={"academy-content-course-info"}>
           <img
             src={require("../../../assets/Icons/time.png")}
-            alt={"This course is expected to take 30 minutes"}
+            alt={`This course is expected to take ${course_duration} minutes`}
           />
           <p>{course_duration} minutes</p>
         </div>

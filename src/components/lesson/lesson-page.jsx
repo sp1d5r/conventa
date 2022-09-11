@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Breadcrumb } from "react-bootstrap";
 import "./lesson-page.css";
 import { useSearchParams } from "react-router-dom";
 import Markdown from "markdown-to-jsx";
+import {
+  getCourse,
+  getLessonFromID,
+} from "../../cloud-infrastructure/firebase/firebase";
+import Loading from "../loading/loading";
 
 function LessonPage() {
   /* The URL looks like : http://localhost:3000/lesson/?lesson_id=gvhvgvhv&course_id=course_name
@@ -11,27 +16,19 @@ function LessonPage() {
   const searchParams = useSearchParams()[0];
   const lesson_id = searchParams.get("lesson_id");
   const course_id = searchParams.get("course_id");
+  const [lesson, setLesson] = useState(null);
+  const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const get_course_information = (course_id) => {
-    return {
-      lessons: [
-        "lesson_id_1",
-        "lesson_id_2",
-        "lesson_id_3",
-        "lesson_id_4",
-        "lesson_id_5",
-        "lesson_id_6",
-        "lesson_id_7",
-      ],
-      course_name: "Course Name",
-      course_image: require("../../assets/courses-notational/course1.png"),
-      course_image_path: "../../assets/courses-notational/course1.png",
-      difficulty: 3,
-      duration: 180,
-    };
-  };
-
-  const course_information = get_course_information(course_id);
+  useEffect(() => {
+    getCourse(course_id).then((res) => {
+      setCourse(res);
+      getLessonFromID(lesson_id).then((res) => {
+        setLesson(res);
+        setLoading(false);
+      });
+    });
+  }, [lesson_id, course_id]);
 
   const get_lesson_information = (lesson_id) => {
     return {
@@ -53,27 +50,31 @@ function LessonPage() {
 
   return (
     <div className={"course-landing-main"}>
-      <div className={"lesson-breadcrumbs"}>
-        <Breadcrumb className={"lesson-breadcrumb-bar"}>
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
-          <Breadcrumb.Item href={`/course/?course_id= ${course_id}`}>
-            {course_information.course_name}
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active>
-            {lesson_information.lesson_title}
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </div>
-      <div className={"course-content-lessons"}>
-        <div className={"lesson-landing-content-section"}>
-          <div className={"course-landing-content-section-child"}>
-            <Markdown className={"lesson-landing-body-markdown"}>
-              {lesson_information.lesson_body}
-            </Markdown>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <div className={"lesson-breadcrumbs"}>
+            <Breadcrumb className={"lesson-breadcrumb-bar"}>
+              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
+              <Breadcrumb.Item href={`/course/?course_id= ${course_id}`}>
+                {course.courseName}
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active>{lesson.title}</Breadcrumb.Item>
+            </Breadcrumb>
           </div>
-        </div>
-      </div>
+          <div className={"course-content-lessons"}>
+            <div className={"lesson-landing-content-section"}>
+              <div className={"course-landing-content-section-child"}>
+                <Markdown className={"lesson-landing-body-markdown"}>
+                  {lesson_information.lesson_body}
+                </Markdown>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

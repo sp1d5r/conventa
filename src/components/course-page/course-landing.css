@@ -58,7 +58,6 @@
 .course-content-card-right {
   min-width: 300px;
   width: 35%;
-  height: 90vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -6,13 +6,16 @@ import {
   getCourses,
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
+import Loading from "../loading/loading";
 
 function Academy({ loggedIn }) {
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const courseItems = () => {
     getCourses().then((_courses) => {
       setCourses(_courses);
+      setLoading(false);
     });
   };
 
@@ -49,41 +52,45 @@ function Academy({ loggedIn }) {
       <div className={"academy-title"}>
         {loggedIn ? <p>Welcome Back!</p> : <p>Academy</p>}
       </div>
-      <div className={"academy-content"}>
-        <div className={"academy-content-section"}>
-          <p className={"academy-content-title"}>courses</p>
-          <div className={"academy-content-section-child"}>
-            {courses.map((item, index) => {
-              return (
-                <CourseCard
-                  imagePath={item.thumbnail}
-                  title={item.courseName}
-                  id={item.id}
-                  time={item.time}
-                  key={index}
-                />
-              );
-            })}
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className={"academy-content"}>
+          <div className={"academy-content-section"}>
+            <p className={"academy-content-title"}>courses</p>
+            <div className={"academy-content-section-child"}>
+              {courses.map((item, index) => {
+                return (
+                  <CourseCard
+                    imagePath={item.thumbnail}
+                    title={item.courseName}
+                    id={item.id}
+                    time={item.time}
+                    key={index}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <br />
+          <br />
+          <div className={"academy-content-section"}>
+            <p className={"academy-content-title"}>minigames</p>
+            <div className={"academy-content-section-child-minigame"}>
+              {minigameItems().map((item, index) => {
+                return (
+                  <MiniGameCard
+                    imagePath={item.imagePath}
+                    title={item.title}
+                    time={item.time}
+                    difficulty={item.difficulty}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
-        <br />
-        <br />
-        <div className={"academy-content-section"}>
-          <p className={"academy-content-title"}>minigames</p>
-          <div className={"academy-content-section-child-minigame"}>
-            {minigameItems().map((item, index) => {
-              return (
-                <MiniGameCard
-                  imagePath={item.imagePath}
-                  title={item.title}
-                  time={item.time}
-                  difficulty={item.difficulty}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

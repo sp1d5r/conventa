@@ -30,6 +30,15 @@
   align-items: center;
 }
 
+.academy-loading-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .academy-content-section {
   /* This is the section i.e. courses*/
   width: 100%;
