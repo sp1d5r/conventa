@@ -8,6 +8,7 @@ import {
   getLessonFromID,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
+import axios from "axios";
 
 function LessonPage() {
   /* The URL looks like : http://localhost:3000/lesson/?lesson_id=gvhvgvhv&course_id=course_name
@@ -18,6 +19,7 @@ function LessonPage() {
   const course_id = searchParams.get("course_id");
   const [lesson, setLesson] = useState(null);
   const [course, setCourse] = useState(null);
+  const [content, setContent] = useState("Loading...");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,28 +27,16 @@ function LessonPage() {
       setCourse(res);
       getLessonFromID(lesson_id).then((res) => {
         setLesson(res);
+        console.log(res.content);
+        axios.get(res.content).then(function (response) {
+          // handle success
+          setContent(response.data);
+        });
+
         setLoading(false);
       });
     });
   }, [lesson_id, course_id]);
-
-  const get_lesson_information = (lesson_id) => {
-    return {
-      lesson_title: "Extrapolating the Big Idea!",
-      lesson_id: lesson_id,
-      lesson_body:
-        "# Extrapolating the Big Idea \n \n  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do\n" +
-        "                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\n" +
-        "                enim ad minim veniam, quis nostrud exercitation ullamco laboris\n" +
-        "                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n" +
-        "                in reprehenderit in voluptate velit esse cillum dolore eu fugiat\n" +
-        "                nulla pariatur. Excepteur sint occaecat cupidatat non proident,\n" +
-        "                sunt in culpa qui officia deserunt",
-      difficulty: 3,
-    };
-  };
-
-  const lesson_information = get_lesson_information(lesson_id);
 
   return (
     <div className={"course-landing-main"}>
@@ -58,7 +48,7 @@ function LessonPage() {
             <Breadcrumb className={"lesson-breadcrumb-bar"}>
               <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
               <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
-              <Breadcrumb.Item href={`/course/?course_id= ${course_id}`}>
+              <Breadcrumb.Item href={`/course/?course_id=${course_id}`}>
                 {course.courseName}
               </Breadcrumb.Item>
               <Breadcrumb.Item active>{lesson.title}</Breadcrumb.Item>
@@ -66,9 +56,9 @@ function LessonPage() {
           </div>
           <div className={"course-content-lessons"}>
             <div className={"lesson-landing-content-section"}>
-              <div className={"course-landing-content-section-child"}>
+              <div className={"lesson-landing-content-section"}>
                 <Markdown className={"lesson-landing-body-markdown"}>
-                  {lesson_information.lesson_body}
+                  {content}
                 </Markdown>
               </div>
             </div>
