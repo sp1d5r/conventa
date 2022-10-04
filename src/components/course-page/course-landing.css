@@ -8,17 +8,20 @@
 
 .course-landing-title {
   min-height: 5vh;
-  width: 90%;
-  padding: 2%;
+  width: 70%;
+  padding-bottom: 2%;
   padding-left: 5%;
   padding-right: 5%;
   text-align: left;
   font-weight: 700;
   font-size: 50px;
-  color: var(--black);
+  color: var(--white);
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 .course-content-lessons {
+  outline: solid 3px #000;
   min-height: 100vh;
   width: 100%;
   background-color: var(--white);
@@ -30,9 +33,13 @@
   justify-content: center;
 }
 
+.course-landing-information {
+  display: flex;
+}
+
 .course-landing-content-section {
   /* This is the section i.e. courses*/
-  width: 65%;
+  width: 85%;
 }
 
 .course-landing-content-title {
@@ -44,8 +51,6 @@
 .course-landing-content-section-child {
   /* This is the thing with the left border  */
   min-width: 350px;
-  padding-right: 5%;
-  border-right: 3px solid var(--light-grey);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-template-rows: repeat(auto-fit, 360px);
@@ -63,6 +68,32 @@
   justify-content: center;
 }
 
+.course-breadcrumbs {
+  min-height: 5vh;
+  width: 90%;
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.course-icon-size {
+  height: 30px;
+}
+
+.course-landing-time,
+.course-landing-difficulty {
+  display: flex;
+  width: 15%;
+  align-items: center;
+  height: 100px;
+  justify-content: space-evenly;
+}
+
+.course-landing-time > p,
+.course-landing-difficulty > p {
+  margin: 0px;
+}
+
 @media screen and (max-width: 600px) {
   .course-landing-content-section-child {
     max-width: 300px;
@@ -76,5 +107,18 @@
 
   .course-landing-content-section {
     margin-top: 20%;
+  }
+
+  .course-landing-information {
+    flex-wrap: wrap;
+  }
+
+  .course-landing-title {
+    width: 100%;
+  }
+
+  .course-landing-time,
+  .course-landing-difficulty {
+    width: 40%;
   }
 }
