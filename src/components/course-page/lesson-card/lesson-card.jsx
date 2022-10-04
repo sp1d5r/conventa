@@ -43,7 +43,7 @@ function LessonCard({ lesson_ref, course_id }) {
       <div className={"academy-content-minigame-image"}>
         <img
           className={"academy-content-minigame-image-data"}
-          src={require("../../../assets/Illustrations/lesson.png")}
+          src={lesson.thumbnail}
           alt={"minigame Notational Data 1"}
         />
       </div>
