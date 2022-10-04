@@ -14,7 +14,10 @@ function CourseLanding() {
   */
   const search_params = useSearchParams()[0];
   const course_id = search_params.get("course_id");
-  const [course_information, set_course_information] = useState({});
+  const [course_information, set_course_information] = useState({
+    courseName: "Loading...",
+    time: "time",
+  });
   const [loading, setLoad] = useState(true);
 
   const get_course_information = (course_id) => {
@@ -43,8 +46,10 @@ function CourseLanding() {
       return "  Easy";
     } else if (course_information.difficulty === 1) {
       return "  Medium";
-    } else {
+    } else if (course_information.difficulty > 1) {
       return "  Hard";
+    } else {
+      return "difficulty ";
     }
   };
 
@@ -69,7 +74,7 @@ function CourseLanding() {
             src={require("../../assets/Icons/time.png")}
             alt={`This course is expected to take 20 minutes`}
           />
-          <p>20 Mins</p>
+          <p>{course_information.time} (mins)</p>
         </div>
         <div className={"course-landing-difficulty"}>
           <img
