@@ -1,3 +1,22 @@
+const newShade = (hexColor, magnitude) => {
+  hexColor = hexColor.replace(`#`, ``);
+  if (hexColor.length === 6) {
+    const decimalColor = parseInt(hexColor, 16);
+    let r = (decimalColor >> 16) + magnitude;
+    r > 255 && (r = 255);
+    r < 0 && (r = 0);
+    let g = (decimalColor & 0x0000ff) + magnitude;
+    g > 255 && (g = 255);
+    g < 0 && (g = 0);
+    let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
+    b > 255 && (b = 255);
+    b < 0 && (b = 0);
+    return `#${(g | (b << 8) | (r << 16)).toString(16)}`;
+  } else {
+    return hexColor;
+  }
+};
+
 function change_color(color) {
   let navbar;
   let footer;
@@ -16,6 +35,7 @@ function change_color(color) {
     footer.style.backgroundColor = color;
   }
   root.style.setProperty("--green", color);
+  root.style.setProperty("--light-green", newShade(color, 20));
   root.style.setProperty("--green-dark", color);
 }
 
@@ -28,8 +48,20 @@ function check_nav() {
     change_color("#E5B7FF");
   } else if (window.location.href.includes("news-room")) {
     change_color("#FFFFFF");
+  } else if (
+    window.location.href.includes("/course/?course_id=l2RN1nSgqJEHjxxX8d4v")
+  ) {
+    change_color("#e3efff");
+  } else if (
+    window.location.href.includes("course/?course_id=YIOv1TJiIjgEQf0bFofK")
+  ) {
+    change_color("#FFE3F7");
+  } else if (
+    window.location.href.includes("course/?course_id=9VBDATVU0WWpoxwwTd6Z")
+  ) {
+    change_color("#ffe3e3");
   } else {
-    change_color("#e4ffb7");
+    change_color("#e3ffea");
   }
 }
 
