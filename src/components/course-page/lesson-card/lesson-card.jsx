@@ -13,11 +13,11 @@ function LessonCard({ lesson_ref, course_id }) {
 
   const _get_difficulty = () => {
     if (lesson.difficulty === 0) {
-      return require("../../../assets/Icons/difficulty/easy.png");
+      return require("../../../assets/Icons/difficulty/easy.svg").default;
     } else if (lesson.difficulty === 1) {
-      return require("../../../assets/Icons/difficulty/medium.png");
+      return require("../../../assets/Icons/difficulty/medium.svg").default;
     } else {
-      return require("../../../assets/Icons/difficulty/hard.png");
+      return require("../../../assets/Icons/difficulty/hard.svg").default;
     }
   };
 
