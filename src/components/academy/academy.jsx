@@ -7,6 +7,7 @@ import {
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
+import { Breadcrumb } from "react-bootstrap";
 
 function Academy({ loggedIn }) {
   const [courses, setCourses] = useState([]);
@@ -49,6 +50,14 @@ function Academy({ loggedIn }) {
 
   return (
     <div className={"academy-main"}>
+      <div className={"course-breadcrumbs"}>
+        <Breadcrumb className={"lesson-breadcrumb-bar"}>
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item active={true} href="/academy/">
+            Academy
+          </Breadcrumb.Item>
+        </Breadcrumb>
+      </div>
       <div className={"academy-title"}>
         {loggedIn ? <p>Welcome Back!</p> : <p>Academy</p>}
       </div>
