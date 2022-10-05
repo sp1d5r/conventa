@@ -9,13 +9,15 @@
 .academy-title {
   min-height: 5vh;
   width: 90%;
-  padding: 2%;
+  padding-bottom: 2%;
   padding-left: 5%;
   padding-right: 5%;
   text-align: left;
   font-weight: 700;
   font-size: 50px;
-  color: var(--black);
+  color: var(--white);
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 .academy-content {
@@ -28,6 +30,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  outline: solid 3px #000000;
 }
 
 .academy-loading-container {

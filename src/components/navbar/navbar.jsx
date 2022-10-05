@@ -1,17 +1,18 @@
 import "./navbar.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../button/button";
 import { Link } from "react-router-dom";
 
 function NavBar() {
   const [opened, updateOpened] = useState(false);
+  const size = useWindowSize();
 
   return (
     <div className={"navbar"} id={"navbar"}>
       <Link className={"brand"} to={"/"}>
         <p>convento</p>
       </Link>
-      {window.innerWidth > 600 ? (
+      {size.width > 700 ? (
         <div className={"navbar-items"}>
           <div className={"navbar-links"}>
             {/*<Link to="/" className={"navbar-link"}>
@@ -33,16 +34,20 @@ function NavBar() {
         </div>
       ) : (
         <div className={"navbar-items"}>
-          <button
-            className={"image-button"}
-            onClick={() => updateOpened(!opened)}
-          >
-            <img
-              className={"nav-image"}
-              src={require("../../assets/Stack.png")}
-              alt={"stack"}
-            />
-          </button>
+          {opened ? (
+            <></>
+          ) : (
+            <button
+              className={"image-button"}
+              onClick={() => updateOpened(!opened)}
+            >
+              <img
+                className={""}
+                src={require("../../assets/Stack.png")}
+                alt={"stack"}
+              />
+            </button>
+          )}
         </div>
       )}
       {opened ? (
@@ -51,6 +56,17 @@ function NavBar() {
             {/*<Link className={"overlay-link"} to="/">
               Documentation
             </Link>*/}
+            <button
+              className={"image-button"}
+              onClick={() => updateOpened(!opened)}
+            >
+              <img
+                className={"nav-image"}
+                style={{ height: "30px" }}
+                src={require("../../assets/Icons/slide-up.png")}
+                alt={"close"}
+              />
+            </button>
             <Link
               to="/academy"
               className={"overlay-link"}
@@ -102,6 +118,33 @@ function NavBar() {
       )}
     </div>
   );
+}
+
+// Hook
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
 }
 
 export default NavBar;

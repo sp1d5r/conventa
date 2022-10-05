@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/slide-up.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+>>>>>>> aa1ad7269124ed5997b849274e0f0114f25d89c6
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +45,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/assets/Icons" />
+      <recent name="$PROJECT_DIR$/src/assets/courses-notational" />
+      <recent name="$PROJECT_DIR$/src/assets/Icons/difficulty" />
       <recent name="$PROJECT_DIR$/src/components/loading" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/assets/Illustrations/waves-frames" />
-      <recent name="$PROJECT_DIR$/src/assets/Illustrations" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders a navbar link">
