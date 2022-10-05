@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 function MiniGameCard({ imagePath, title, time, difficulty }) {
   const _get_difficulty = () => {
     if (difficulty === 0) {
-      return require("../../../assets/Icons/difficulty/easy.png");
+      return require("../../../assets/Icons/difficulty/easy.svg").default;
     } else if (difficulty === 1) {
-      return require("../../../assets/Icons/difficulty/medium.png");
+      return require("../../../assets/Icons/difficulty/medium.svg").default;
     } else {
-      return require("../../../assets/Icons/difficulty/hard.png");
+      return require("../../../assets/Icons/difficulty/hard.svg").default;
     }
   };
 
