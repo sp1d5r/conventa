@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/slide-up.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/navbar-color.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/navbar-color.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/background-rectangle.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/background-rectangle.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/green_white_help_rect.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/green_white_help_rect.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +40,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets/Icons/difficulty" />
       <recent name="$PROJECT_DIR$/src/assets/Icons" />
+      <recent name="$PROJECT_DIR$/src/assets/courses-notational" />
+      <recent name="$PROJECT_DIR$/src/assets/Icons/difficulty" />
       <recent name="$PROJECT_DIR$/src/components/loading" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/assets/Illustrations/waves-frames" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders a navbar link">

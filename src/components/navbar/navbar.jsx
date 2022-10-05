@@ -33,16 +33,20 @@ function NavBar() {
         </div>
       ) : (
         <div className={"navbar-items"}>
-          <button
-            className={"image-button"}
-            onClick={() => updateOpened(!opened)}
-          >
-            <img
-              className={"nav-image"}
-              src={require("../../assets/Stack.png")}
-              alt={"stack"}
-            />
-          </button>
+          {opened ? (
+            <></>
+          ) : (
+            <button
+              className={"image-button"}
+              onClick={() => updateOpened(!opened)}
+            >
+              <img
+                className={""}
+                src={require("../../assets/Stack.png")}
+                alt={"stack"}
+              />
+            </button>
+          )}
         </div>
       )}
       {opened ? (
@@ -51,6 +55,17 @@ function NavBar() {
             {/*<Link className={"overlay-link"} to="/">
               Documentation
             </Link>*/}
+            <button
+              className={"image-button"}
+              onClick={() => updateOpened(!opened)}
+            >
+              <img
+                className={"nav-image"}
+                style={{ height: "30px" }}
+                src={require("../../assets/Icons/slide-up.png")}
+                alt={"close"}
+              />
+            </button>
             <Link
               to="/academy"
               className={"overlay-link"}
