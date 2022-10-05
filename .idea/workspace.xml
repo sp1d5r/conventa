@@ -5,12 +5,10 @@
       <change afterPath="$PROJECT_DIR$/src/assets/Icons/Close.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/assets/Icons/slide-up.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
-=======
+
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
->>>>>>> aa1ad7269124ed5997b849274e0f0114f25d89c6
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
