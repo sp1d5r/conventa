@@ -36,7 +36,7 @@ function change_color(color) {
   }
   root.style.setProperty("--green", color);
   root.style.setProperty("--light-green", newShade(color, 20));
-  root.style.setProperty("--green-dark", color);
+  root.style.setProperty("--green-dark", newShade(color, -20));
 }
 
 function check_nav() {
