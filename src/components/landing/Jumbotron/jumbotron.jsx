@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Windows from "../../../assets/Icons/Windows XP.png";
 import Apple from "../../../assets/Icons/Apple Logo.png";
 import Google from "../../../assets/Icons/Google.png";
+import { Link } from "react-router-dom";
 
 function Jumbotron() {
   const [mouse, setMouse] = useState(false);
@@ -19,7 +20,7 @@ function Jumbotron() {
           Trusted by experts in the field, backed by research conducted by the
           FBI and proven to work in the real world.
         </p>
-        <button
+        <Link
           className={"jumbo-get-started"}
           onMouseEnter={() => {
             setMouse(true);
@@ -27,9 +28,10 @@ function Jumbotron() {
           onMouseLeave={() => {
             setMouse(false);
           }}
+          to={"/academy"}
         >
           Get Started Now!
-        </button>
+        </Link>
       </div>
       <div className={"jumbo-bottom"}>
         <div className={"jumbo-small-wrapper"}>
