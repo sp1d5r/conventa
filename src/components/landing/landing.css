@@ -1,0 +1,17 @@
+.what-are-you-waiting-for {
+  width: 100%;
+  min-height: 30px;
+  height: 40vh;
+  background-color: var(--white);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  color: var(--black);
+}
+
+.what-are-you-waiting-for > p {
+  font-weight: 700;
+  font-size: 40px;
+}

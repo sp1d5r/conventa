@@ -33,17 +33,3 @@
   font-size: calc(10px + 2vmin);
   color: var(--white);
 }
-
-.what-are-you-waiting-for {
-  width: 100%;
-  min-height: 30px;
-  height: 10%;
-  background-color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 40px;
-  padding: 5%;
-  color: var(--black);
-}
