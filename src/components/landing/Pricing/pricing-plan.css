@@ -104,4 +104,12 @@ single-benefit.pricing-main {
   .pricing-card {
     padding: 5%;
   }
+
+  .subscription-benefits {
+    min-height: 200px;
+  }
+
+  .pricing-card > .button-blue {
+    height: 50px;
+  }
 }
