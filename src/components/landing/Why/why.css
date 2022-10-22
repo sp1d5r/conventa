@@ -41,7 +41,7 @@
   height: 10%;
   font-style: normal;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 5vh;
   text-align: center;
   color: var(--black);
   width: 90%;
@@ -73,10 +73,14 @@
   min-width: 300px;
 }
 
+.why-main-right > figcaption {
+  font-size: 2vh;
+}
+
 .why-span-green-text {
   font-style: normal;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 5vh;
   /* identical to box height */
 
   text-align: center;
@@ -93,13 +97,13 @@
   border-left: 10px solid var(--green);
   width: 90%;
   margin-top: 5%;
-  font-size: 18px;
+  font-size: 2vh;
   padding: 5%;
   box-sizing: border-box;
 }
 
 .why-main-text-box > p {
-  line-height: 40px;
+  line-height: 4vh;
 }
 
 .why-img {
