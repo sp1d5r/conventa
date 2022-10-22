@@ -5,6 +5,8 @@ import Help from "./Help/help";
 import How from "./How/how";
 import EmotionalIntelligence from "./Emotional Intelligence/emotional_intelligence";
 import PricingPlan from "./Pricing/pricing-plan";
+import "./landing.css";
+import { Link } from "react-router-dom";
 
 function Landing() {
   return (
@@ -17,6 +19,9 @@ function Landing() {
       <PricingPlan />`
       <div className={"what-are-you-waiting-for"}>
         <p>What are you waiting for?</p>
+        <Link to={"/academy"} className={"jumbo-get-started"}>
+          Get Started
+        </Link>
       </div>
     </div>
   );
