@@ -27,7 +27,7 @@
   animation-name: jumbo-wrapper-annimation;
   animation-duration: 4s;
   width: 100vw;
-  height: 70vh;
+  height: min(70vh, 1000px);
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -89,7 +89,7 @@
   width: 80vw;
   font-style: normal;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 8vh;
   text-align: center;
   color: #222222;
 }
@@ -125,7 +125,7 @@
   width: 80%;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 2vh;
   line-height: 24px;
   text-align: center;
   text-decoration-line: underline;
