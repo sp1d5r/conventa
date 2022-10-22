@@ -44,7 +44,6 @@
   font-weight: 500;
   font-size: 20px;
   text-align: center;
-  text-decoration-line: underline;
   color: #363636;
 }
 
@@ -102,5 +101,9 @@
 
   .help-top-bottom {
     font-size: 15px;
+  }
+
+  .help-card {
+    min-height: 300px;
   }
 }
