@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import "./minigame-video.css";
 
 const useImage = ({ src }) => {
   const [loaded, setLoaded] = useState(false);
@@ -39,7 +40,7 @@ const MinigameVideo = ({ src, alt, updateQuestions, loopTimes, pause }) => {
 
   return (
     <video
-      className={`first-impression-image-act ${loaded}`}
+      className={`mingame-video-act ${loaded}`}
       alt={alt}
       controls
       autoPlay={"autoplay"}

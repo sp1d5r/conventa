@@ -252,6 +252,7 @@
 
   .first-impressions-game-title {
     flex-direction: column;
+    font-size: 30px;
   }
 
   .first-impressions-card-main {
@@ -279,6 +280,6 @@
   }
 
   .first-impressions-card-right {
-    margin: 20px;
+    margin: 10px;
   }
 }

@@ -1,0 +1,14 @@
+.mingame-video-act {
+  transition: 0.3s cubic-bezier(0.3, 0, 0.4, 1) opacity;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  position: absolute;
+  padding: 2%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  object-fit: contain;
+}
