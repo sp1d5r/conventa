@@ -33,7 +33,8 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
     let qs = {
       questions: [
         {
-          videoUrl: "/video/LieExample1.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample1.mp4?alt=media&token=ce406690-5023-48a0-8dd4-bda9bfaffa33",
           correctOption: 1,
           source:
             "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
@@ -42,7 +43,8 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
             "The clients hands where still which indicates she's sad",
         },
         {
-          videoUrl: "/video/LieExample2.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample2.mp4?alt=media&token=7e35e582-1e56-47d2-b581-51a56204c08f",
           correctOption: 2,
           source:
             "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
@@ -51,7 +53,8 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
             "The clients hands where still which indicates she's sad",
         },
         {
-          videoUrl: "/video/LieExample1.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample1.mp4?alt=media&token=ce406690-5023-48a0-8dd4-bda9bfaffa33",
           correctOption: 2,
           source: "Peaky Blinders - BBC - Episode 30",
           prompt: "You are getting feedback from a client about your work.",
@@ -59,7 +62,8 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
             "The clients hands where still which indicates she's sad",
         },
         {
-          videoUrl: "/video/LieExample1.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample2.mp4?alt=media&token=7e35e582-1e56-47d2-b581-51a56204c08f",
           correctOption: 1,
           source: "Peaky Blinders - BBC - Episode 312",
           prompt: "You are getting feedback from a client about your work.",
