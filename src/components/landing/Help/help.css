@@ -80,7 +80,7 @@
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  font-size: 1.5vh;
+  font-size: 15px;
   color: var(--black);
   margin-right: auto;
   margin-left: auto;
@@ -104,6 +104,10 @@
   }
 
   .help-card {
-    min-height: 300px;
+    font-size: 4vw;
+  }
+
+  .help-card-bottom {
+    font-size: 4vw;
   }
 }
