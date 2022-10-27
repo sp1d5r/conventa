@@ -33,7 +33,8 @@ function CatchALiarGame({ setGameState, difficulty }) {
     let qs = {
       questions: [
         {
-          videoUrl: "/video/LieExample1.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample1.mp4?alt=media&token=ce406690-5023-48a0-8dd4-bda9bfaffa33",
           correctOption: false,
           source:
             "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
@@ -41,7 +42,8 @@ function CatchALiarGame({ setGameState, difficulty }) {
             "The clients hands where still which indicates she's sad",
         },
         {
-          videoUrl: "/video/LieExample2.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample2.mp4?alt=media&token=7e35e582-1e56-47d2-b581-51a56204c08f",
           correctOption: true,
           source:
             "Ian and his Ex-Girlfriend Play 2 Truths 1 Lie - Youtube - Smosh Pit",
@@ -49,14 +51,16 @@ function CatchALiarGame({ setGameState, difficulty }) {
             "The clients hands where still which indicates she's sad",
         },
         {
-          videoUrl: "/video/LieExample1.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample1.mp4?alt=media&token=ce406690-5023-48a0-8dd4-bda9bfaffa33",
           correctOption: false,
           source: "Peaky Blinders - BBC - Episode 30",
           correctPrompt:
             "The clients hands where still which indicates she's sad",
         },
         {
-          videoUrl: "/video/LieExample1.mp4",
+          videoUrl:
+            "https://firebasestorage.googleapis.com/v0/b/convento-453e6.appspot.com/o/deception-detection%2FLieExample2.mp4?alt=media&token=7e35e582-1e56-47d2-b581-51a56204c08f",
           correctOption: true,
           source: "Peaky Blinders - BBC - Episode 312",
           correctPrompt:
