@@ -21,6 +21,11 @@
   justify-content: flex-end;
   align-items: flex-end;
   color: white;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 11.2%,
+    rgba(0, 0, 0, 0.5) 90.9%
+  );
 }
 
 .client-emotions-prompt {
