@@ -1,10 +1,12 @@
 import { initializeApp } from "firebase/app";
 import {
-  getFirestore,
   collection,
-  getDocs,
   doc,
   getDoc,
+  getDocs,
+  getFirestore,
+  query,
+  where,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import axios from "axios";
@@ -93,6 +95,25 @@ export async function getLessonFromID(lesson_id) {
   return { id: lesson_id, ...lessonItems.data() };
 }
 
+/* Minigames*/
+
+// Deception Detection
+const NUMBER_OF_MINIGAMES = 2;
+
+export async function getDeceptionItems(number_of_games) {
+  const deceptionCollection = collection(firestore, "deception-detection");
+  let qs = [];
+  for (let i = 0; i < number_of_games; ++i) {
+    qs[i] = Math.floor(Math.random() * NUMBER_OF_MINIGAMES);
+  }
+  const deceptionQuery = query(deceptionCollection, where("index", "in", qs));
+  const deceptionDocs = await getDocs(deceptionQuery);
+  return deceptionDocs.docs.map((doc) => {
+    return { id: doc.id, ...doc.data() };
+  });
+}
+
+/* Logging */
 export function logCourseClicked(id, courseName) {
   logEvent(analytics, "select_course", {
     content_type: "course",
