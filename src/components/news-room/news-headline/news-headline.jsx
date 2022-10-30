@@ -45,13 +45,7 @@ function NewsHeadline() {
           />
           <div className={"news-headline-content"}>
             <p className={"news-headline-title"}>{content.title}</p>
-            <p className={"news-headline-description"}>description</p>
-            <div className={"news-headline-div-options"}>
-              <button className={"share-button"}></button>
-              <button className={"share-button"}></button>
-              <button className={"share-button"}></button>
-              <button className={"share-button"}></button>
-            </div>
+            <p className={"news-headline-description"}>Made By: Elijah Ahmad</p>
           </div>
         </a>
       </div>
