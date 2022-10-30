@@ -17,20 +17,17 @@ function NewsHeading() {
   return (
     <div className={"news-room-heading"}>
       <div className={"news-room-stock-text"}>
-        <p>
-          here is a collection of text with some relevant information about the
-          stock lol here is a collection of text with some relevant information
-          about the stock lol here is a collection of text with some relevant
-          information about the stock lol
-        </p>
+        <div />
       </div>
       <div className={"news-room-heading-annimation"}>
         <p className={"news-room-heading-title after-intro-animation"}>
-          THE NEWSROOM
+          THE NEWS ROOM
         </p>
       </div>
 
-      <div className={"news-room-stock-text"}></div>
+      <div className={"news-room-stock-text"}>
+        <div />
+      </div>
     </div>
   );
 }
