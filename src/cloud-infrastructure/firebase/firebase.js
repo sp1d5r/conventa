@@ -98,11 +98,11 @@ export async function getLessonFromID(lesson_id) {
 /* Minigames*/
 
 // Deception Detection
-const NUMBER_OF_MINIGAMES = 2;
+const NUMBER_OF_MINIGAMES = 4;
 
 export async function getDeceptionItems(number_of_games) {
   const deceptionCollection = collection(firestore, "deception-detection");
-  let qs = [];
+  let qs = Array(number_of_games);
   for (let i = 0; i < number_of_games; ++i) {
     qs[i] = Math.floor(Math.random() * NUMBER_OF_MINIGAMES);
   }

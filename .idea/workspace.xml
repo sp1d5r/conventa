@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/deception-detection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Help/help.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Jumbotron/jumbotron.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/Why/why.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-video/minigame-video.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-video/minigame-video.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/catch-a-liar-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/catch-a-liar-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

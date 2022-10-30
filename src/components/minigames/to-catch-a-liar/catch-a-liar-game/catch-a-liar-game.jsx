@@ -128,6 +128,16 @@ function CatchALiarGame({ setGameState, difficulty }) {
     pausedMessage.hidden = false;
   };
 
+  const pressPause = () => {
+    paused.current = !paused.current;
+    setPause(!pause);
+    if (paused.current) {
+      unhidePauseScreen();
+    } else {
+      hidePauseScreen();
+    }
+  };
+
   /* Unhide/Hide the End Screen */
   const hideEndScreen = () => {
     var endMessage = document.getElementById("end-message");
@@ -137,16 +147,6 @@ function CatchALiarGame({ setGameState, difficulty }) {
   const unhideEndScreen = () => {
     var endMessage = document.getElementById("end-message");
     endMessage.hidden = false;
-  };
-
-  const pressPause = () => {
-    paused.current = !paused.current;
-    setPause(!pause);
-    if (paused.current) {
-      unhidePauseScreen();
-    } else {
-      hidePauseScreen();
-    }
   };
 
   const quitGame = () => {
@@ -164,12 +164,12 @@ function CatchALiarGame({ setGameState, difficulty }) {
 
   const resetGame = () => {
     /*
-      Steps to reset game:
-        * reset initial array variables
-        * make sure the time is reset
-        * reset the scores and stuff
-        * try again.
-    */
+          Steps to reset game:
+            * reset initial array variables
+            * make sure the time is reset
+            * reset the scores and stuff
+            * try again.
+        */
 
     saveScoreToUser();
     let qs = getQuestions().questions;
@@ -229,6 +229,7 @@ function CatchALiarGame({ setGameState, difficulty }) {
   const hideAnswerScreen = () => {
     const div = document.getElementById("answer-message");
     div.classList.add("hidden");
+    div.setAttribute("hidden", "hidden");
     div.classList.remove("correct-answer");
     div.classList.remove("incorrect-answer");
   };
@@ -236,6 +237,7 @@ function CatchALiarGame({ setGameState, difficulty }) {
   const showAnswerScreen = (correct) => {
     const div = document.getElementById("answer-message");
     div.classList.remove("hidden");
+    div.removeAttribute("hidden");
     div.classList.add(correct ? "correct-answer" : "incorrect-answer");
     answerTime.current = 2;
   };
