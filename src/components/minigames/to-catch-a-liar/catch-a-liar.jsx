@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./catch-a-liar.css";
 import StartMinigame from "../minigame-components/start-screen/start-screen";
-import CatchALiarGame from "./catch-a-liar-game/catch-a-liar-game";
+import DeceptionDetection from "./catch-a-liar-game/deception-detection";
 
 /*
   The minigame
@@ -36,7 +36,10 @@ function CatchALiar() {
       );
     } else if (state === 1) {
       /* This is the game state */
-      return <CatchALiarGame setGameState={setState} difficulty={difficulty} />;
+      return (
+        <DeceptionDetection setGameState={setState} difficulty={difficulty} />
+      );
+      // <CatchALiarGame setGameState={setState} difficulty={difficulty} />;
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
     } else {
       /* This is the game complete state */
