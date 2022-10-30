@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/logo1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-headline/news-headline.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-headline/news-headline.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-stories/news-card-small.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-stories/news-card-small.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +39,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/assets/news-room" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/assets/Icons" />
       <recent name="$PROJECT_DIR$/src/assets/courses-notational" />
-      <recent name="$PROJECT_DIR$/src/assets/Icons/difficulty" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders a navbar link">
