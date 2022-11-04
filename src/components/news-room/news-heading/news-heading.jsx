@@ -21,7 +21,19 @@ function NewsHeading() {
       </div>
       <div className={"news-room-heading-annimation"}>
         <p className={"news-room-heading-title after-intro-animation"}>
-          THE NEWS ROOM
+          <span style={{ color: "#e3fffb" }}>t</span>
+          <span style={{ color: "#e3fdff" }}>h</span>
+          <span style={{ color: "#e3ebff" }}>e</span>
+          <span style={{ color: "#fff" }}> </span>
+          <span style={{ color: "#e9e3ff" }}>n</span>
+          <span style={{ color: "#e9e3ff" }}>e</span>
+          <span style={{ color: "#f5e3ff" }}>w</span>
+          <span style={{ color: "#f5e3ff" }}>s</span>
+          <span style={{ color: "#f5e3ff" }}> </span>
+          <span style={{ color: "#ffe3ec" }}>r</span>
+          <span style={{ color: "#ffe3e3" }}>o</span>
+          <span style={{ color: "#ffede3" }}>o</span>
+          <span style={{ color: "#fffce3" }}>m</span>
         </p>
       </div>
 

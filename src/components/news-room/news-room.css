@@ -22,7 +22,10 @@
 .news-room-heading-title {
   font-size: 70px;
   font-weight: 700;
-  font-family: "Times New Roman", Times, serif;
+
+  color: var(--white);
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 .after-intro-animation {
@@ -49,8 +52,10 @@
 }
 
 .news-headline-todays-headline-text {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-left: 20px;
+  text-decoration: underline;
 }
 
 .news-headline-todays-story {
@@ -93,7 +98,8 @@
 }
 
 .news-headline-title {
-  font-size: 25px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .news-headline-div-options {
@@ -115,7 +121,7 @@
 /* News Stories */
 .news-stories-headline-text {
   font-size: 20px;
-  font-weight: 600;
+  margin-left: 20px;
 }
 
 .news-stories-container {
@@ -180,6 +186,7 @@
   text-align: left;
   display: flex;
   align-items: flex-end;
+  font-size: 0.9rem;
 }
 
 .news-card-small-time {
@@ -304,6 +311,11 @@
 
   .news-headline-container {
     width: 100%;
+  }
+
+  .news-headline-title {
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 
