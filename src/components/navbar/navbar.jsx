@@ -10,7 +10,7 @@ function NavBar() {
   return (
     <div className={"navbar"} id={"navbar"}>
       <Link className={"brand"} to={"/"}>
-        <p>convento</p>
+        <p className={"brand-text"}>Anima</p>
       </Link>
       {size.width > 700 ? (
         <div className={"navbar-items"}>
@@ -19,13 +19,13 @@ function NavBar() {
               Documentation
             </Link>*/}
             <Link to="/academy" className={"navbar-link"}>
-              Academy
+              academy
             </Link>
             <Link to="/news-room/" className={"navbar-link"}>
-              News Room
+              news room
             </Link>
             <Link to="/about-us/" className={"navbar-link"}>
-              About Us
+              about us
             </Link>
           </div>
           <Link className={"navbar-button"} to={"/auth"}>
