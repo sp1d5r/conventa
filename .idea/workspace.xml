@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/logo1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
@@ -39,10 +38,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/Icons" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/assets/news-room" />
       <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$/src/assets/Icons" />
       <recent name="$PROJECT_DIR$/src/assets/courses-notational" />
     </key>
   </component>
@@ -157,6 +156,8 @@
       <workItem from="1665831743851" duration="1891000" />
       <workItem from="1666379524057" duration="994000" />
       <workItem from="1666473114676" duration="1746000" />
+      <workItem from="1667941550847" duration="5584000" />
+      <workItem from="1668347881978" duration="11145000" />
     </task>
     <servers />
   </component>

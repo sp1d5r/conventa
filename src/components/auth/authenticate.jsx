@@ -10,15 +10,11 @@ function Authenticate() {
     console.log("Objective changed", login);
   });
 
-  return (
-    <div className={"authenticate-home"}>
-      {login ? (
-        <Login changeObjective={changeObjective} />
-      ) : (
-        <SignUp changeObjective={changeObjective} />
-      )}
-    </div>
-  );
+  if (login) {
+    return <Login changeObjective={changeObjective} />;
+  } else {
+    return <SignUp changeObjective={changeObjective} />;
+  }
 }
 
 export default Authenticate;

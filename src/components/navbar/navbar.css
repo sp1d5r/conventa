@@ -178,6 +178,33 @@
   text-align: left;
 }
 
+/* This is the size of the authentication Navigation Bar */
+.auth-navbar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: absolute;
+  z-index: 1;
+}
+
+/* This is the back button */
+.auth-back-div {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.auth-back-div > p {
+  margin: 0;
+}
+
+.auth-back-img {
+  width: 30px;
+  height: 30px;
+}
+
 @keyframes slideNews {
   0% {
     top: -100vw;
