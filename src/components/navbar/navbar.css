@@ -31,6 +31,13 @@
   text-decoration: none;
 }
 
+.brand-text {
+  letter-spacing: 0.1rem;
+  text-shadow: -0.08rem -0.08rem 0 #fff, 0.08rem -0.08rem 0 #fff,
+    -0.08rem 0.08rem 0 #fff, 0.08rem 0.08rem 0 #fff;
+  color: black;
+}
+
 .brand :first-child {
   margin: 0;
 }
@@ -69,7 +76,7 @@
 .navbar-link {
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.65rem;
   text-align: center;
   color: var(--black);
   text-decoration: none;
@@ -98,6 +105,14 @@
   }
   .navbar-items {
     width: 20%;
+  }
+
+  .brand-text {
+    font-size: 25px;
+    letter-spacing: 0.1rem;
+    text-shadow: -0.08rem -0.08rem 0 #fff, 0.08rem -0.08rem 0 #fff,
+      -0.08rem 0.08rem 0 #fff, 0.08rem 0.08rem 0 #fff;
+    color: black;
   }
 }
 
