@@ -9,8 +9,8 @@ function Login({ changeObjective }) {
 
   return (
     <div className={"login-home"}>
-      <div className={"login-section slide-in"}>
-        <div className={"login-body"}>
+      <div className={"login-section"}>
+        <div className={"login-body slide-in-right"}>
           <p className={"login-title"}>Login to Your Account</p>
           {size ? (
             <span>
@@ -67,7 +67,7 @@ function Login({ changeObjective }) {
       {size ? (
         <></>
       ) : (
-        <div className={"side-body"}>
+        <div className={"side-body slide-in-right"}>
           <div className={"side-section"}>
             <p className={"side-title"}>New Here?</p>
             <p className={"side-text-body"}>

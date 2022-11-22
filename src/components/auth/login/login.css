@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   z-index: -1;
+  background-color: #e3ffea;
 }
 
 .login-section {
@@ -105,6 +106,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 60%;
+  background: white;
 }
 
 .side-section {
@@ -143,6 +147,11 @@
   -webkit-animation: slide-in 1s forwards;
 }
 
+.slide-in-right {
+  animation: slide-in-right 1s forwards;
+  -webkit-animation: slide-in-right 1s forwards;
+}
+
 @keyframes slide-in {
   0% {
     transform: translateX(-100%);
@@ -158,6 +167,26 @@
   }
   100% {
     -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(000%);
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(200%);
+    left: 200%;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    left: 60%;
   }
 }
 
