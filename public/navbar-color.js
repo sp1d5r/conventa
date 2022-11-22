@@ -54,6 +54,8 @@ function check_nav() {
     change_color("#FFE3F7");
   } else if (window.location.href.includes("course_id=9VBDATVU0WWpoxwwTd6Z")) {
     change_color("#ffe3e3");
+  } else if (window.location.href.includes("auth")) {
+    change_color("#ffffff");
   } else {
     change_color("#e3ffea");
   }
