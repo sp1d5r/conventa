@@ -86,7 +86,7 @@ function SignUp({ changeObjective }) {
                 switch_to_sign_up();
               }}
             >
-              Sign Up
+              Login
             </button>
           </div>
         </div>
