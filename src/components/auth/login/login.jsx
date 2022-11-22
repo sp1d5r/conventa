@@ -2,14 +2,20 @@ import React from "react";
 import "./login.css";
 
 function Login({ changeObjective }) {
+  const size = window.innerWidth < 600;
   return (
     <div className={"login-home"}>
       <div className={"login-section slide-in"}>
         <div className={"login-body"}>
           <p className={"login-title"}>Login to Your Account</p>
-          <span>
-            if you're new sign in <span className={"underline"}>here</span>
-          </span>
+          {size ? (
+            <span>
+              if you're new sign in <span className={"underline"}>here</span>
+            </span>
+          ) : (
+            <></>
+          )}
+
           <div className={"various-authentication"}>
             <img
               alt={"Sign in with Facebook"}
@@ -46,16 +52,20 @@ function Login({ changeObjective }) {
           <button className={"login-button"}>Sign In</button>
         </div>
       </div>
-      <div className={"side-body"}>
-        <div className={"side-section"}>
-          <p className={"side-title"}>New Here?</p>
-          <p className={"side-text-body"}>
-            Sign up and learn about dark psychology in a never before seen
-            interactive way!
-          </p>
-          <button className={"side-button"}>Sign Up</button>
+      {size ? (
+        <></>
+      ) : (
+        <div className={"side-body"}>
+          <div className={"side-section"}>
+            <p className={"side-title"}>New Here?</p>
+            <p className={"side-text-body"}>
+              Sign up and learn about dark psychology in a never before seen
+              interactive way!
+            </p>
+            <button className={"side-button"}>Sign Up</button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
