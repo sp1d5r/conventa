@@ -3,12 +3,19 @@
   top: -50px;
   left: 0;
   height: calc(100vh + 100px);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+.login-section {
   width: 70vw;
+  height: 100%;
+  background-color: #e3ffea;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e3ffea;
-  z-index: -1;
 }
 
 .login-body {
@@ -20,9 +27,8 @@
 }
 
 .alt-auth {
-  height: 50px;
-  width: 50px;
-  background-color: red;
+  height: 75px;
+  width: 75px;
 }
 
 .login-divider {
@@ -85,4 +91,71 @@
   line-height: 1.2;
   display: flex;
   align-items: center;
+  text-decoration: underline;
+}
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+}
+
+.side-body {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #282828;
+}
+
+.side-text-body {
+  width: 80%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  color: #4b4b4b;
+}
+
+.side-button {
+  padding: 5% 10%;
+  background: #e3ffea;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  border: none;
+}
+
+.slide-in {
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
 }
