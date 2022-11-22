@@ -3,6 +3,10 @@ import "./login.css";
 
 function Login({ changeObjective }) {
   const size = window.innerWidth < 600;
+  const switch_to_sign_up = () => {
+    changeObjective(false);
+  };
+
   return (
     <div className={"login-home"}>
       <div className={"login-section slide-in"}>
@@ -10,7 +14,15 @@ function Login({ changeObjective }) {
           <p className={"login-title"}>Login to Your Account</p>
           {size ? (
             <span>
-              if you're new sign in <span className={"underline"}>here</span>
+              if you're new sign up{" "}
+              <span
+                className={"underline"}
+                onClick={() => {
+                  switch_to_sign_up();
+                }}
+              >
+                here
+              </span>
             </span>
           ) : (
             <></>
@@ -62,7 +74,14 @@ function Login({ changeObjective }) {
               Sign up and learn about dark psychology in a never before seen
               interactive way!
             </p>
-            <button className={"side-button"}>Sign Up</button>
+            <button
+              className={"side-button"}
+              onClick={() => {
+                switch_to_sign_up();
+              }}
+            >
+              Sign Up
+            </button>
           </div>
         </div>
       )}
