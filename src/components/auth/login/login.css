@@ -72,8 +72,8 @@
 
 .login-button {
   width: 30%;
-  height: 67px;
-  background: #b8fdad;
+  padding: 3%;
+  background: #bcf2c9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   outline: none;
@@ -194,5 +194,9 @@
 @media only screen and (max-width: 700px) {
   .login-section {
     width: 100vw;
+  }
+
+  .login-body {
+    width: 80vw;
   }
 }
