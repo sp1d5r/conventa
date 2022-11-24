@@ -3,9 +3,10 @@ import "./footer.css";
 import { useLocation } from "react-router-dom";
 
 function Footer() {
-  const is_auth = useLocation().pathname.split("/").at(-1) === "auth";
+  const path_name = useLocation().pathname.split("/").at(-1);
+  const back_navigation = path_name === "auth" || path_name === "pricing-page";
 
-  if (!is_auth) {
+  if (!back_navigation) {
     return (
       <div id={"footer-main"} className={"footer-main"}>
         <div className={"footer-main-top"}>

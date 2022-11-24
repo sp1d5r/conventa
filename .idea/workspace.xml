@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/back-button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-select-card/pricing-select-card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-select-card/pricing-select-card.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-selected-card/pricing-selected-card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-selected-card/pricing-selected-card.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-side-panel/pricing-side-panel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-side-panel/pricing-side-panel.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/property/property.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/property/property.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/time-radio-button/time-radio-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/pricing-page/time-radio-button/time-radio-button.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/navbar-color.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/navbar-color.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/auth-navbar/auth-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/auth-navbar/auth-navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +44,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/elijahahmad/e-learning-template/src/components/pricing-page&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
@@ -33,6 +53,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/pricing-page" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
     </key>
