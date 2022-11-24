@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../navbar.css";
+import { Link, useLocation } from "react-router-dom";
 
 function AuthNavbar() {
+  const path_name = useLocation().pathname.split("/").at(-1);
+  const is_auth = path_name === "auth";
+
   return (
     <div className={"auth-navbar"}>
-      <Link className={"auth-back-div"} to={"/"}>
+      <Link className={"auth-back-div"} to={is_auth ? "/" : "/auth"}>
         <img
           className={"auth-back-img"}
           src={require("../../../assets/Icons/back-arrow.png")}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./login.css";
+import { Link } from "react-router-dom";
 
 function Login({ changeObjective, initial, size }) {
   const switch_to_sign_up = () => {
@@ -64,7 +65,9 @@ function Login({ changeObjective, initial, size }) {
           </form>
           <br />
 
-          <button className={"login-button"}>Sign In</button>
+          <Link to={"/academy"} className={"login-button"}>
+            Sign In
+          </Link>
         </div>
       </div>
       {size ? (
