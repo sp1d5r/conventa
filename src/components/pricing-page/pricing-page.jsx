@@ -3,7 +3,6 @@ import "./pricing-page.css";
 import PricingSidePanel from "./pricing-side-panel/pricing-side-panel";
 import TimeRadioButton from "./time-radio-button/time-radio-button";
 import PricingSelectCard from "./pricing-select-card/pricing-select-card";
-import PricingSelectedCard from "./pricing-selected-card/pricing-selected-card";
 
 function PricingPage() {
   const [is_annual, setAnnual] = useState(true);
@@ -26,57 +25,40 @@ function PricingPage() {
           </p>
 
           <div className={"pricing-cards-container"}>
-            {plan_selected === 1 ? (
-              <PricingSelectedCard
-                setPlan={setPlan}
-                title={"Hobbiest"}
-                price={15}
-                level={1}
-              />
-            ) : (
-              <PricingSelectCard
-                setPlan={setPlan}
-                title={"Hobbiest"}
-                price={15}
-                level={1}
-              />
-            )}
-            {plan_selected === 2 ? (
-              <PricingSelectedCard
-                setPlan={setPlan}
-                title={"Amateur"}
-                price={15}
-                level={2}
-              />
-            ) : (
-              <PricingSelectCard
-                setPlan={setPlan}
-                title={"Amateur"}
-                price={15}
-                level={2}
-              />
-            )}
-            {plan_selected === 3 ? (
-              <PricingSelectedCard
-                setPlan={setPlan}
-                title={"Professional"}
-                price={150}
-                level={3}
-              />
-            ) : (
-              <PricingSelectCard
-                setPlan={setPlan}
-                title={"Professional"}
-                price={150}
-                level={3}
-              />
-            )}
+            <PricingSelectCard
+              setPlan={setPlan}
+              title={"Hobbiest"}
+              price={15}
+              level={1}
+              selected={plan_selected === 1}
+            />
+
+            <PricingSelectCard
+              setPlan={setPlan}
+              title={"Amateur"}
+              price={15}
+              level={2}
+              selected={plan_selected === 2}
+            />
+
+            <PricingSelectCard
+              setPlan={setPlan}
+              title={"Professional"}
+              price={150}
+              level={3}
+              selected={plan_selected === 3}
+            />
           </div>
           <div className={"pricing-call-to-action"}>
             <span className={"pricing-cta-text"}>
               Happy with your plan already?
-              <span className={"pricing-text-underline"}>Continue.</span>
+              <span className={"pricing-text-underline"}> Continue.</span>
             </span>
+          </div>
+          <div className={"pricing-call-to-action"}>
+            <button className={"pricing-call-to-action-button"}>
+              Purchase
+            </button>
           </div>
         </div>
       </div>
