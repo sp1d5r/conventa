@@ -36,7 +36,8 @@
   margin: 3% 0%;
 }
 
-.pricing-body-text {
+.pricing-body-text,
+.pricing-call-to-action {
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -44,4 +45,29 @@
   color: #4b4b4b;
   text-align: left;
   margin: 1% 0%;
+}
+
+.pricing-cards-container {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pricing-call-to-action {
+  width: 100%;
+  text-align: center;
+}
+
+.pricing-text-underline {
+  text-decoration: underline;
+}
+
+.pricing-call-to-action-button {
+  width: 30%;
+  background: #717df1;
+  border-radius: 30px;
+  height: 50px;
+  font-weight: 600;
+  color: var(--white);
 }
