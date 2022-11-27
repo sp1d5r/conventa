@@ -132,6 +132,10 @@
   color: #4b4b4b;
 }
 
+.danger-alert {
+  width: 100%;
+}
+
 .side-button {
   margin-top: 20px;
   padding: 2% 10%;

@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import "./login.css";
 import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { Alert } from "react-bootstrap";
 
 function Login({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   // Getting Sign In method from Auth Context
@@ -16,6 +18,7 @@ function Login({ changeObjective, initial, size }) {
   };
 
   const failedCallback = (error_code, error_message) => {
+    setError(`Failed to Login - ${error_message}`);
     console.log(error_code, error_message);
   };
 
@@ -34,6 +37,13 @@ function Login({ changeObjective, initial, size }) {
           className={`login-body slide-in${initial.current ? "-right" : ""}`}
         >
           <p className={"login-title"}>Login to Your Account</p>
+          {error !== "" ? (
+            <Alert variant={"danger"} className={"danger-alert"}>
+              {error}
+            </Alert>
+          ) : (
+            <></>
+          )}
           {size ? (
             <span>
               if you're new sign up{" "}
