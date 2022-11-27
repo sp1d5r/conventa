@@ -63,7 +63,7 @@
   grid-template-columns: repeat(auto-fit, 300px);
   grid-template-rows: repeat(auto-fit, 240px);
   row-gap: 20px;
-  column-gap: 50px;
+  column-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
   justify-items: flex-start;
   align-items: center;
