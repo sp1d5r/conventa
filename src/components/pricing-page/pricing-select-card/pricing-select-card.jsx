@@ -3,19 +3,53 @@ import "./pricing-select-card.css";
 import "../property/property";
 import Property from "../property/property";
 
-function PricingSelectCard({ plan_selected, setPlan, title, price, level }) {
+function PricingSelectCard({
+  plan_selected,
+  setPlan,
+  title,
+  price,
+  level,
+  selected,
+}) {
+  const toSelected = (original) => {
+    if (selected) {
+      return original.replace("select", "selected");
+    } else {
+      return original;
+    }
+  };
+
   return (
     <>
-      <div className={"plan-selected-card"}>
-        <div className={"plan-selected-value"}>
-          <p className={"plan-selected-title"}>Selected</p>
+      <div
+        className={toSelected("plan-select-card")}
+        onClick={() => {
+          setPlan(level);
+        }}
+      >
+        <div className={toSelected("plan-select-value")}>
+          <p className={toSelected("plan-select-title")}>Selected</p>
         </div>
-        <div className={"plan-selected-bottom-div"}>
-          <p className={"plan-selected-title"}>{title}</p>
-          <p className={"plan-selected-price"}>£{price}</p>
-          <Property valid={level === 1} text={"Full Course Access"} />
-          <Property valid={level === 2} text={"Full Minigame Access"} />
-          <Property valid={level === 3} text={"Beta Testing Case Studies"} />
+        <div className={toSelected("plan-select-bottom-div")}>
+          <div className={toSelected("plan-select-text")}>
+            <p className={toSelected("plan-select-class")}>{title}</p>
+            <p className={toSelected("plan-select-price")}>£{price}</p>
+          </div>
+          <Property
+            valid={level >= 1}
+            property_name={"Full Course Access"}
+            selected={selected}
+          />
+          <Property
+            valid={level >= 2}
+            property_name={"Full Minigame Access"}
+            selected={selected}
+          />
+          <Property
+            valid={level >= 3}
+            property_name={"Beta Testing Case Studies"}
+            selected={selected}
+          />
         </div>
       </div>
     </>
