@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./pricing-page.css";
 import PricingSidePanel from "./pricing-side-panel/pricing-side-panel";
 import TimeRadioButton from "./time-radio-button/time-radio-button";
@@ -7,11 +7,12 @@ import PricingSelectCard from "./pricing-select-card/pricing-select-card";
 function PricingPage() {
   const [is_annual, setAnnual] = useState(true);
   const [plan_selected, setPlan] = useState(2);
+  const window_size = useWindowSize();
 
   return (
     <>
       <div className={"pricing-main"}>
-        <PricingSidePanel />
+        {window_size.width < 1000 ? <></> : <PricingSidePanel />}
         <div className={"pricing-body"}>
           <div className={"pricing-heading"}>
             <h1 className={"pricing-title"}>Upgrade your Plan</h1>
@@ -64,6 +65,33 @@ function PricingPage() {
       </div>
     </>
   );
+}
+
+// Hook
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
 }
 
 export default PricingPage;

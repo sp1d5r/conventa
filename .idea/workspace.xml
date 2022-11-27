@@ -5,13 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-select-card/pricing-select-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-select-card/pricing-select-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-select-card/pricing-select-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-select-card/pricing-select-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-selected-card/pricing-selected-card.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-selected-card/pricing-selected-card.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-side-panel/pricing-side-panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-side-panel/pricing-side-panel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/property/property.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/property/property.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/property/property.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/property/property.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
