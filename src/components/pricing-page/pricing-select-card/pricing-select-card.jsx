@@ -35,21 +35,23 @@ function PricingSelectCard({
             <p className={toSelected("plan-select-class")}>{title}</p>
             <p className={toSelected("plan-select-price")}>£{price}</p>
           </div>
-          <Property
-            valid={level >= 1}
-            property_name={"Full Course Access"}
-            selected={selected}
-          />
-          <Property
-            valid={level >= 2}
-            property_name={"Full Minigame Access"}
-            selected={selected}
-          />
-          <Property
-            valid={level >= 3}
-            property_name={"Beta Testing Case Studies"}
-            selected={selected}
-          />
+          <div className={"properties-div"}>
+            <Property
+              valid={level >= 1}
+              property_name={"Full Course Access"}
+              selected={selected}
+            />
+            <Property
+              valid={level >= 2}
+              property_name={"Full Minigame Access"}
+              selected={selected}
+            />
+            <Property
+              valid={level >= 3}
+              property_name={"Beta Testing Case Studies"}
+              selected={selected}
+            />
+          </div>
         </div>
       </div>
     </>

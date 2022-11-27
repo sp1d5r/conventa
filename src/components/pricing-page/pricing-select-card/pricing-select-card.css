@@ -92,7 +92,7 @@
 }
 
 .properties-div {
-  height: 70%;
+  height: 40%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -101,4 +101,33 @@
 
 .properties-div > * {
   flex: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .plan-select-card,
+  .plan-selected-card {
+    width: 90%;
+    height: 20%;
+  }
+
+  .plan-select-bottom-div,
+  .plan-selected-bottom-div {
+    display: flex;
+  }
+
+  .plan-select-text,
+  .plan-selected-text {
+    margin-top: auto;
+    height: 100%;
+    margin: 5px;
+  }
+
+  .plan-select-price,
+  .plan-selected-price {
+    margin: 5px;
+  }
+
+  .properties-div {
+    height: 100%;
+  }
 }

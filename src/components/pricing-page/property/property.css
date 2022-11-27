@@ -17,8 +17,16 @@
 .property-value-unvalid {
   margin: 0;
   font-size: 15px;
+  text-align: left;
 }
 
 .property-value-valid {
   color: var(--white);
+}
+
+@media only screen and (max-width: 600px) {
+  .property-value-valid,
+  .property-value-unvalid {
+    font-size: 12px;
+  }
 }

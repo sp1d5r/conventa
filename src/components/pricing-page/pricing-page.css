@@ -79,3 +79,10 @@
     width: 90%;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .pricing-cards-container {
+    flex-direction: column;
+    height: 110%;
+  }
+}
