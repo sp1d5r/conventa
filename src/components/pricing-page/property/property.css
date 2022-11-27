@@ -1,0 +1,24 @@
+.property-div {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 5% 1%;
+}
+
+.property-image {
+  height: 80%;
+  aspect-ratio: 1;
+  margin: 5px;
+}
+
+.property-value-valid,
+.property-value-unvalid {
+  margin: 0;
+  font-size: 15px;
+}
+
+.property-value-valid {
+  color: var(--white);
+}

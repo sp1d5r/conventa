@@ -36,7 +36,7 @@ function PricingPage() {
             <PricingSelectCard
               setPlan={setPlan}
               title={"Amateur"}
-              price={15}
+              price={25}
               level={2}
               selected={plan_selected === 2}
             />
