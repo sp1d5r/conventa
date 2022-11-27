@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "../login/login.css";
-import { createAccount } from "../../../cloud-infrastructure/firebase/firebase";
+import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 
 function SignUp({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+
+  // Getting Sign In method from Auth Context
+  const { createAccount } = useAuth();
 
   const switch_to_sign_up = () => {
     changeObjective(true);
