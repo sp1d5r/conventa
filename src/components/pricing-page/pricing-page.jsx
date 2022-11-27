@@ -3,6 +3,7 @@ import "./pricing-page.css";
 import PricingSidePanel from "./pricing-side-panel/pricing-side-panel";
 import TimeRadioButton from "./time-radio-button/time-radio-button";
 import PricingSelectCard from "./pricing-select-card/pricing-select-card";
+import { Link } from "react-router-dom";
 
 function PricingPage() {
   const [is_annual, setAnnual] = useState(true);
@@ -53,13 +54,19 @@ function PricingPage() {
           <div className={"pricing-call-to-action"}>
             <span className={"pricing-cta-text"}>
               Happy with your plan already?
-              <span className={"pricing-text-underline"}> Continue.</span>
+              <Link to={"/academy"} className={"pricing-text-underline"}>
+                {" "}
+                Continue.
+              </Link>
             </span>
           </div>
           <div className={"pricing-call-to-action"}>
-            <button className={"pricing-call-to-action-button"}>
-              Purchase
-            </button>
+            {/* TODO - remove this to add stripe payment */}
+            <Link to={"/academy"} className={"pricing-button-link"}>
+              <button className={"pricing-call-to-action-button"}>
+                Purchase
+              </button>
+            </Link>
           </div>
         </div>
       </div>

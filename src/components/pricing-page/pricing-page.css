@@ -74,6 +74,11 @@
   color: var(--white);
 }
 
+.pricing-button-link {
+  width: 100%;
+  height: 100%;
+}
+
 @media only screen and (max-width: 1000px) {
   .pricing-body {
     width: 90%;
