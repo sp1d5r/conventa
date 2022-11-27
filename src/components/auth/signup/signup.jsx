@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../login/login.css";
 import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
+import { Alert } from "react-bootstrap";
 
 function SignUp({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+  const [error, setError] = useState("");
 
   // Getting Sign In method from Auth Context
   const { createAccount } = useAuth();
@@ -20,6 +22,7 @@ function SignUp({ changeObjective, initial, size }) {
   };
 
   const failedCallback = (error_code, error_message) => {
+    setError(`Failed to Login - ${error_message}`);
     console.log(error_code, error_message);
   };
 
@@ -30,6 +33,8 @@ function SignUp({ changeObjective, initial, size }) {
   const trySignIn = () => {
     if (verifyDetails()) {
       createAccount(email, password, name, successfulCallback, failedCallback);
+    } else {
+      setError("Passwords do not match!");
     }
   };
 
@@ -41,6 +46,13 @@ function SignUp({ changeObjective, initial, size }) {
         >
           <div className={"login-body"}>
             <p className={"login-title"}>Create a New Account</p>
+            {error !== "" ? (
+              <Alert variant={"danger"} className={"danger-alert"}>
+                {error}
+              </Alert>
+            ) : (
+              <></>
+            )}
             {size ? (
               <span>
                 if you already have an account, click{" "}
