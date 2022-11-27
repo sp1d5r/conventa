@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "./login.css";
-import { signIn } from "../../../cloud-infrastructure/firebase/firebase";
+import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function Login({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  // Getting Sign In method from Auth Context
+  const { signIn } = useAuth();
 
   const switch_to_sign_up = () => {
     changeObjective(false);
@@ -15,7 +20,7 @@ function Login({ changeObjective, initial, size }) {
   };
 
   const successfulCallback = () => {
-    window.location.href = "/pricing-page";
+    navigate("/pricing-page");
   };
 
   const trySignIn = () => {

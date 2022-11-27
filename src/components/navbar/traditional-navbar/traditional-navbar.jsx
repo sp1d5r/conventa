@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../button/button";
+import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
+import auth from "../../../cloud-infrastructure/firebase/firebase";
 
 function TraditionalNavbar() {
   const [opened, updateOpened] = useState(false);
   const size = useWindowSize();
+  const { signOutUser } = useAuth();
+  const current_user = auth.currentUser;
+
+  const signedOutSuccessful = () => {
+    window.location.reload();
+  };
 
   return (
     <div className={"navbar"} id={"navbar"}>
@@ -27,9 +35,19 @@ function TraditionalNavbar() {
               About Us
             </Link>
           </div>
-          <Link className={"navbar-button"} to={"/auth"}>
-            <Button text={"Login"} />
-          </Link>
+          {current_user ? (
+            <button
+              onClick={(e) => {
+                signOutUser(signedOutSuccessful);
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link className={"navbar-button"} to={"/auth"}>
+              <Button text={"Login"} />
+            </Link>
+          )}
         </div>
       ) : (
         <div className={"navbar-items"}>

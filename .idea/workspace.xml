@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login/login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/auth-navbar/auth-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/auth-navbar/auth-navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/traditional-navbar/traditional-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/traditional-navbar/traditional-navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +35,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>

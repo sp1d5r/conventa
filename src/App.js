@@ -15,35 +15,38 @@ import TrackingClientEmotions from "./components/minigames/tracking-client-emoti
 import AboutUs from "./components/about-us/about-us";
 import NewsRoom from "./components/news-room/news-room";
 import PricingPage from "./components/pricing-page/pricing-page";
+import AuthProvider from "./cloud-infrastructure/firebase/auth";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/auth" element={<Authenticate />} />
-          <Route path="/academy" element={<Academy loggedIn={false} />} />
-          <Route path="/course/" element={<CourseLanding />} />
-          <Route path="/lesson/" element={<LessonPage />} />
-          <Route path="/about-us/" element={<AboutUs />} />
-          <Route path="/pricing-page/" element={<PricingPage />} />
-          <Route path="/news-room/" element={<NewsRoom />} />
-          <Route
-            path="/minigame/First%20Impressions"
-            element={<FirstImpressions />}
-          />
-          <Route path="/minigame/Catch%20a%20Liar" element={<CatchALiar />} />
-          <Route
-            path="/minigame/Tracking%20Client%20Emotions"
-            element={<TrackingClientEmotions />}
-          />
-          <Route path="/" element={<Landing />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <BrowserRouter>
+          <NavBar />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/auth" element={<Authenticate />} />
+            <Route path="/academy" element={<Academy loggedIn={false} />} />
+            <Route path="/course/" element={<CourseLanding />} />
+            <Route path="/lesson/" element={<LessonPage />} />
+            <Route path="/about-us/" element={<AboutUs />} />
+            <Route path="/pricing-page/" element={<PricingPage />} />
+            <Route path="/news-room/" element={<NewsRoom />} />
+            <Route
+              path="/minigame/First%20Impressions"
+              element={<FirstImpressions />}
+            />
+            <Route path="/minigame/Catch%20a%20Liar" element={<CatchALiar />} />
+            <Route
+              path="/minigame/Tracking%20Client%20Emotions"
+              element={<TrackingClientEmotions />}
+            />
+            <Route path="/" element={<Landing />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
+    </AuthProvider>
   );
 }
 
