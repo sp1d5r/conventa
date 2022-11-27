@@ -9,6 +9,11 @@ import {
   where,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import axios from "axios";
 import md5 from "../utils/md5";
 
@@ -22,9 +27,11 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
+/* Initialise Firebase */
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const analytics = getAnalytics(app);
+const auth = getAuth(app);
 
 /* Session Constants */
 const start_time = Date.now();
@@ -134,4 +141,45 @@ export function logAcademyStart() {
     content_type: "webpage",
     items: [{ time: Date.now(), session: getSessionId(), ip: getIP() }],
   });
+}
+
+/* User Authentication */
+
+export function signIn(email, password, success_callback, failed_callback) {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(`${user} signed in`);
+      success_callback();
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(`${email} failed to sign in`);
+      failed_callback(errorCode, errorMessage);
+    });
+}
+
+export function createAccount(
+  email,
+  password,
+  name,
+  successful_callback,
+  failed_callback
+) {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+      successful_callback();
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      console.log("User Account not made");
+      failed_callback(errorCode, errorMessage);
+    });
 }

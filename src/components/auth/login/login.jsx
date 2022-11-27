@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { signIn } from "../../../cloud-infrastructure/firebase/firebase";
 
 function Login({ changeObjective, initial, size }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const switch_to_sign_up = () => {
     changeObjective(false);
   };
 
-  console.log(initial.current);
+  const failedCallback = (error_code, error_message) => {
+    console.log(error_code, error_message);
+  };
+
+  const successfulCallback = () => {
+    window.location.href = "/pricing-page";
+  };
+
+  const trySignIn = () => {
+    signIn(email, password, successfulCallback, failedCallback);
+  };
 
   return (
     <div className={"login-home"}>
@@ -58,16 +71,34 @@ function Login({ changeObjective, initial, size }) {
 
           <form className={"login-form"}>
             <p>email</p>
-            <input className={"login-input"} />
+            <input
+              className={"login-input"}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setEmail(e.target.value);
+                }
+              }}
+            />
             <br />
             <p>password</p>
-            <input className={"login-input"} />
+            <input
+              className={"login-input"}
+              type={"password"}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
           </form>
           <br />
 
-          <Link to={"/academy"} className={"login-button"}>
+          <button
+            className={"login-button"}
+            onClick={(e) => {
+              trySignIn();
+            }}
+          >
             Sign In
-          </Link>
+          </button>
         </div>
       </div>
       {size ? (
