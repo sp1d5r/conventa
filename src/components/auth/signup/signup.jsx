@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "../login/login.css";
-import { Link } from "react-router-dom";
+import { createAccount } from "../../../cloud-infrastructure/firebase/firebase";
 
 function SignUp({ changeObjective, initial, size }) {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+
   const switch_to_sign_up = () => {
     changeObjective(true);
+  };
+
+  const verifyDetails = () => {
+    return password === newPassword;
+  };
+
+  const failedCallback = (error_code, error_message) => {
+    console.log(error_code, error_message);
+  };
+
+  const successfulCallback = () => {
+    window.location.href = "/pricing-page";
+  };
+
+  const trySignIn = () => {
+    if (verifyDetails()) {
+      createAccount(email, password, name, successfulCallback, failedCallback);
+    }
   };
 
   return (
@@ -57,22 +80,55 @@ function SignUp({ changeObjective, initial, size }) {
 
             <form className={"login-form"}>
               <p>email</p>
-              <input className={"login-input"} />
+              <input
+                className={"login-input"}
+                onChange={(e) => {
+                  if (e.target.value !== "") {
+                    setEmail(e.target.value);
+                  }
+                }}
+                placeholder={email}
+              />
               <br />
               <p>name</p>
-              <input className={"login-input"} />
+              <input
+                className={"login-input"}
+                onChange={(e) => {
+                  if (e.target.value !== "") {
+                    setName(e.target.value);
+                  }
+                }}
+                placeholder={name}
+              />
               <br />
               <p>password</p>
-              <input className={"login-input"} />
+              <input
+                className={"login-input"}
+                type={"password"}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
               <br />
               <p>re-enter password</p>
-              <input className={"login-input"} />
+              <input
+                className={"login-input"}
+                type={"password"}
+                onChange={(e) => {
+                  setNewPassword(e.target.value);
+                }}
+              />
             </form>
             <br />
 
-            <Link className={"login-button"} to={"/pricing-page"}>
+            <button
+              className={"login-button"}
+              onClick={() => {
+                trySignIn();
+              }}
+            >
               Sign Up
-            </Link>
+            </button>
           </div>
         </div>
       </div>
