@@ -22,7 +22,7 @@ function SignUp({ changeObjective, initial, size }) {
   };
 
   const failedCallback = (error_code, error_message) => {
-    setError(`Failed to Login - ${error_message}`);
+    setError(`Failed to Sign Up - ${error_message}`);
     console.log(error_code, error_message);
   };
 
