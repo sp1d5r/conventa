@@ -37,6 +37,7 @@ function TraditionalNavbar() {
           </div>
           {current_user ? (
             <button
+              className={"button-logout"}
               onClick={(e) => {
                 signOutUser(signedOutSuccessful);
               }}
@@ -120,14 +121,24 @@ function TraditionalNavbar() {
                 alt={"stack"}
               />
             </Link>
-
-            <Link
-              className={"navbar-button-mobile"}
-              to="/auth"
-              onClick={() => updateOpened(!opened)}
-            >
-              <Button text={"Login"} />
-            </Link>
+            {current_user ? (
+              <button
+                className={"button-logout"}
+                onClick={(e) => {
+                  signOutUser(signedOutSuccessful);
+                }}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                className={"navbar-button-mobile"}
+                to="/auth"
+                onClick={() => updateOpened(!opened)}
+              >
+                <Button text={"Login"} />
+              </Link>
+            )}
           </div>
         </div>
       ) : (
