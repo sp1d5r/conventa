@@ -3,6 +3,7 @@ import {
   collection,
   doc,
   getDoc,
+  setDoc,
   getDocs,
   getFirestore,
   query,
@@ -69,6 +70,17 @@ const getSessionId = () => {
     return session_id;
   }
 };
+
+/* Authentication */
+export async function createUserDoc(user_cred, name, email) {
+  const userCollection = collection(firestore, "users");
+  await setDoc(doc(userCollection, user_cred.user.uid), {
+    name: name,
+    email: email,
+    subscription: "free",
+    verification: "none",
+  });
+}
 
 /* Courses */
 export async function getCourses() {

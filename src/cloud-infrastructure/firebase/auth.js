@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import auth from "./firebase";
+import auth, { createUserDoc } from "./firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  deleteUser,
 } from "firebase/auth";
 
 const AuthContext = React.createContext();
@@ -39,14 +40,34 @@ export default function AuthProvider({ children }) {
     failed_callback
   ) {
     createUserWithEmailAndPassword(auth, email, password)
-      .then((_) => {
+      .then((user_cred) => {
         // Signed in
-        successful_callback();
+        // Create user doc for the account
+        console.log("here");
+        createUserDoc(user_cred, email, name)
+          .then((_) => {
+            successful_callback();
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            deleteUser(auth.currentUser)
+              .then(() => {
+                failed_callback(
+                  errorCode,
+                  "Account Creation Failed - Try Again"
+                );
+              })
+              .catch((error) => {
+                failed_callback(
+                  error.code,
+                  "Please contact support with your email..."
+                );
+              });
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
         console.log("User Account not made");
         failed_callback(errorCode, errorMessage);
       });
