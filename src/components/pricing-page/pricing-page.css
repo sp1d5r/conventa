@@ -85,6 +85,29 @@
   }
 }
 
+/* Stripe Overlay */
+.overlay-loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(65, 154, 100, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-loading-div {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 600px) {
   .pricing-cards-container {
     flex-direction: column;

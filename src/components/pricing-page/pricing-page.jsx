@@ -3,15 +3,43 @@ import "./pricing-page.css";
 import PricingSidePanel from "./pricing-side-panel/pricing-side-panel";
 import TimeRadioButton from "./time-radio-button/time-radio-button";
 import PricingSelectCard from "./pricing-select-card/pricing-select-card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import auth, {
+  createCheckoutSession,
+} from "../../cloud-infrastructure/firebase/firebase";
 
 function PricingPage() {
   const [is_annual, setAnnual] = useState(true);
   const [plan_selected, setPlan] = useState(2);
+  const [loading, setLoading] = useState(false);
   const window_size = useWindowSize();
+  const current_user = auth.currentUser;
+  const navigator = useNavigate();
+
+  if (!current_user) {
+    navigator("/auth");
+  }
+
+  const goToStripe = () => {
+    setLoading(!loading);
+    createCheckoutSession(
+      current_user.uid,
+      plan_selected,
+      is_annual ? 2 : 1
+    ).then((r) => console.log("here"));
+  };
 
   return (
     <>
+      {loading ? (
+        <div className={"overlay-loading"}>
+          <div className={"overlay-loading-div"}>
+            <h4>Sending you to Stripe...</h4>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className={"pricing-main"}>
         {window_size.width < 1000 ? <></> : <PricingSidePanel />}
         <div className={"pricing-body"}>
@@ -46,7 +74,7 @@ function PricingPage() {
             <PricingSelectCard
               setPlan={setPlan}
               title={"Professional"}
-              price={150}
+              price={100}
               level={3}
               selected={plan_selected === 3}
             />
@@ -62,11 +90,14 @@ function PricingPage() {
           </div>
           <div className={"pricing-call-to-action"}>
             {/* TODO - remove this to add stripe payment */}
-            <Link to={"/academy"} className={"pricing-button-link"}>
-              <button className={"pricing-call-to-action-button"}>
-                Purchase
-              </button>
-            </Link>
+            <button
+              className={"pricing-call-to-action-button"}
+              onClick={(_) => {
+                goToStripe();
+              }}
+            >
+              Purchase
+            </button>
           </div>
         </div>
       </div>
