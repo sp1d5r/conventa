@@ -2,12 +2,14 @@ import { initializeApp } from "firebase/app";
 import {
   collection,
   doc,
+  addDoc,
   getDoc,
   setDoc,
   getDocs,
   getFirestore,
   query,
   where,
+  onSnapshot,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
@@ -36,6 +38,15 @@ export default auth;
 const start_time = Date.now();
 let ip = null;
 let session_id = null;
+
+const PRICING_PLAN_IDS = [
+  "price_1MDtRwGME0Qq6U11kgSPpAMw", //HOBBYIST_MONTHLY
+  "price_1MDtUcGME0Qq6U11AqbXxfeI", //HOBBYIST_YEARLY
+  "price_1MDtTUGME0Qq6U11XjxqzOiK", //AMATEUR_MONTHLY
+  "price_1MDtTUGME0Qq6U1117YJzQol", //AMATEUR_YEARLY
+  "price_1MDtUCGME0Qq6U11F6mX5pC6", //PRO_MONTHLY
+  "price_1MDtUCGME0Qq6U11ol786qFy", //PRO_YEARLY
+];
 
 const setIP = (value) => {
   ip = value;
@@ -79,6 +90,36 @@ export async function createUserDoc(user_cred, name, email) {
     email: email,
     subscription: "free",
     verification: "none",
+  });
+}
+
+export async function createCheckoutSession(uid, plan_selected, is_annual) {
+  const price_id = PRICING_PLAN_IDS[plan_selected * is_annual - 1];
+  console.log(price_id, plan_selected * is_annual - 1);
+  const sessionDocRef = await addDoc(
+    collection(firestore, `users/${uid}/checkout_sessions`),
+    {
+      price: price_id,
+      success_url: window.location.origin + "/academy",
+      cancel_url: window.location.origin + "/pricing-page",
+    }
+  );
+
+  onSnapshot(sessionDocRef, (snap) => {
+    const { error, url } = snap.data();
+    if (error) {
+      // Show an error to your customer and
+      // inspect your Cloud Function logs in the Firebase console.
+      alert(`An error occured: ${error.message}`);
+    }
+    if (url) {
+      // We have a Stripe Checkout URL, let's redirect.
+      window.location.assign(url);
+      // getStripe().then((stripe) => {
+      //   stripe.redirectToCheckout({sessionId: session_id})
+      // });
+      // stripe.redirectToCheckout({session_id: session_id)
+    }
   });
 }
 
