@@ -1,20 +1,20 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Conventa",
+  "name": "Interactive Psychology",
   "icons": [
     {
-      "src": "logo.jpeg",
-      "type": "image/jpeg",
+      "src": "logo.png",
+      "type": "image/png",
       "sizes": "270x368"
     },
     {
-      "src": "logo.jpeg",
-      "type": "image/jpeg",
+      "src": "logo.png",
+      "type": "image/png",
       "sizes": "270x368"
     },
     {
-      "src": "logo.jpeg",
-      "type": "image/jpeg",
+      "src": "logo.png",
+      "type": "image/png",
       "sizes": "270x368"
     }
   ],
