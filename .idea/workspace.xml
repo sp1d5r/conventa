@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/landing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +161,7 @@
       <workItem from="1666473114676" duration="1746000" />
       <workItem from="1667941550847" duration="5584000" />
       <workItem from="1668347881978" duration="17251000" />
-      <workItem from="1670771591561" duration="21468000" />
+      <workItem from="1670771591561" duration="21593000" />
     </task>
     <servers />
   </component>
