@@ -2,12 +2,14 @@ import React from "react";
 import "./landing.css";
 import Intro from "./intro/intro";
 import Competence from "./competence/competence";
+import Example from "./example/example";
 
 function Landing() {
   return (
     <div className={"container"}>
       <Intro />
       <Competence />
+      <Example />
     </div>
   );
 }
