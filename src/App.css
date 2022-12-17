@@ -8,6 +8,10 @@
   --light-blue: #4a5bb5;
 }
 
+.green-text {
+  color: #499b80;
+}
+
 .App {
   text-align: center;
 }

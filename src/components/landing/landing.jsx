@@ -1,16 +1,19 @@
 import React from "react";
-import Jumbotron from "./Jumbotron/jumbotron";
-import Why from "./Why/why";
-import Help from "./Help/help";
-import How from "./How/how";
-import EmotionalIntelligence from "./Emotional Intelligence/emotional_intelligence";
-import PricingPlan from "./Pricing/pricing-plan";
 import "./landing.css";
-import { Link } from "react-router-dom";
+import Intro from "./intro/intro";
 
 function Landing() {
   return (
-    <div style={{ width: "100%" }}>
+    <div className={"container"}>
+      <Intro />
+    </div>
+  );
+}
+
+export default Landing;
+
+/*
+* <div style={{ width: "100%" }}>
       <Jumbotron />
       <Why />
       <Help />
@@ -24,7 +27,5 @@ function Landing() {
         </Link>
       </div>
     </div>
-  );
-}
-
-export default Landing;
+*
+* */
