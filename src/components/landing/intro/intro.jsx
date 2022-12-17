@@ -32,6 +32,7 @@ function Intro() {
           <img src={HomeLanding} alt={"something"} />
         </div>
       </div>
+      <br />
       <div className={"bottom-metrics"}>
         <div className={"bottom-metric"}>
           <p className={"main-metric"}>100+</p>
@@ -53,6 +54,7 @@ function Intro() {
           <p className={"side-metric"}>Interactive Minigames</p>
         </div>
       </div>
+      <div className={"spacer border-bottom"} />
     </>
   );
 }

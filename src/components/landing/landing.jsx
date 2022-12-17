@@ -1,11 +1,13 @@
 import React from "react";
 import "./landing.css";
 import Intro from "./intro/intro";
+import Competence from "./competence/competence";
 
 function Landing() {
   return (
     <div className={"container"}>
       <Intro />
+      <Competence />
     </div>
   );
 }
