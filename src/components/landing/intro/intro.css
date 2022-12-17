@@ -1,0 +1,135 @@
+.intro-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70vh;
+}
+
+.intro-text {
+  width: 60%;
+  height: 80%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-text-h1 {
+  font-family: "Inter", serif;
+  font-weight: 700;
+  margin-bottom: 5%;
+}
+
+.intro-text-p {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-top: 3%;
+}
+
+.intro-image {
+  width: 40%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-button {
+  background: #3b71e7;
+  border-radius: 10px;
+  height: 65px;
+  width: 300px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacer {
+  height: 7vh;
+}
+
+.intro-button > * {
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.bottom-metrics {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 2px solid var(--black);
+  height: 15vh;
+}
+
+.bottom-metric {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-metric {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.side-metric {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #555555;
+  text-align: left;
+  padding: 2%;
+}
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 700px) {
+  .intro-text {
+    width: 100%;
+  }
+
+  .intro-image {
+    width: 100%;
+  }
+
+  .intro-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .bottom-metrics {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 2px solid var(--black);
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .bottom-metric {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5%;
+  }
+}

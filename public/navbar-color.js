@@ -59,7 +59,7 @@ function check_nav() {
   } else if (window.location.href.includes("pricing-page")) {
     change_color("#e3ffea");
   } else {
-    change_color("#e3ffea");
+    change_color("#ffffff");
   }
 }
 
