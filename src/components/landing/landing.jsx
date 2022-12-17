@@ -4,6 +4,7 @@ import Intro from "./intro/intro";
 import Competence from "./competence/competence";
 import Example from "./example/example";
 import Cost from "./cost/cost";
+import Waiting from "./waiting/waiting";
 
 function Landing() {
   return (
@@ -12,6 +13,7 @@ function Landing() {
       <Competence />
       <Example />
       <Cost />
+      <Waiting />
     </div>
   );
 }

@@ -1,0 +1,28 @@
+.waiting-div {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+}
+
+.waiting-text {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-button {
+  background: #3b71e7;
+  border-radius: 10px;
+  height: 65px;
+  width: 300px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
