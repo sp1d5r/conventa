@@ -1,0 +1,47 @@
+.example-courses-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  width: 100%;
+  text-align: center;
+}
+
+.example-course-div {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  height: 50px;
+  width: max(250px, 22%);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px;
+}
+
+.example-course-image {
+  margin-top: 10%;
+  width: 100%;
+}
+
+.example-course-div:hover {
+  background-color: #499b80;
+}
+
+.example-course-text {
+  font-family: "Lexend", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0;
+}
+
+.example-image {
+  height: 25px;
+  width: 25px;
+  margin: 10px;
+}
