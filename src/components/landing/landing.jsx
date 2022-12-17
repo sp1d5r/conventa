@@ -3,6 +3,7 @@ import "./landing.css";
 import Intro from "./intro/intro";
 import Competence from "./competence/competence";
 import Example from "./example/example";
+import Cost from "./cost/cost";
 
 function Landing() {
   return (
@@ -10,6 +11,7 @@ function Landing() {
       <Intro />
       <Competence />
       <Example />
+      <Cost />
     </div>
   );
 }

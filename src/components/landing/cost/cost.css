@@ -1,0 +1,141 @@
+.outer-switch {
+  width: 150px;
+  height: 50px;
+  outline: 2px solid #000000;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.inner-switch {
+  background: #499b80;
+  border: 2px solid #000000;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.radio-switch-p {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.switch-icon {
+  padding: 5%;
+  height: 60%;
+  width: 20%;
+}
+
+.cost-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20vh;
+}
+
+.cost-main-text {
+  width: 100%;
+  height: 20%;
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.cost-main-link {
+  color: #3b71e7;
+  text-decoration: underline;
+}
+
+.cost-cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cost-card {
+  height: 50vh;
+  width: 27%;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cost-card-heading {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding: 15%;
+}
+
+.cost-card-price {
+  font-family: "Lexend", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #000000;
+}
+
+.cost-card-monthly {
+  width: 50%;
+  padding: 5%;
+  font-family: "Lexend", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.cost-card-section {
+  width: 100%;
+  height: 22%;
+  padding: 10%;
+}
+
+.cost-card-text {
+  font-family: "Lexend", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+  text-align: left;
+}
+
+.cost-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+}
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 700px) {
+  .cost-cards {
+    flex-wrap: wrap;
+  }
+
+  .cost-card {
+    height: 50vh;
+    width: 100%;
+    margin: 5%;
+  }
+}

@@ -81,6 +81,7 @@ function Example() {
         src={ExampleImage}
         alt={"Example of our course"}
       />
+      <div className={"spacer border-bottom"} />
     </>
   );
 }

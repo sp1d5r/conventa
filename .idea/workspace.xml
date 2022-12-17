@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/landing/example/example.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/landing/example/example.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/home/switch.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/landing/cost/radio-switch.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Emotional Intelligence/emotional_intelligence.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Help/help.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/How/how.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Pricing/pricing-plan.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/Why/why.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/example/example.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/example/example.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/landing/landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/landing.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +176,7 @@
       <workItem from="1666473114676" duration="1746000" />
       <workItem from="1667941550847" duration="5584000" />
       <workItem from="1668347881978" duration="17251000" />
-      <workItem from="1670771591561" duration="17804000" />
+      <workItem from="1670771591561" duration="21021000" />
     </task>
     <servers />
   </component>
