@@ -3,8 +3,11 @@ import "./about-us.css";
 import AboutUsLanding from "../../assets/about-us/LandingAboutUs.svg";
 import AboutUsLandingMobile from "../../assets/about-us/AboutUsLandingMobile.svg";
 import { Link } from "react-router-dom";
+import auth from "../../cloud-infrastructure/firebase/firebase";
+import HistoryAboutUs from "./history/history";
 
 function AboutUs() {
+  const current_user = auth.currentUser;
   return (
     <div>
       <img
@@ -14,10 +17,37 @@ function AboutUs() {
       />
       <div className={"container"}>
         <div className={"about-us-get-started"}>
-          <Link to={"/auth"} className={"intro-button"}>
-            <p>Sign Up</p>
+          <Link
+            to={current_user ? "/academy" : "/auth"}
+            className={"intro-button"}
+          >
+            <p>Get Started</p>
           </Link>
         </div>
+        <br />
+        <div className={"bottom-metrics"}>
+          <div className={"bottom-metric"}>
+            <p className={"main-metric"}>100+</p>
+            <p className={"side-metric"}>Research papers referenced</p>
+          </div>
+
+          <div className={"bottom-metric"}>
+            <p className={"main-metric"}>150+</p>
+            <p className={"side-metric"}>Hours of content available</p>
+          </div>
+
+          <div className={"bottom-metric"}>
+            <p className={"main-metric"}>20</p>
+            <p className={"side-metric"}>Written courses available</p>
+          </div>
+
+          <div className={"bottom-metric"}>
+            <p className={"main-metric"}>5+</p>
+            <p className={"side-metric"}>Interactive Minigames</p>
+          </div>
+        </div>
+        <br />
+        <HistoryAboutUs />
       </div>
     </div>
   );
