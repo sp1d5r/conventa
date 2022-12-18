@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/about-us/AboutUsLandingMobile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/about-us/LandingAboutUs.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/about-us/logo-white.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/competence/competence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/competence/competence.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/cost/cost.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sand-mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/core-values.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/landing.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/our-background.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/our-strengths.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/the-roadmap.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/about-us/landing/the-team.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/traditional-navbar/standard-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/traditional-navbar/standard-navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
