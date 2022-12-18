@@ -10,8 +10,8 @@ function Intro() {
       <div className={"intro-div"}>
         <div className={"intro-text"}>
           <h1 className={"intro-text-h1"}>
-            <span>Use technology to interactively learn</span>
-            <span className={"green-text"}> practical psychology</span>
+            <span>Use Technology to Interactively Learn</span>
+            <span className={"green-text"}> Practical Psychology</span>
             <span>!</span>
           </h1>
 

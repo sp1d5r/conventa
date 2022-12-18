@@ -15,14 +15,12 @@
 }
 
 .intro-text-h1 {
-  font-family: "Inter", serif;
   font-weight: 700;
   margin-bottom: 5%;
   text-align: left;
 }
 
 .intro-text-p {
-  font-family: "Inter", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -78,7 +76,6 @@
 }
 
 .main-metric {
-  font-family: "Inter", serif;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -87,7 +84,6 @@
 }
 
 .side-metric {
-  font-family: "Inter", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
