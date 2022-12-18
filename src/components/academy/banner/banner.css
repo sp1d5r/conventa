@@ -1,0 +1,43 @@
+.banner-div {
+  width: 100%;
+  min-height: 50px;
+  background-color: #2e2e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid black;
+}
+
+.banner-text {
+  color: white;
+  margin: 0;
+  padding-right: 10px;
+  letter-spacing: 0.1rem;
+}
+
+.banner-button {
+  background-color: #3b71e7;
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.banner-button > p {
+  color: white;
+  margin: 0;
+}
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 700px) {
+  .banner-text {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .banner-div {
+    flex-wrap: wrap;
+  }
+}

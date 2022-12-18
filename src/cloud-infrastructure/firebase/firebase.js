@@ -193,3 +193,13 @@ export function logAcademyStart() {
     items: [{ time: Date.now(), session: getSessionId(), ip: getIP() }],
   });
 }
+
+/* Banner */
+export async function getBanner() {
+  const bannersRef = collection(firestore, "banner");
+  const bannerItem = await getDocs(bannersRef);
+  const banner = bannerItem.docs.map((doc) => {
+    return { id: doc.id, ...doc.data() };
+  });
+  return banner[0];
+}
