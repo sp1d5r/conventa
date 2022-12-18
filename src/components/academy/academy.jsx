@@ -10,6 +10,7 @@ import {
 import Loading from "../loading/loading";
 import { Breadcrumb } from "react-bootstrap";
 import Banner from "./banner/banner";
+import UserCard from "./user-card/user-card";
 
 function Academy({ loggedIn }) {
   const [courses, setCourses] = useState([]);
@@ -81,6 +82,8 @@ function Academy({ loggedIn }) {
         <Loading />
       ) : (
         <div className={"academy-content"}>
+          <UserCard />
+
           <div className={"academy-content-section"}>
             <p className={"academy-content-title"}>courses</p>
             <div className={"academy-content-section-child"}>
