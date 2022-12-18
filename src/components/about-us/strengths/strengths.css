@@ -1,0 +1,49 @@
+.strengths-div {
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  margin: auto;
+}
+
+.strength-cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+.strength-card {
+  width: 45%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.strength-heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.strength-p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+@media only screen and (max-width: 700px) {
+  .strength-card {
+    width: 95%;
+  }
+}
