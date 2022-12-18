@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import auth from "../../cloud-infrastructure/firebase/firebase";
 import HistoryAboutUs from "./history/history";
 import Strengths from "./strengths/strengths";
+import Roadmap from "./roadmap/roadmap";
 
 function AboutUs() {
   const current_user = auth.currentUser;
@@ -50,6 +51,7 @@ function AboutUs() {
         <br />
         <HistoryAboutUs />
         <Strengths />
+        <Roadmap />
       </div>
     </div>
   );

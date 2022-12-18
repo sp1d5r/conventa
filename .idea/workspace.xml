@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/about-us/strengths/strengths.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/about-us/strengths/strengths.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/roadmap/roadmap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/about-us/roadmap/roadmap.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" afterDir="false" />
     </list>
