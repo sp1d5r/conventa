@@ -1,0 +1,17 @@
+.card-section {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+.card-description {
+  /* width: 50%; */
+  padding: 5%;
+  font-family: "Lexend", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: left;
+  color: #000000;
+}
