@@ -5,6 +5,7 @@ import AboutUsLandingMobile from "../../assets/about-us/AboutUsLandingMobile.svg
 import { Link } from "react-router-dom";
 import auth from "../../cloud-infrastructure/firebase/firebase";
 import HistoryAboutUs from "./history/history";
+import Strengths from "./strengths/strengths";
 
 function AboutUs() {
   const current_user = auth.currentUser;
@@ -48,6 +49,7 @@ function AboutUs() {
         </div>
         <br />
         <HistoryAboutUs />
+        <Strengths />
       </div>
     </div>
   );
