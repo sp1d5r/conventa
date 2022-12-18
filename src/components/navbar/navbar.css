@@ -4,9 +4,7 @@
   width: 100vw;
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,14 +12,51 @@
   z-index: 10;
 }
 
+.login-button-white,
+.logout-button-white {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-button-white {
+  background-color: #ffc5c5;
+}
+
+.logout-button-white:hover {
+  background-color: #f68888;
+}
+
+.login-button-white-p {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #000000;
+}
+
+.login-button-white:hover {
+  background-color: #499b80;
+}
+
 .brand {
   height: 70%;
   min-width: 120px;
   font-family: "arial";
-  border-right: 2px solid var(--light-grey);
   font-style: normal;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 15px;
   text-align: left;
   color: var(--black);
   padding-left: 20px;
@@ -29,6 +64,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  margin-left: 5%;
 }
 
 .button-logout {
@@ -40,10 +76,31 @@
 }
 
 .brand-text {
-  letter-spacing: 0.1rem;
-  text-shadow: -0.08rem -0.08rem 0 #fff, 0.08rem -0.08rem 0 #fff,
-    -0.08rem 0.08rem 0 #fff, 0.08rem 0.08rem 0 #fff;
-  color: black;
+  margin: 0;
+  margin-left: 10px;
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.navbar-link-p {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  margin: 0;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  color: #000000;
 }
 
 .brand :first-child {
@@ -109,18 +166,34 @@
 @media only screen and (max-width: 680px) {
   .brand {
     height: 60%;
-    width: 70%;
+    margin-left: 5px;
   }
+
   .navbar-items {
     width: 20%;
   }
 
   .brand-text {
-    font-size: 25px;
-    letter-spacing: 0.1rem;
-    text-shadow: -0.08rem -0.08rem 0 #fff, 0.08rem -0.08rem 0 #fff,
-      -0.08rem 0.08rem 0 #fff, 0.08rem 0.08rem 0 #fff;
-    color: black;
+    font-family: "Lexend";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+  }
+
+  .login-button-white {
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .logout-button-white {
+    margin: auto;
+    margin-top: 10px;
   }
 }
 
@@ -184,6 +257,15 @@
   margin: 0;
   width: 30%;
   text-align: left;
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  color: #000000;
 }
 
 /* This is the size of the authentication Navigation Bar */
