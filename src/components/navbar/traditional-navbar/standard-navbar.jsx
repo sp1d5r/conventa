@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../assets/home/logo.svg";
+import WhiteLogo from "../../../assets/about-us/logo-white.svg";
 import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 import auth from "../../../cloud-infrastructure/firebase/firebase";
 
 function NavbarStandard() {
   const [opened, updateOpened] = useState(false);
   const size = useWindowSize();
+  const isAboutUs = window.location.href.indexOf("about-us") > -1;
   const { signOutUser } = useAuth();
   const current_user = auth.currentUser;
 
@@ -48,22 +50,48 @@ function NavbarStandard() {
 
   return (
     <>
-      <div className={"navbar"} id={"navbar"}>
+      <div className={`navbar ${isAboutUs ? "black" : "white"}`} id={"navbar"}>
         <Link className={"brand"} to={"/"}>
-          <img className={"brand-img"} src={Logo} alt={"logo"} />
-          <p className={"brand-text"}>conventa</p>
+          <img
+            className={"brand-img"}
+            src={isAboutUs ? WhiteLogo : Logo}
+            alt={"logo"}
+          />
+          <p
+            className={`brand-text ${isAboutUs ? "white-text" : "black-text"}`}
+          >
+            conventa
+          </p>
         </Link>
 
         {size.width > 700 ? (
           <>
             <Link to={"/academy"}>
-              <p className={"navbar-link-p"}>Academy</p>
+              <p
+                className={`navbar-link-p ${
+                  isAboutUs ? "white-text" : "black-text"
+                }`}
+              >
+                Academy
+              </p>
             </Link>
             <Link to={"/news-room"}>
-              <p className={"navbar-link-p"}>News Room</p>
+              <p
+                className={`navbar-link-p ${
+                  isAboutUs ? "white-text" : "black-text"
+                }`}
+              >
+                News Room
+              </p>
             </Link>
             <Link to={"/about-us"}>
-              <p className={"navbar-link-p"}>About Us</p>
+              <p
+                className={`navbar-link-p ${
+                  isAboutUs ? "white-text" : "black-text"
+                }`}
+              >
+                About Us
+              </p>
             </Link>
           </>
         ) : (

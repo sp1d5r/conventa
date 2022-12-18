@@ -1,22 +1,23 @@
 import React from "react";
 import "./about-us.css";
-import Landing from "./landing/landing";
-import OurBackground from "./landing/our-background";
-import OurStrength from "./landing/our-strengths";
-import CoreValues from "./landing/core-values";
-import TheRoadMap from "./landing/the-roadmap";
-import TheTeam from "./landing/the-team";
+import AboutUsLanding from "../../assets/about-us/LandingAboutUs.svg";
+import AboutUsLandingMobile from "../../assets/about-us/AboutUsLandingMobile.svg";
+import { Link } from "react-router-dom";
 
 function AboutUs() {
   return (
     <div>
-      <Landing />
-      <div style={{ width: "85vw", margin: "auto" }}>
-        <OurBackground />
-        <OurStrength />
-        <CoreValues />
-        <TheRoadMap />
-        <TheTeam />
+      <img
+        className={"about-us-landing"}
+        src={window.innerWidth < 700 ? AboutUsLandingMobile : AboutUsLanding}
+        alt={"About us?"}
+      />
+      <div className={"container"}>
+        <div className={"about-us-get-started"}>
+          <Link to={"/auth"} className={"intro-button"}>
+            <p>Sign Up</p>
+          </Link>
+        </div>
       </div>
     </div>
   );
