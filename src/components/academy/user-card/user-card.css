@@ -1,0 +1,80 @@
+.user-card-div {
+  width: 90%;
+  margin: auto;
+  min-height: 20vh;
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.user-information {
+  height: calc(20vh * 0.9);
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.user-info-text {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0;
+}
+
+.user-info-text-p {
+  font-size: 20px;
+}
+
+.text-mute {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: lightslategray;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.streak-information {
+  width: 50%;
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0% 5%;
+}
+
+.border-right {
+  border-right: 2px solid #ededed;
+}
+
+.left-hand-div {
+  padding: 20px;
+}
+
+.circular-loader {
+  height: 70%;
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 700px) {
+  .user-information {
+    width: 100%;
+  }
+
+  .streak-information {
+    width: 100%;
+  }
+
+  .user-card-div {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

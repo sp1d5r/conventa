@@ -17,10 +17,19 @@ const newShade = (hexColor, magnitude) => {
   }
 };
 
+function change_nav(color) {
+  let nav;
+  nav = document.getElementById("navbar");
+  if (nav) {
+    nav.style.backgroundColor = color;
+  }
+}
+
 function change_color(color) {
   let navbar;
   let footer;
   let root;
+  change_nav(color);
   root = document.querySelector(":root");
   navbar = document.getElementById("root");
   if (navbar) {
@@ -42,6 +51,8 @@ function change_color(color) {
 function check_nav() {
   if (window.location.href.includes("First%20Impressions")) {
     change_color("#B7F6FF");
+  } else if (window.location.href.includes("academy")) {
+    change_color("#E3FFEA");
   } else if (window.location.href.includes("Catch%20a%20Liar")) {
     change_color("#FFB7B7");
   } else if (window.location.href.includes("Tracking%20Client%20Emotions")) {
@@ -58,6 +69,8 @@ function check_nav() {
     change_color("#e3ffea");
   } else if (window.location.href.includes("pricing-page")) {
     change_color("#e3ffea");
+  } else if (window.location.href.includes("about-us")) {
+    change_nav("#000000");
   } else {
     change_color("#ffffff");
   }

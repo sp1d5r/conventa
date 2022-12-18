@@ -3,20 +3,30 @@ import "./academy.css";
 import CourseCard from "./course-card/course-card";
 import MiniGameCard from "./minigame-card/minigame-card";
 import {
+  getBanner,
   getCourses,
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
 import { Breadcrumb } from "react-bootstrap";
+import Banner from "./banner/banner";
+import UserCard from "./user-card/user-card";
 
 function Academy({ loggedIn }) {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [banner, setBanner] = useState({});
 
   const courseItems = () => {
     getCourses().then((_courses) => {
       setCourses(_courses);
       setLoading(false);
+    });
+  };
+
+  const getBannerFromFirebase = () => {
+    getBanner().then((_banner) => {
+      setBanner(_banner);
     });
   };
 
@@ -46,6 +56,7 @@ function Academy({ loggedIn }) {
   useEffect(() => {
     courseItems();
     logAcademyStart();
+    getBannerFromFirebase();
   }, []);
 
   return (
@@ -59,12 +70,20 @@ function Academy({ loggedIn }) {
         </Breadcrumb>
       </div>
       <div className={"academy-title"}>
-        {loggedIn ? <p>Welcome Back!</p> : <p>Academy</p>}
+        <p>Academy</p>
       </div>
+
+      {banner.promoMessage && banner.color ? (
+        <Banner promoMessage={banner.promoMessage} color={banner.color} />
+      ) : (
+        <></>
+      )}
       {loading ? (
         <Loading />
       ) : (
         <div className={"academy-content"}>
+          <UserCard />
+
           <div className={"academy-content-section"}>
             <p className={"academy-content-title"}>courses</p>
             <div className={"academy-content-section-child"}>
