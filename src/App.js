@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Authenticate from "./components/auth/authenticate";
 import Academy from "./components/academy/academy";
 import CourseLanding from "./components/course-page/course-landing";
-import LessonPage from "./components/lesson/lesson-page";
 import FirstImpressions from "./components/minigames/first-impressions/first-impressions";
 import CatchALiar from "./components/minigames/to-catch-a-liar/catch-a-liar";
 import ScrollToTop from "./components/routing/scroll-to-top";
@@ -16,6 +15,7 @@ import AboutUs from "./components/about-us/about-us";
 import NewsRoom from "./components/news-room/news-room";
 import PricingPage from "./components/pricing-page/pricing-page";
 import AuthProvider from "./cloud-infrastructure/firebase/auth";
+import NewLessonPage from "./components/lesson/temp-lesson-page";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
             <Route path="/auth" element={<Authenticate />} />
             <Route path="/academy" element={<Academy loggedIn={false} />} />
             <Route path="/course/" element={<CourseLanding />} />
-            <Route path="/lesson/" element={<LessonPage />} />
+            <Route path="/lesson/" element={<NewLessonPage />} />
             <Route path="/about-us/" element={<AboutUs />} />
             <Route path="/pricing-page/" element={<PricingPage />} />
             <Route path="/news-room/" element={<NewsRoom />} />

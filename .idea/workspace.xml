@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/streak-day/streak-day.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/streak-day/streak-day.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/FireworkExplosion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/progress-bar/progress-bar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/progress-bar/progress-bar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/temp-lesson-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/banner/banner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/banner/banner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +170,7 @@
       <workItem from="1667941550847" duration="5584000" />
       <workItem from="1668347881978" duration="17251000" />
       <workItem from="1670771591561" duration="21593000" />
+      <workItem from="1671468176395" duration="9130000" />
     </task>
     <servers />
   </component>
