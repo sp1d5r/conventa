@@ -123,6 +123,18 @@ export async function createCheckoutSession(uid, plan_selected, is_annual) {
   });
 }
 
+/* User Information */
+export async function userCompletedLesson(lesson_id) {
+  const activityDocRef = await addDoc(
+    collection(firestore, `users/${auth.currentUser.uid}/activity`),
+    {
+      date: Date.now(),
+      lesson_id: lesson_id,
+    }
+  );
+  return activityDocRef;
+}
+
 /* Courses */
 export async function getCourses() {
   const courseCollection = collection(firestore, "courses");

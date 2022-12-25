@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Breadcrumb } from "react-bootstrap";
 import "./lesson-page.css";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   getCourse,
   getLessonFromID,
   getPageFromID,
+  userCompletedLesson,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
 import ProgressBar from "./progress-bar/progress-bar";
 import LessonContent from "./lesson-content/lesson-content";
+import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 
 const LESSON_CONTENT_EXAMPLE = [
   {
@@ -96,11 +98,13 @@ function NewLessonPage() {
   /* Keep track of content progress */
   const [user_progress, setProgress] = useState([]);
   const [loading, setLoading] = useState(true);
+  /* Navigation */
+  const navigator = useNavigate();
+  /* Auth info */
+  const { current_user } = useAuth();
 
   useEffect(() => {
-    getPageFromID("TfmAh9FGRO0IsxykeMCT").then((a) => {
-      console.log("TEST 1 ", a);
-    });
+    console.log(current_user);
 
     getCourse(course_id).then((res) => {
       setCourse(res);
@@ -180,6 +184,32 @@ function NewLessonPage() {
     goForward();
   };
 
+  const updateUserInfoLessonComplete = async () => {
+    return userCompletedLesson(lesson_id);
+  };
+
+  const lessonCompleteSubmit = () => {
+    updateUserInfoLessonComplete().then(() => {
+      navigator(`/course/?course_id=${course_id}`);
+    });
+  };
+
+  const lessonCompleteBack = () => {
+    updateUserInfoLessonComplete()
+      .then((_) => {
+        window.location.reload();
+      })
+      .catch((e) => {
+        window.location.reload();
+      });
+  };
+
+  const lessonCompleteNextLesson = () => {
+    updateUserInfoLessonComplete().then(() => {
+      navigator(`/course/?course_id=${course_id}`);
+    });
+  };
+
   return (
     <div className={"course-landing-main"}>
       {loading ? (
@@ -210,6 +240,9 @@ function NewLessonPage() {
                   status={user_progress[current_position]}
                   type={current_content.type}
                   submit={submit}
+                  lessonCompleteSubmit={lessonCompleteSubmit}
+                  lessonCompleteBack={lessonCompleteBack}
+                  lessonCompleteNextLesson={lessonCompleteNextLesson}
                 />
               </div>
             </div>

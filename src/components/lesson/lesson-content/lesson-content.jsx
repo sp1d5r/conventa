@@ -119,7 +119,12 @@ function QuestionContent({
 }
 
 /* Final Content */
-function FinalContent({ lessonTitle, submit }) {
+function FinalContent({
+  lessonTitle,
+  lessonCompleteBack,
+  lessonCompleteSubmit,
+  lessonCompleteNextLesson,
+}) {
   return (
     <>
       <div className={"lesson-content-div"}>
@@ -132,13 +137,28 @@ function FinalContent({ lessonTitle, submit }) {
           <p className={"lesson-text-title"}>{lessonTitle}</p>
         </div>
         <div className={"lesson-final-button-div"}>
-          <button onClick={submit} className={"lesson-submit-button"}>
+          <button
+            onClick={() => {
+              lessonCompleteBack();
+            }}
+            className={"lesson-submit-button"}
+          >
             <p className={"lesson-content-submit-text"}>Retry</p>
           </button>
-          <button onClick={submit} className={"lesson-submit-button"}>
+          <button
+            onClick={() => {
+              lessonCompleteSubmit();
+            }}
+            className={"lesson-submit-button"}
+          >
             <p className={"lesson-content-submit-text"}>Submit</p>
           </button>
-          <button onClick={submit} className={"lesson-submit-button"}>
+          <button
+            onClick={() => {
+              lessonCompleteNextLesson();
+            }}
+            className={"lesson-submit-button"}
+          >
             <p className={"lesson-content-submit-text"}>Next Lesson</p>
           </button>
         </div>
@@ -147,7 +167,15 @@ function FinalContent({ lessonTitle, submit }) {
   );
 }
 
-function LessonContent({ type, content, status, submit }) {
+function LessonContent({
+  type,
+  content,
+  status,
+  submit,
+  lessonCompleteSubmit,
+  lessonCompleteBack,
+  lessonCompleteNextLesson,
+}) {
   if (type === "text") {
     return (
       <TextContent
@@ -168,7 +196,14 @@ function LessonContent({ type, content, status, submit }) {
       />
     );
   } else if (type === "final") {
-    return <FinalContent lessonTitle={content.title} />;
+    return (
+      <FinalContent
+        lessonTitle={content.title}
+        lessonCompleteSubmit={lessonCompleteSubmit}
+        lessonCompleteBack={lessonCompleteBack}
+        lessonCompleteNextLesson={lessonCompleteNextLesson}
+      />
+    );
   }
 }
 

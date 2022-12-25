@@ -4,6 +4,7 @@
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/temp-lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/temp-lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +165,7 @@
       <workItem from="1667941550847" duration="5584000" />
       <workItem from="1668347881978" duration="17251000" />
       <workItem from="1670771591561" duration="21593000" />
-      <workItem from="1671468176395" duration="16351000" />
+      <workItem from="1671468176395" duration="17858000" />
     </task>
     <servers />
   </component>
