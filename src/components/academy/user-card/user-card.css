@@ -1,5 +1,5 @@
 .user-card-div {
-  width: 90%;
+  width: 100%;
   margin: auto;
   min-height: 20vh;
   margin-bottom: 5%;
@@ -67,6 +67,9 @@
 @media only screen and (max-width: 700px) {
   .user-information {
     width: 100%;
+    border: none;
+    border-bottom: 2px solid #ededed;
+    margin-bottom: 5px;
   }
 
   .streak-information {

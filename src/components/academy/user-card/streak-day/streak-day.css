@@ -4,21 +4,24 @@
 
 .streak-day {
   height: calc(20vh * 0.7);
-  border: 1px solid lightslategray;
+  border: 2px solid lightslategray;
   border-radius: 20px;
   width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 2px;
 }
 
 .yellow-streak {
-  border: 1px solid #e9b350;
+  border: 2px solid #e9b350;
+  background-color: #fff5d9;
 }
 
 .blue-streak {
-  border: 1px solid #3483eb;
+  border: 2px solid #3483eb;
+  background-color: #e1f5f4;
 }
 
 .streak-day-text {
