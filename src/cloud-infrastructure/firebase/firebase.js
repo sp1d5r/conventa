@@ -123,6 +123,18 @@ export async function createCheckoutSession(uid, plan_selected, is_annual) {
   });
 }
 
+/* User Information */
+export async function userCompletedLesson(lesson_id) {
+  const activityDocRef = await addDoc(
+    collection(firestore, `users/${auth.currentUser.uid}/activity`),
+    {
+      date: Date.now(),
+      lesson_id: lesson_id,
+    }
+  );
+  return activityDocRef;
+}
+
 /* Courses */
 export async function getCourses() {
   const courseCollection = collection(firestore, "courses");
@@ -151,6 +163,33 @@ export async function getLessonFromID(lesson_id) {
   const lessonDoc = doc(firestore, "lessons", lesson_id);
   const lessonItems = await getDoc(lessonDoc);
   return { id: lesson_id, ...lessonItems.data() };
+}
+
+/* Pages */
+export async function getPageFromID(page_path) {
+  const pageDoc = doc(firestore, "pages", page_path.split("/")[1]);
+  const snapshot = await getDoc(pageDoc);
+  const pageData = snapshot.data().page;
+  // Slight formatting change goes here
+  // {type: pageData.type, data: {}}
+  let data;
+  if (pageData.type === "text") {
+    data = {
+      type: pageData.type,
+      content: pageData.data,
+    };
+  } else if (pageData.type === "question") {
+    data = {
+      type: pageData.type,
+      content: {
+        question: pageData.question,
+        questions: pageData.questions,
+        answer: parseInt(pageData.answer),
+        explanation: pageData.explanation,
+      },
+    };
+  }
+  return data;
 }
 
 /* Minigames*/

@@ -23,4 +23,6 @@
 .lesson-landing-content-section {
   /* This is the section i.e. courses*/
   width: 100%;
+  margin: auto;
+  height: 90vh;
 }
