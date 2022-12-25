@@ -11,6 +11,7 @@ import Loading from "../loading/loading";
 import { Breadcrumb } from "react-bootstrap";
 import Banner from "./banner/banner";
 import UserCard from "./user-card/user-card";
+import { change_color } from "../../cloud-infrastructure/utils/color";
 
 function Academy({ loggedIn }) {
   const [courses, setCourses] = useState([]);
@@ -57,6 +58,7 @@ function Academy({ loggedIn }) {
     courseItems();
     logAcademyStart();
     getBannerFromFirebase();
+    change_color("#E3FFEA");
   }, []);
 
   return (

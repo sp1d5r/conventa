@@ -15,7 +15,7 @@ import AboutUs from "./components/about-us/about-us";
 import NewsRoom from "./components/news-room/news-room";
 import PricingPage from "./components/pricing-page/pricing-page";
 import AuthProvider from "./cloud-infrastructure/firebase/auth";
-import NewLessonPage from "./components/lesson/temp-lesson-page";
+import NewLessonPage from "./components/lesson/lesson-page";
 
 function App() {
   return (

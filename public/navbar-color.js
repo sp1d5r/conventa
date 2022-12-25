@@ -59,12 +59,6 @@ function check_nav() {
     change_color("#E5B7FF");
   } else if (window.location.href.includes("news-room")) {
     change_color("#FFFFFF");
-  } else if (window.location.href.includes("course_id=l2RN1nSgqJEHjxxX8d4v")) {
-    change_color("#e3efff");
-  } else if (window.location.href.includes("course_id=YIOv1TJiIjgEQf0bFofK")) {
-    change_color("#FFE3F7");
-  } else if (window.location.href.includes("course_id=9VBDATVU0WWpoxwwTd6Z")) {
-    change_color("#ffe3e3");
   } else if (window.location.href.includes("auth")) {
     change_color("#e3ffea");
   } else if (window.location.href.includes("pricing-page")) {
