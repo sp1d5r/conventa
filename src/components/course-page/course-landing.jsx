@@ -7,6 +7,7 @@ import CourseProfileCard from "./course-profile-card/course-profile-card";
 import { getCourse } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
 import { Breadcrumb } from "react-bootstrap";
+import { change_color } from "../../cloud-infrastructure/utils/color";
 
 function CourseLanding() {
   /* The URL looks like : http://localhost:3000/course/?course_id=gvhvgvhv
@@ -24,6 +25,7 @@ function CourseLanding() {
     getCourse(course_id).then((info) => {
       set_course_information(info);
       setLoad(false);
+      change_color(info.color);
     });
   };
 
