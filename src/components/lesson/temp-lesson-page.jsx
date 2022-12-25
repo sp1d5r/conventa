@@ -5,9 +5,9 @@ import { useSearchParams } from "react-router-dom";
 import {
   getCourse,
   getLessonFromID,
+  getPageFromID,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
-import axios from "axios";
 import ProgressBar from "./progress-bar/progress-bar";
 import LessonContent from "./lesson-content/lesson-content";
 
@@ -98,30 +98,42 @@ function NewLessonPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    getPageFromID("TfmAh9FGRO0IsxykeMCT").then((a) => {
+      console.log("TEST 1 ", a);
+    });
+
     getCourse(course_id).then((res) => {
       setCourse(res);
       getLessonFromID(lesson_id).then((res) => {
         setLesson(res);
-        console.log(res.content);
-        axios.get(res.content).then(function (response) {
-          // TODO:// use firebase to do this one
-          const temp = LESSON_CONTENT_EXAMPLE;
-          temp.push({
+
+        // Inside lessons we should have pages, update content to represent each of these pages
+        const pages = res.pages;
+        console.log(pages);
+
+        Promise.all(
+          pages.map((page) => {
+            return getPageFromID(page);
+          })
+        ).then((returned_pages) => {
+          returned_pages.push({
             type: "final",
             content: {
               title: res.title,
             },
           });
-          setContent(temp);
-          setCurrentContent(temp[0]);
+
+          setContent(returned_pages);
+          setCurrentContent(returned_pages[0]);
           setProgress(
-            temp.map((_) => {
+            returned_pages.map((_) => {
               return "";
             })
           );
+          setLoading(false);
+
+          console.log(LESSON_CONTENT_EXAMPLE);
         });
-        console.log(user_progress, current_position, current_content, content);
-        setLoading(false);
       });
     });
     // eslint-disable-next-line
