@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./streak-day.css";
+import { userStreakForDay } from "../../../../cloud-infrastructure/firebase/firebase";
 
-function StreakDay({ today, day, streak }) {
+function StreakDay({ today, day, date }) {
+  const [streak, setStreak] = useState(false);
+  useEffect(() => {
+    userStreakForDay(date).then((res) => {
+      setStreak(res);
+    });
+  }, [date]);
+
   return (
     <>
       <div

@@ -125,14 +125,39 @@ export async function createCheckoutSession(uid, plan_selected, is_annual) {
 
 /* User Information */
 export async function userCompletedLesson(lesson_id) {
+  const date = new Date();
+  // Set time to 00:00:00
+  date.setHours(0, 0, 0, 0);
   const activityDocRef = await addDoc(
     collection(firestore, `users/${auth.currentUser.uid}/activity`),
     {
-      date: Date.now(),
+      date: date.getTime(),
       lesson_id: lesson_id,
     }
   );
   return activityDocRef;
+}
+export async function getLessonsCompletedForDay(date) {
+  date.setHours(0, 0, 0, 0);
+  console.log(date.getTime());
+  const userActivityRef = collection(
+    firestore,
+    `users/${auth.currentUser.uid}/activity`
+  );
+  const q = query(userActivityRef, where("date", "==", date.getTime()));
+  const querySnapshot = await getDocs(q);
+  let entries = 0;
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    entries += 1;
+  });
+  return entries;
+}
+
+export async function userStreakForDay(date) {
+  // Set time to 00:00:00
+  const entries = await getLessonsCompletedForDay(date);
+  return entries >= 5;
 }
 
 /* Courses */

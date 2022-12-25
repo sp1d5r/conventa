@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./user-card.css";
 import StreakDay from "./streak-day/streak-day";
+import { getLessonsCompletedForDay } from "../../../cloud-infrastructure/firebase/firebase";
 
 function UserCard() {
   const NUMBER_STREAK_REQUIRED = 5;
-  const streak = 2;
+  const [streak, setStreak] = useState(0);
   const longest_streak = 4;
   const lessons_completed = 45;
+  const today = new Date();
+  const [sunday, setSunday] = useState(); // ;)
+  const [monday, setMonday] = useState();
+  const [tuesday, setTuesday] = useState();
+  const [wednesday, setWednesday] = useState();
+  const [thursday, setThursday] = useState();
+  const [friday, setFriday] = useState();
+  const [saturday, setSaturday] = useState();
+
+  useEffect(() => {
+    var curr = new Date(); // get current date
+    var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
+    setSunday(new Date(curr.setDate(first)));
+    setMonday(new Date(curr.setDate(first + 1)));
+    setTuesday(new Date(curr.setDate(first + 2)));
+    setWednesday(new Date(curr.setDate(first + 3)));
+    setThursday(new Date(curr.setDate(first + 4)));
+    setFriday(new Date(curr.setDate(first + 5)));
+    setSaturday(new Date(curr.setDate(first + 6)));
+    getLessonsCompletedForDay(today).then((res) => {
+      console.log(res);
+      setStreak(res);
+    });
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
@@ -22,28 +48,29 @@ function UserCard() {
               className="loader-path"
               cx="50"
               cy="50"
-              r="10"
+              r="20"
               fill="none"
               stroke={"#ededed"}
+              strokeWidth={"5px"}
             ></circle>
             <circle
               className="loader-path"
               cx="50"
               cy="50"
-              r="10"
+              r="20"
               fill="none"
               stroke="#3483eb"
               strokeDasharray={`${
-                Math.min(3, streak) *
-                Math.round(62.8 / NUMBER_STREAK_REQUIRED, 1)
-              } 62`}
+                Math.min(5, streak) *
+                Math.round(125.7 / NUMBER_STREAK_REQUIRED, 1)
+              } 125.7`}
             ></circle>
             <text
-              x="47"
-              y="54"
+              x="45"
+              y="56"
               fontFamily={"Lexend"}
               fill={"#000000"}
-              fontSize={"10px"}
+              fontSize={"18px"}
             >
               {streak}
             </text>
@@ -62,13 +89,55 @@ function UserCard() {
         </div>
 
         <div className={"streak-information"}>
-          <StreakDay today={true} day={"Su"} streak={false} />
-          <StreakDay today={false} day={"M"} streak={false} />
-          <StreakDay today={false} day={"Tu"} streak={false} />
-          <StreakDay today={false} day={"W"} streak={false} />
-          <StreakDay today={false} day={"Th"} streak={false} />
-          <StreakDay today={false} day={"F"} streak={false} />
-          <StreakDay today={false} day={"Sa"} streak={false} />
+          {sunday && (
+            <StreakDay
+              today={today.getTime() === sunday.getTime()}
+              day={"Su"}
+              date={sunday}
+            />
+          )}
+          {monday && (
+            <StreakDay
+              today={today.getTime() === monday.getTime()}
+              day={"M"}
+              date={monday}
+            />
+          )}
+          {tuesday && (
+            <StreakDay
+              today={today.getTime() === tuesday.getTime()}
+              day={"Tu"}
+              date={tuesday}
+            />
+          )}
+          {wednesday && (
+            <StreakDay
+              today={today.getTime() === wednesday.getTime()}
+              day={"W"}
+              date={wednesday}
+            />
+          )}
+          {thursday && (
+            <StreakDay
+              today={today.getTime() === thursday.getTime()}
+              day={"Th"}
+              date={thursday}
+            />
+          )}
+          {friday && (
+            <StreakDay
+              today={today.getTime() === friday.getTime()}
+              day={"F"}
+              date={friday}
+            />
+          )}
+          {saturday && (
+            <StreakDay
+              today={today.getTime() === saturday.getTime()}
+              day={"Sa"}
+              date={saturday}
+            />
+          )}
         </div>
       </div>
     </>
