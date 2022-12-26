@@ -90,3 +90,32 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .academy-content-course {
+    height: 90%;
+  }
+
+  .academy-content-course:hover {
+    height: 95%;
+  }
+
+  .academy-content-course-image-data {
+    height: 97px;
+    width: auto;
+  }
+
+  .academy-content-course-title > p {
+    margin: 2px;
+    font-size: 0.7rem;
+  }
+
+  .academy-content-course-info > p {
+    font-size: 0.5rem;
+  }
+
+  .academy-content-course-info > img {
+    height: 15px;
+    width: 15px;
+  }
+}
