@@ -34,11 +34,16 @@
 /* If the display is less than 600 it's a mobile device*/
 @media only screen and (max-width: 700px) {
   .banner-text {
-    width: 100%;
+    width: 60%;
     margin: 5px;
+    font-size: 10px;
   }
 
-  .banner-div {
-    flex-wrap: wrap;
+  .banner-button > p {
+    font-size: 10px;
   }
+
+  /*.banner-div {*/
+  /*  flex-wrap: wrap;*/
+  /*}*/
 }
