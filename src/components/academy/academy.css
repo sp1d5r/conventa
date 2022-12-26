@@ -91,16 +91,23 @@
   .academy-content-section-child {
     width: 100%;
     border: none;
-    grid-template-rows: 45% 45%;
-    grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-rows: 47% 47%;
+    grid-template-columns: repeat(auto-fit, 180px);
+    row-gap: 10px;
+    height: 451px;
     grid-auto-flow: column;
     overflow-x: scroll;
-    height: 400px;
     padding: 10px;
   }
 
   .academy-content-section-child-minigame {
-    padding-left: 10%;
-    width: 85%;
+    width: 100%;
+    border: none;
+    grid-template-rows: 90%;
+    grid-template-columns: repeat(auto-fit, 220px);
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    height: 400px;
+    padding: 10px;
   }
 }
