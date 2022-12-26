@@ -7,6 +7,7 @@ import {
   setDoc,
   getDocs,
   getFirestore,
+  getCountFromServer,
   query,
   where,
   onSnapshot,
@@ -139,7 +140,6 @@ export async function userCompletedLesson(lesson_id) {
 }
 export async function getLessonsCompletedForDay(date) {
   date.setHours(0, 0, 0, 0);
-  console.log(date.getTime());
   const userActivityRef = collection(
     firestore,
     `users/${auth.currentUser.uid}/activity`
@@ -188,6 +188,16 @@ export async function getLessonFromID(lesson_id) {
   const lessonDoc = doc(firestore, "lessons", lesson_id);
   const lessonItems = await getDoc(lessonDoc);
   return { id: lesson_id, ...lessonItems.data() };
+}
+
+export async function getLessonsCompleted() {
+  const userActivityRef = collection(
+    firestore,
+    `users/${auth.currentUser.uid}/activity`
+  );
+  const lessonActivity = query(userActivityRef, where("lesson_id", "!=", ""));
+  const lessonCount = await getCountFromServer(lessonActivity);
+  return lessonCount.data().count;
 }
 
 /* Pages */

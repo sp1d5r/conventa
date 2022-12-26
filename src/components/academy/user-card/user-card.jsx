@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./user-card.css";
 import StreakDay from "./streak-day/streak-day";
-import { getLessonsCompletedForDay } from "../../../cloud-infrastructure/firebase/firebase";
+import {
+  getLessonsCompleted,
+  getLessonsCompletedForDay,
+} from "../../../cloud-infrastructure/firebase/firebase";
 
 function UserCard() {
   const NUMBER_STREAK_REQUIRED = 5;
   const [streak, setStreak] = useState(0);
-  const longest_streak = 4;
-  const lessons_completed = 45;
-  const today = new Date();
+  const [today, setToday] = useState(new Date());
   const [sunday, setSunday] = useState(); // ;)
   const [monday, setMonday] = useState();
   const [tuesday, setTuesday] = useState();
@@ -16,20 +17,55 @@ function UserCard() {
   const [thursday, setThursday] = useState();
   const [friday, setFriday] = useState();
   const [saturday, setSaturday] = useState();
+  const [lessons_completed, setLessonsCompleted] = useState(0);
 
+  const cleanDate = (date) => {
+    const temp = new Date(date);
+    temp.setHours(0, 0, 0, 0);
+    return temp;
+  };
+
+  const getUserStreakText = () => {
+    if (streak === 0) {
+      return (
+        <p className={"user-info-text-p"}>
+          Complete <span className={"bold"}>{NUMBER_STREAK_REQUIRED}</span>{" "}
+          lessons daily to start a streak!
+        </p>
+      );
+    } else if (streak < 5) {
+      return (
+        <p className={"user-info-text-p"}>
+          Complete only{" "}
+          <span className={"bold"}>{NUMBER_STREAK_REQUIRED - streak}</span>{" "}
+          lessons more to start a streak!
+        </p>
+      );
+    } else {
+      return (
+        <p className={"user-info-text-p"}>
+          Congratulations! You've achieved a streak for today, come back
+          tomorrow!
+        </p>
+      );
+    }
+  };
   useEffect(() => {
     var curr = new Date(); // get current date
+    setToday(cleanDate(curr.getDate()));
     var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
-    setSunday(new Date(curr.setDate(first)));
-    setMonday(new Date(curr.setDate(first + 1)));
-    setTuesday(new Date(curr.setDate(first + 2)));
-    setWednesday(new Date(curr.setDate(first + 3)));
-    setThursday(new Date(curr.setDate(first + 4)));
-    setFriday(new Date(curr.setDate(first + 5)));
-    setSaturday(new Date(curr.setDate(first + 6)));
+    setSunday(cleanDate(curr.setDate(first)));
+    setMonday(cleanDate(curr.setDate(first + 1)));
+    setTuesday(cleanDate(curr.setDate(first + 2)));
+    setWednesday(cleanDate(curr.setDate(first + 3)));
+    setThursday(cleanDate(curr.setDate(first + 4)));
+    setFriday(cleanDate(curr.setDate(first + 5)));
+    setSaturday(cleanDate(curr.setDate(first + 6)));
     getLessonsCompletedForDay(today).then((res) => {
-      console.log(res);
       setStreak(res);
+    });
+    getLessonsCompleted().then((res) => {
+      setLessonsCompleted(res);
     });
     // eslint-disable-next-line
   }, []);
@@ -77,26 +113,23 @@ function UserCard() {
           </svg>
           <div className={"text-left left-hand-div"}>
             <p className={"user-info-text"}>Welcome Back!</p>
-            <p className={"user-info-text-p"}>
-              Complete <span className={"bold"}>{NUMBER_STREAK_REQUIRED}</span>{" "}
-              lessons daily to start a streak!
-            </p>
+            {getUserStreakText()}
             <div className={"text-mute"}>
-              <p>{longest_streak} Longest Streak</p>
-              <p>{lessons_completed} Courses Completed</p>
+              <p>{lessons_completed} Lessons Completed</p>
+              {/*<p>{longest_streak} Courses Completed</p>*/}
             </div>
           </div>
         </div>
 
         <div className={"streak-information"}>
-          {sunday && (
+          {today && sunday && (
             <StreakDay
               today={today.getTime() === sunday.getTime()}
               day={"Su"}
               date={sunday}
             />
           )}
-          {monday && (
+          {today && monday && (
             <StreakDay
               today={today.getTime() === monday.getTime()}
               day={"M"}
@@ -110,28 +143,28 @@ function UserCard() {
               date={tuesday}
             />
           )}
-          {wednesday && (
+          {today && wednesday && (
             <StreakDay
               today={today.getTime() === wednesday.getTime()}
               day={"W"}
               date={wednesday}
             />
           )}
-          {thursday && (
+          {today && thursday && (
             <StreakDay
               today={today.getTime() === thursday.getTime()}
               day={"Th"}
               date={thursday}
             />
           )}
-          {friday && (
+          {today && friday && (
             <StreakDay
               today={today.getTime() === friday.getTime()}
               day={"F"}
               date={friday}
             />
           )}
-          {saturday && (
+          {today && saturday && (
             <StreakDay
               today={today.getTime() === saturday.getTime()}
               day={"Sa"}
