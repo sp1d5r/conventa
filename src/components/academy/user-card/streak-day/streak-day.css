@@ -37,4 +37,8 @@
   .streak-day {
     width: 30px;
   }
+
+  .streak-day-text {
+    font-size: 1rem;
+  }
 }
