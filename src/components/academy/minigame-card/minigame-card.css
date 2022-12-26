@@ -82,3 +82,20 @@
 .academy-content-minigame-info > img {
   height: 25px;
 }
+
+/* height: 300px; */
+
+@media screen and (max-width: 600px) {
+  .academy-content-minigame {
+    height: 300px;
+  }
+
+  .academy-content-minigame-title > p {
+    margin: 5px;
+    font-size: 0.8rem;
+  }
+
+  .academy-content-minigame-info > img {
+    height: 20px;
+  }
+}

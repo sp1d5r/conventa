@@ -123,4 +123,19 @@
   .course-landing-difficulty {
     width: 40%;
   }
+
+  .academy-content-minigame-image-data {
+    aspect-ratio: 1/1;
+    width: 170px;
+  }
+
+  .course-landing-content-section {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .course-content-lessons {
+    padding: 0px;
+    min-height: 60vh;
+  }
 }

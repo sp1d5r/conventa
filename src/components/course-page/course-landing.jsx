@@ -94,7 +94,7 @@ function CourseLanding() {
           <div className={"course-landing-content-section"}>
             <p className={"course-landing-content-title"}>lessons</p>
 
-            <div className={"course-landing-content-section-child"}>
+            <div className={"academy-content-section-child-minigame"}>
               {course_information &&
                 course_information.lessons?.map((lesson_ref, index) => {
                   return (
