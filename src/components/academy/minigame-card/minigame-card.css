@@ -98,4 +98,8 @@
   .academy-content-minigame-info > img {
     height: 20px;
   }
+
+  .academy-content-minigame:hover {
+    height: 320px;
+  }
 }
