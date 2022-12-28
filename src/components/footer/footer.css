@@ -13,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  border-top: 3px solid black;
 }
 
 .footer-information {
@@ -31,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex: 1;
   margin: auto;
 }
@@ -39,18 +40,40 @@
 .footer-information-heading {
   font-weight: 700;
   font-size: 20px;
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+
   color: var(--black);
 }
 
 .footer-information-links {
-  border-left: 3px solid var(--light-grey);
   padding-left: 5%;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 1px solid black;
 }
 
 .footer-information-links > a {
   text-decoration: none;
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
   color: var(--black);
+  width: max(50%, 100px);
 }
 
 .footer-available-on {
