@@ -4,8 +4,9 @@ import PricingSidePanel from "./pricing-side-panel/pricing-side-panel";
 import TimeRadioButton from "./time-radio-button/time-radio-button";
 import PricingSelectCard from "./pricing-select-card/pricing-select-card";
 import { Link, useNavigate } from "react-router-dom";
-import auth, {
+import {
   createCheckoutSession,
+  getCurrentUser,
 } from "../../cloud-infrastructure/firebase/firebase";
 
 function PricingPage() {
@@ -13,12 +14,8 @@ function PricingPage() {
   const [plan_selected, setPlan] = useState(2);
   const [loading, setLoading] = useState(false);
   const window_size = useWindowSize();
-  const current_user = auth.currentUser;
+  const [current_user, setCurrentUser] = useState(null);
   const navigator = useNavigate();
-
-  if (!current_user) {
-    navigator("/auth");
-  }
 
   const goToStripe = () => {
     setLoading(!loading);
@@ -28,6 +25,16 @@ function PricingPage() {
       is_annual ? 2 : 1
     ).then((r) => console.log("here"));
   };
+
+  useEffect(() => {
+    getCurrentUser().then((res) => {
+      if (res) {
+        setCurrentUser(res);
+      } else {
+        navigator("/auth");
+      }
+    });
+  }, [navigator]);
 
   return (
     <>

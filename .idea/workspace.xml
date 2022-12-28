@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/navbar-color.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/navbar-color.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/authenticate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/authenticate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/auth-navbar/auth-navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/auth-navbar/auth-navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +173,7 @@
       <workItem from="1670771591561" duration="21593000" />
       <workItem from="1671468176395" duration="18637000" />
       <workItem from="1672173495666" duration="513000" />
-      <workItem from="1672222967057" duration="2138000" />
+      <workItem from="1672222967057" duration="6467000" />
     </task>
     <servers />
   </component>

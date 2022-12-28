@@ -124,6 +124,14 @@ export async function createCheckoutSession(uid, plan_selected, is_annual) {
   });
 }
 
+export function getUserClaim() {
+  auth.currentUser.getIdToken(true).then((res) => {
+    auth.currentUser.getIdTokenResult().then((res1) => {
+      console.log(res1);
+    });
+  });
+}
+
 /* User Information */
 export async function userCompletedLesson(lesson_id) {
   const date = new Date();
@@ -158,6 +166,15 @@ export async function userStreakForDay(date) {
   // Set time to 00:00:00
   const entries = await getLessonsCompletedForDay(date);
   return entries >= 5;
+}
+
+export function getCurrentUser() {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      unsubscribe();
+      resolve(user);
+    }, reject);
+  });
 }
 
 /* Courses */

@@ -70,7 +70,9 @@ function Academy({ loggedIn }) {
     return () => {
       window.removeEventListener("scroll", onScroll);
       const navbar = document.getElementById("navbar");
-      navbar.style.borderBottom = "";
+      if (navbar) {
+        navbar.style.borderBottom = "";
+      }
     };
   }, []);
 
