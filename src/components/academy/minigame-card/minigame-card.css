@@ -85,7 +85,7 @@
 
 /* height: 300px; */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .academy-content-minigame {
     height: 300px;
   }

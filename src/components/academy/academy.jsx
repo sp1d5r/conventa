@@ -55,6 +55,26 @@ function Academy({ loggedIn }) {
   };
 
   useEffect(() => {
+    const onScroll = () => {
+      if (window.pageYOffset > 250) {
+        const navbar = document.getElementById("navbar");
+        navbar.style.borderBottom = "3px solid black";
+      } else {
+        const navbar = document.getElementById("navbar");
+        navbar.style.borderBottom = "";
+      }
+    };
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      const navbar = document.getElementById("navbar");
+      navbar.style.borderBottom = "";
+    };
+  }, []);
+
+  useEffect(() => {
     courseItems();
     logAcademyStart();
     getBannerFromFirebase();
