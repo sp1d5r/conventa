@@ -24,6 +24,7 @@ export default function AuthProvider({ children }) {
       .then((userCredential) => {
         // Signed in
         success_callback();
+        setCurrentUser(userCredential);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -45,8 +46,9 @@ export default function AuthProvider({ children }) {
         // Create user doc for the account
         console.log("here");
         createUserDoc(user_cred, email, name)
-          .then((_) => {
+          .then((userCredential) => {
             successful_callback();
+            setCurrentUser(userCredential);
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -79,6 +81,7 @@ export default function AuthProvider({ children }) {
         // Sign-out successful.
         console.log("signed out");
         signedOutSuccessful();
+        setCurrentUser(null);
       })
       .catch((error) => {
         // An error happened.

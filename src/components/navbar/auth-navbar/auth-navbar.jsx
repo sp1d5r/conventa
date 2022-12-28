@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../navbar.css";
 import { Link, useLocation } from "react-router-dom";
-import auth from "../../../cloud-infrastructure/firebase/firebase";
+import { getCurrentUser } from "../../../cloud-infrastructure/firebase/firebase";
 
 function AuthNavbar() {
   const path_name = useLocation().pathname.split("/").at(-1);
   const is_auth = path_name === "auth";
-  const current_user = auth.currentUser;
+  const [current_user, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    getCurrentUser().then((res) => {
+      setCurrentUser(res);
+    });
+  }, []);
 
   const getPath = () => {
     if (is_auth) {

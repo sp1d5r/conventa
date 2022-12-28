@@ -5,6 +5,7 @@ import {
   getLessonsCompleted,
   getLessonsCompletedForDay,
 } from "../../../cloud-infrastructure/firebase/firebase";
+import { Link } from "react-router-dom";
 
 function UserCard() {
   const NUMBER_STREAK_REQUIRED = 5;
@@ -18,6 +19,7 @@ function UserCard() {
   const [friday, setFriday] = useState();
   const [saturday, setSaturday] = useState();
   const [lessons_completed, setLessonsCompleted] = useState(0);
+  const [role, setRole] = useState("Upgrade!");
 
   const cleanDate = (date) => {
     const temp = new Date(date);
@@ -67,6 +69,7 @@ function UserCard() {
     getLessonsCompleted().then((res) => {
       setLessonsCompleted(res);
     });
+    setRole("Upgrade");
     // eslint-disable-next-line
   }, []);
 
@@ -112,7 +115,12 @@ function UserCard() {
             </text>
           </svg>
           <div className={"text-left left-hand-div"}>
-            <p className={"user-info-text"}>Welcome Back!</p>
+            <div className={"user-card-welcome-back"}>
+              <p className={"user-info-text"}>Welcome Back!</p>
+              <Link to={"/pricing-page"} className={"user-button-badge"}>
+                {role}
+              </Link>
+            </div>
             {getUserStreakText()}
             <div className={"text-mute"}>
               <p>{lessons_completed} Lessons Completed</p>
