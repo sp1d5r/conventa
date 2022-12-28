@@ -1,6 +1,7 @@
 import React from "react";
 import "./footer.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Logo from "../../assets/home/logo.svg";
 
 function Footer() {
   const path_name = useLocation().pathname.split("/").at(-1);
@@ -12,68 +13,32 @@ function Footer() {
         <div className={"footer-main-top"}>
           <div className={"footer-information"}>
             <div className={"footer-information-box"}>
-              <p className={"footer-information-heading"}>Practice</p>
+              <p className={"footer-information-heading"}>Navigate</p>
               <div className={"footer-information-links"}>
-                <a href={"/"}>Courses</a>
-                <br />
-                <a href={"/"}>Minigames</a>
-                <br />
-                <a href={"/"}>Skill Tests</a>
+                <a href={"/about-us"}>About Us</a>
+                <a href={"/news-room"}>News Room</a>
+                <a href={"/academy"}>Academy</a>
               </div>
             </div>
             <div className={"footer-information-box"}>
-              <p className={"footer-information-heading"}>Material</p>
+              <p className={"footer-information-heading"}>Contact</p>
               <div className={"footer-information-links"}>
                 <a href={"/"}>Youtube</a>
-                <br />
                 <a href={"/"}>Podcasts</a>
-                <br />
                 <a href={"/"}>Discord</a>
               </div>
             </div>
             <div className={"footer-information-box"}>
-              <p className={"footer-information-heading"}>About us</p>
-              <div className={"footer-information-links"}>
-                <a href={"/"}>Email</a>
-                <br />
-                <a href={"/"}>Instagram</a>
-                <br />
-                <a href={"/"}>Twitter</a>
-              </div>
-            </div>
-          </div>
-          <div className={"footer-available-on"}>
-            <div className={"footer-available-on-items"}>
-              <p>available on:</p>
-              <img
-                src={require("../../assets/Icons/Apple Logo.png")}
-                alt={"available on apple"}
-              />
-              <img
-                src={require("../../assets/Icons/Google.png")}
-                alt={"available on Google"}
-              />
-              <img
-                src={require("../../assets/Icons/Windows XP.png")}
-                alt={"available on windows"}
-              />
-            </div>
-            <div className={"footer-available-on-items"}>
-              <p>Resources from:</p>
-              <img
-                src={require("../../assets/Icons/Netflix.png")}
-                alt={"available on apple"}
-              />
-              <img
-                src={require("../../assets/Icons/YouTube.png")}
-                alt={"available on Google"}
-              />
+              <Link className={"brand"} to={"/"}>
+                <img className={"brand-img"} src={Logo} alt={"logo"} />
+                <p className={`brand-text black-text"`}>conventa</p>
+              </Link>
             </div>
           </div>
         </div>
         <div className={"footer-main-bottom"}>
           <div className={"footer-bottom-div"}>
-            <p>Convento - Copyright 2022 © - All rights reserved</p>
+            <p>Conventa - Copyright 2023 © - All rights reserved</p>
           </div>
         </div>
       </div>
