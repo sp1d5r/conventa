@@ -75,7 +75,7 @@
   padding-left: 5%;
   border-left: 3px solid var(--light-grey);
   display: inline-grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 250px);
   grid-template-rows: repeat(auto-fit, 400px);
   grid-auto-rows: minmax(100px, auto);
   justify-items: center;
@@ -87,7 +87,7 @@
   transition: height 5s ease;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .academy-content-section-child {
     width: 100%;
     border: none;
