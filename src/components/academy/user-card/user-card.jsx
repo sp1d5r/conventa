@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./user-card.css";
 import StreakDay from "./streak-day/streak-day";
-import {
+import auth, {
   getLessonsCompleted,
   getLessonsCompletedForDay,
+  getUserClaim,
 } from "../../../cloud-infrastructure/firebase/firebase";
 import { Link } from "react-router-dom";
 
@@ -19,6 +20,7 @@ function UserCard() {
   const [friday, setFriday] = useState();
   const [saturday, setSaturday] = useState();
   const [lessons_completed, setLessonsCompleted] = useState(0);
+  const current_user = auth.currentUser;
   const [role, setRole] = useState("Upgrade!");
 
   const cleanDate = (date) => {
@@ -28,6 +30,11 @@ function UserCard() {
   };
 
   const getUserStreakText = () => {
+    if (!current_user) {
+      return (
+        <p>Start learning psychology that will improve your life today!</p>
+      );
+    }
     if (streak === 0) {
       return (
         <p className={"user-info-text-p"}>
@@ -69,7 +76,14 @@ function UserCard() {
     getLessonsCompleted().then((res) => {
       setLessonsCompleted(res);
     });
-    setRole("Upgrade");
+
+    getUserClaim().then((res) => {
+      let r = res;
+      if (res === "Hobbiest" || res === "Amateur") {
+        r = res + " ^";
+      }
+      setRole(r);
+    });
     // eslint-disable-next-line
   }, []);
 
@@ -116,10 +130,16 @@ function UserCard() {
           </svg>
           <div className={"text-left left-hand-div"}>
             <div className={"user-card-welcome-back"}>
-              <p className={"user-info-text"}>Welcome Back!</p>
-              <Link to={"/pricing-page"} className={"user-button-badge"}>
-                {role}
-              </Link>
+              <p className={"user-info-text"}>
+                Welcome {current_user ? "Back!" : "!!"}
+              </p>
+              {role === "Professional" ? (
+                <Link to={"/pricing-page"} className={"user-button-badge"}>
+                  {role}
+                </Link>
+              ) : (
+                <span className={"user-button-badge"}>{role}</span>
+              )}
             </div>
             {getUserStreakText()}
             <div className={"text-mute"}>

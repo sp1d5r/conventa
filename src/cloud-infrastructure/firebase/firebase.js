@@ -124,12 +124,14 @@ export async function createCheckoutSession(uid, plan_selected, is_annual) {
   });
 }
 
-export function getUserClaim() {
-  auth.currentUser.getIdToken(true).then((res) => {
-    auth.currentUser.getIdTokenResult().then((res1) => {
-      console.log(res1);
-    });
-  });
+export async function getUserClaim() {
+  await auth.currentUser.getIdToken(true);
+  const decodedToken = await auth.currentUser.getIdTokenResult();
+  if (decodedToken?.claims?.stripeRole) {
+    return decodedToken.claims.stripeRole;
+  } else {
+    return "Upgrade!";
+  }
 }
 
 /* User Information */
