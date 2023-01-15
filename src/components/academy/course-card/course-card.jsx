@@ -1,9 +1,12 @@
 import React from "react";
 import "./course-card.css";
 import { Link } from "react-router-dom";
-import { logCourseClicked } from "../../../cloud-infrastructure/firebase/firebase";
+import auth, {
+  logCourseClicked,
+} from "../../../cloud-infrastructure/firebase/firebase";
 
 function CourseCard({ imagePath, title, time, id }) {
+  const current_user = auth.currentUser;
   const logCourseInteraction = () => {
     logCourseClicked(id, title);
   };
@@ -11,7 +14,7 @@ function CourseCard({ imagePath, title, time, id }) {
   return (
     <Link
       className={"academy-content-course"}
-      to={`/course/?course_id=${id}`}
+      to={current_user ? `/course/?course_id=${id}` : "/auth"}
       onClick={() => {
         logCourseInteraction();
       }}

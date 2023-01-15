@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/academy/imitation-card/imitation-card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +171,7 @@
       <workItem from="1671468176395" duration="18637000" />
       <workItem from="1672173495666" duration="513000" />
       <workItem from="1672222967057" duration="8663000" />
-      <workItem from="1672509244128" duration="4843000" />
+      <workItem from="1672509244128" duration="8338000" />
     </task>
     <servers />
   </component>

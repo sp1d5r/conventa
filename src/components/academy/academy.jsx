@@ -12,6 +12,7 @@ import { Breadcrumb } from "react-bootstrap";
 import Banner from "./banner/banner";
 import UserCard from "./user-card/user-card";
 import { change_color } from "../../cloud-infrastructure/utils/color";
+import ImitationCard from "./imitation-card/imitation-card";
 
 function Academy() {
   const [courses, setCourses] = useState([]);
@@ -58,6 +59,29 @@ function Academy() {
         title: "Effective Speaking",
         time: 30,
         difficulty: 0,
+      },
+    ];
+  };
+
+  const imitationItems = () => {
+    return [
+      {
+        imagePath: require("../../assets/minigame-notational/minigame1.png"),
+        title: "John Wick",
+        badges: ["Body Language"],
+        subtext: "Command respect if you're quiet",
+        time: 30,
+        difficulty: 0,
+        color: "#ECFFE3",
+      },
+      {
+        imagePath: require("../../assets/minigame-notational/minigame1.png"),
+        title: "Thomas Shelby",
+        badges: ["Body Language"],
+        subtext: "Remain calm under pressure",
+        time: 30,
+        difficulty: 0,
+        color: "#E3FDFF",
       },
     ];
   };
@@ -143,6 +167,24 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     time={item.time}
+                    difficulty={item.difficulty}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <br />
+          <br />
+          <div className={"academy-content-section"}>
+            <p className={"academy-content-title"}>inimation</p>
+            <div className={"academy-content-section-child-minigame"}>
+              {imitationItems().map((item, index) => {
+                return (
+                  <ImitationCard
+                    color={item.color}
+                    imagePath={item.imagePath}
+                    title={item.title}
+                    subtext={item.subtext}
                     difficulty={item.difficulty}
                   />
                 );
