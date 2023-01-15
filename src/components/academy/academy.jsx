@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./academy.css";
 import CourseCard from "./course-card/course-card";
 import MiniGameCard from "./minigame-card/minigame-card";
-import {
+import auth, {
   getBanner,
   getCourses,
   logAcademyStart,
@@ -13,16 +13,19 @@ import Banner from "./banner/banner";
 import UserCard from "./user-card/user-card";
 import { change_color } from "../../cloud-infrastructure/utils/color";
 
-function Academy({ loggedIn }) {
+function Academy() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [banner, setBanner] = useState({});
+  const current_user = auth.currentUser;
 
   const courseItems = () => {
-    getCourses().then((_courses) => {
-      setCourses(_courses);
-      setLoading(false);
-    });
+    getCourses()
+      .then((_courses) => {
+        setCourses(_courses);
+        setLoading(false);
+      })
+      .catch(() => {});
   };
 
   const getBannerFromFirebase = () => {
@@ -102,7 +105,7 @@ function Academy({ loggedIn }) {
       ) : (
         <></>
       )}
-      {loading ? (
+      {current_user && loading ? (
         <Loading />
       ) : (
         <div className={"academy-content"}>
