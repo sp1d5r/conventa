@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/academy/imitation-card/imitation-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,10 +116,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Jest.renders a navbar link" />
+        <item itemvalue="npm.test" />
         <item itemvalue="npm.prettier-write" />
         <item itemvalue="npm.prettier" />
         <item itemvalue="npm.lint" />
-        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +163,7 @@
       <workItem from="1671468176395" duration="18637000" />
       <workItem from="1672173495666" duration="513000" />
       <workItem from="1672222967057" duration="8663000" />
-      <workItem from="1672509244128" duration="8338000" />
+      <workItem from="1672509244128" duration="8422000" />
     </task>
     <servers />
   </component>
