@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./academy.css";
 import CourseCard from "./course-card/course-card";
 import MiniGameCard from "./minigame-card/minigame-card";
-import auth, {
+import {
   getBanner,
   getCourses,
   logAcademyStart,
@@ -17,7 +17,6 @@ function Academy() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [banner, setBanner] = useState({});
-  const current_user = auth.currentUser;
 
   const courseItems = () => {
     getCourses()
@@ -53,6 +52,12 @@ function Academy() {
         title: "Tracking Client Emotions",
         time: 30,
         difficulty: 2,
+      },
+      {
+        imagePath: require("../../assets/minigame-notational/minigame1.png"),
+        title: "Effective Speaking",
+        time: 30,
+        difficulty: 0,
       },
     ];
   };
@@ -105,7 +110,7 @@ function Academy() {
       ) : (
         <></>
       )}
-      {current_user && loading ? (
+      {loading ? (
         <Loading />
       ) : (
         <div className={"academy-content"}>

@@ -16,6 +16,7 @@ import NewsRoom from "./components/news-room/news-room";
 import PricingPage from "./components/pricing-page/pricing-page";
 import AuthProvider from "./cloud-infrastructure/firebase/auth";
 import NewLessonPage from "./components/lesson/lesson-page";
+import EffectiveSpeaking from "./components/minigames/effective-speaking/effective-speaking";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
             <Route
               path="/minigame/First%20Impressions"
               element={<FirstImpressions />}
+            />
+            <Route
+              path={"/minigame/Effective%20Speaking"}
+              element={<EffectiveSpeaking />}
             />
             <Route path="/minigame/Catch%20a%20Liar" element={<CatchALiar />} />
             <Route

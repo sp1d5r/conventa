@@ -61,7 +61,9 @@
   border-left: 3px solid var(--light-grey);
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, 300px);
-  grid-template-rows: repeat(auto-fit, 240px);
+  grid-template-rows: 47% 47%;
+  grid-auto-flow: column;
+  overflow-x: scroll;
   row-gap: 20px;
   column-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
