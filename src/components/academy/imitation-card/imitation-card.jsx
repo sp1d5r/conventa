@@ -1,9 +1,8 @@
 import React from "react";
-import "./minigame-card.css";
 import { Link } from "react-router-dom";
 import auth from "../../../cloud-infrastructure/firebase/firebase";
 
-function MiniGameCard({ imagePath, title, time, difficulty }) {
+function ImitationCard({ color, imagePath, title, subtext, difficulty }) {
   const current_user = auth.currentUser;
 
   const _get_difficulty = () => {
@@ -30,6 +29,10 @@ function MiniGameCard({ imagePath, title, time, difficulty }) {
     <Link
       className={"academy-content-minigame"}
       to={current_user ? `/minigame/${title}` : "/auth"}
+      style={{
+        backgroundColor: color,
+        border: "1px solid #000000",
+      }}
     >
       <div className={"academy-content-minigame-image"}>
         <img
@@ -41,12 +44,8 @@ function MiniGameCard({ imagePath, title, time, difficulty }) {
       <div className={"academy-content-minigame-title"}>
         <p>{title}</p>
       </div>
-      <div className={"academy-content-course-info"}>
-        <img
-          src={require("../../../assets/Icons/time.png")}
-          alt={"This course is expected to take 30 minutes"}
-        />
-        <p>{time} minutes</p>
+      <div className={"academy-content-course-subtext"}>
+        <p>{subtext}</p>
       </div>
       <div className={"academy-content-minigame-info"}>
         <img
@@ -59,4 +58,4 @@ function MiniGameCard({ imagePath, title, time, difficulty }) {
   );
 }
 
-export default MiniGameCard;
+export default ImitationCard;
