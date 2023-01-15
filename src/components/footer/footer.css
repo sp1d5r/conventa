@@ -130,3 +130,9 @@
 .footer-bottom-div > p {
   margin: 10px;
 }
+
+@media (max-width: 600px) {
+  .footer-information-box {
+    margin-top: 5%;
+  }
+}
