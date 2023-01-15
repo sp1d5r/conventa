@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/academy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +166,7 @@
       <workItem from="1671468176395" duration="18637000" />
       <workItem from="1672173495666" duration="513000" />
       <workItem from="1672222967057" duration="8663000" />
-      <workItem from="1672509244128" duration="4622000" />
+      <workItem from="1672509244128" duration="4843000" />
     </task>
     <servers />
   </component>
