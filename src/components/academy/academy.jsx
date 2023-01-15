@@ -176,7 +176,7 @@ function Academy() {
           <br />
           <br />
           <div className={"academy-content-section"}>
-            <p className={"academy-content-title"}>inimation</p>
+            <p className={"academy-content-title"}>imitation</p>
             <div className={"academy-content-section-child-minigame"}>
               {imitationItems().map((item, index) => {
                 return (
