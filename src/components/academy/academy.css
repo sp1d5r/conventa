@@ -60,7 +60,7 @@
   padding-left: 5%;
   border-left: 3px solid var(--light-grey);
   display: inline-grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 260px);
   grid-template-rows: 47% 47%;
   grid-auto-flow: column;
   overflow-x: scroll;
