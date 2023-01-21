@@ -1,8 +1,6 @@
 /* Shared Classes */
 .first-impressions-main-div {
-  background-image: url("../../../assets/FirstImpressionsImage.svg");
-  background-color: var(--white);
-  background-size: cover;
+  background-color: #b7f6ff;
   background-position: center;
   min-height: 90vh;
   width: 100vw;
@@ -12,6 +10,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
+  animation-name: slide-down;
+  animation-duration: 1s;
+}
+
+.white-background {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 /* State 0 - Start First Impressions */
