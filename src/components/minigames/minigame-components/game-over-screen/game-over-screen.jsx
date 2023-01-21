@@ -1,30 +1,15 @@
 import React from "react";
 import "./game-over-screen.css";
 import "../shared.css";
+import MinigameButton from "../../../button/minigame-button";
 
-function GameOverScreen({
-  timeSpent,
-  score,
-  totalQuestions,
-  resetGame,
-  leaveGame,
-}) {
+function GameOverScreen({ score, totalQuestions, resetGame, leaveGame }) {
   return (
-    <div id="end-message" className="error-message" hidden>
-      <div className={"game-over-card"}>
-        <p className={"game-over-title"}>Game Over!</p>
+    <div id="end-message" className="overlay-main-div" hidden>
+      <div className={"overlay-card"}>
+        <p className={"minigame-start-title game-over-title"}>Game Over!</p>
 
-        <div className={"game-over-info"}>
-          <span>
-            <img
-              style={{ height: 20, width: 20 }}
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/TimeSpan.png")}
-            />
-            <p>
-              Total Time Spent: <b>{timeSpent.current}</b>
-            </p>
-          </span>
+        <div className={"score-info"}>
           <span>
             <img
               alt="Actions"
@@ -37,25 +22,23 @@ function GameOverScreen({
         </div>
 
         <div className={"game-over-line"} />
-        <b>Press the button to begin</b>
-        <button
-          className={"skip-button"}
-          onClick={() => {
-            resetGame();
-          }}
-        >
-          {" "}
-          Try Again
-        </button>
-        <button
-          className={"quit-button"}
-          onClick={() => {
-            leaveGame();
-          }}
-        >
-          {" "}
-          Leave
-        </button>
+        <b className={"begin-text"}>Press the button to begin</b>
+        <div className={"minigame-start-button-div spaced-button"}>
+          <MinigameButton
+            text={"Try Again"}
+            color={"blue"}
+            onClick={() => {
+              resetGame();
+            }}
+          />
+          <MinigameButton
+            text={"Leave"}
+            color={"red"}
+            onClick={() => {
+              leaveGame();
+            }}
+          />
+        </div>
       </div>
     </div>
   );

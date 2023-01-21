@@ -15,8 +15,8 @@ function PausedScreen({
   quitGame,
 }) {
   return (
-    <div id="paused-message" className="paused-main-div" hidden>
-      <div className={"paused-card"}>
+    <div id="paused-message" className="overlay-main-div" hidden>
+      <div className={"overlay-card"}>
         <p className={"minigame-start-title"}>
           {gameTitle} {"\n"} Paused!
         </p>
@@ -28,7 +28,7 @@ function PausedScreen({
           </p>
           <p>{text2}</p>
         </div>
-        <div className={"paused-info"}>
+        <div className={"score-info"}>
           <span className={"card-text"}>
             <img
               alt="Actions"
