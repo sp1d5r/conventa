@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-landing/minigame-landing.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +169,7 @@
       <workItem from="1672173495666" duration="513000" />
       <workItem from="1672222967057" duration="8663000" />
       <workItem from="1672509244128" duration="8422000" />
-      <workItem from="1674302856728" duration="2751000" />
+      <workItem from="1674302856728" duration="4345000" />
     </task>
     <servers />
   </component>
