@@ -29,7 +29,7 @@ function StartMinigame({
       </div>
       <p>{get_last_score()}</p>
       <div className={"minigame-start-line"} />
-      <b>Let's Begin!</b>
+      <b className={"begin-text"}>Let's Begin!</b>
       <div className={"minigame-start-button-div"}>
         <MinigameButton
           text={"Easy"}
