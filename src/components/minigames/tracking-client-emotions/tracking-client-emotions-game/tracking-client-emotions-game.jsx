@@ -3,6 +3,7 @@ import "../tracking-client-emotions.css";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameVideo from "../../minigame-components/minigame-video/minigame-video";
+import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
 
 /*
 Task list for this one
@@ -119,15 +120,11 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
 
   /* Unhide/Hide the Pause Screen */
   const hidePauseScreen = () => {
-    var button = document.getElementById("pause-button-first-impressions");
-    button.innerHTML = "Pause";
     var pausedMessage = document.getElementById("paused-message");
     pausedMessage.hidden = true;
   };
 
   const unhidePauseScreen = () => {
-    var button = document.getElementById("pause-button-first-impressions");
-    button.innerHTML = "Resume";
     var pausedMessage = document.getElementById("paused-message");
     pausedMessage.hidden = false;
   };
@@ -280,30 +277,11 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
   };
 
   return (
-    <div>
-      <div className={"first-impressions-game-title"}>
-        <p>Minigame - Tracking Client Emotions</p>
-        <div className={"first-impressions-menu"}>
-          <button
-            id="pause-button-first-impressions"
-            className={"pause-button"}
-            onClick={() => {
-              pressPause();
-            }}
-          >
-            {" "}
-            Pause
-          </button>
-          <button
-            onClick={() => {
-              updateQuestions();
-            }}
-            className={"skip-button"}
-          >
-            Skip{" "}
-          </button>
-        </div>
-      </div>
+    <MinigameMain
+      title={"Tracking Client Emotions"}
+      updateQuestion={updateQuestions}
+      pauseGame={pressPause}
+    >
       <div className={"first-impressions-game-cards"}>
         {
           /* This is the Answer Popup */
@@ -328,8 +306,12 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
             timeSpent={timeSpent}
             score={score}
             totalQuestions={totalQuestions}
-            pressPause={pressPause}
-            quitGame={quitGame}
+            pressPause={() => {
+              pressPause();
+            }}
+            quitGame={() => {
+              quitGame();
+            }}
           />
         }
         {
@@ -408,7 +390,7 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
           </div>
         </div>
       </div>
-    </div>
+    </MinigameMain>
   );
 }
 

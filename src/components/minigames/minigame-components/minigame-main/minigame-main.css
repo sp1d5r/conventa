@@ -1,0 +1,60 @@
+.minigame-main-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 2%;
+}
+
+.minigame-main-title {
+  width: 100%;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-family: "Lexend", serif;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+  border-bottom: 2px solid black;
+}
+
+.minigame-main-button {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  height: 20%;
+  max-width: 500px;
+}
+
+.main-pause-button > button {
+  height: 50px !important;
+}
+
+.pause-button,
+.skip-button {
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 6%;
+  height: 50px;
+  border: 2px solid black;
+  font-family: "Lexend", serif;
+  min-width: 100px;
+}
+
+.pause-button {
+  background-color: #8ddff9;
+}
+
+.skip-button {
+  background-color: #d0f98d;
+}
+
+@media screen and (max-width: 600px) {
+  .minigame-main-button {
+    justify-content: space-evenly;
+  }
+}

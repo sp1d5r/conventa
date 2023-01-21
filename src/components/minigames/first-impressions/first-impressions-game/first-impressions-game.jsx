@@ -4,6 +4,7 @@ import LoadingBar from "../../../loading-bar/loading";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameImage from "../../minigame-components/minigame-image/minigame-image";
+import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
 /*
 TODO for this part of the project:
   - add annimation to the different parts of the screen.
@@ -275,30 +276,11 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
   });
 
   return (
-    <div>
-      <div className={"first-impressions-game-title"}>
-        <p>Minigame - First Impressions</p>
-        <div className={"first-impressions-menu"}>
-          <button
-            id="pause-button-first-impressions"
-            className={"pause-button"}
-            onClick={() => {
-              pressPause();
-            }}
-          >
-            {" "}
-            Pause
-          </button>
-          <button
-            onClick={() => {
-              updateQuestions();
-            }}
-            className={"skip-button"}
-          >
-            Skip{" "}
-          </button>
-        </div>
-      </div>
+    <MinigameMain
+      title={"First Impressions"}
+      updateQuestion={updateQuestions}
+      pauseGame={pressPause}
+    >
       <div className={"first-impressions-game-cards"}>
         {
           /* This is the Answer Popup */
@@ -325,8 +307,12 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
             timeSpent={timeSpent}
             score={score}
             totalQuestions={totalQuestions}
-            pressPause={pressPause}
-            quitGame={quitGame}
+            pressPause={() => {
+              pressPause();
+            }}
+            quitGame={() => {
+              quitGame();
+            }}
           />
         }
         {
@@ -429,7 +415,7 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           </div>
         </div>
       </div>
-    </div>
+    </MinigameMain>
   );
 }
 
