@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./tracking-client-emotions.css";
 import StartMinigame from "../minigame-components/start-screen/start-screen";
 import TrackingClientEmotionsGame from "./tracking-client-emotions-game/tracking-client-emotions-game";
+import MinigameLanding from "../minigame-components/minigame-landing/minigame-landing";
 
 /*
   The minigame
@@ -49,9 +50,7 @@ function TrackingClientEmotions() {
   };
 
   return (
-    <div className={"tracking-client-emotions-main-div"}>
-      {from_minigame_state()}
-    </div>
+    <MinigameLanding color={"#E5B7FF"}>{from_minigame_state()}</MinigameLanding>
   );
 }
 

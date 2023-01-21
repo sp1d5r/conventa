@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./first-impressions.css";
 import StartFirstImpressions from "./start-first-impressions/start-first-impressions";
 import FirstImpressionsGame from "./first-impressions-game/first-impressions-game";
+import MinigameLanding from "../minigame-components/minigame-landing/minigame-landing";
 
 function FirstImpressions() {
   const [state, setState] = useState(0);
@@ -27,7 +28,7 @@ function FirstImpressions() {
   };
 
   return (
-    <div className={"first-impressions-main-div"}>{from_minigame_state()}</div>
+    <MinigameLanding color={"#B7F6FF"}>{from_minigame_state()}</MinigameLanding>
   );
 }
 
