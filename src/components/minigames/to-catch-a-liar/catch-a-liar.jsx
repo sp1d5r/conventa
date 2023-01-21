@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./catch-a-liar.css";
 import StartMinigame from "../minigame-components/start-screen/start-screen";
+import { change_color } from "../../../cloud-infrastructure/utils/color";
 import DeceptionDetection from "./catch-a-liar-game/deception-detection";
 
 /*
@@ -15,6 +16,10 @@ import DeceptionDetection from "./catch-a-liar-game/deception-detection";
 function CatchALiar() {
   const [state, setState] = useState(0);
   const [difficulty, setDifficulty] = useState(0);
+
+  useEffect(() => {
+    change_color("#FFB7B7");
+  }, []);
 
   const from_minigame_state = () => {
     if (state === 0) {
