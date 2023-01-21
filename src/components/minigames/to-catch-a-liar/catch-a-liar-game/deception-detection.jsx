@@ -4,6 +4,7 @@ import PausedScreen from "../../minigame-components/paused-screen/paused-screen"
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameVideo from "../../minigame-components/minigame-video/minigame-video";
 import { getDeceptionItems } from "../../../../cloud-infrastructure/firebase/firebase";
+import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
 
 /*
  *
@@ -167,15 +168,11 @@ function DeceptionDetection({ setGameState, difficulty }) {
 
   /* ------ PAUSE SCREEN LOGIC ------ */
   const hidePauseScreen = () => {
-    var button = document.getElementById("pause-button-first-impressions");
-    button.innerHTML = "Pause";
     var pausedMessage = document.getElementById("paused-message");
     pausedMessage.hidden = true;
   };
 
   const showPauseScreen = () => {
-    var button = document.getElementById("pause-button-first-impressions");
-    button.innerHTML = "Resume";
     var pausedMessage = document.getElementById("paused-message");
     pausedMessage.hidden = false;
   };
@@ -209,30 +206,11 @@ function DeceptionDetection({ setGameState, difficulty }) {
   };
 
   return (
-    <div>
-      <div className={"first-impressions-game-title"}>
-        <p>Minigame - Deception Detection</p>
-        <div className={"first-impressions-menu"}>
-          <button
-            id="pause-button-first-impressions"
-            className={"pause-button"}
-            onClick={() => {
-              pressPause();
-            }}
-          >
-            {" "}
-            Pause
-          </button>
-          <button
-            onClick={() => {
-              updateQuestion();
-            }}
-            className={"skip-button"}
-          >
-            Skip{" "}
-          </button>
-        </div>
-      </div>
+    <MinigameMain
+      pauseGame={pressPause}
+      updateQuestion={updateQuestion}
+      title={"Deception Detection"}
+    >
       <div className={"first-impressions-game-cards"}>
         {
           /* This is the Answer Popup */
@@ -337,7 +315,7 @@ function DeceptionDetection({ setGameState, difficulty }) {
           </div>
         </div>
       </div>
-    </div>
+    </MinigameMain>
   );
 }
 
