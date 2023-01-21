@@ -1,6 +1,6 @@
 .catch-a-liar-main-div {
-  background-image: url("../../../assets/catch-a-liar/CatchALiar.svg");
-  background-color: var(--white);
+  /*background-image: url("../../../assets/catch-a-liar/CatchALiar.svg");*/
+  background-color: #ffb7b7;
   background-size: cover;
   background-position: center;
   min-height: 90vh;
@@ -11,6 +11,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
+  animation-name: slide-down;
+  animation-duration: 1s;
+}
+
+.white-background {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .overlay-source {
