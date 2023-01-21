@@ -46,7 +46,11 @@ function CatchALiar() {
     }
   };
 
-  return <div className={"catch-a-liar-main-div"}>{from_minigame_state()}</div>;
+  return (
+    <div className={"white-background"}>
+      <div className={"catch-a-liar-main-div"}>{from_minigame_state()}</div>
+    </div>
+  );
 }
 
 export default CatchALiar;

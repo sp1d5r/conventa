@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +168,7 @@
       <workItem from="1672173495666" duration="513000" />
       <workItem from="1672222967057" duration="8663000" />
       <workItem from="1672509244128" duration="8422000" />
+      <workItem from="1674302856728" duration="716000" />
     </task>
     <servers />
   </component>
