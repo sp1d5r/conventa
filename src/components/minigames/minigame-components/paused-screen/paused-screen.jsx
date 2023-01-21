@@ -1,6 +1,7 @@
 import React from "react";
 import "./paused-screen.css";
 import "../shared.css";
+import MinigameButton from "../../../button/minigame-button";
 
 function PausedScreen({
   gameTitle,
@@ -14,10 +15,12 @@ function PausedScreen({
   quitGame,
 }) {
   return (
-    <div id="paused-message" className="error-message" hidden>
+    <div id="paused-message" className="paused-main-div" hidden>
       <div className={"paused-card"}>
-        <p className={"paused-title"}>{gameTitle} - Paused!</p>
-        <div className={"paused-info"}>
+        <p className={"minigame-start-title"}>
+          {gameTitle} {"\n"} Paused!
+        </p>
+        <div className={"minigame-start-info"}>
           <p>{text1}</p>
           <p>
             For Example:
@@ -26,17 +29,7 @@ function PausedScreen({
           <p>{text2}</p>
         </div>
         <div className={"paused-info"}>
-          <span>
-            <img
-              style={{ height: 20, width: 20 }}
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/TimeSpan.png")}
-            />
-            <p>
-              Total Time Spent: <b>{timeSpent.current}</b>
-            </p>
-          </span>
-          <span>
+          <span className={"card-text"}>
             <img
               alt="Actions"
               src={require("../../../../assets/first-impressions/Action.png")}
@@ -48,25 +41,23 @@ function PausedScreen({
         </div>
 
         <div className={"paused-line"} />
-        <b>Press the button to begin</b>
-        <button
-          className={"pause-button"}
-          onClick={() => {
-            pressPause();
-          }}
-        >
-          {" "}
-          Resume
-        </button>
-        <button
-          className={"quit-button"}
-          onClick={() => {
-            quitGame();
-          }}
-        >
-          {" "}
-          Quit
-        </button>
+        <b className={"begin-text"}>Press the button to begin</b>
+        <div className={"minigame-start-button-div"}>
+          <MinigameButton
+            text={"Resume"}
+            color={"blue"}
+            onClick={() => {
+              pressPause();
+            }}
+          />
+          <MinigameButton
+            text={"Quit"}
+            color={"red"}
+            onClick={() => {
+              quitGame();
+            }}
+          />
+        </div>
       </div>
     </div>
   );
