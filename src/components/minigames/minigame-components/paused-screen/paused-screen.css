@@ -21,10 +21,6 @@
   align-items: center;
 }
 
-.paused-info {
-  margin: 5%;
-}
-
 .paused-line {
   width: 100%;
   border-bottom: 1px solid var(--black);
