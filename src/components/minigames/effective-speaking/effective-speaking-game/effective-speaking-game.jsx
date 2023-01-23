@@ -37,7 +37,9 @@ function EffectiveSpeakingGame({
     setPause(!paused);
   };
 
-  const updateQuestion = () => {};
+  const updateQuestion = () => {
+    setGameState(0);
+  };
 
   const updateTopicTime = (topicTime) => {
     // console.log(topics.length - parseInt(topicTime / secondsPerTopic))

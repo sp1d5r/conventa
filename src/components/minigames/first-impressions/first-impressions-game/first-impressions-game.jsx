@@ -291,40 +291,6 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
             </div>
           </div>
         }
-        {
-          /* This is the Paused Screen */
-          <PausedScreen
-            gameTitle={"First Impressions"}
-            text1={
-              "The goal is to quickly scan the image, read the promt and try to find relevant body language techniques."
-            }
-            example={
-              "“Find body language techniques this person is using to portray composure.”"
-            }
-            text2={
-              "You will be presented with 10 images and 4 potential techniques. Select the relevant techniques."
-            }
-            timeSpent={timeSpent}
-            score={score}
-            totalQuestions={totalQuestions}
-            pressPause={() => {
-              pressPause();
-            }}
-            quitGame={() => {
-              quitGame();
-            }}
-          />
-        }
-        {
-          /* This is the End Screen */
-          <GameOverScreen
-            timeSpent={timeSpent}
-            score={score}
-            totalQuestions={totalQuestions}
-            resetGame={resetGame}
-            leaveGame={leaveGame}
-          />
-        }
         <div className={"first-impressions-card-main"}>
           <LoadingBar
             width={
@@ -415,6 +381,40 @@ function FirstImpressionsGame({ setGameState, difficulty }) {
           </div>
         </div>
       </div>
+      {
+        /* This is the Paused Screen */
+        <PausedScreen
+          gameTitle={"First Impressions"}
+          text1={
+            "The goal is to quickly scan the image, read the promt and try to find relevant body language techniques."
+          }
+          example={
+            "“Find body language techniques this person is using to portray composure.”"
+          }
+          text2={
+            "You will be presented with 10 images and 4 potential techniques. Select the relevant techniques."
+          }
+          timeSpent={timeSpent}
+          score={score}
+          totalQuestions={totalQuestions}
+          pressPause={() => {
+            pressPause();
+          }}
+          quitGame={() => {
+            quitGame();
+          }}
+        />
+      }
+      {
+        /* This is the End Screen */
+        <GameOverScreen
+          timeSpent={timeSpent}
+          score={score}
+          totalQuestions={totalQuestions}
+          resetGame={resetGame}
+          leaveGame={leaveGame}
+        />
+      }
     </MinigameMain>
   );
 }

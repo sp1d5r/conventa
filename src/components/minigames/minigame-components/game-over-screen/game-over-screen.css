@@ -1,5 +1,5 @@
 .game-over-title {
-  margin-top: 20%;
+  margin-top: 2%;
 }
 
 .game-over-info {
@@ -14,4 +14,10 @@
 
 .spaced-button {
   margin: 10% 0%;
+}
+
+@media screen and (max-width: 600px) {
+  .game-over-title {
+    margin-top: 20%;
+  }
 }
