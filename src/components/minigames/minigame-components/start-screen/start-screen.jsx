@@ -10,6 +10,7 @@ function StartMinigame({
   text1,
   example,
   text2,
+  children,
 }) {
   const get_last_score = (minigameId) => {
     console.log(minigameId);
@@ -20,13 +21,17 @@ function StartMinigame({
     <div className={"minigame-start-card"}>
       <p className={"minigame-start-title"}>Minigame - {title}</p>
       <div className={"minigame-start-info"}>
-        <p>{text1}</p>
-        <p>
-          For Example:
-          <span style={{ fontStyle: "italic" }}>{example}</span>
-        </p>
-        <p>{text2}</p>
+        {text1 && <p>{text1}</p>}
+        {example && (
+          <p>
+            For Example:
+            <span style={{ fontStyle: "italic" }}>{example}</span>
+          </p>
+        )}
+        {text2 && <p>{text2}</p>}
+        {children}
       </div>
+
       <p>{get_last_score()}</p>
       <div className={"minigame-start-line"} />
       <b className={"begin-text"}>Let's Begin!</b>

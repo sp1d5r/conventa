@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-main/minigame-main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-main/minigame-main.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/deception-detection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/deception-detection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +171,7 @@
       <workItem from="1672222967057" duration="8663000" />
       <workItem from="1672509244128" duration="8422000" />
       <workItem from="1674302856728" duration="7785000" />
+      <workItem from="1674508355186" duration="406000" />
     </task>
     <servers />
   </component>
