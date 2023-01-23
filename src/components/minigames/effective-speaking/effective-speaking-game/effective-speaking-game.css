@@ -1,0 +1,36 @@
+.effective-speaking-game-main {
+  width: 100vw;
+  height: 70vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.effective-speaking-timer-svg {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.effective-speaking-list-group-divs {
+  width: 40%;
+}
+
+.effective-speaking-list-group {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .effective-speaking-timer-svg {
+    height: 40%;
+    width: 100%;
+  }
+
+  .effective-speaking-game-main {
+    flex-direction: column;
+  }
+}
