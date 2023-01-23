@@ -66,7 +66,7 @@
 }
 
 .overlay-main-div {
-  top: -20vh;
+  top: 10vh;
   width: 100vw;
   /*height: 129vh;*/
   background-color: var(--green);
@@ -74,8 +74,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .score-info {
-  margin: 10% 5%;
+  margin: 2% 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .score-info {
+    margin: 5% 5%;
+  }
 }

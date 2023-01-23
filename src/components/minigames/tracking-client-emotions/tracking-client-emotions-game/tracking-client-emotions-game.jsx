@@ -282,6 +282,38 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
       updateQuestion={updateQuestions}
       pauseGame={pressPause}
     >
+      {
+        /* This is the Paused Screen */
+        <PausedScreen
+          gameTitle={"Tracking Client Emotions"}
+          text1={
+            "You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."
+          }
+          example={"“We will get back to you with an email soon.”"}
+          text2={
+            "You will be presented with options to choose from, explaining an emotion with a certain body language."
+          }
+          timeSpent={timeSpent}
+          score={score}
+          totalQuestions={totalQuestions}
+          pressPause={() => {
+            pressPause();
+          }}
+          quitGame={() => {
+            quitGame();
+          }}
+        />
+      }
+      {
+        /* This is the End Screen */
+        <GameOverScreen
+          timeSpent={timeSpent}
+          score={score}
+          totalQuestions={totalQuestions}
+          resetGame={resetGame}
+          leaveGame={leaveGame}
+        />
+      }
       <div className={"first-impressions-game-cards"}>
         {
           /* This is the Answer Popup */
@@ -291,38 +323,6 @@ function TrackingClientEmotionsGame({ setGameState, difficulty }) {
               <p className={""}>{lastAnswer.current}</p>
             </div>
           </div>
-        }
-        {
-          /* This is the Paused Screen */
-          <PausedScreen
-            gameTitle={"Tracking Client Emotions"}
-            text1={
-              "You will be presented with a background prompt and then a video will be shown. Your task is to determine how the client is feeling."
-            }
-            example={"“We will get back to you with an email soon.”"}
-            text2={
-              "You will be presented with options to choose from, explaining an emotion with a certain body language."
-            }
-            timeSpent={timeSpent}
-            score={score}
-            totalQuestions={totalQuestions}
-            pressPause={() => {
-              pressPause();
-            }}
-            quitGame={() => {
-              quitGame();
-            }}
-          />
-        }
-        {
-          /* This is the End Screen */
-          <GameOverScreen
-            timeSpent={timeSpent}
-            score={score}
-            totalQuestions={totalQuestions}
-            resetGame={resetGame}
-            leaveGame={leaveGame}
-          />
         }
         <div className={"first-impressions-card-main"}>
           <div className={"first-impressions-image"}>

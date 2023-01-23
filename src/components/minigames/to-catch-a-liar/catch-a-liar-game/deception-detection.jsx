@@ -211,6 +211,42 @@ function DeceptionDetection({ setGameState, difficulty }) {
       updateQuestion={updateQuestion}
       title={"Deception Detection"}
     >
+      {
+        /* This is the Paused Screen */
+        <PausedScreen
+          gameTitle={"To Catch A Liar"}
+          text1={
+            "You will have a looping video playing, your job is to determine if the person in the video is telling the truth or not."
+          }
+          example={"“I never once *rubs nose* lied in my life.”"}
+          text2={
+            "You will be presented with `Truth` and `Lie` pick the correct option for a point"
+          }
+          timeSpent={0}
+          score={score}
+          totalQuestions={NUMBER_OF_QUESTIONS}
+          pressPause={() => {
+            pressPause();
+          }}
+          quitGame={() => {
+            setGameState(0);
+          }}
+        />
+      }
+      {
+        /* This is the End Screen */
+        <GameOverScreen
+          timeSpent={"don't worry bout it sweetheart..."}
+          score={score}
+          totalQuestions={NUMBER_OF_QUESTIONS}
+          resetGame={() => {
+            resetGame();
+          }}
+          leaveGame={() => {
+            setGameState(0);
+          }}
+        />
+      }
       <div className={"first-impressions-game-cards"}>
         {
           /* This is the Answer Popup */
@@ -220,42 +256,6 @@ function DeceptionDetection({ setGameState, difficulty }) {
               <p className={""}>{correctPrompt}</p>
             </div>
           </div>
-        }
-        {
-          /* This is the Paused Screen */
-          <PausedScreen
-            gameTitle={"To Catch A Liar"}
-            text1={
-              "You will have a looping video playing, your job is to determine if the person in the video is telling the truth or not."
-            }
-            example={"“I never once *rubs nose* lied in my life.”"}
-            text2={
-              "You will be presented with `Truth` and `Lie` pick the correct option for a point"
-            }
-            timeSpent={0}
-            score={score}
-            totalQuestions={NUMBER_OF_QUESTIONS}
-            pressPause={() => {
-              pressPause();
-            }}
-            quitGame={() => {
-              setGameState(0);
-            }}
-          />
-        }
-        {
-          /* This is the End Screen */
-          <GameOverScreen
-            timeSpent={"don't worry bout it sweetheart..."}
-            score={score}
-            totalQuestions={NUMBER_OF_QUESTIONS}
-            resetGame={() => {
-              resetGame();
-            }}
-            leaveGame={() => {
-              setGameState(0);
-            }}
-          />
         }
         <div className={"first-impressions-card-main"}>
           <div className={"first-impressions-image"}>
