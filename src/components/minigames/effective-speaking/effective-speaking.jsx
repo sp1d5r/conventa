@@ -6,19 +6,32 @@ import { Form } from "react-bootstrap";
 import EffectiveSpeakingGame from "./effective-speaking-game/effective-speaking-game";
 import GameOverScreen from "../minigame-components/game-over-screen/game-over-screen";
 import FormRange from "react-bootstrap/FormRange";
+import getArrayOfWords from "../../../cloud-infrastructure/openai/openai";
 
 function EffectiveSpeaking() {
   const [state, setState] = useState(0);
   const [difficulty, setDifficulty] = useState(0);
   const [topic, setTopic] = useState("Something");
   const [topicTime, setTopicTime] = useState(60);
+  const [topics, setTopics] = useState([]);
+
+  const setGameState = (gameState) => {
+    if (gameState === 1) {
+      getArrayOfWords(topic, difficulty).then((res) => {
+        setTopics(res);
+        setState(gameState);
+      });
+    } else {
+      setState(gameState);
+    }
+  };
 
   const from_minigame_state = () => {
     if (state === 0) {
       /* This is the intro state */
       return (
         <StartMinigame
-          setState={setState}
+          setState={setGameState}
           setDifficulty={setDifficulty}
           minigameId={"catch-a-liar"}
           title={"Effective Speaking"}
@@ -60,7 +73,7 @@ function EffectiveSpeaking() {
           setGameState={setState}
           difficulty={difficulty}
           timer={topicTime}
-          topics={["hello", "cats", "baddies", "something here"]}
+          topics={topics}
           topicName={topic}
         />
       );

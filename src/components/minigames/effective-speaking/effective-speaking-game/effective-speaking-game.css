@@ -33,4 +33,8 @@
   .effective-speaking-game-main {
     flex-direction: column;
   }
+
+  .effective-speaking-list-group-divs {
+    width: 90%;
+  }
 }

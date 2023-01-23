@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/first-impressions/first-impressions-game/first-impressions-game.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/deception-detection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/to-catch-a-liar/catch-a-liar-game/deception-detection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/tracking-client-emotions/tracking-client-emotions-game/tracking-client-emotions-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
