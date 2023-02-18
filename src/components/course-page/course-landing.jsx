@@ -12,6 +12,10 @@ import { change_color } from "../../cloud-infrastructure/utils/color";
 function CourseLanding() {
   /* The URL looks like : http://localhost:3000/course/?course_id=gvhvgvhv
   and the course id you get is gvhvgvhv
+  Difficulty Ratings:
+   0 = Easy
+   1 = Medium
+   2 = Hard
   */
   const search_params = useSearchParams()[0];
   const course_id = search_params.get("course_id");
@@ -43,18 +47,6 @@ function CourseLanding() {
     }
   };
 
-  const _get_difficulty_name = () => {
-    if (course_information.difficulty === 0) {
-      return "  Easy";
-    } else if (course_information.difficulty === 1) {
-      return "  Medium";
-    } else if (course_information.difficulty > 1) {
-      return "  Hard";
-    } else {
-      return "difficulty ";
-    }
-  };
-
   useEffect(() => {
     const onScroll = () => {
       if (window.pageYOffset > 250) {
@@ -71,7 +63,9 @@ function CourseLanding() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       const navbar = document.getElementById("navbar");
-      navbar.style.borderBottom = "";
+      if (navbar) {
+        navbar.style.borderBottom = "";
+      }
     };
   }, []);
 
@@ -104,7 +98,6 @@ function CourseLanding() {
             src={_get_difficulty()}
             alt={"This minigame is expected to take 30 minutes"}
           />
-          <p>{_get_difficulty_name()}</p>
         </div>
       </div>
       {loading ? (

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Breadcrumb } from "react-bootstrap";
 import "./lesson-page.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
@@ -13,6 +12,10 @@ import ProgressBar from "./progress-bar/progress-bar";
 import LessonContent from "./lesson-content/lesson-content";
 import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 import { change_color } from "../../cloud-infrastructure/utils/color";
+import { Button } from "react-bootstrap";
+import RedHeart from "../../assets/lesson/red-heart.svg";
+import GreyHeart from "../../assets/lesson/grey-heart.svg";
+import Gems from "../../assets/lesson/gems.svg";
 
 const LESSON_CONTENT_EXAMPLE = [
   {
@@ -88,8 +91,6 @@ function NewLessonPage() {
   const searchParams = useSearchParams()[0];
   const lesson_id = searchParams.get("lesson_id");
   const course_id = searchParams.get("course_id");
-  const [lesson, setLesson] = useState(null);
-  const [course, setCourse] = useState(null);
   /* Content information */
   const [content, setContent] = useState([]);
   /* Content that gets shown in the area panel */
@@ -103,20 +104,21 @@ function NewLessonPage() {
   const navigator = useNavigate();
   /* Auth info */
   const { current_user } = useAuth();
+  /* Lives Information */
+  const [lives, setLives] = useState(3);
+  /* Gems Information */
+  const [gems, setGems] = useState(0);
 
   useEffect(() => {
     console.log(current_user);
 
     getCourse(course_id).then((res) => {
-      setCourse(res);
       change_color(res.color);
+      // TODO:// Get lives lost for today
+      setLives(3);
       getLessonFromID(lesson_id).then((res) => {
-        setLesson(res);
-
         // Inside lessons we should have pages, update content to represent each of these pages
         const pages = res.pages;
-        console.log(pages);
-
         Promise.all(
           pages.map((page) => {
             return getPageFromID(page);
@@ -155,9 +157,13 @@ function NewLessonPage() {
     goToPosition(nextIndex);
   };
 
-  const goBack = () => {
-    const lastIndex = Math.max(0, current_position - 1);
-    goToPosition(lastIndex);
+  const sendCorrectAnswer = () => {
+    setGems(gems + 30);
+  };
+
+  const sendIncorrectAnswer = () => {
+    setLives(lives - 1);
+    //TODO:// Add a new entry for life lost for the current date
   };
 
   //TODO(eahmad): Make a submit button
@@ -167,10 +173,10 @@ function NewLessonPage() {
     console.log(current_content.type);
     if (current_content.type === "question") {
       if (correctAnswer) {
-        console.log("here");
-        temp[current_position] = "question-answered-green";
+        /* This is the correct answer*/
+        sendCorrectAnswer();
       } else {
-        temp[current_position] = "question-answered-red";
+        sendIncorrectAnswer();
       }
     }
 
@@ -178,15 +184,12 @@ function NewLessonPage() {
       temp[current_position] = "text-completed";
     }
 
-    if (current_position + 1 <= user_progress.length - 1) {
-      temp[current_position + 1] = "furthest";
-    }
-
     setProgress(temp);
     goForward();
   };
 
   const updateUserInfoLessonComplete = async () => {
+    // TODO:// Add the gems earned to the current user
     return userCompletedLesson(lesson_id);
   };
 
@@ -212,31 +215,58 @@ function NewLessonPage() {
     });
   };
 
+  const getLives = () => {
+    const hearts = [];
+    for (let grey = 0; grey < 3 - lives; grey++) {
+      hearts.push(GreyHeart);
+    }
+    for (let red = 0; red < lives; red++) {
+      hearts.push(RedHeart);
+    }
+    return hearts.map((heart) => {
+      return <img src={heart} alt={"life "} />;
+    });
+  };
+
   return (
     <div className={"course-landing-main"}>
       {loading ? (
         <Loading />
       ) : (
         <>
-          <div className={"lesson-breadcrumbs"}>
-            <Breadcrumb className={"lesson-breadcrumb-bar"}>
-              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-              <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
-              <Breadcrumb.Item href={`/course/?course_id=${course_id}`}>
-                {course.courseName}
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>{lesson.title}</Breadcrumb.Item>
-            </Breadcrumb>
-          </div>
           <div className={"course-content-lessons"}>
             <div className={"lesson-landing-content-section"}>
               <div className={"lesson-landing-content-section"}>
-                <ProgressBar
-                  goBack={goBack}
-                  user_progress={user_progress}
-                  currentIndex={current_position}
-                  goForward={goForward}
-                />
+                <div className={"lesson-top"}>
+                  <ProgressBar
+                    currentProgress={Math.min(
+                      current_position + 1,
+                      content.length
+                    )}
+                    totalPages={content.length}
+                  />
+                  <div className={"lesson-metadata"}>
+                    <Button
+                      variant={"danger"}
+                      onClick={() => {
+                        navigator(`/course/?course_id=${course_id}`);
+                      }}
+                    >
+                      Exit
+                    </Button>
+                    <div className={"lesson-user-data"}>
+                      <div className={"user-lives"}>
+                        {/* User Hearts */}
+                        {getLives()}
+                      </div>
+
+                      <div className={"user-gems"}>
+                        <p className={"amount-of-gems"}>{gems}</p>
+                        <img src={Gems} alt={"Gems Earned"} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <LessonContent
                   content={current_content.content}
                   status={user_progress[current_position]}
@@ -256,3 +286,17 @@ function NewLessonPage() {
 }
 
 export default NewLessonPage;
+
+/*
+<div className={"lesson-breadcrumbs"}>
+
+            <Breadcrumb className={"lesson-breadcrumb-bar"}>
+              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+              <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
+              <Breadcrumb.Item href={`/course/?course_id=${course_id}`}>
+                {course.courseName}
+              </Breadcrumb.Item>
+              <Breadcrumb.Item active>{lesson.title}</Breadcrumb.Item>
+            </Breadcrumb>
+          </div>
+* */

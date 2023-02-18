@@ -5,10 +5,16 @@ import AuthNavbar from "./auth-navbar/auth-navbar";
 import NavbarStandard from "./traditional-navbar/standard-navbar";
 
 function NavBar() {
-  const path_name = useLocation().pathname.split("/").at(-1);
-  const back_navigation = path_name === "auth" || path_name === "pricing-page";
+  const path_name = useLocation().pathname.split("/");
+  const final_part = path_name.at(-1);
+  const back_navigation =
+    final_part === "auth" || final_part === "pricing-page";
 
-  return <>{back_navigation ? <AuthNavbar /> : <NavbarStandard />}</>;
+  if (path_name.at(1) === "lesson") {
+    return <></>;
+  } else {
+    return <>{back_navigation ? <AuthNavbar /> : <NavbarStandard />}</>;
+  }
 }
 
 export default NavBar;
