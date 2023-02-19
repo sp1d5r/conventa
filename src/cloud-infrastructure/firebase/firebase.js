@@ -1,16 +1,16 @@
 import { initializeApp } from "firebase/app";
 import {
+  addDoc,
   collection,
   doc,
-  addDoc,
+  getCountFromServer,
   getDoc,
-  setDoc,
   getDocs,
   getFirestore,
-  getCountFromServer,
-  query,
-  where,
   onSnapshot,
+  query,
+  setDoc,
+  where,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
@@ -148,6 +148,7 @@ export async function userCompletedLesson(lesson_id) {
   );
   return activityDocRef;
 }
+
 export async function getLessonsCompletedForDay(date) {
   date.setHours(0, 0, 0, 0);
   const userActivityRef = collection(
@@ -177,6 +178,34 @@ export function getCurrentUser() {
       resolve(user);
     }, reject);
   });
+}
+
+/* Lives */
+export async function getLives() {
+  const date = new Date();
+  date.setHours(0, 0, 0, 0);
+  const livesRef = collection(firestore, `users/${auth.currentUser.uid}/lives`);
+  const q = query(livesRef, where("date", ">=", date.getTime()));
+  const querySnapshot = await getDocs(q);
+  let entries = 0;
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    entries += 1;
+  });
+  return entries;
+}
+
+export async function lostLife(pageId, selectedOption) {
+  const date = new Date();
+
+  return await addDoc(
+    collection(firestore, `users/${auth.currentUser.uid}/lives`),
+    {
+      date: date.getTime(),
+      pageId: pageId,
+      selectedOption: selectedOption,
+    }
+  );
 }
 
 /* Courses */

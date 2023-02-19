@@ -26,13 +26,17 @@
   font-size: 20px;
 }
 
-.text-mute {
+.additional-info {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   font-size: 12px;
   font-weight: 400;
   color: lightslategray;
+}
+
+.additional-info > p {
+  margin-bottom: 0;
 }
 
 .bold {
