@@ -13,9 +13,8 @@ import LessonContent from "./lesson-content/lesson-content";
 import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 import { change_color } from "../../cloud-infrastructure/utils/color";
 import { Button } from "react-bootstrap";
-import RedHeart from "../../assets/lesson/red-heart.svg";
-import GreyHeart from "../../assets/lesson/grey-heart.svg";
 import Gems from "../../assets/lesson/gems.svg";
+import Lives from "../academy/user-card/lives/lives";
 
 const LESSON_CONTENT_EXAMPLE = [
   {
@@ -105,7 +104,7 @@ function NewLessonPage() {
   /* Auth info */
   const { current_user } = useAuth();
   /* Lives Information */
-  const [lives, setLives] = useState(3);
+  const [lifeLost, setLifeLost] = useState(false);
   /* Gems Information */
   const [gems, setGems] = useState(0);
 
@@ -115,7 +114,6 @@ function NewLessonPage() {
     getCourse(course_id).then((res) => {
       change_color(res.color);
       // TODO:// Get lives lost for today
-      setLives(3);
       getLessonFromID(lesson_id).then((res) => {
         // Inside lessons we should have pages, update content to represent each of these pages
         const pages = res.pages;
@@ -162,7 +160,7 @@ function NewLessonPage() {
   };
 
   const sendIncorrectAnswer = () => {
-    setLives(lives - 1);
+    setLifeLost(!lifeLost);
     //TODO:// Add a new entry for life lost for the current date
   };
 
@@ -215,19 +213,6 @@ function NewLessonPage() {
     });
   };
 
-  const getLives = () => {
-    const hearts = [];
-    for (let grey = 0; grey < 3 - lives; grey++) {
-      hearts.push(GreyHeart);
-    }
-    for (let red = 0; red < lives; red++) {
-      hearts.push(RedHeart);
-    }
-    return hearts.map((heart) => {
-      return <img src={heart} alt={"life "} />;
-    });
-  };
-
   return (
     <div className={"course-landing-main"}>
       {loading ? (
@@ -255,10 +240,7 @@ function NewLessonPage() {
                       Exit
                     </Button>
                     <div className={"lesson-user-data"}>
-                      <div className={"user-lives"}>
-                        {/* User Hearts */}
-                        {getLives()}
-                      </div>
+                      <Lives lifeLost={lifeLost} />
 
                       <div className={"user-gems"}>
                         <p className={"amount-of-gems"}>{gems}</p>

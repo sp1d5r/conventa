@@ -7,6 +7,7 @@ import auth, {
   getUserClaim,
 } from "../../../cloud-infrastructure/firebase/firebase";
 import { Link } from "react-router-dom";
+import Lives from "./lives/lives";
 
 function UserCard() {
   const NUMBER_STREAK_REQUIRED = 5;
@@ -142,9 +143,10 @@ function UserCard() {
               )}
             </div>
             {getUserStreakText()}
-            <div className={"text-mute"}>
+            <div className={"additional-info"}>
               <p>{lessons_completed} Lessons Completed</p>
               {/*<p>{longest_streak} Courses Completed</p>*/}
+              <Lives lifeLost={false} />
             </div>
           </div>
         </div>
