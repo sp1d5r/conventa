@@ -11,6 +11,7 @@ import {
   query,
   setDoc,
   where,
+  updateDoc,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
@@ -91,12 +92,13 @@ export async function createUserDoc(user_cred, name, email) {
     email: email,
     subscription: "free",
     verification: "none",
+    gems: 0,
   });
 }
 
 export async function createCheckoutSession(uid, plan_selected, is_annual) {
   const price_id = PRICING_PLAN_IDS[plan_selected * is_annual - 1];
-  console.log(price_id, plan_selected * is_annual - 1);
+  // console.log(price_id, plan_selected * is_annual - 1);
   const sessionDocRef = await addDoc(
     collection(firestore, `users/${uid}/checkout_sessions`),
     {
@@ -180,6 +182,61 @@ export function getCurrentUser() {
   });
 }
 
+/* Gems */
+export async function getUserGems() {
+  // get user data
+  const userDoc = doc(firestore, "users", auth.currentUser.uid);
+  return getDoc(userDoc)
+    .then((e) => {
+      // console.log("user info", e.data())
+      if ("gems" in e.data()) {
+        return e.data()["gems"];
+      } else {
+        return 0;
+      }
+    })
+    .catch((e) => {
+      return 0;
+    });
+}
+
+export async function addGemLog(pageId, numberOfGems, gemType) {
+  const date = new Date();
+
+  return await addDoc(
+    collection(firestore, `users/${auth.currentUser.uid}/gems`),
+    {
+      date: date.getTime(),
+      pageId: pageId,
+      gems: numberOfGems,
+      gemType: gemType,
+    }
+  );
+}
+
+export async function addGemsToUser(
+  numberOfGems,
+  pageId,
+  gemType,
+  successUpdate,
+  failedUpdate
+) {
+  getUserGems().then((amount) => {
+    const userDoc = doc(firestore, "users", auth.currentUser.uid);
+    const newGems = amount + numberOfGems;
+    Promise.all([
+      updateDoc(userDoc, { gems: newGems }),
+      addGemLog(pageId, numberOfGems, gemType),
+    ])
+      .then((_) => {
+        successUpdate(`Added ${numberOfGems} gems. New Total: ${newGems}`);
+      })
+      .catch((e) => {
+        failedUpdate(`Unable to add gems... Network Error...${e}`);
+      });
+  });
+}
+
 /* Lives */
 export async function getLives() {
   const date = new Date();
@@ -250,6 +307,7 @@ export async function getLessonsCompleted() {
 
 /* Pages */
 export async function getPageFromID(page_path) {
+  const pageId = page_path.split("/")[1];
   const pageDoc = doc(firestore, "pages", page_path.split("/")[1]);
   const snapshot = await getDoc(pageDoc);
   const pageData = snapshot.data().page;
@@ -258,11 +316,13 @@ export async function getPageFromID(page_path) {
   let data;
   if (pageData.type === "text") {
     data = {
+      id: pageId,
       type: pageData.type,
       content: pageData.data,
     };
   } else if (pageData.type === "question") {
     data = {
+      id: pageId,
       type: pageData.type,
       content: {
         question: pageData.question,

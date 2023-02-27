@@ -2,86 +2,87 @@ import React, { useEffect, useState } from "react";
 import "./lesson-page.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
+  addGemsToUser,
   getCourse,
   getLessonFromID,
   getPageFromID,
+  lostLife,
   userCompletedLesson,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
 import ProgressBar from "./progress-bar/progress-bar";
 import LessonContent from "./lesson-content/lesson-content";
-import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 import { change_color } from "../../cloud-infrastructure/utils/color";
 import { Button } from "react-bootstrap";
-import Gems from "../../assets/lesson/gems.svg";
+import Gems from "../../assets/lesson/gem.svg";
 import Lives from "../academy/user-card/lives/lives";
 
-const LESSON_CONTENT_EXAMPLE = [
-  {
-    type: "text",
-    content:
-      "The mind is one of the most complex and intriguing aspects of human nature. For centuries, philosophers, psychologists and scientists have sought to unravel its mysteries. It is generally believed that the mind influences our behavior and actions, so a great deal of research has gone into understanding the mental processes that lead to both good and bad decisions.",
-  },
-  {
-    type: "question",
-    content: {
-      question: "What is one way life experiences can affect us?",
-      questions: [
-        "A. Inheriting biological markers from our parents",
-        "B. Consulting with a psychologist",
-        "C. Fixing ourselves on our own",
-        "D. All of the above",
-      ],
-      answer: 4,
-      explanation:
-        "At some point in our lives, we have all either consulted with a psychologist or known someone who has. Life's experiences can break us down in ways we cannot fix on our own, and sometimes these breakdowns are due to certain biological markers we inherited from our parents",
-    },
-  },
-  {
-    type: "text",
-    content:
-      "Some studies of the mind have concentrated on the brain, looking at the physical aspects of how information is acquired, processed, interpreted and stored. These studies hope to get a better understanding of how the brain can affect a person's reasoning. This research has paved the way for progress in managing debilitating conditions like Alzheimer's, perception difficulties and even memory loss.",
-  },
-  {
-    type: "text",
-    content:
-      "Another familiar aspect of the study of the human mind is psychology. At some point in our lives, we have all either consulted with a psychologist or known someone who has. Life's experiences can break us down in ways we cannot fix on our own, and sometimes these breakdowns are due to certain biological markers we inherited from our parents. Emotions like depression, anxiety and fear can darken our daily experiences and make it difficult to thrive. However, with a combination of drugs and therapy, we can protect ourselves from the darkness within.",
-  },
-  {
-    type: "text",
-    content: "What about the darkness in others…",
-  },
-  {
-    type: "text",
-    content:
-      "Everyone has the capacity for both great good and great evil. Beneath our surface emotions like sadness, depression, joy, and happiness is a deep-seated desire that can lead us to deliberately harm others if those urges are not kept in check. These darker desires are rooted in more primitive instincts like our flight or fight response that promotes our survival. Sometimes there is only one word that adequately describes the human response to these dark emotions...evil.",
-  },
-  {
-    type: "text",
-    content:
-      "Dark psychology is the study of the human condition in relation to the psychological nature of humans preying on others. In layman's terms, dark psychology explores that aspect of human nature which allows us to take deliberate and willful actions that bring harm to our fellow humans - mind you, use of the term prey does not necessarily translate into physically harming a person (although there is a branch of dark psychology dedicated entirely to this). In subsequent chapters we will touch briefly on those areas related specifically physical violence.",
-  },
-  {
-    type: "text",
-    content:
-      'In movies or books, you may have come across words or phrases alluding to "a darkness within". Even some famous philosophers made references to this inner darkness. The revered book of Christians talks about how "the heart of man is desperately wicked". We have all encountered at least one individual who we described as being exceptionally calm or reserved in social settings, only for this same individual to perpetrate an act so devious that we find it difficult to associate that act with the person in question. Sometimes, we are that individual. As surprising as it may seem, it is not entirely shocking.',
-  },
-  {
-    type: "text",
-    content:
-      'These cases are usually just triggered responses to external situations; the pot was stirred so to speak and those dark emotions which were hidden beneath simmered to the surface. Usually they recede back down once control is exerted over them. Everyone has a latent tendency to be a bit naughty or downright evil if the right "buttons" are pushed; some other individuals on the other hand are fully in control of these dark emotions - they nurture them, feed them, and when it serves their own purposes - willfully unleash them at another person\'s expense.',
-  },
-  {
-    type: "text",
-    content:
-      "Sometimes, these emotions are groomed from an early age. A child learns that if he or she cries in a certain way, the adults in their lives will rushing to do their bidding. If the parents do not impress on the child early enough the wrongness of this behavior, the child grows up thinking people in their lives can be manipulated into doing what they want. The crying would cease to be a weapon as they grow but they would continue using other emotional manipulation tactics.",
-  },
-  {
-    type: "text",
-    content:
-      "Dark psychology is all about studying the thought process of a person like this. It seeks to understand why someone would carry out these actions, despite knowing it might cause pain to another individual. Dark psychology illuminates the dark side of human nature and provides insight into why someone might act this way.",
-  },
-];
+// const LESSON_CONTENT_EXAMPLE = [
+//   {
+//     type: "text",
+//     content:
+//       "The mind is one of the most complex and intriguing aspects of human nature. For centuries, philosophers, psychologists and scientists have sought to unravel its mysteries. It is generally believed that the mind influences our behavior and actions, so a great deal of research has gone into understanding the mental processes that lead to both good and bad decisions.",
+//   },
+//   {
+//     type: "question",
+//     content: {
+//       question: "What is one way life experiences can affect us?",
+//       questions: [
+//         "A. Inheriting biological markers from our parents",
+//         "B. Consulting with a psychologist",
+//         "C. Fixing ourselves on our own",
+//         "D. All of the above",
+//       ],
+//       answer: 4,
+//       explanation:
+//         "At some point in our lives, we have all either consulted with a psychologist or known someone who has. Life's experiences can break us down in ways we cannot fix on our own, and sometimes these breakdowns are due to certain biological markers we inherited from our parents",
+//     },
+//   },
+//   {
+//     type: "text",
+//     content:
+//       "Some studies of the mind have concentrated on the brain, looking at the physical aspects of how information is acquired, processed, interpreted and stored. These studies hope to get a better understanding of how the brain can affect a person's reasoning. This research has paved the way for progress in managing debilitating conditions like Alzheimer's, perception difficulties and even memory loss.",
+//   },
+//   {
+//     type: "text",
+//     content:
+//       "Another familiar aspect of the study of the human mind is psychology. At some point in our lives, we have all either consulted with a psychologist or known someone who has. Life's experiences can break us down in ways we cannot fix on our own, and sometimes these breakdowns are due to certain biological markers we inherited from our parents. Emotions like depression, anxiety and fear can darken our daily experiences and make it difficult to thrive. However, with a combination of drugs and therapy, we can protect ourselves from the darkness within.",
+//   },
+//   {
+//     type: "text",
+//     content: "What about the darkness in others…",
+//   },
+//   {
+//     type: "text",
+//     content:
+//       "Everyone has the capacity for both great good and great evil. Beneath our surface emotions like sadness, depression, joy, and happiness is a deep-seated desire that can lead us to deliberately harm others if those urges are not kept in check. These darker desires are rooted in more primitive instincts like our flight or fight response that promotes our survival. Sometimes there is only one word that adequately describes the human response to these dark emotions...evil.",
+//   },
+//   {
+//     type: "text",
+//     content:
+//       "Dark psychology is the study of the human condition in relation to the psychological nature of humans preying on others. In layman's terms, dark psychology explores that aspect of human nature which allows us to take deliberate and willful actions that bring harm to our fellow humans - mind you, use of the term prey does not necessarily translate into physically harming a person (although there is a branch of dark psychology dedicated entirely to this). In subsequent chapters we will touch briefly on those areas related specifically physical violence.",
+//   },
+//   {
+//     type: "text",
+//     content:
+//       'In movies or books, you may have come across words or phrases alluding to "a darkness within". Even some famous philosophers made references to this inner darkness. The revered book of Christians talks about how "the heart of man is desperately wicked". We have all encountered at least one individual who we described as being exceptionally calm or reserved in social settings, only for this same individual to perpetrate an act so devious that we find it difficult to associate that act with the person in question. Sometimes, we are that individual. As surprising as it may seem, it is not entirely shocking.',
+//   },
+//   {
+//     type: "text",
+//     content:
+//       'These cases are usually just triggered responses to external situations; the pot was stirred so to speak and those dark emotions which were hidden beneath simmered to the surface. Usually they recede back down once control is exerted over them. Everyone has a latent tendency to be a bit naughty or downright evil if the right "buttons" are pushed; some other individuals on the other hand are fully in control of these dark emotions - they nurture them, feed them, and when it serves their own purposes - willfully unleash them at another person\'s expense.',
+//   },
+//   {
+//     type: "text",
+//     content:
+//       "Sometimes, these emotions are groomed from an early age. A child learns that if he or she cries in a certain way, the adults in their lives will rushing to do their bidding. If the parents do not impress on the child early enough the wrongness of this behavior, the child grows up thinking people in their lives can be manipulated into doing what they want. The crying would cease to be a weapon as they grow but they would continue using other emotional manipulation tactics.",
+//   },
+//   {
+//     type: "text",
+//     content:
+//       "Dark psychology is all about studying the thought process of a person like this. It seeks to understand why someone would carry out these actions, despite knowing it might cause pain to another individual. Dark psychology illuminates the dark side of human nature and provides insight into why someone might act this way.",
+//   },
+// ];
 
 function NewLessonPage() {
   /* The URL looks like : http://localhost:3000/lesson/?lesson_id=gvhvgvhv&course_id=course_name
@@ -101,16 +102,12 @@ function NewLessonPage() {
   const [loading, setLoading] = useState(true);
   /* Navigation */
   const navigator = useNavigate();
-  /* Auth info */
-  const { current_user } = useAuth();
   /* Lives Information */
   const [lifeLost, setLifeLost] = useState(false);
   /* Gems Information */
   const [gems, setGems] = useState(0);
 
   useEffect(() => {
-    console.log(current_user);
-
     getCourse(course_id).then((res) => {
       change_color(res.color);
       // TODO:// Get lives lost for today
@@ -137,8 +134,6 @@ function NewLessonPage() {
             })
           );
           setLoading(false);
-
-          console.log(LESSON_CONTENT_EXAMPLE);
         });
       });
     });
@@ -155,26 +150,42 @@ function NewLessonPage() {
     goToPosition(nextIndex);
   };
 
-  const sendCorrectAnswer = () => {
+  const successGemUpdate = (text) => {
+    // TODO:// Handle Success Update
     setGems(gems + 30);
   };
 
-  const sendIncorrectAnswer = () => {
-    setLifeLost(!lifeLost);
-    //TODO:// Add a new entry for life lost for the current date
+  const failedGemUpdate = (text) => {
+    // TODO:// Handle Failed Update
+    console.log("Failed to update Gems", text);
+  };
+
+  const sendCorrectAnswer = () => {
+    addGemsToUser(
+      30,
+      current_content.id,
+      "Standard",
+      successGemUpdate,
+      failedGemUpdate
+    ).then((r) => console.log("completed"));
+  };
+
+  const sendIncorrectAnswer = (submittedAnswer) => {
+    lostLife(current_content.id, submittedAnswer).then((_) =>
+      setLifeLost(!lifeLost)
+    );
   };
 
   //TODO(eahmad): Make a submit button
-  const submit = (correctAnswer) => {
+  const submit = (correctAnswer, submittedAnswer) => {
     const temp = user_progress;
 
-    console.log(current_content.type);
     if (current_content.type === "question") {
       if (correctAnswer) {
         /* This is the correct answer*/
         sendCorrectAnswer();
       } else {
-        sendIncorrectAnswer();
+        sendIncorrectAnswer(submittedAnswer);
       }
     }
 

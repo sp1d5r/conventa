@@ -27,7 +27,7 @@ function QuestionPage({
             <div className={"lesson-content-button-div"}>
               <button
                 onClick={() => {
-                  submit(answer === correctAnswer);
+                  submit(answer === correctAnswer, answer);
                 }}
                 className={"lesson-submit-button"}
               >

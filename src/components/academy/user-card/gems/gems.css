@@ -1,0 +1,15 @@
+.user-gems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount-of-gems {
+  font-family: "Lexend", serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}

@@ -8,6 +8,7 @@ import auth, {
 } from "../../../cloud-infrastructure/firebase/firebase";
 import { Link } from "react-router-dom";
 import Lives from "./lives/lives";
+import TotalGems from "./gems/gems";
 
 function UserCard() {
   const NUMBER_STREAK_REQUIRED = 5;
@@ -144,9 +145,12 @@ function UserCard() {
             </div>
             {getUserStreakText()}
             <div className={"additional-info"}>
+              <Lives lifeLost={false} />
+              <TotalGems />
+            </div>
+            <div className={"additional-info"}>
               <p>{lessons_completed} Lessons Completed</p>
               {/*<p>{longest_streak} Courses Completed</p>*/}
-              <Lives lifeLost={false} />
             </div>
           </div>
         </div>
