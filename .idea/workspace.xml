@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/lives/lives.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/lives/lives.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/lesson/gem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/lesson/gem.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/gems/gems.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/academy/user-card/gems/gems.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/images-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/question-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/question-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
@@ -175,6 +178,7 @@
       <workItem from="1672509244128" duration="8422000" />
       <workItem from="1674302856728" duration="7785000" />
       <workItem from="1674508355186" duration="1161000" />
+      <workItem from="1676936323031" duration="4584000" />
     </task>
     <servers />
   </component>
