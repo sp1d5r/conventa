@@ -3,6 +3,7 @@ import "./lesson-content.css";
 import TextPage from "./pages/text-page";
 import QuestionPage from "./pages/question-page";
 import FinalPage from "./pages/final-page";
+import SelectionTextPage from "./pages/selection-text-page";
 
 function LessonContent({
   type,
@@ -39,6 +40,15 @@ function LessonContent({
         lessonCompleteSubmit={lessonCompleteSubmit}
         lessonCompleteBack={lessonCompleteBack}
         lessonCompleteNextLesson={lessonCompleteNextLesson}
+      />
+    );
+  } else if (type === "selection_text") {
+    return (
+      <SelectionTextPage
+        question={content.question}
+        options={content.questions}
+        correctAnswer={content.answer}
+        submit={submit}
       />
     );
   }
