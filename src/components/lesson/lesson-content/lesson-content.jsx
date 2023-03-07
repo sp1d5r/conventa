@@ -4,6 +4,7 @@ import TextPage from "./pages/text-page";
 import QuestionPage from "./pages/question-page";
 import FinalPage from "./pages/final-page";
 import SelectionTextPage from "./pages/selection-text-page";
+import SelectionImagePage from "./pages/selection-image-page";
 
 function LessonContent({
   type,
@@ -47,6 +48,16 @@ function LessonContent({
       <SelectionTextPage
         question={content.question}
         options={content.questions}
+        correctAnswer={content.answer}
+        submit={submit}
+      />
+    );
+  } else if (type === "selection_image") {
+    return (
+      <SelectionImagePage
+        question={content.question}
+        sources={content.questions.map((elem) => elem.src)}
+        options={content.questions.map((elem) => elem.content)}
         correctAnswer={content.answer}
         submit={submit}
       />
