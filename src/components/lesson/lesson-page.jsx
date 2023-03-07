@@ -19,11 +19,36 @@ import Lives from "../academy/user-card/lives/lives";
 
 const LESSON_CONTENT_EXAMPLE = [
   {
+    type: "selection_image",
+    content: {
+      question: "Objections to the sale should be  __________.",
+      questions: [
+        {
+          src: "/lesson-notional/encouraged.png",
+          content: "encouraged",
+        },
+        {
+          src: "/lesson-notional/questioned.png",
+          content: "questioned",
+        },
+        {
+          src: "/lesson-notional/shot-down.png",
+          content: "shot-down",
+        },
+        {
+          src: "/lesson-notional/ignored.png",
+          content: "ignored",
+        },
+      ],
+      answer: 1,
+    },
+  },
+  {
     type: "selection_text",
     content: {
       question: "How should you address objections?",
       questions: ["Asking Questions", "Directly", "Indirectly", "Creatively"],
-      answer: 4,
+      answer: 1,
     },
   },
   {
