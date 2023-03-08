@@ -5,6 +5,27 @@ import QuestionPage from "./pages/question-page";
 import FinalPage from "./pages/final-page";
 import SelectionTextPage from "./pages/selection-text-page";
 import SelectionImagePage from "./pages/selection-image-page";
+import BuildSentencePage from "./pages/build-sentence-page";
+
+function shuffle(array) {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
 
 function LessonContent({
   type,
@@ -59,6 +80,14 @@ function LessonContent({
         sources={content.questions.map((elem) => elem.src)}
         options={content.questions.map((elem) => elem.content)}
         correctAnswer={content.answer}
+        submit={submit}
+      />
+    );
+  } else if (type === "build_sentence") {
+    return (
+      <BuildSentencePage
+        options={shuffle(content.split(" "))}
+        correctAnswer={content}
         submit={submit}
       />
     );

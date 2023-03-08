@@ -19,6 +19,10 @@ import Lives from "../academy/user-card/lives/lives";
 
 const LESSON_CONTENT_EXAMPLE = [
   {
+    type: "build_sentence",
+    content: "Objections to the sale should be encouraged.",
+  },
+  {
     type: "selection_image",
     content: {
       question: "Objections to the sale should be  __________.",
