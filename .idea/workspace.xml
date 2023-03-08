@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/selection-image-page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/build-sentence-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" afterDir="false" />
@@ -173,7 +173,7 @@
       <workItem from="1674302856728" duration="7785000" />
       <workItem from="1674508355186" duration="1161000" />
       <workItem from="1676936323031" duration="4584000" />
-      <workItem from="1677979845665" duration="5043000" />
+      <workItem from="1677979845665" duration="8493000" />
     </task>
     <servers />
   </component>
