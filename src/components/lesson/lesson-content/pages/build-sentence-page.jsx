@@ -135,7 +135,7 @@ function BuildSentencePage({ options, correctAnswer, submit }) {
           {answered && wordsPicked.join(" ") !== correctAnswer ? (
             <div
               className={"underlined-text-page"}
-              style={{ marginTop: 15, marginBottom: 15 }}
+              style={{ marginTop: 15, marginBottom: 15, width: "100%" }}
             >
               {correctAnswer}
             </div>

@@ -309,6 +309,79 @@
   margin: 0;
 }
 
+/* Single Word Input */
+.single-word-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-word-input {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.single-word-input-box {
+  width: 80%;
+  text-align: left;
+  border-style: hidden !important;
+  background-color: transparent;
+  letter-spacing: 0.5em;
+  position: absolute;
+  color: transparent;
+  top: 0;
+  z-index: 1;
+}
+
+.single-word-input-box::selection {
+  color: transparent;
+}
+
+.single-word-empty-letters {
+  writing-mode: horizontal-tb !important;
+  padding: 1px 2px;
+  border-width: 2px;
+  width: 100%;
+  color: #a5c3fe;
+  text-align: left;
+  letter-spacing: 0.4em;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+.single-word-input-box:focus {
+  border-style: hidden !important;
+  outline: none;
+}
+
+.letter-entry-div {
+  position: relative;
+  height: 25px;
+  width: 25px;
+}
+
+.single-word-actual-char {
+  position: absolute;
+  margin: 0;
+  left: 2px;
+}
+
+.letters-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .correct {
   background: #d8ffb0;
 }

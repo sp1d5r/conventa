@@ -6,6 +6,7 @@ import FinalPage from "./pages/final-page";
 import SelectionTextPage from "./pages/selection-text-page";
 import SelectionImagePage from "./pages/selection-image-page";
 import BuildSentencePage from "./pages/build-sentence-page";
+import SingleWordPage from "./pages/single-word-page";
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -88,6 +89,14 @@ function LessonContent({
       <BuildSentencePage
         options={shuffle(content.split(" "))}
         correctAnswer={content}
+        submit={submit}
+      />
+    );
+  } else if (type === "single_word") {
+    return (
+      <SingleWordPage
+        sentence={content.sentence}
+        word={content.word}
         submit={submit}
       />
     );
