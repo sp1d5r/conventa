@@ -54,3 +54,9 @@
   align-items: flex-end;
   padding: 0;
 }
+
+@media screen and (max-width: 700px) {
+  .lesson-landing-content-section {
+    height: 100vh;
+  }
+}
