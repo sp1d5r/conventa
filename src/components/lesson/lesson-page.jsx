@@ -19,6 +19,7 @@ import Lives from "../academy/user-card/lives/lives";
 
 const LESSON_CONTENT_EXAMPLE = [
   {
+    id: "test",
     type: "single_word",
     content: {
       sentence: "Objections to the sale should be ",
@@ -26,10 +27,12 @@ const LESSON_CONTENT_EXAMPLE = [
     },
   },
   {
+    id: "test",
     type: "build_sentence",
     content: "Objections to the sale should be encouraged.",
   },
   {
+    id: "test",
     type: "selection_image",
     content: {
       question: "Objections to the sale should be  __________.",
@@ -55,6 +58,7 @@ const LESSON_CONTENT_EXAMPLE = [
     },
   },
   {
+    id: "test",
     type: "selection_text",
     content: {
       question: "How should you address objections?",
@@ -68,6 +72,7 @@ const LESSON_CONTENT_EXAMPLE = [
       "The mind is one of the most complex and intriguing aspects of human nature. For centuries, philosophers, psychologists and scientists have sought to unravel its mysteries. It is generally believed that the mind influences our behavior and actions, so a great deal of research has gone into understanding the mental processes that lead to both good and bad decisions.",
   },
   {
+    id: "test",
     type: "question",
     content: {
       question: "What is one way life experiences can affect us?",
@@ -229,7 +234,10 @@ function NewLessonPage() {
 
     if (
       current_content.type === "question" ||
-      current_content.type === "selection_text"
+      current_content.type === "selection_text" ||
+      current_content.type === "single_word" ||
+      current_content.type === "build_sentence" ||
+      current_content.type === "selection_image"
     ) {
       if (correctAnswer) {
         /* This is the correct answer*/
