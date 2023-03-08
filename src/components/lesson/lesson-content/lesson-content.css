@@ -305,6 +305,10 @@
   align-items: center;
 }
 
+.answer-word > p {
+  margin: 0;
+}
+
 .correct {
   background: #d8ffb0;
 }
