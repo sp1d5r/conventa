@@ -45,7 +45,7 @@ function CourseCard({ imagePath, title, time, id, locked }) {
       </div>
       <div className={"academy-content-course-info"}>
         {locked ? (
-          <b className={"locked-text"}> locked</b>
+          <b className={"locked-text"}>Locked</b>
         ) : (
           <>
             <img
