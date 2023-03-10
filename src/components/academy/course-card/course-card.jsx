@@ -5,16 +5,30 @@ import auth, {
   logCourseClicked,
 } from "../../../cloud-infrastructure/firebase/firebase";
 
-function CourseCard({ imagePath, title, time, id }) {
+function CourseCard({ imagePath, title, time, id, locked }) {
   const current_user = auth.currentUser;
   const logCourseInteraction = () => {
     logCourseClicked(id, title);
   };
 
+  const getLinkPath = () => {
+    if (current_user) {
+      console.log("Course card is locked", locked);
+      if (locked) {
+        /* Create a Better Pricing Page */
+        return "";
+      } else {
+        return `/course/?course_id=${id}`;
+      }
+    } else {
+      return "/auth";
+    }
+  };
+
   return (
     <Link
-      className={"academy-content-course"}
-      to={current_user ? `/course/?course_id=${id}` : "/auth"}
+      className={`academy-content-course ${locked ? "locked" : ""}`}
+      to={getLinkPath()}
       onClick={() => {
         logCourseInteraction();
       }}
@@ -30,11 +44,17 @@ function CourseCard({ imagePath, title, time, id }) {
         <p>{title}</p>
       </div>
       <div className={"academy-content-course-info"}>
-        <img
-          src={require("../../../assets/Icons/time.png")}
-          alt={"This course is expected to take 30 minutes"}
-        />
-        <p>{time} minutes</p>
+        {locked ? (
+          <b className={"locked-text"}> locked</b>
+        ) : (
+          <>
+            <img
+              src={require("../../../assets/Icons/time.png")}
+              alt={"This course is expected to take 30 minutes"}
+            />
+            <p>{time} minutes</p>
+          </>
+        )}
       </div>
     </Link>
   );
