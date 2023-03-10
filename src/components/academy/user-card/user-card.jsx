@@ -81,6 +81,7 @@ function UserCard() {
 
     getUserClaim().then((res) => {
       let r = res;
+      console.log("User Claim", res);
       if (res === "Hobbiest" || res === "Amateur") {
         r = res + " ^";
       }

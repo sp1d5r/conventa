@@ -17,10 +17,6 @@
   text-decoration: none;
 }
 
-.locked {
-  background: #ffeded;
-}
-
 .academy-content-course:hover {
   background: var(--light-green);
   height: 250px;

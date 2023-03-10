@@ -5,6 +5,7 @@ import MiniGameCard from "./minigame-card/minigame-card";
 import {
   getBanner,
   getCourses,
+  getUserClaim,
   lessonsLocked,
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
@@ -19,16 +20,19 @@ function Academy() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [banner, setBanner] = useState({});
-  const [locked, setLocked] = useState(false);
+  const [lessonLocked, setLessonLocked] = useState(false);
+  const [accountType, setAccountType] = useState("Upgrade!");
 
   const courseItems = () => {
     getCourses()
       .then((_courses) => {
         lessonsLocked().then((isLocked) => {
-          console.log(isLocked);
-          setLocked(isLocked);
-          setCourses(_courses);
-          setLoading(false);
+          getUserClaim().then((account) => {
+            setLessonLocked(isLocked);
+            setCourses(_courses);
+            setAccountType(account);
+            setLoading(false);
+          });
         });
       })
       .catch(() => {});
@@ -158,7 +162,7 @@ function Academy() {
                     imagePath={item.thumbnail}
                     title={item.courseName}
                     id={item.id}
-                    locked={locked}
+                    locked={lessonLocked}
                     time={item.time}
                     key={index}
                   />
@@ -177,6 +181,7 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     time={item.time}
+                    locked={accountType === "Upgrade!"}
                     difficulty={item.difficulty}
                   />
                 );
@@ -194,6 +199,11 @@ function Academy() {
                     color={item.color}
                     imagePath={item.imagePath}
                     title={item.title}
+                    locked={
+                      accountType === "Hobbiest" ||
+                      accountType === "Amateur" ||
+                      accountType === "Upgrade!"
+                    }
                     subtext={item.subtext}
                     difficulty={item.difficulty}
                   />
