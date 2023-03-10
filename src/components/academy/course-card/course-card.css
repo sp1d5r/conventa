@@ -17,10 +17,23 @@
   text-decoration: none;
 }
 
+.locked {
+  background: #ffeded;
+}
+
 .academy-content-course:hover {
   background: var(--light-green);
   height: 250px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.55);
+}
+
+.locked:hover {
+  background: #ffc4c4;
+}
+
+.locked-text {
+  color: #ca0000;
+  font-size: 12px;
 }
 
 .academy-content-course > * {

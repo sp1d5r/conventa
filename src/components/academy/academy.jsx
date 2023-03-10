@@ -5,6 +5,7 @@ import MiniGameCard from "./minigame-card/minigame-card";
 import {
   getBanner,
   getCourses,
+  lessonsLocked,
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
@@ -18,12 +19,17 @@ function Academy() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [banner, setBanner] = useState({});
+  const [locked, setLocked] = useState(false);
 
   const courseItems = () => {
     getCourses()
       .then((_courses) => {
-        setCourses(_courses);
-        setLoading(false);
+        lessonsLocked().then((isLocked) => {
+          console.log(isLocked);
+          setLocked(isLocked);
+          setCourses(_courses);
+          setLoading(false);
+        });
       })
       .catch(() => {});
   };
@@ -33,6 +39,8 @@ function Academy() {
       setBanner(_banner);
     });
   };
+
+  const getLessonsLocked = () => {};
 
   const minigameItems = () => {
     return [
@@ -113,6 +121,7 @@ function Academy() {
     logAcademyStart();
     getBannerFromFirebase();
     change_color("#E3FFEA");
+    getLessonsLocked();
   }, []);
 
   return (
@@ -149,6 +158,7 @@ function Academy() {
                     imagePath={item.thumbnail}
                     title={item.courseName}
                     id={item.id}
+                    locked={locked}
                     time={item.time}
                     key={index}
                   />

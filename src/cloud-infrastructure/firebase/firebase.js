@@ -252,6 +252,16 @@ export async function getLives() {
   return entries;
 }
 
+export async function lessonsLocked() {
+  const response = await getUserClaim();
+  if (response === "Upgrade!") {
+    const lives = await getLives();
+    return lives >= 3;
+  } else {
+    return false;
+  }
+}
+
 export async function lostLife(pageId, selectedOption) {
   const date = new Date();
 
