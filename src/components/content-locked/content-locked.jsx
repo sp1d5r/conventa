@@ -30,7 +30,6 @@ function CountDown() {
       setHours(diff.getHours());
       setMinutes(diff.getMinutes());
       setSeconds(diff.getSeconds());
-      console.log("here");
     }, 1000);
     return () => {
       clearInterval(myInterval);

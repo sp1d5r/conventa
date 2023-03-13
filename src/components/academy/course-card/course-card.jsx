@@ -13,7 +13,6 @@ function CourseCard({ imagePath, title, time, id, locked }) {
 
   const getLinkPath = () => {
     if (current_user) {
-      console.log("Course card is locked", locked);
       if (locked) {
         /* Create a Better Pricing Page */
         return "/content-locked?reason=lives";
