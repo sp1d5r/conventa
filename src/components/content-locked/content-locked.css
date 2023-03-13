@@ -1,0 +1,120 @@
+.content-locked-full-div {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #ffd2fd;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-locked-title-div {
+  width: 100%;
+  height: 15%;
+  background-color: #ffd2fd;
+  border-bottom: 3px solid #000000;
+  min-height: 5vh;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--white);
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.stopwatch-font {
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--white);
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+.countdown-div {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-locked-mobile-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80vh;
+}
+
+.content-locked-desktop-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70vh;
+}
+
+.lock-image {
+  width: min(80%, 200px);
+}
+
+.content-locked-button {
+  background: #f3a9ff;
+  border: 3px solid #d884ff;
+  border-radius: 10px;
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+  padding: 15px 20px;
+}
+
+.content-locked-button:focus {
+  background: #d884ff;
+  border: 3px solid #8540a5;
+}
+
+.content-locked-button:hover {
+  background: #d884ff;
+  border: 3px solid #8540a5;
+}
+
+.content-background-image {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  z-index: 0;
+  object-fit: contain;
+  width: 100%;
+}
+
+.content-body-div {
+  z-index: 1;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .content-locked-title-div,
+  .stopwatch-font {
+    font-size: 40px;
+  }
+
+  .countdown-div {
+    min-height: 100px;
+  }
+
+  .content-locked-full-div {
+    min-height: 0;
+  }
+
+  .content-background-image {
+    width: auto;
+  }
+}

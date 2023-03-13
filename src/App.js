@@ -17,6 +17,7 @@ import PricingPage from "./components/pricing-page/pricing-page";
 import AuthProvider from "./cloud-infrastructure/firebase/auth";
 import NewLessonPage from "./components/lesson/lesson-page";
 import EffectiveSpeaking from "./components/minigames/effective-speaking/effective-speaking";
+import ContentLocked from "./components/content-locked/content-locked";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/auth" element={<Authenticate />} />
             <Route path="/academy" element={<Academy loggedIn={false} />} />
             <Route path="/course/" element={<CourseLanding />} />
+            <Route path="/content-locked/" element={<ContentLocked />} />
             <Route path="/lesson/" element={<NewLessonPage />} />
             <Route path="/about-us/" element={<AboutUs />} />
             <Route path="/pricing-page/" element={<PricingPage />} />
