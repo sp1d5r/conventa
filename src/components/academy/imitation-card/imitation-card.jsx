@@ -36,7 +36,7 @@ function ImitationCard({
     if (current_user) {
       if (locked) {
         /* Create a Better Pricing Page */
-        return "";
+        return "/content-locked/";
       } else {
         return `/minigame/${title}`;
       }

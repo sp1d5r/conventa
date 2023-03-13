@@ -16,7 +16,7 @@ function CourseCard({ imagePath, title, time, id, locked }) {
       console.log("Course card is locked", locked);
       if (locked) {
         /* Create a Better Pricing Page */
-        return "";
+        return "/content-locked?reason=lives";
       } else {
         return `/course/?course_id=${id}`;
       }
