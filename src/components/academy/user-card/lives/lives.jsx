@@ -3,18 +3,23 @@ import GreyHeart from "../../../../assets/lesson/grey-heart.svg";
 import RedHeart from "../../../../assets/lesson/red-heart.svg";
 import { getLives } from "../../../../cloud-infrastructure/firebase/firebase";
 import "./lives.css";
+import { useNavigate } from "react-router-dom";
 
-function Lives({ lifeLost = false }) {
+function Lives({ lifeLost = false, redirect = false }) {
   const [livesLost, setLivesLost] = useState(3);
+  const navigate = useNavigate();
   // const [infiniteLives, setInfiniteLives] = useState(false);
 
   useEffect(() => {
-    // get lives remaining
+    // get lives lost
     getLives().then((res) => {
       console.log("result", res);
       setLivesLost(res);
+      if (redirect && res >= 3) {
+        navigate("/content-locked?reason=lives");
+      }
     });
-  }, [lifeLost]);
+  }, [lifeLost, redirect, navigate]);
 
   const generateHearts = () => {
     const hearts = [];

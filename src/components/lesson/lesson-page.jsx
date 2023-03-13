@@ -309,7 +309,7 @@ function NewLessonPage() {
                       Exit
                     </Button>
                     <div className={"lesson-user-data"}>
-                      <Lives lifeLost={lifeLost} />
+                      <Lives lifeLost={lifeLost} redirect={true} />
 
                       <div className={"user-gems"}>
                         <p className={"amount-of-gems"}>{gems}</p>
