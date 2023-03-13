@@ -12,7 +12,10 @@ function SingleWordPage({ sentence, word, submit }) {
           <div className={"lesson-content-button-div"}>
             <button
               onClick={() => {
-                submit(inputWord === word, inputWord);
+                submit(
+                  inputWord.toLowerCase() === word.toLowerCase(),
+                  inputWord
+                );
               }}
               className={"lesson-submit-button"}
             >
@@ -39,7 +42,7 @@ function SingleWordPage({ sentence, word, submit }) {
 
   const getAnswered = () => {
     if (answered) {
-      if (inputWord === word) {
+      if (inputWord.toLowerCase() === word.toLowerCase()) {
         return (
           <div className={"answer-word correct"}>
             <p className={"page-text"}>Correct Answer</p>
