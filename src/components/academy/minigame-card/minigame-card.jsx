@@ -30,7 +30,7 @@ function MiniGameCard({ imagePath, title, locked, time, difficulty }) {
     if (current_user) {
       if (locked) {
         /* Create a Better Pricing Page */
-        return "";
+        return "/content-locked/";
       } else {
         return `/minigame/${title}`;
       }
