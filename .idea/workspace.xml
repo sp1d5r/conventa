@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/auth/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/content-locked/content-locked.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/content-locked/content-locked.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/authenticate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/authenticate.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +174,7 @@
       <workItem from="1674508355186" duration="1161000" />
       <workItem from="1676936323031" duration="4584000" />
       <workItem from="1677979845665" duration="12583000" />
+      <workItem from="1679388972135" duration="2378000" />
     </task>
     <servers />
   </component>

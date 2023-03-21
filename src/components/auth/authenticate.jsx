@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./authenticate.css";
-import Login from "./login/login";
+import Login from "./login";
 import SignUp from "./signup/signup";
 import { getCurrentUser } from "../../cloud-infrastructure/firebase/firebase";
 import { useNavigate } from "react-router-dom";

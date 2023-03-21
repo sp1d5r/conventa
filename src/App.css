@@ -8,6 +8,13 @@
   --light-blue: #4a5bb5;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f3fff1 inset !important;
+}
+
 .green-text {
   color: #499b80;
 }

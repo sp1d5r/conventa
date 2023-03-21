@@ -1,0 +1,176 @@
+.auth-title,
+.auth-sub-text,
+.auth-form-title,
+.auth-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #343030;
+  width: 100%;
+  text-align: left;
+}
+
+.auth-text,
+.auth-switch {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.auth-sub-text {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #7e7e7e;
+}
+
+.auth-form-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+  min-width: min(90%, 420px);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.login-with-google-button {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+
+  min-width: 300px;
+  height: 40px;
+
+  background: #ffffff;
+  border: 1px solid #505050;
+  border-radius: 30px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+
+.login-with-google-button:hover {
+  background-color: #cdffc5;
+}
+
+.login-with-google-button > p {
+  color: #505050;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.auth-divider {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.auth-divider > p {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.auth-divider > div {
+  width: 40%;
+  outline: 1px solid #4e4e4e;
+  height: 0;
+}
+
+.auth-form {
+  min-width: 320px;
+  text-align: left;
+}
+
+.auth-form-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.auth-form-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+  width: 100%;
+
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.bottom-text-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.remember-me-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me-checkbox > p {
+  margin-bottom: 0;
+  margin-left: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.auth-link {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration-line: underline;
+  color: #128200;
+}
+
+.auth-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 100px;
+  margin: 15px 0px;
+  gap: 26px;
+  width: 80%;
+  height: 50px;
+  background: #cdffc5;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.auth-button-text {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 0;
+}
