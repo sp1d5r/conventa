@@ -1,3 +1,47 @@
+.login-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: calc(100vh + 100px);
+  padding: 50px 0px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+
+.login-section {
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.side-body {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  background: white;
+}
+
+.side-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .auth-title,
 .auth-sub-text,
 .auth-form-title,
@@ -173,4 +217,15 @@
   font-style: normal;
   font-weight: 400;
   margin-bottom: 0;
+}
+
+/* If the display is less than 600 it's a mobile device*/
+@media only screen and (max-width: 700px) {
+  .login-section {
+    width: 100vw;
+  }
+
+  .login-body {
+    width: 80vw;
+  }
 }
