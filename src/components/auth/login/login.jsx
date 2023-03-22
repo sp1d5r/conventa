@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./login.css";
 import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
+import "../login-signup.css";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
 
 function Login({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
@@ -33,10 +34,20 @@ function Login({ changeObjective, initial, size }) {
   return (
     <div className={"login-home"}>
       <div className={"login-section"}>
-        <div
-          className={`login-body slide-in${initial.current ? "-right" : ""}`}
-        >
-          <p className={"login-title"}>Login to Your Account</p>
+        <div className={"auth-form-main"}>
+          <div className={"auth-title"}>
+            <img src={GreenLogo} alt={"Conventa"} />
+          </div>
+          <p className={"auth-title"}>Login</p>
+          <p className={"auth-sub-text"}>Brush up on some lessons!</p>
+          <button className={"login-with-google-button"}>
+            <img
+              src={require("../../../assets/Icons/Google-Line.png")}
+              alt={"G"}
+            />
+            Login with Google
+          </button>
+
           {error !== "" ? (
             <Alert variant={"danger"} className={"danger-alert"}>
               {error}
@@ -44,76 +55,67 @@ function Login({ changeObjective, initial, size }) {
           ) : (
             <></>
           )}
-          {size ? (
-            <span>
-              if you're new sign up{" "}
-              <span
-                className={"underline"}
-                onClick={() => {
-                  switch_to_sign_up();
-                }}
-              >
-                here
-              </span>
-            </span>
-          ) : (
-            <></>
-          )}
 
-          <div className={"various-authentication"}>
-            <img
-              alt={"Sign in with Facebook"}
-              src={require("../../../assets/Icons/Facebook Circled.png")}
-              className={"alt-auth"}
-            />
-            <img
-              alt={"Sign in with Facebook"}
-              src={require("../../../assets/Icons/Google Plus.png")}
-              className={"alt-auth"}
-            />
-            <img
-              alt={"Sign in with Facebook"}
-              src={require("../../../assets/Icons/LinkedIn.png")}
-              className={"alt-auth"}
-            />
-          </div>
-
-          <div className={"login-divider"}>
+          <div className={"auth-divider"}>
             <div />
-            <p>or</p>
+            <p>Sign in with Email</p>
             <div />
           </div>
 
-          <form className={"login-form"}>
-            <p>email</p>
+          <form className={"auth-form"}>
+            <p className={"auth-form-title"}>Email</p>
             <input
-              className={"login-input"}
+              className={"auth-form-input"}
               onChange={(e) => {
                 if (e.target.value !== "") {
                   setEmail(e.target.value);
                 }
               }}
             />
-            <br />
-            <p>password</p>
+            <p className={"auth-form-title"}>Password</p>
             <input
-              className={"login-input"}
+              className={"auth-form-input"}
               type={"password"}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
           </form>
-          <br />
+
+          <div className={"bottom-text-div"}>
+            <div className={"remember-me-checkbox"}>
+              <input
+                type="checkbox"
+                id="vehicle1"
+                name="vehicle1"
+                value="Bike"
+              />
+              <p>Remember Me</p>
+            </div>
+            <a className={"auth-link"} href={"/forgot-password"}>
+              Forgot Password
+            </a>
+          </div>
 
           <button
-            className={"login-button"}
+            className={"auth-button"}
             onClick={(e) => {
               trySignIn();
             }}
           >
-            Sign In
+            <p className={"auth-button-text"}>Sign In</p>
           </button>
+          <p className={"auth-text"}>
+            Already have an account?{" "}
+            <span
+              className={"auth-link"}
+              onClick={() => {
+                switch_to_sign_up();
+              }}
+            >
+              Create an Account
+            </span>
+          </p>
         </div>
       </div>
       {size ? (

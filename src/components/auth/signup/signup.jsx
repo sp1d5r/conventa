@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "../login/login.css";
 import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
+import "../login-signup.css";
+import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
 import { Alert } from "react-bootstrap";
 
-function SignUp({ changeObjective, initial, size }) {
+function SignIn({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -41,110 +42,105 @@ function SignUp({ changeObjective, initial, size }) {
   return (
     <div className={"login-home"}>
       <div className={"login-section"}>
-        <div
-          className={`login-body slide-in${initial.current ? "-right" : ""}`}
-        >
-          <div className={"login-body"}>
-            <p className={"login-title"}>Create a New Account</p>
-            {error !== "" ? (
-              <Alert variant={"danger"} className={"danger-alert"}>
-                {error}
-              </Alert>
-            ) : (
-              <></>
-            )}
-            {size ? (
-              <span>
-                if you already have an account, click{" "}
-                <span
-                  className={"underline"}
-                  onClick={() => {
-                    switch_to_sign_up();
-                  }}
-                >
-                  here
-                </span>
-              </span>
-            ) : (
-              <></>
-            )}
+        <div className={"auth-form-main"}>
+          <div className={"auth-title"}>
+            <img src={GreenLogo} alt={"Conventa"} />
+          </div>
+          <p className={"auth-title"}>Sign Up</p>
+          <p className={"auth-sub-text"}>Equip yourself for anything.</p>
+          <button className={"login-with-google-button"}>
+            <img
+              src={require("../../../assets/Icons/Google-Line.png")}
+              alt={"G"}
+            />
+            Sign up with Google
+          </button>
 
-            <div className={"various-authentication"}>
-              <img
-                alt={"Sign in with Facebook"}
-                src={require("../../../assets/Icons/Facebook Circled.png")}
-                className={"alt-auth"}
+          {error !== "" ? (
+            <Alert variant={"danger"} className={"danger-alert"}>
+              {error}
+            </Alert>
+          ) : (
+            <></>
+          )}
+
+          <div className={"auth-divider"}>
+            <div />
+            <p>Sign up with Email</p>
+            <div />
+          </div>
+
+          <form className={"auth-form"}>
+            <p className={"auth-form-title"}>Name</p>
+            <input
+              className={"auth-form-input"}
+              type={"name"}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              placeholder={"Jane Doe"}
+            />
+            <p className={"auth-form-title"}>Email</p>
+            <input
+              className={"auth-form-input"}
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setEmail(e.target.value);
+                }
+              }}
+              placeholder={"mail@domain.com"}
+            />
+            <p className={"auth-form-title"}>Password</p>
+            <input
+              className={"auth-form-input"}
+              type={"password"}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              placeholder={"Min 8 Characters"}
+            />
+            <p className={"auth-form-title"}>Confirm Password</p>
+            <input
+              className={"auth-form-input"}
+              type={"password"}
+              onChange={(e) => {
+                setNewPassword(e.target.value);
+              }}
+              placeholder={"Min 8 Characters"}
+            />
+          </form>
+
+          <div className={"bottom-text-div"}>
+            <div className={"remember-me-checkbox"}>
+              <input
+                type="checkbox"
+                id="vehicle1"
+                name="vehicle1"
+                value="Bike"
               />
-              <img
-                alt={"Sign in with Facebook"}
-                src={require("../../../assets/Icons/Google Plus.png")}
-                className={"alt-auth"}
-              />
-              <img
-                alt={"Sign in with Facebook"}
-                src={require("../../../assets/Icons/LinkedIn.png")}
-                className={"alt-auth"}
-              />
+              <p>Remember Me</p>
             </div>
+          </div>
 
-            <div className={"login-divider"}>
-              <div />
-              <p>or</p>
-              <div />
-            </div>
-
-            <form className={"login-form"}>
-              <p>email</p>
-              <input
-                className={"login-input"}
-                onChange={(e) => {
-                  if (e.target.value !== "") {
-                    setEmail(e.target.value);
-                  }
-                }}
-                placeholder={email}
-              />
-              <br />
-              <p>name</p>
-              <input
-                className={"login-input"}
-                onChange={(e) => {
-                  if (e.target.value !== "") {
-                    setName(e.target.value);
-                  }
-                }}
-                placeholder={name}
-              />
-              <br />
-              <p>password</p>
-              <input
-                className={"login-input"}
-                type={"password"}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <br />
-              <p>re-enter password</p>
-              <input
-                className={"login-input"}
-                type={"password"}
-                onChange={(e) => {
-                  setNewPassword(e.target.value);
-                }}
-              />
-            </form>
-            <br />
-
-            <button
-              className={"login-button"}
+          <button
+            className={"auth-button"}
+            onClick={(e) => {
+              trySignIn();
+            }}
+          >
+            <p className={"auth-button-text"}>Sign Up</p>
+          </button>
+          <p className={"auth-text"}>
+            Already Registered?{" "}
+            <span
+              className={"auth-link"}
               onClick={() => {
-                trySignIn();
+                switch_to_sign_up();
               }}
             >
-              Sign Up
-            </button>
-          </div>
+              Login Now.
+            </span>
+          </p>
         </div>
       </div>
       {size ? (
@@ -152,9 +148,10 @@ function SignUp({ changeObjective, initial, size }) {
       ) : (
         <div className={`side-body ${initial.current ? "slide-in-right" : ""}`}>
           <div className={"side-section"}>
-            <p className={"side-title"}>Have an Account?</p>
+            <p className={"side-title"}>New Here?</p>
             <p className={"side-text-body"}>
-              Sign up and we'll get back to work!
+              Sign up and learn about dark psychology in a never before seen
+              interactive way!
             </p>
             <button
               className={"side-button"}
@@ -162,7 +159,7 @@ function SignUp({ changeObjective, initial, size }) {
                 switch_to_sign_up();
               }}
             >
-              Login
+              Sign Up
             </button>
           </div>
         </div>
@@ -171,4 +168,4 @@ function SignUp({ changeObjective, initial, size }) {
   );
 }
 
-export default SignUp;
+export default SignIn;
