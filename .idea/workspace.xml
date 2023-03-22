@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Google-Line.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Logo-Green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/Logo-Green.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/authenticate/business/background-bottom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/authenticate/confidence/background-bottom.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/authenticate/relationships/background-bottom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/images/images.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth/images/images.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/authenticate/business/background-bottom.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/authenticate/business/background-bottom.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/authenticate/confidence/background-bottom.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/authenticate/confidence/background-bottom.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/authenticate/relationships/background-bottom.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/authenticate/relationships/background-bottom.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/authenticate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/authenticate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login-signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/login.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/login/login.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/login/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login/login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" afterDir="false" />
     </list>
@@ -183,7 +179,7 @@
       <workItem from="1674508355186" duration="1161000" />
       <workItem from="1676936323031" duration="4584000" />
       <workItem from="1677979845665" duration="12583000" />
-      <workItem from="1679388972135" duration="4254000" />
+      <workItem from="1679388972135" duration="6084000" />
     </task>
     <servers />
   </component>
