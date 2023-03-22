@@ -4,6 +4,7 @@ import "../login-signup.css";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
+import LoginImages from "../images/images";
 
 function Login({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
@@ -122,21 +123,7 @@ function Login({ changeObjective, initial, size }) {
         <></>
       ) : (
         <div className={`side-body ${initial.current ? "slide-in-right" : ""}`}>
-          <div className={"side-section"}>
-            <p className={"side-title"}>New Here?</p>
-            <p className={"side-text-body"}>
-              Sign up and learn about dark psychology in a never before seen
-              interactive way!
-            </p>
-            <button
-              className={"side-button"}
-              onClick={() => {
-                switch_to_sign_up();
-              }}
-            >
-              Sign Up
-            </button>
-          </div>
+          <LoginImages />
         </div>
       )}
     </div>

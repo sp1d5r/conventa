@@ -3,6 +3,7 @@ import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 import "../login-signup.css";
 import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
 import { Alert } from "react-bootstrap";
+import LoginImages from "../images/images";
 
 function SignIn({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
@@ -147,21 +148,7 @@ function SignIn({ changeObjective, initial, size }) {
         <></>
       ) : (
         <div className={`side-body ${initial.current ? "slide-in-right" : ""}`}>
-          <div className={"side-section"}>
-            <p className={"side-title"}>New Here?</p>
-            <p className={"side-text-body"}>
-              Sign up and learn about dark psychology in a never before seen
-              interactive way!
-            </p>
-            <button
-              className={"side-button"}
-              onClick={() => {
-                switch_to_sign_up();
-              }}
-            >
-              Sign Up
-            </button>
-          </div>
+          <LoginImages />
         </div>
       )}
     </div>
