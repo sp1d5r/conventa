@@ -29,7 +29,7 @@ function SignIn({ changeObjective, initial, size }) {
   };
 
   const successfulCallback = () => {
-    window.location.href = "/pricing-page";
+    window.location.href = "/introduction";
   };
 
   const trySignIn = () => {
