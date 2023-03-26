@@ -62,7 +62,7 @@ function check_nav() {
   } else if (window.location.href.includes("auth")) {
     change_color("#e3ffea");
   } else if (window.location.href.includes("pricing-page")) {
-    change_color("#e3ffea");
+    change_color("#ffffff");
   } else if (window.location.href.includes("about-us")) {
     change_color("#ffffff");
     change_nav("#000000");
