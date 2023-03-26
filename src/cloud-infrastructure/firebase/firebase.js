@@ -41,12 +41,15 @@ const start_time = Date.now();
 let ip = null;
 let session_id = null;
 
-const PRICING_PLAN_IDS = [
+const PRICING_PLANS_MONTHLY = [
   "price_1MDtRwGME0Qq6U11kgSPpAMw", //HOBBYIST_MONTHLY
-  "price_1MDtUcGME0Qq6U11AqbXxfeI", //HOBBYIST_YEARLY
   "price_1MDtTUGME0Qq6U11XjxqzOiK", //AMATEUR_MONTHLY
-  "price_1MDtTUGME0Qq6U1117YJzQol", //AMATEUR_YEARLY
   "price_1MDtUCGME0Qq6U11F6mX5pC6", //PRO_MONTHLY
+];
+
+const PRICING_PLANS_YEARLY = [
+  "price_1MDtUcGME0Qq6U11AqbXxfeI", //HOBBYIST_YEARLY
+  "price_1MDtTUGME0Qq6U1117YJzQol", //AMATEUR_YEARLY
   "price_1MDtUCGME0Qq6U11ol786qFy", //PRO_YEARLY
 ];
 
@@ -96,8 +99,13 @@ export async function createUserDoc(user_cred, name, email) {
   });
 }
 
-export async function createCheckoutSession(uid, plan_selected, is_annual) {
-  const price_id = PRICING_PLAN_IDS[plan_selected * is_annual - 1];
+export async function createCheckoutSession(uid, plan_selected, isMonthly) {
+  var price_id;
+  if (isMonthly) {
+    price_id = PRICING_PLANS_MONTHLY[plan_selected];
+  } else {
+    price_id = PRICING_PLANS_YEARLY[plan_selected];
+  }
   // console.log(price_id, plan_selected * is_annual - 1);
   const sessionDocRef = await addDoc(
     collection(firestore, `users/${uid}/checkout_sessions`),

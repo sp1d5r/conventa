@@ -13,11 +13,11 @@ import ScrollToTop from "./components/routing/scroll-to-top";
 import TrackingClientEmotions from "./components/minigames/tracking-client-emotions/tracking-client-emotions";
 import AboutUs from "./components/about-us/about-us";
 import NewsRoom from "./components/news-room/news-room";
-import PricingPage from "./components/pricing-page/pricing-page";
 import AuthProvider from "./cloud-infrastructure/firebase/auth";
 import NewLessonPage from "./components/lesson/lesson-page";
 import EffectiveSpeaking from "./components/minigames/effective-speaking/effective-speaking";
 import ContentLocked from "./components/content-locked/content-locked";
+import PricingPageMain from "./components/pricing-page/pricing-page-main";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
             <Route path="/content-locked/" element={<ContentLocked />} />
             <Route path="/lesson/" element={<NewLessonPage />} />
             <Route path="/about-us/" element={<AboutUs />} />
-            <Route path="/pricing-page/" element={<PricingPage />} />
+            <Route path="/pricing-page/" element={<PricingPageMain />} />
             <Route path="/news-room/" element={<NewsRoom />} />
             <Route
               path="/minigame/First%20Impressions"
