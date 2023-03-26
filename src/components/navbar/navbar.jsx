@@ -8,7 +8,9 @@ function NavBar() {
   const path_name = useLocation().pathname.split("/");
   const final_part = path_name.at(-1);
   const back_navigation =
-    final_part === "auth" || final_part === "pricing-page";
+    final_part === "auth" ||
+    final_part === "pricing-page" ||
+    final_part === "introduction";
 
   if (path_name.at(1) === "lesson") {
     return <></>;

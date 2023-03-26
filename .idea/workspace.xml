@@ -2,10 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/30Degrees.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Bamboo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/BusinessStrategy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Children.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Circled2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Circled5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Dumbbell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Friends.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Handshake.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/HotArticle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/LawnCare.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Leaf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/LogicDataTypes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Love.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Media.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Minigames.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/MoneyBag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/MoviesFolder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/NationalPark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Never.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/NewStore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/OakTree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/PottedPlant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Romance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/SportStopwatch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/StatisticsReport.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/Sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/TearOffCalendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/TheatreStage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/UserGroups.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/ViewMore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Icons/introduction/YouSingular.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/introduction/finished-introduction.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/introduction/finished-introduction.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/introduction/introduction.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/introduction/introduction.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/introduction/introduction.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/introduction/introduction.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,0 +1,92 @@
+.introduction-main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: max(350px, 40%);
+  background: #ffffff;
+}
+
+.introduction-selection-option {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 26px 25px;
+  width: 100%;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #7b7b7b;
+  border-radius: 5px;
+  flex: none;
+  flex-grow: 0;
+}
+
+.intro-complete-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected {
+  background-color: #e6ffe2;
+}
+
+.introduction-title-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.introduction-subtext {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: #999999;
+}
+
+.introduction-title {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #000000;
+}
+
+.introduction-selection-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+
+.introduction-main-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.introduction-button-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.white {
+  background-color: #ffffff;
+}
+
+.next-button {
+  color: #000000;
+}

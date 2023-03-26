@@ -18,6 +18,7 @@ import NewLessonPage from "./components/lesson/lesson-page";
 import EffectiveSpeaking from "./components/minigames/effective-speaking/effective-speaking";
 import ContentLocked from "./components/content-locked/content-locked";
 import PricingPageMain from "./components/pricing-page/pricing-page-main";
+import Introduction from "./components/introduction/introduction";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/about-us/" element={<AboutUs />} />
             <Route path="/pricing-page/" element={<PricingPageMain />} />
             <Route path="/news-room/" element={<NewsRoom />} />
+            <Route path={"/introduction"} element={<Introduction />} />
             <Route
               path="/minigame/First%20Impressions"
               element={<FirstImpressions />}
