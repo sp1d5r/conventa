@@ -137,11 +137,11 @@ function UserCard() {
                 Welcome {current_user ? "Back!" : "!!"}
               </p>
               {role === "Professional" ? (
+                <span className={"user-button-badge"}>{role}</span>
+              ) : (
                 <Link to={"/pricing-page"} className={"user-button-badge"}>
                   {role}
                 </Link>
-              ) : (
-                <span className={"user-button-badge"}>{role}</span>
               )}
             </div>
             {getUserStreakText()}

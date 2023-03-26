@@ -4,6 +4,7 @@ import RadioSwitch from "../landing/cost/radio-switch";
 import {
   createCheckoutSession,
   getCurrentUser,
+  getUserClaim,
 } from "../../cloud-infrastructure/firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -73,9 +74,7 @@ function PricingPageMain() {
 
   const goToStripe = () => {
     setLoading(true);
-    createCheckoutSession(current_user.uid, selected, monthly).then((r) =>
-      setLoading(false)
-    );
+    createCheckoutSession(current_user.uid, selected, monthly).then((r) => {});
   };
 
   const getPrice = () => {
@@ -100,13 +99,24 @@ function PricingPageMain() {
 
   useEffect(() => {
     getCurrentUser().then((res) => {
+      getUserClaim().then((res) => {
+        var currentPlan = -1;
+        if (res === "Hobbiest") {
+          currentPlan = 0;
+        } else if (res === "Amateur") {
+          currentPlan = 1;
+        } else if (res === "Professional") {
+          currentPlan = 2;
+        }
+        setCurrentPlan(currentPlan);
+        setSelected(currentPlan + 1);
+      });
       if (res) {
         setCurrentUser(res);
       } else {
         navigator("/auth");
       }
     });
-    setCurrentPlan(-1);
   }, [navigator]);
 
   return (
@@ -150,7 +160,7 @@ function PricingPageMain() {
             current_plan={current_plan}
             index={0}
             select={setSelected}
-            price={monthly ? "£3" : "£15"}
+            price={monthly ? "£3" : "£30"}
             timeframe={monthly ? "month" : "year"}
             properties={[
               "Access to all written articles",
@@ -164,7 +174,7 @@ function PricingPageMain() {
             current_plan={current_plan}
             index={1}
             select={setSelected}
-            price={monthly ? "£5" : "£30"}
+            price={monthly ? "£5" : "£45"}
             timeframe={monthly ? "month" : "year"}
             properties={[
               "Access to all written articles & courses",
@@ -178,7 +188,7 @@ function PricingPageMain() {
             current_plan={current_plan}
             index={2}
             select={setSelected}
-            price={monthly ? "£15" : "£100"}
+            price={monthly ? "£15" : "£120"}
             timeframe={monthly ? "month" : "year"}
             properties={[
               "Access to all written articles & courses",
