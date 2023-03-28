@@ -20,6 +20,18 @@ import Lives from "../academy/user-card/lives/lives";
 const LESSON_CONTENT_EXAMPLE = [
   {
     id: "test",
+    type: "flip_and_select",
+    content: {
+      mapping: {
+        "Not all exceptions are": "valid",
+        "Objections to the sale should be": "encouraged",
+        "Objections to a sale are ": "good",
+        "Discover exceptions by": "asking questions",
+      },
+    },
+  },
+  {
+    id: "test",
     type: "single_word",
     content: {
       sentence: "Objections to the sale should be ",

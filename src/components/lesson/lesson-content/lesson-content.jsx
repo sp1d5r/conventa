@@ -7,6 +7,7 @@ import SelectionTextPage from "./pages/selection-text-page";
 import SelectionImagePage from "./pages/selection-image-page";
 import BuildSentencePage from "./pages/build-sentence-page";
 import SingleWordPage from "./pages/single-word-page";
+import FlipAndSelect from "./pages/flip-and-select";
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -97,6 +98,15 @@ function LessonContent({
       <SingleWordPage
         sentence={content.sentence}
         word={content.word}
+        submit={submit}
+      />
+    );
+  } else if (type === "flip_and_select") {
+    return (
+      <FlipAndSelect
+        question={content.question}
+        mapping={content.mapping}
+        shuffledValues={shuffle(Object.values(content.mapping))}
         submit={submit}
       />
     );
