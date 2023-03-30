@@ -255,6 +255,10 @@
   background-color: #d4ffcd;
 }
 
+.incorrect {
+  background-color: #ffcdcd;
+}
+
 .flipped {
   background: #eff9ff;
 }
