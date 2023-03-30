@@ -20,6 +20,18 @@ import Lives from "../academy/user-card/lives/lives";
 const LESSON_CONTENT_EXAMPLE = [
   {
     id: "test",
+    type: "match_cards",
+    content: {
+      mapping: {
+        "Not all exceptions are": "valid",
+        "Objections to the sale should be": "encouraged",
+        "Objections to a sale are ": "good",
+        "Discover exceptions by": "asking questions",
+      },
+    },
+  },
+  {
+    id: "test",
     type: "flip_and_select",
     content: {
       mapping: {
@@ -249,7 +261,8 @@ function NewLessonPage() {
       current_content.type === "selection_text" ||
       current_content.type === "single_word" ||
       current_content.type === "build_sentence" ||
-      current_content.type === "selection_image"
+      current_content.type === "selection_image" ||
+      current_content.type === "match_cards"
     ) {
       if (correctAnswer) {
         /* This is the correct answer*/
