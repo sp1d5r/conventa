@@ -218,7 +218,8 @@
 }
 
 .selection-image-image {
-  height: 75%;
+  max-width: 80%;
+  max-height: 75%;
   aspect-ratio: 1;
 }
 
