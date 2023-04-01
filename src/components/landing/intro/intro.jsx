@@ -23,16 +23,16 @@ function Intro() {
           <p className={"intro-text-p"}>
             It’s better - and more engaging than reading a textbook!
           </p>
-          <div className={"spacer"} />
+
           <Link to={"/auth"} className={"intro-button"}>
             <p>Get Started</p>
           </Link>
         </div>
+
         <div className={"intro-image"}>
           <img src={HomeLanding} alt={"something"} />
         </div>
       </div>
-      <br />
       <div className={"bottom-metrics"}>
         <div className={"bottom-metric"}>
           <p className={"main-metric"}>100+</p>

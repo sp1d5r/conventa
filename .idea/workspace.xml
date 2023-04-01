@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/competence/competence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/competence/competence.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/cost/cost.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/example/example.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/example/example.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/example/example.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/example/example.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +179,8 @@
       <workItem from="1676936323031" duration="4584000" />
       <workItem from="1677979845665" duration="12583000" />
       <workItem from="1679388972135" duration="19566000" />
-      <workItem from="1679984590604" duration="6953000" />
+      <workItem from="1679984590604" duration="7099000" />
+      <workItem from="1680384564832" duration="1816000" />
     </task>
     <servers />
   </component>
