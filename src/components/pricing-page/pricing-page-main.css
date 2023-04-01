@@ -51,7 +51,6 @@
 
 .recommended-bar > p,
 .current-plan-bar > p {
-  font-family: "Inter", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -140,7 +139,6 @@
 }
 
 .loading-text {
-  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
