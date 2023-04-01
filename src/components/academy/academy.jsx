@@ -216,9 +216,10 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     locked={
-                      accountType === "Hobbiest" ||
-                      accountType === "Amateur" ||
-                      accountType === "Upgrade!"
+                      true
+                      // accountType === "Hobbiest" ||
+                      // accountType === "Amateur" ||
+                      // accountType === "Upgrade!"
                     }
                     subtext={item.subtext}
                     difficulty={item.difficulty}
