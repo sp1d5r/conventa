@@ -33,6 +33,7 @@ function Academy() {
                 setLessonLocked(isLocked);
                 setCourses(_courses);
                 setAccountType(account);
+                setLoading(false);
               })
               .catch((err) => {
                 console.log("Error getting Claim", err);
@@ -47,7 +48,10 @@ function Academy() {
             setLoading(false);
           });
       })
-      .catch(() => {});
+      .catch(() => {
+        console.log("here");
+        setLoading(false);
+      });
   };
 
   const getBannerFromFirebase = () => {
