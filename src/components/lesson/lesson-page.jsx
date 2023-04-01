@@ -237,7 +237,7 @@ function NewLessonPage() {
 
   const sendCorrectAnswer = () => {
     addGemsToUser(
-      30,
+      5,
       current_content.id,
       "Standard",
       successGemUpdate,

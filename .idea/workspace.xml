@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/images/images.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/images/images.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/login-signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/login-signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/introduction/introduction.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/introduction/introduction.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,7 @@
       <workItem from="1676936323031" duration="4584000" />
       <workItem from="1677979845665" duration="12583000" />
       <workItem from="1679388972135" duration="19566000" />
-      <workItem from="1679984590604" duration="5316000" />
+      <workItem from="1679984590604" duration="6350000" />
     </task>
     <servers />
   </component>

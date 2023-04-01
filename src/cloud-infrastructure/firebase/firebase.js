@@ -263,8 +263,14 @@ export async function getLives() {
 export async function lessonsLocked() {
   const response = await getUserClaim();
   if (response === "Upgrade!") {
-    const lives = await getLives();
-    return lives >= 3;
+    try {
+      const lives = await getLives();
+      return lives >= 3;
+    } catch (e) {
+      console.log("error", e);
+    }
+    console.log("here");
+    return false;
   } else {
     return false;
   }
