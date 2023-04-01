@@ -15,7 +15,7 @@
 }
 
 .competence-left-image {
-  width: 50%;
+  width: min(400px, 45%);
 }
 
 .competence-left-image > img {
@@ -33,7 +33,7 @@
 
 .competence-attribute {
   text-align: left;
-  padding: 5%;
+  padding: 4%;
 }
 
 .attribute-heading {

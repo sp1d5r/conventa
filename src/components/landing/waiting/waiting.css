@@ -16,15 +16,16 @@
 }
 
 .intro-button {
-  background: #3b71e7;
+  background: #499b80;
   border-radius: 10px;
-  height: 65px;
   width: 300px;
+  padding: 2%;
   outline: none;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Lexend", serif;
 }
 
 /* If the display is less than 600 it's a mobile device*/

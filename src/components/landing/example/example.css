@@ -22,8 +22,13 @@
 }
 
 .example-course-image {
-  margin-top: 10%;
-  width: 100%;
+  width: 70%;
+  padding: 2%;
+  border: 3px solid black;
+  margin-bottom: 5%;
+  box-shadow: -10px 10px 0 -3px white, -10px 10px black, -20px 20px 0 -3px white,
+    -20px 20px black, -30px 30px 0 -3px white, -30px 30px black,
+    -40px 40px 0 -3px white, -40px 40px black;
 }
 
 .example-course-div:hover {
@@ -44,4 +49,20 @@
   height: 25px;
   width: 25px;
   margin: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .example-course-image {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 2%;
+    border: 2px solid black;
+    box-shadow: -10px 10px 0 -2px white, -10px 10px black,
+      -20px 20px 0 -2px white, -20px 20px black, -30px 30px 0 -2px white,
+      -30px 30px black, -40px 40px 0 -2px white, -40px 40px black;
+  }
+
+  .example-course-div {
+    margin: 2px;
+  }
 }
