@@ -47,7 +47,6 @@
 .auth-sub-text,
 .auth-form-title,
 .auth-text {
-  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -59,7 +58,6 @@
 
 .auth-text,
 .auth-switch {
-  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -183,14 +181,12 @@
 .remember-me-checkbox > p {
   margin-bottom: 0;
   margin-left: 5px;
-  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
 }
 
 .auth-link {
-  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 1rem;
