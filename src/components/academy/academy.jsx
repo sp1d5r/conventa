@@ -26,14 +26,26 @@ function Academy() {
   const courseItems = () => {
     getCourses()
       .then((_courses) => {
-        lessonsLocked().then((isLocked) => {
-          getUserClaim().then((account) => {
-            setLessonLocked(isLocked);
+        lessonsLocked()
+          .then((isLocked) => {
+            getUserClaim()
+              .then((account) => {
+                setLessonLocked(isLocked);
+                setCourses(_courses);
+                setAccountType(account);
+              })
+              .catch((err) => {
+                console.log("Error getting Claim", err);
+                setLessonLocked(isLocked);
+                setCourses(_courses);
+                setLoading(false);
+              });
+          })
+          .catch((err) => {
+            console.log("Error getting Lesson", err);
             setCourses(_courses);
-            setAccountType(account);
             setLoading(false);
           });
-        });
       })
       .catch(() => {});
   };
