@@ -69,6 +69,7 @@
   grid-auto-rows: minmax(100px, auto);
   justify-items: flex-start;
   align-items: center;
+  padding: 10px;
 }
 
 .academy-content-section-child-minigame {
