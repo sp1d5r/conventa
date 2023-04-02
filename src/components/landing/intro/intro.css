@@ -37,18 +37,6 @@
   justify-content: center;
 }
 
-.intro-button {
-  background: #3b71e7;
-  border-radius: 10px;
-  height: 65px;
-  width: 300px;
-  outline: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .spacer {
   height: 7vh;
 }

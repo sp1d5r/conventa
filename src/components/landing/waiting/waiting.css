@@ -28,6 +28,9 @@
   font-family: "Lexend", serif;
 }
 
+.intro-button:hover {
+  border: 2px solid black;
+}
 /* If the display is less than 600 it's a mobile device*/
 @media only screen and (max-width: 700px) {
   .waiting-text {
