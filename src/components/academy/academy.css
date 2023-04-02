@@ -57,6 +57,7 @@
 .academy-content-section-child-minigame {
   /* This is the thing with the left border  */
   width: 95%;
+  padding: 10px;
   padding-left: 5%;
   border-left: 3px solid var(--light-grey);
   display: inline-grid;
@@ -69,7 +70,6 @@
   grid-auto-rows: minmax(100px, auto);
   justify-items: flex-start;
   align-items: center;
-  padding: 10px;
 }
 
 .academy-content-section-child-minigame {
