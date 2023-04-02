@@ -66,10 +66,11 @@
   align-items: center;
   border-top: 2px solid var(--black);
   height: 15vh;
+  flex-wrap: wrap;
 }
 
 .bottom-metric {
-  width: 20%;
+  width: max(20%, 250px);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
