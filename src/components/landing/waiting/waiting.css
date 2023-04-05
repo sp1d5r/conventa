@@ -40,4 +40,9 @@
   .waiting-div {
     flex-wrap: wrap;
   }
+
+  .intro-button {
+    height: 50px;
+    margin: 5px;
+  }
 }
