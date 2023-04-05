@@ -433,4 +433,7 @@
   .lesson-text {
     line-height: 20px;
   }
+  .flip-card {
+    height: min(100px, 15%);
+  }
 }
