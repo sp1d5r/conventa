@@ -9,6 +9,7 @@ import BuildSentencePage from "./pages/build-sentence-page";
 import SingleWordPage from "./pages/single-word-page";
 import FlipAndSelect from "./pages/flip-and-select";
 import MatchCards from "./pages/match-cards-page";
+import CaseStudyPage from "./pages/case-study-page";
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -120,6 +121,14 @@ function LessonContent({
           Object.entries(content.mapping).map(([key, value]) => [value, key])
         )}
         shuffledValues={shuffle(Object.values(content.mapping))}
+        submit={submit}
+      />
+    );
+  } else if (type === "case_study") {
+    return (
+      <CaseStudyPage
+        content={content.story}
+        caseStudy={content.title}
         submit={submit}
       />
     );
