@@ -355,6 +355,67 @@ export async function getPageFromID(page_path) {
         explanation: pageData.explanation,
       },
     };
+  } else if (pageData.type === "selection_image") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        question: pageData.question,
+        questions: pageData.questions,
+        answer: parseInt(pageData.answer),
+      },
+    };
+  } else if (pageData.type === "build_sentence") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: pageData.data,
+    };
+  } else if (pageData.type === "single_word") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        sentence: pageData.sentence,
+        word: pageData.word,
+      },
+    };
+  } else if (pageData.type === "selection_text") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        question: pageData.question,
+        questions: pageData.questions,
+        answer: parseInt(pageData.answer),
+      },
+    };
+  } else if (pageData.type === "selection_image") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      question: pageData.question,
+      questions: pageData.questions,
+      answer: parseInt(pageData.answer),
+    };
+  } else if (pageData.type === "match_cards") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        mapping: { ...pageData.mapping },
+      },
+    };
+  } else if (pageData.type === "flip_and_select") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        mapping: { ...pageData.mapping },
+      },
+    };
+  } else {
+    console.log(pageData);
   }
   return data;
 }
