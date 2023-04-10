@@ -25,7 +25,19 @@ function Login({ changeObjective, initial, size }) {
   };
 
   const successfulCallback = () => {
-    navigate("/pricing-page");
+    console.log("Requesting permission...");
+    Notification.requestPermission()
+      .then((permission) => {
+        if (permission === "granted") {
+          console.log("Notification permission granted.");
+          navigate("/pricing-page");
+        } else {
+          navigate("/pricing-page");
+        }
+      })
+      .catch((err) => {
+        navigate("/pricing-page");
+      });
   };
 
   const trySignIn = () => {
