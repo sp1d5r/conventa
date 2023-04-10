@@ -31,18 +31,19 @@ function SignIn({ changeObjective, initial, size }) {
   };
 
   const successfulCallback = () => {
-    Notification.requestPermission()
-      .then((permission) => {
-        if (permission === "granted") {
-          console.log("Notification permission granted.");
-          navigate("/introduction");
-        } else {
-          navigate("/introduction");
-        }
-      })
-      .catch((err) => {
-        navigate("/introduction");
-      });
+    try {
+      Notification.requestPermission()
+        .then((permission) => {
+          if (permission === "granted") {
+            console.log("Notification permission granted.");
+          }
+        })
+        .catch((err) => {});
+    } catch (err) {
+      console.log("Unable to give notifications", err);
+    } finally {
+      navigate("/introduction");
+    }
   };
 
   const trySignIn = () => {
