@@ -14,6 +14,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
+import { getMessaging, getToken } from "firebase/messaging";
 import { getAuth } from "firebase/auth";
 import axios from "axios";
 import md5 from "../utils/md5";
@@ -33,6 +34,25 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const messaging = getMessaging(app);
+
+getToken(messaging, { vapidKey: process.env.REACT_APP_VAPID_KEY })
+  .then((currentToken) => {
+    if (currentToken) {
+      // Send the token to your server and update the UI if necessary
+      // ...
+    } else {
+      // Show permission request UI
+      console.log(
+        "No registration token available. Request permission to generate one."
+      );
+      // ...
+    }
+  })
+  .catch((err) => {
+    console.log("An error occurred while retrieving token. ", err);
+    // ...
+  });
 
 export default auth;
 
@@ -412,6 +432,15 @@ export async function getPageFromID(page_path) {
       type: pageData.type,
       content: {
         mapping: { ...pageData.mapping },
+      },
+    };
+  } else if (pageData.type === "case_study") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        story: pageData.story,
+        title: pageData.title,
       },
     };
   } else {

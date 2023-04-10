@@ -4,6 +4,7 @@ import "../login-signup.css";
 import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
 import { Alert } from "react-bootstrap";
 import LoginImages from "../images/images";
+import { useNavigate } from "react-router-dom";
 
 function SignIn({ changeObjective, initial, size }) {
   const [email, setEmail] = useState("");
@@ -11,6 +12,7 @@ function SignIn({ changeObjective, initial, size }) {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   // Getting Sign In method from Auth Context
   const { createAccount } = useAuth();
@@ -29,7 +31,18 @@ function SignIn({ changeObjective, initial, size }) {
   };
 
   const successfulCallback = () => {
-    window.location.href = "/introduction";
+    Notification.requestPermission()
+      .then((permission) => {
+        if (permission === "granted") {
+          console.log("Notification permission granted.");
+          navigate("/introduction");
+        } else {
+          navigate("/introduction");
+        }
+      })
+      .catch((err) => {
+        navigate("/introduction");
+      });
   };
 
   const trySignIn = () => {
