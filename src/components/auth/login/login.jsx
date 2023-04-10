@@ -26,18 +26,21 @@ function Login({ changeObjective, initial, size }) {
 
   const successfulCallback = () => {
     console.log("Requesting permission...");
-    Notification.requestPermission()
-      .then((permission) => {
-        if (permission === "granted") {
-          console.log("Notification permission granted.");
-          navigate("/pricing-page");
-        } else {
-          navigate("/pricing-page");
-        }
-      })
-      .catch((err) => {
-        navigate("/pricing-page");
-      });
+    try {
+      Notification.requestPermission()
+        .then((permission) => {
+          if (permission === "granted") {
+            console.log("Notification permission granted.");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (err) {
+      console.log(err);
+    } finally {
+      navigate("/pricing-page");
+    }
   };
 
   const trySignIn = () => {
