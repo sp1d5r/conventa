@@ -59,7 +59,7 @@
   width: 95%;
   padding: 10px;
   padding-left: 5%;
-  border-left: 3px solid var(--light-grey);
+  border-left: 2px solid #777;
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, 260px);
   grid-template-rows: 47% 47%;
@@ -76,7 +76,7 @@
   /* This is the thing with the left border  */
   width: 95%;
   padding-left: 5%;
-  border-left: 3px solid var(--light-grey);
+  border-left: 2px solid #777;
   display: inline-grid;
   grid-template-columns: repeat(auto-fit, 250px);
   grid-template-rows: repeat(auto-fit, 400px);

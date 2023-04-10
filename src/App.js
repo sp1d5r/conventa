@@ -19,8 +19,15 @@ import EffectiveSpeaking from "./components/minigames/effective-speaking/effecti
 import ContentLocked from "./components/content-locked/content-locked";
 import PricingPageMain from "./components/pricing-page/pricing-page-main";
 import Introduction from "./components/introduction/introduction";
+import { onMessageListener } from "./cloud-infrastructure/firebase/firebase";
 
 function App() {
+  onMessageListener()
+    .then((payload) => {
+      console.log(payload);
+    })
+    .catch((err) => console.log("failed: ", err));
+
   return (
     <AuthProvider>
       <div className="App">

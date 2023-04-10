@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import auth, { createUserDoc } from "./firebase";
+import auth, { createUserDoc, updateUserNotificationToken } from "./firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -23,7 +23,12 @@ export default function AuthProvider({ children }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        success_callback();
+        updateUserNotificationToken(
+          userCredential.user.uid,
+          success_callback
+        ).then((r) => {
+          console.log("Completed user update.");
+        });
         setCurrentUser(userCredential);
       })
       .catch((error) => {
@@ -47,7 +52,12 @@ export default function AuthProvider({ children }) {
         console.log("here");
         createUserDoc(user_cred, email, name)
           .then((userCredential) => {
-            successful_callback();
+            updateUserNotificationToken(
+              userCredential.user.uid,
+              successful_callback
+            ).then((r) => {
+              console.log("Completed user update.");
+            });
             setCurrentUser(userCredential);
           })
           .catch((error) => {

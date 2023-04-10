@@ -10,11 +10,11 @@ import {
   onSnapshot,
   query,
   setDoc,
-  where,
   updateDoc,
+  where,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { getAuth } from "firebase/auth";
 import axios from "axios";
 import md5 from "../utils/md5";
@@ -35,24 +35,6 @@ const firestore = getFirestore(app);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const messaging = getMessaging(app);
-
-getToken(messaging, { vapidKey: process.env.REACT_APP_VAPID_KEY })
-  .then((currentToken) => {
-    if (currentToken) {
-      // Send the token to your server and update the UI if necessary
-      // ...
-    } else {
-      // Show permission request UI
-      console.log(
-        "No registration token available. Request permission to generate one."
-      );
-      // ...
-    }
-  })
-  .catch((err) => {
-    console.log("An error occurred while retrieving token. ", err);
-    // ...
-  });
 
 export default auth;
 
@@ -499,3 +481,71 @@ export async function getBanner() {
   });
   return banner[0];
 }
+
+async function addUserNotificationToken(userId, currentToken) {
+  // Add a document that gives the current token
+  console.log("Updating notifications");
+  return await setDoc(doc(collection(firestore, `notifications/`), userId), {
+    notification_token: currentToken,
+  });
+}
+
+export const getOrRegisterServiceWorker = () => {
+  if ("serviceWorker" in navigator) {
+    console.log("Registering a service worker!");
+    return window.navigator.serviceWorker
+      .getRegistration("/firebase-push-notification-scope")
+      .then((serviceWorker) => {
+        console.log("Registered service worker", serviceWorker);
+        if (serviceWorker) return serviceWorker;
+        const firebaseConfigParams = new URLSearchParams(
+          firebaseConfig
+        ).toString();
+        return window.navigator.serviceWorker.register(
+          `/firebase-messaging-sw.js?firebaseConfig=${firebaseConfigParams}`,
+          {
+            scope: "/e-learning-template",
+          }
+        );
+      });
+  }
+  throw new Error("The browser doesn`t support service worker.");
+};
+
+export async function updateUserNotificationToken(userId, successCallback) {
+  getOrRegisterServiceWorker().then((serviceWorkerRegistration) => {
+    getToken(messaging, {
+      vapidKey: process.env.REACT_APP_VAPID_KEY,
+      serviceWorkerRegistration,
+    })
+      .then((currentToken) => {
+        if (currentToken) {
+          console.log("Updating the notifications entry");
+          addUserNotificationToken(userId, currentToken)
+            .then((_) => {
+              successCallback();
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        } else {
+          // Show permission request UI
+          console.log(
+            "No registration token available. Request permission to generate one."
+          );
+          successCallback();
+        }
+      })
+      .catch((err) => {
+        console.log("An error occurred while retrieving token. ", err);
+        successCallback();
+      });
+  });
+}
+
+export const onMessageListener = () =>
+  new Promise((resolve) => {
+    onMessage(messaging, (payload) => {
+      resolve(payload);
+    });
+  });
