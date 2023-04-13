@@ -62,6 +62,7 @@ export default function AuthProvider({ children }) {
               })
               .catch((error) => {
                 console.log("Failed ot update User Notification Token");
+                successful_callback();
               });
             setCurrentUser(userCredential);
           })
