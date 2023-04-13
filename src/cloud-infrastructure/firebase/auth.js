@@ -23,6 +23,7 @@ export default function AuthProvider({ children }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+        console.log("Singed in");
         updateUserNotificationToken(
           userCredential.user.uid,
           success_callback
@@ -34,6 +35,7 @@ export default function AuthProvider({ children }) {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+
         failed_callback(errorCode, errorMessage);
       });
   }
@@ -50,14 +52,18 @@ export default function AuthProvider({ children }) {
         // Signed in
         // Create user doc for the account
         console.log("here");
+        console.log("Created User", user_cred);
         createUserDoc(user_cred, email, name)
           .then((userCredential) => {
-            updateUserNotificationToken(
-              userCredential.user.uid,
-              successful_callback
-            ).then((r) => {
-              console.log("Completed user update.");
-            });
+            console.log("Created user Doc");
+            updateUserNotificationToken(user_cred.user.uid, successful_callback)
+              .then((r) => {
+                console.log("Completed user update.");
+              })
+              .catch((error) => {
+                console.log("Failed ot update User Notification Token");
+                successful_callback();
+              });
             setCurrentUser(userCredential);
           })
           .catch((error) => {
@@ -66,7 +72,7 @@ export default function AuthProvider({ children }) {
               .then(() => {
                 failed_callback(
                   errorCode,
-                  "Account Creation Failed - Try Again"
+                  `Account Creation Failed - Try Again - ${error}`
                 );
               })
               .catch((error) => {
