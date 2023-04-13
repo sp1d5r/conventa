@@ -92,6 +92,7 @@ const getSessionId = () => {
 /* Authentication */
 export async function createUserDoc(user_cred, name, email) {
   const userCollection = collection(firestore, "users");
+  console.log(user_cred.user.uid);
   await setDoc(doc(userCollection, user_cred.user.uid), {
     name: name,
     email: email,
