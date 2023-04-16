@@ -16,20 +16,22 @@
 }
 
 .intro-button {
-  background: #499b80;
+  background: #e3ffea;
   border-radius: 10px;
   width: 300px;
   padding: 2%;
   outline: none;
-  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Lexend", serif;
+  border: 2px solid black;
+  max-height: 75px;
+  min-height: 50px;
 }
 
 .intro-button:hover {
-  border: 2px solid black;
+  border: 3px solid black;
 }
 /* If the display is less than 600 it's a mobile device*/
 @media only screen and (max-width: 700px) {
@@ -43,6 +45,7 @@
 
   .intro-button {
     height: 50px;
-    margin: 5px;
+    width: auto;
+    margin: 20px 5px;
   }
 }

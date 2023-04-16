@@ -7,12 +7,12 @@ function Competence() {
     <>
       <div className={"spacer"} />
       <div className={"competence"}>
-        <h1 className={"intro-text-h1"}>
+        <h1 className={"intro-text-h1 competence-text"}>
           <span>Making you</span>
           <span className={"green-text"}> more competent</span>
           <span> at all ages!</span>
         </h1>
-        <p className={"intro-text-p"}>
+        <p className={"intro-text-p competence-text-p"}>
           Learn more about us in our{" "}
           <a className={"color-blue"} href={"/about-us"}>
             about us

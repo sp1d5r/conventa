@@ -7,7 +7,9 @@ function Waiting() {
     <>
       <div className={"waiting-div"}>
         <div className={"waiting-text"}>
-          <h1 className={"green-text"}>What are you waiting for?</h1>
+          <h1 className={"intro-text-h1 green-text"}>
+            What are you waiting for?
+          </h1>
           <p className={"intro-text-p"}>
             Take control back of your life now with conventa
           </p>

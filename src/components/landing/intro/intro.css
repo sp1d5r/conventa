@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 65vh;
+  height: 75vh;
 }
 
 .intro-text {
@@ -43,7 +43,7 @@
 
 .intro-button > * {
   font-weight: 600;
-  color: white;
+  color: black;
   margin: 0;
 }
 
@@ -62,12 +62,13 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 15px;
 }
 
 .main-metric {
   font-style: normal;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 1.5rem;
   letter-spacing: 0.02em;
   color: #000000;
 }

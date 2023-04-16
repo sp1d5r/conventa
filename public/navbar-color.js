@@ -67,8 +67,8 @@ function check_nav() {
     change_color("#ffffff");
     change_nav("#000000");
   } else if (window.location.href.includes("content-locked")) {
-    change_color("#FFD2FD");
-    change_nav("#FFD2FD");
+    change_color("#ff98b7");
+    change_nav("#ff98b7");
   } else {
     change_color("#ffffff");
   }

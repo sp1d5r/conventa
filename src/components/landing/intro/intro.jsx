@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 function Intro() {
   return (
     <>
-      <div className={"spacer"} />
       <div className={"intro-div"}>
         <div className={"intro-text"}>
           <h1 className={"intro-text-h1"}>

@@ -138,7 +138,9 @@ function PricingPageMain() {
           <></>
         )}
         <div className={"cost-heading"}>
-          <h1>Upgrade your plan!</h1>
+          <h1 className={"intro-text-h1 competence-text"}>
+            Upgrade your plan!
+          </h1>
           <RadioSwitch switchMonthly={switchMonthly} />
         </div>
         <span className={"cost-main-text"}>

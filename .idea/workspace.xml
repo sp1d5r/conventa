@@ -2,7 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/navbar-color.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/navbar-color.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home/cast-study.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/cast-study.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home/flower-girl.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/flower-girl.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/content-locked/content-locked.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/content-locked/content-locked.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/content-locked/content-locked.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/content-locked/content-locked.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/competence/competence.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/competence/competence.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/competence/competence.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/competence/competence.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/cost/cost.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/cost/cost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/example/example.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/example/example.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/example/example.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/example/example.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/waiting/waiting.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +196,8 @@
       <workItem from="1680384564832" duration="4952000" />
       <workItem from="1680445153282" duration="3502000" />
       <workItem from="1680639006523" duration="325000" />
-      <workItem from="1681370277861" duration="706000" />
+      <workItem from="1681370277861" duration="1429000" />
+      <workItem from="1681634278817" duration="6721000" />
     </task>
     <servers />
   </component>
