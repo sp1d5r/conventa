@@ -40,7 +40,7 @@ const INTRODUCTION_QUESTIONS = {
   subtext: "Before you begin lets get to know you a bit more",
   icons: [Leaf, BusinessStrategy, Love, Dumbell],
   texts: [
-    "Handle Situations",
+    "Handle Situations Better",
     "Improve Business Skills",
     "Improve Relationships",
     "Improve Mental Strength",
@@ -64,8 +64,7 @@ const FINAL_QUESTIONS = [
   },
   {
     title: "What type of content works best for you?",
-    subtext:
-      "We use spaced repetition and do not advice to work for longer than this a day",
+    subtext: "Select whichever content is the best for you.",
     icons: [HotArticle, Media, Minigames, Movies],
     texts: [
       "Long-form articles",
@@ -73,7 +72,7 @@ const FINAL_QUESTIONS = [
       "Interactive Minigames",
       "Videos",
     ],
-    singleSelect: true,
+    singleSelect: false,
   },
 ];
 
@@ -82,14 +81,24 @@ const CARISMA_QUESTIONS = [
     title: "How often are you nervous?",
     subtext: "Select the most appropriate one.",
     icons: [Stopwatch, Sun, Calendar, Never],
-    texts: ["Always", "A few times a day", "A few days a week", "Never"],
+    texts: [
+      "Always",
+      "A few times a week",
+      "A few times a month",
+      "Hardly Ever",
+    ],
     singleSelect: true,
   },
   {
     title: "How confident are you now?",
     subtext: "Select the most appropriate one.",
     icons: [NationPark, SignleYou, UserGroups, TheatreStages],
-    texts: ["Always", "A few times a day", "A few days a week", "Never"],
+    texts: [
+      "Not Confident",
+      "Fairly Confident",
+      "Very Confident",
+      "I am Confidence",
+    ],
     singleSelect: true,
   },
 ];

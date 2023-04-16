@@ -41,7 +41,7 @@ function ContentLocked() {
   const navigator = useNavigate();
 
   useEffect(() => {
-    change_color("#FFD2FD");
+    change_color("#ff98b7");
   }, []);
 
   const buttonPress = () => {

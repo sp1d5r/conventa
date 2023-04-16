@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getLesson } from "../../../cloud-infrastructure/firebase/firebase";
 
-function LessonCard({ lesson_ref, course_id }) {
+function LessonCard({ lesson_ref, course_id, isLocked }) {
   const [lesson, setLesson] = useState({});
 
   const get_lesson_information = useCallback(() => {
@@ -38,7 +38,11 @@ function LessonCard({ lesson_ref, course_id }) {
   return (
     <Link
       className={"academy-content-minigame"}
-      to={`/lesson/?lesson_id=${lesson.id}&course_id=${course_id}`}
+      to={
+        isLocked
+          ? `/content-locked?reason=lives`
+          : `/lesson/?lesson_id=${lesson.id}&course_id=${course_id}`
+      }
     >
       <div className={"academy-content-minigame-image"}>
         <img
