@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/binary-classification-page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/content-locked/content-locked.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/content-locked/content-locked.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/lesson-card/lesson-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/lesson-card/lesson-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/introduction/introduction.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/introduction/introduction.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +182,8 @@
       <workItem from="1680639006523" duration="325000" />
       <workItem from="1681370277861" duration="1429000" />
       <workItem from="1681634278817" duration="6885000" />
-      <workItem from="1681647488314" duration="1789000" />
+      <workItem from="1681647488314" duration="2615000" />
+      <workItem from="1681799071667" duration="2444000" />
     </task>
     <servers />
   </component>
