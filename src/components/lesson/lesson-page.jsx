@@ -349,46 +349,45 @@ function NewLessonPage() {
         <Loading />
       ) : (
         <>
-          <div className={"course-content-lessons"}>
+          <div className={"lesson-landing-main"}>
             <div className={"lesson-landing-content-section"}>
-              <div className={"lesson-landing-content-section"}>
-                <div className={"lesson-top"}>
-                  <ProgressBar
-                    currentProgress={Math.min(
-                      current_position + 1,
-                      content.length
-                    )}
-                    totalPages={content.length}
-                  />
-                  <div className={"lesson-metadata"}>
-                    <Button
-                      variant={"danger"}
-                      onClick={() => {
-                        navigator(`/course/?course_id=${course_id}`);
-                      }}
-                    >
-                      Exit
-                    </Button>
-                    <div className={"lesson-user-data"}>
-                      <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
+              <div className={"lesson-top"}>
+                <ProgressBar
+                  currentProgress={Math.min(
+                    current_position + 1,
+                    content.length
+                  )}
+                  totalPages={content.length}
+                />
+                <div className={"lesson-metadata"}>
+                  <Button
+                    variant={"danger"}
+                    onClick={() => {
+                      navigator(`/course/?course_id=${course_id}`);
+                    }}
+                  >
+                    Exit
+                  </Button>
+                  <div className={"lesson-user-data"}>
+                    <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
 
-                      <div className={"user-gems"}>
-                        <p className={"amount-of-gems"}>{gems}</p>
-                        <img src={Gems} alt={"Gems Earned"} />
-                      </div>
+                    <div className={"user-gems"}>
+                      <p className={"amount-of-gems"}>{gems}</p>
+                      <img src={Gems} alt={"Gems Earned"} />
                     </div>
                   </div>
                 </div>
-                <LessonContent
-                  content={current_content.content}
-                  status={user_progress[current_position]}
-                  type={current_content.type}
-                  submit={submit}
-                  lessonCompleteSubmit={lessonCompleteSubmit}
-                  lessonCompleteBack={lessonCompleteBack}
-                  lessonCompleteNextLesson={lessonCompleteNextLesson}
-                />
               </div>
+              <div></div>
+              <LessonContent
+                content={current_content.content}
+                status={user_progress[current_position]}
+                type={current_content.type}
+                submit={submit}
+                lessonCompleteSubmit={lessonCompleteSubmit}
+                lessonCompleteBack={lessonCompleteBack}
+                lessonCompleteNextLesson={lessonCompleteNextLesson}
+              />
             </div>
           </div>
         </>

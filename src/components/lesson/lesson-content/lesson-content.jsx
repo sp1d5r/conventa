@@ -11,6 +11,7 @@ import FlipAndSelect from "./pages/flip-and-select";
 import MatchCards from "./pages/match-cards-page";
 import CaseStudyPage from "./pages/case-study-page";
 import BinaryClassificationPage from "./pages/binary-classification-page";
+import OrderList from "./pages/order-list";
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -145,6 +146,14 @@ function LessonContent({
         optionTwoResult={valueTwo}
         allShuffled={shuffle(valueOne.concat(valueTwo))}
       ></BinaryClassificationPage>
+    );
+  } else if (type === "order_list") {
+    return (
+      <OrderList
+        submit={submit}
+        shuffledList={shuffle(content)}
+        correctOrder={content}
+      />
     );
   }
 }
