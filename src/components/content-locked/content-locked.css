@@ -59,8 +59,9 @@
 
 .content-locked-button:focus,
 .content-locked-button:hover {
-  background: #499b80;
-  border: 3px solid #38866d;
+  background: #91d0a6;
+  border: 3px solid #000;
+  color: black;
 }
 
 .content-background-image {

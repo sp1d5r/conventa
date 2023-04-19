@@ -183,7 +183,7 @@
   border-radius: 5px;
   width: 100%;
   margin: 10px 0%;
-  height: 100px;
+  height: 10vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -197,6 +197,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .selection-image-option {
@@ -208,9 +209,6 @@
   justify-content: center;
   padding: 15px 25px;
   gap: 20px;
-
-  width: 45%;
-  height: 45%;
 
   background: #ffffff;
   border: 1px solid #7b7b7b;
@@ -366,6 +364,11 @@
   position: relative;
 }
 
+.single-word-page {
+  min-height: 40vh;
+  justify-content: space-between;
+}
+
 .single-word-input-box {
   width: 80%;
   text-align: left;
@@ -467,6 +470,7 @@
 /* If the display is less than 600 it's a mobile device*/
 @media only screen and (max-width: 700px) {
   .lesson-text {
-    line-height: 20px;
+    line-height: 25px;
+    letter-spacing: 0.1rem;
   }
 }
