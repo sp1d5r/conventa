@@ -10,6 +10,8 @@ import SingleWordPage from "./pages/single-word-page";
 import FlipAndSelect from "./pages/flip-and-select";
 import MatchCards from "./pages/match-cards-page";
 import CaseStudyPage from "./pages/case-study-page";
+import BinaryClassificationPage from "./pages/binary-classification-page";
+import OrderList from "./pages/order-list";
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -130,6 +132,27 @@ function LessonContent({
         content={content.story}
         caseStudy={content.title}
         submit={submit}
+      />
+    );
+  } else if (type === "binary_classification") {
+    const valueOne = Object.values(content.mapping)[0];
+    const valueTwo = Object.values(content.mapping)[1];
+    return (
+      <BinaryClassificationPage
+        submit={submit}
+        categoryOne={Object.keys(content.mapping)[0]}
+        categoryTwo={Object.keys(content.mapping)[1]}
+        optionOneResult={valueOne}
+        optionTwoResult={valueTwo}
+        allShuffled={shuffle(valueOne.concat(valueTwo))}
+      ></BinaryClassificationPage>
+    );
+  } else if (type === "order_list") {
+    return (
+      <OrderList
+        submit={submit}
+        shuffledList={shuffle(content)}
+        correctOrder={content}
       />
     );
   }

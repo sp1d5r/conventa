@@ -4,7 +4,10 @@ import "./course-landing.css";
 
 import LessonCard from "./lesson-card/lesson-card";
 import CourseProfileCard from "./course-profile-card/course-profile-card";
-import { getCourse } from "../../cloud-infrastructure/firebase/firebase";
+import {
+  getCourse,
+  lessonsLocked,
+} from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
 import { Breadcrumb } from "react-bootstrap";
 import { change_color } from "../../cloud-infrastructure/utils/color";
@@ -23,6 +26,7 @@ function CourseLanding() {
     courseName: "Loading...",
     time: "time",
   });
+  const [lessonLocked, setLessonLocked] = useState(false);
   const [loading, setLoad] = useState(true);
 
   const get_course_information = (course_id) => {
@@ -34,6 +38,10 @@ function CourseLanding() {
   };
 
   useEffect(() => {
+    lessonsLocked().then((isLocked) => {
+      console.log("here", isLocked);
+      setLessonLocked(isLocked);
+    });
     get_course_information(course_id);
   }, [course_id]);
 
@@ -115,6 +123,7 @@ function CourseLanding() {
                       lesson_ref={lesson_ref}
                       course_id={course_id}
                       key={index}
+                      isLocked={lessonLocked}
                     />
                   );
                 })}

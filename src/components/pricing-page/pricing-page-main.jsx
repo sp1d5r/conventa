@@ -65,7 +65,7 @@ function PricingPageMain() {
   const [loading, setLoading] = useState(false);
   const [current_user, setCurrentUser] = useState(null);
   const [current_plan, setCurrentPlan] = useState(0);
-  const [selected, setSelected] = useState(current_plan + 1); // set to current_plan + 1
+  const [selected, setSelected] = useState(1); // set to current_plan + 1
   const navigator = useNavigate();
 
   const switchMonthly = () => {
@@ -100,16 +100,16 @@ function PricingPageMain() {
   useEffect(() => {
     getCurrentUser().then((res) => {
       getUserClaim().then((res) => {
-        var currentPlan = -1;
+        var _currentPlan = -1;
         if (res === "Hobbiest") {
-          currentPlan = 0;
+          _currentPlan = 0;
         } else if (res === "Amateur") {
-          currentPlan = 1;
+          _currentPlan = 1;
         } else if (res === "Professional") {
-          currentPlan = 2;
+          _currentPlan = 2;
         }
-        setCurrentPlan(currentPlan);
-        setSelected(currentPlan + 1);
+        setSelected(Math.max(_currentPlan + 1, 1));
+        setCurrentPlan(_currentPlan);
       });
       if (res) {
         setCurrentUser(res);
@@ -138,7 +138,9 @@ function PricingPageMain() {
           <></>
         )}
         <div className={"cost-heading"}>
-          <h1>Upgrade your plan!</h1>
+          <h1 className={"intro-text-h1 competence-text"}>
+            Upgrade your plan!
+          </h1>
           <RadioSwitch switchMonthly={switchMonthly} />
         </div>
         <span className={"cost-main-text"}>

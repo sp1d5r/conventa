@@ -17,11 +17,15 @@ function Example() {
       <h1 className={"intro-text-h1"}>
         See the world the way it was supposed to be seen!
       </h1>
-      <img
-        className={"example-course-image"}
-        src={ExampleImage}
-        alt={"Example of our course"}
-      />
+      {window.innerWidth < 600 ? (
+        <></>
+      ) : (
+        <img
+          className={"example-course-image"}
+          src={ExampleImage}
+          alt={"Example of our course"}
+        />
+      )}
       <div className={"example-courses-div"}>
         <Link className={"example-course-div"} to={"/auth"}>
           <img

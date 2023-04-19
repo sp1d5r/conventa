@@ -12,7 +12,7 @@ function Cost() {
     <>
       <div className={"spacer"} />
       <div className={"cost-heading"}>
-        <h1>
+        <h1 className={"intro-text-h1 competence-text"}>
           Affordable for <span className={"green-text"}>Everyone</span>!
         </h1>
         <RadioSwitch switchMonthly={switchMonthly} />
@@ -29,9 +29,8 @@ function Cost() {
         {" "}
         support@conventa.net
       </a>
-      <div className={"spacer"} />
       <div className={"cost-cards"}>
-        <div className={"cost-card"}>
+        <div className={"cost-card-landing"}>
           <div className={"cost-card-heading"}>
             <p className={"cost-card-price"}>{monthly ? "£3" : "£15"}</p>
             <p className={"cost-card-monthly"}>
@@ -50,7 +49,7 @@ function Cost() {
             </p>
           </div>
         </div>
-        <div className={"cost-card"}>
+        <div className={"cost-card-landing"}>
           <div className={"cost-card-heading"}>
             <p className={"cost-card-price"}>{monthly ? "£5" : "£30"}</p>
             <p className={"cost-card-monthly"}>
@@ -69,7 +68,7 @@ function Cost() {
             <p className={"cost-card-text"}>Preview some beta case studies</p>
           </div>
         </div>
-        <div className={"cost-card"}>
+        <div className={"cost-card-landing"}>
           <div className={"cost-card-heading"}>
             <p className={"cost-card-price"}>{monthly ? "£15" : "£100"}</p>
             <p className={"cost-card-monthly"}>

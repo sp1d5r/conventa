@@ -61,7 +61,7 @@ function SingleWordPage({ sentence, word, submit }) {
   return (
     <>
       <div className={"lesson-content-div"}>
-        <div className={"question-content-main"}>
+        <div className={"single-word-page question-content-main"}>
           <div className={"selection-text-top"}>
             <p className={"text-muted-selection"}>Select the correct option</p>
             <p className={"selection-question"}>{sentence}</p>

@@ -1,9 +1,10 @@
 .competence {
   text-align: left;
+  margin: 20px 0px;
 }
 
 .color-blue {
-  color: #3b71e7;
+  color: #05891b;
   text-decoration: underline;
 }
 
@@ -27,6 +28,14 @@
   width: 50%;
 }
 
+.competence-text {
+  margin-bottom: 0;
+}
+
+.competence-text-p {
+  margin: 5px;
+}
+
 .bottom-outline {
   border-bottom: 1px solid var(--black);
 }
@@ -39,7 +48,7 @@
 .attribute-heading {
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1rem;
   color: var(--black);
   margin-bottom: 1rem;
 }
@@ -48,7 +57,7 @@
   font-family: "Lexend", serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 0.95rem;
   line-height: 25px;
   color: var(--black);
   margin: 0;

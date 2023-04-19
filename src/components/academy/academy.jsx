@@ -55,9 +55,15 @@ function Academy() {
   };
 
   const getBannerFromFirebase = () => {
-    getBanner().then((_banner) => {
-      setBanner(_banner);
-    });
+    getBanner()
+      .then((_banner) => {
+        console.log("here");
+        setBanner(_banner);
+      })
+      .catch((err) => {
+        console.log("Unable to get banner", err);
+        setBanner({ promoMessage: "", color: "" });
+      });
   };
 
   const getLessonsLocked = () => {};
@@ -158,7 +164,7 @@ function Academy() {
         <p>Academy</p>
       </div>
 
-      {banner.promoMessage && banner.color ? (
+      {banner && banner.promoMessage && banner.color ? (
         <Banner promoMessage={banner.promoMessage} color={banner.color} />
       ) : (
         <></>
