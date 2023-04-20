@@ -340,6 +340,7 @@ export async function getPageFromID(page_path) {
   const pageData = snapshot.data().page;
   // Slight formatting change goes here
   // {type: pageData.type, data: {}}
+  console.log(pageData);
   let data;
   if (pageData.type === "text") {
     data = {
@@ -426,8 +427,29 @@ export async function getPageFromID(page_path) {
         title: pageData.title,
       },
     };
-  } else {
-    console.log(pageData);
+  } else if (pageData.type === "order_list") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        question: pageData.question,
+        correct_order: pageData.correct_order,
+      },
+    };
+  } else if (pageData.type === "binary_classifier") {
+    data = {
+      id: pageId,
+      type: pageData.type,
+      content: {
+        question: pageData.question,
+        category_one: Object.keys(pageData.mapping)[0],
+        category_two: Object.keys(pageData.mapping)[1],
+        category_one_options:
+          pageData.mapping[Object.keys(pageData.mapping)[0]],
+        category_two_options:
+          pageData.mapping[Object.keys(pageData.mapping)[1]],
+      },
+    };
   }
   return data;
 }

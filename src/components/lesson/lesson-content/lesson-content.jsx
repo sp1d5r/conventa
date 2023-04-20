@@ -134,27 +134,30 @@ function LessonContent({
         submit={submit}
       />
     );
-  } else if (type === "binary_classification") {
-    const valueOne = Object.values(content.mapping)[0];
-    const valueTwo = Object.values(content.mapping)[1];
+  } else if (type === "binary_classifier") {
     return (
       <BinaryClassificationPage
         submit={submit}
-        categoryOne={Object.keys(content.mapping)[0]}
-        categoryTwo={Object.keys(content.mapping)[1]}
-        optionOneResult={valueOne}
-        optionTwoResult={valueTwo}
-        allShuffled={shuffle(valueOne.concat(valueTwo))}
+        categoryOne={content.category_one}
+        categoryTwo={content.category_two}
+        optionOneResult={content.category_one_options}
+        optionTwoResult={content.category_two_options}
+        allShuffled={shuffle(
+          content.category_one_options.concat(content.category_two_options)
+        )}
       ></BinaryClassificationPage>
     );
   } else if (type === "order_list") {
     return (
       <OrderList
         submit={submit}
-        shuffledList={shuffle(content)}
-        correctOrder={content}
+        shuffledList={shuffle(content.correct_order)}
+        question={content.question}
+        correctOrder={content.correct_order}
       />
     );
+  } else {
+    console.log("Could not load content", content);
   }
 }
 
