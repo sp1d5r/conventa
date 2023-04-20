@@ -41,8 +41,10 @@ function BinaryClassificationPage({
   optionTwoResult,
   allShuffled,
 }) {
-  const [categoryOneVals, setCategoryOneVals] = useState([]);
-  const [categoryTwoVals, setCategoryTwoVals] = useState([]);
+  const [categoryVals, setCategoryVals] = useState({
+    categoryOneVals: [],
+    categoryTwoVals: [],
+  });
   const [answered, setAnswered] = useState(false);
   const [refresh, setRefresh] = useState(false);
 
@@ -54,11 +56,17 @@ function BinaryClassificationPage({
             <button
               onClick={() => {
                 submit(
-                  compareArrays(categoryOneVals, optionOneResult) &&
-                    compareArrays(categoryTwoVals, optionTwoResult),
+                  compareArrays(
+                    categoryVals.categoryOneVals,
+                    optionOneResult
+                  ) &&
+                    compareArrays(
+                      categoryVals.categoryTwoVals,
+                      optionTwoResult
+                    ),
                   JSON.stringify({
-                    categoryOne: categoryOneVals,
-                    categoryTwo: categoryTwoVals,
+                    categoryOne: categoryVals.categoryOneVals,
+                    categoryTwo: categoryVals.categoryTwoVals,
                   })
                 );
               }}
@@ -89,23 +97,26 @@ function BinaryClassificationPage({
     const _shuffledArray = [...allShuffled];
     const oneShuffled = _shuffledArray.splice(0, _shuffledArray.length / 2);
     const twoShuffled = _shuffledArray;
-    setCategoryOneVals(oneShuffled);
-    setCategoryTwoVals(twoShuffled);
+    setCategoryVals({
+      categoryOneVals: oneShuffled,
+      categoryTwoVals: twoShuffled,
+    });
   }, [allShuffled]);
 
   const moveCard = (category, index) => {
-    let _categoryOneVals = categoryOneVals;
-    let _categoryTwoVals = categoryTwoVals;
+    let _categoryOneVals = categoryVals.categoryOneVals;
+    let _categoryTwoVals = categoryVals.categoryTwoVals;
     if (category === categoryOne) {
       const res = _categoryOneVals.splice(index, 1);
-
       _categoryTwoVals = _categoryTwoVals.concat(res);
     } else {
       const res = _categoryTwoVals.splice(index, 1);
       _categoryOneVals = _categoryOneVals.concat(res);
     }
-    setCategoryOneVals(_categoryOneVals);
-    setCategoryTwoVals(_categoryTwoVals);
+    setCategoryVals({
+      categoryOneVals: _categoryOneVals,
+      categoryTwoVals: _categoryTwoVals,
+    });
     setRefresh(!refresh);
   };
 
@@ -122,7 +133,7 @@ function BinaryClassificationPage({
           <div className={"selection-image-div"}>
             <div className={"flip-single-selection-"}>
               <p className={"selection-question"}>{categoryOne}</p>
-              {categoryOneVals.map((value, index) => {
+              {categoryVals.categoryOneVals.map((value, index) => {
                 return (
                   <SelectionCard
                     answered={answered}
@@ -137,7 +148,7 @@ function BinaryClassificationPage({
             </div>
             <div className={"flip-single-selection-"}>
               <p className={"selection-question"}>{categoryTwo}</p>
-              {categoryTwoVals.map((value, index) => {
+              {categoryVals.categoryTwoVals.map((value, index) => {
                 return (
                   <SelectionCard
                     answered={answered}
