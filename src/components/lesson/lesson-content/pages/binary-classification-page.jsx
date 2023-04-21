@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
-const compareArrays = (a, b) => {
-  return JSON.stringify(a) === JSON.stringify(b);
+const compareArrays = (correct, userChoice) => {
+  return correct.every((i) => userChoice.includes(i));
 };
 
 function SelectionCard({
@@ -57,12 +57,12 @@ function BinaryClassificationPage({
               onClick={() => {
                 submit(
                   compareArrays(
-                    categoryVals.categoryOneVals,
-                    optionOneResult
+                    optionOneResult,
+                    categoryVals.categoryOneVals
                   ) &&
                     compareArrays(
-                      categoryVals.categoryTwoVals,
-                      optionTwoResult
+                      optionTwoResult,
+                      categoryVals.categoryTwoVals
                     ),
                   JSON.stringify({
                     categoryOne: categoryVals.categoryOneVals,

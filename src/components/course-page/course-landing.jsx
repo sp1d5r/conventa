@@ -46,9 +46,9 @@ function CourseLanding() {
   }, [course_id]);
 
   const _get_difficulty = () => {
-    if (course_information.difficulty === 0) {
+    if (course_information.difficulty === "1") {
       return require("../../assets/Icons/difficulty/easy.svg").default;
-    } else if (course_information.difficulty === 1) {
+    } else if (course_information.difficulty === "2") {
       return require("../../assets/Icons/difficulty/medium.svg").default;
     } else {
       return require("../../assets/Icons/difficulty/hard.svg").default;

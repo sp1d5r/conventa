@@ -12,9 +12,9 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
   }, [lesson_ref]);
 
   const _get_difficulty = () => {
-    if (lesson.difficulty === 0) {
+    if (lesson.difficulty === "1") {
       return require("../../../assets/Icons/difficulty/easy.svg").default;
-    } else if (lesson.difficulty === 1) {
+    } else if (lesson.difficulty === "2") {
       return require("../../../assets/Icons/difficulty/medium.svg").default;
     } else {
       return require("../../../assets/Icons/difficulty/hard.svg").default;
@@ -22,9 +22,9 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
   };
 
   const _get_difficulty_name = () => {
-    if (lesson.difficulty === 0) {
+    if (lesson.difficulty === "1") {
       return "easy";
-    } else if (lesson.difficulty === 1) {
+    } else if (lesson.difficulty === "2") {
       return "medium";
     } else {
       return "hard";

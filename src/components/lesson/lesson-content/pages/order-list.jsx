@@ -8,27 +8,33 @@ function ReOrderederableList({ list, setList, answered, correctOrder }) {
   const [targetDrag, setTarget] = useState(-1);
 
   const dragStart = (e, position) => {
-    setTarget(position);
-    dragItem.current = position;
-    console.log(e.target.innerHTML);
+    if (!answered) {
+      setTarget(position);
+      dragItem.current = position;
+      console.log(e.target.innerHTML);
+    }
   };
 
   const dragEnter = (e, position) => {
-    setDragging(position);
-    dragOverItem.current = position;
-    console.log(e.target.innerHTML);
+    if (!answered) {
+      setDragging(position);
+      dragOverItem.current = position;
+      console.log(e.target.innerHTML);
+    }
   };
 
   const drop = (e) => {
-    const copyListItems = [...list];
-    const dragItemContent = copyListItems[dragItem.current];
-    copyListItems.splice(dragItem.current, 1);
-    copyListItems.splice(dragOverItem.current, 0, dragItemContent);
-    dragItem.current = null;
-    dragOverItem.current = null;
-    setList(copyListItems);
-    setDragging(-1);
-    setTarget(-1);
+    if (!answered) {
+      const copyListItems = [...list];
+      const dragItemContent = copyListItems[dragItem.current];
+      copyListItems.splice(dragItem.current, 1);
+      copyListItems.splice(dragOverItem.current, 0, dragItemContent);
+      dragItem.current = null;
+      dragOverItem.current = null;
+      setList(copyListItems);
+      setDragging(-1);
+      setTarget(-1);
+    }
   };
 
   const getAnswer = (text, correspondingText) => {

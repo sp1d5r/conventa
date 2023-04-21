@@ -69,7 +69,6 @@
   column-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
   justify-items: flex-start;
-  align-items: center;
 }
 
 .academy-content-section-child-minigame {
