@@ -2,6 +2,7 @@ import React from "react";
 import "./minigame-card.css";
 import { Link } from "react-router-dom";
 import auth from "../../../cloud-infrastructure/firebase/firebase";
+import WorkInProgress from "../../../assets/home/work-in-progress.svg";
 
 function MiniGameCard({ imagePath, title, locked, time, difficulty }) {
   const current_user = auth.currentUser;
@@ -44,6 +45,11 @@ function MiniGameCard({ imagePath, title, locked, time, difficulty }) {
       className={`academy-content-minigame ${locked ? "locked" : ""}`}
       to={getLinkPath()}
     >
+      <img
+        className={"work-in-progress-tag"}
+        src={WorkInProgress}
+        alt={"work in progress"}
+      />
       <div className={"academy-content-minigame-image"}>
         <img
           className={"academy-content-minigame-image-data"}
