@@ -96,7 +96,6 @@
     grid-template-rows: 47% 47%;
     grid-template-columns: repeat(auto-fit, 180px);
     row-gap: 10px;
-    height: 451px;
     grid-auto-flow: column;
     overflow-x: scroll;
     padding: 10px;

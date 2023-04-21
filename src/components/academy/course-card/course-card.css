@@ -121,7 +121,7 @@
 
 @media screen and (max-width: 900px) {
   .academy-content-course {
-    height: 90%;
+    height: 185px;
   }
 
   .academy-content-course:hover {
