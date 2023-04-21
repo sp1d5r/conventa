@@ -134,7 +134,7 @@ function UserCard() {
           <div className={"text-left left-hand-div"}>
             <div className={"user-card-welcome-back"}>
               <p className={"user-info-text"}>
-                Welcome {current_user ? "Back!" : "!!"}
+                Welcome {current_user ? "Back!" : ""}
               </p>
               {role === "Professional" ? (
                 <span className={"user-button-badge"}>{role}</span>
