@@ -70,23 +70,17 @@ function Academy() {
 
   const minigameItems = () => {
     return [
-      {
-        imagePath: require("../../assets/minigame-notational/minigame1.png"),
-        title: "First Impressions",
-        time: 30,
-        difficulty: 0,
-      },
+      // {
+      //   imagePath: require("../../assets/minigame-notational/minigame1.png"),
+      //   title: "First Impressions",
+      //   time: 30,
+      //   difficulty: 0,
+      // },
       {
         imagePath: require("../../assets/minigame-notational/minigame2.png"),
         title: "Catch a Liar",
         time: 30,
         difficulty: 1,
-      },
-      {
-        imagePath: require("../../assets/minigame-notational/minigame3.png"),
-        title: "Tracking Client Emotions",
-        time: 30,
-        difficulty: 2,
       },
       {
         imagePath: require("../../assets/minigame-notational/minigame1.png"),

@@ -4,6 +4,7 @@
   border-radius: 20px;
   height: 350px;
   aspect-ratio: 5 / 7;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -92,6 +93,14 @@
 
 .academy-content-minigame-info > img {
   height: 25px;
+}
+
+.work-in-progress-tag {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  left: 0;
 }
 
 /* height: 300px; */

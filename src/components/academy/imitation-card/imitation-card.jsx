@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../../../cloud-infrastructure/firebase/firebase";
+import ComingSoon from "../../../assets/home/coming-soon.svg";
 
 function ImitationCard({
   color,
@@ -54,6 +55,11 @@ function ImitationCard({
         border: "1px solid #000000",
       }}
     >
+      <img
+        className={"work-in-progress-tag"}
+        src={ComingSoon}
+        alt={"Coming Soon"}
+      />
       <div className={"academy-content-minigame-image"}>
         <img
           className={"academy-content-minigame-image-data"}
