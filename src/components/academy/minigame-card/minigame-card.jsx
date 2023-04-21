@@ -60,26 +60,33 @@ function MiniGameCard({ imagePath, title, locked, time, difficulty }) {
       <div className={"academy-content-minigame-title"}>
         <p>{title}</p>
       </div>
-      <div className={"academy-content-course-info"}>
-        {locked ? (
-          <b className={"locked-text"}>Locked</b>
-        ) : (
-          <>
+
+      {locked ? (
+        <>
+          <div className={"academy-content-course-info"}>
+            <button className={"unlock-minigame-button "}>
+              <b className={"locked-text"}>Unlock for 10,000 Gems</b>
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={"academy-content-minigame-info"}>
             <img
               src={require("../../../assets/Icons/time.png")}
               alt={"This course is expected to take 30 minutes"}
             />
             <p>{time} minutes</p>
-          </>
-        )}
-      </div>
-      <div className={"academy-content-minigame-info"}>
-        <img
-          src={_get_difficulty()}
-          alt={"This minigame is expected to take 30 minutes"}
-        />
-        <p>{_get_difficulty_name()}</p>
-      </div>
+          </div>
+          <div className={"academy-content-minigame-info"}>
+            <img
+              src={_get_difficulty()}
+              alt={"This minigame is expected to take 30 minutes"}
+            />
+            <p>{_get_difficulty_name()}</p>
+          </div>
+        </>
+      )}
     </Link>
   );
 }
