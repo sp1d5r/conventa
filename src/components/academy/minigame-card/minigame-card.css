@@ -50,7 +50,8 @@
 
 .academy-content-minigame-image-data {
   aspect-ratio: 1/1;
-  width: 200px;
+  width: 70%;
+  padding: 5px;
 }
 
 .academy-content-minigame-title {

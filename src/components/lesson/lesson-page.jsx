@@ -297,7 +297,9 @@ function NewLessonPage() {
       current_content.type === "single_word" ||
       current_content.type === "build_sentence" ||
       current_content.type === "selection_image" ||
-      current_content.type === "match_cards"
+      current_content.type === "match_cards" ||
+      current_content.type === "order_list" ||
+      current_content.type === "binary_classifier"
     ) {
       if (correctAnswer) {
         /* This is the correct answer*/

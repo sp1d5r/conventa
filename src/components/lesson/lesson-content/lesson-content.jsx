@@ -151,7 +151,7 @@ function LessonContent({
     return (
       <OrderList
         submit={submit}
-        shuffledList={shuffle(content.correct_order)}
+        shuffledList={shuffle([...content.correct_order])}
         question={content.question}
         correctOrder={content.correct_order}
       />
