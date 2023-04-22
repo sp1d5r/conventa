@@ -1,44 +1,57 @@
-import React, { useRef, useState } from "react";
 import "../lesson-content.css";
+import { DndProvider } from "react-dnd";
+import { MultiBackend } from "react-dnd-multi-backend";
+import { HTML5toTouch } from "rdndmb-html5-to-touch";
+import React, { useState } from "react";
+import { useDrag, useDrop } from "react-dnd";
 
-function ReOrderederableList({ list, setList, answered, correctOrder }) {
-  const dragItem = useRef();
-  const dragOverItem = useRef();
-  const [dragging, setDragging] = useState(-1);
-  const [targetDrag, setTarget] = useState(-1);
+function moveElement(array, startIndex, endIndex) {
+  const element = array.splice(startIndex, 1)[0];
+  array.splice(endIndex, 0, element);
+  return array;
+}
 
-  const dragStart = (e, position) => {
-    if (!answered) {
-      setTarget(position);
-      dragItem.current = position;
-      console.log(e.target.innerHTML);
-    }
-  };
+const Card = ({ id, text, index, moveCard, answered, correctText }) => {
+  const ref = React.useRef(null);
+  const [, drop] = useDrop({
+    type: "card",
+    accept: "card",
+    hover(item, monitor) {
+      if (!ref.current) {
+        return;
+      }
+      const dragIndex = item.index;
+      const hoverIndex = index;
+      if (dragIndex === hoverIndex) {
+        return;
+      }
+      const hoverBoundingRect = ref.current.getBoundingClientRect();
+      const hoverMiddleY =
+        (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+      const clientOffset = monitor.getClientOffset();
+      const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+      if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+        return;
+      }
+      if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+        return;
+      }
+      moveCard(dragIndex, hoverIndex);
+      item.index = hoverIndex;
+    },
+  });
+  const [{ isDragging }, drag] = useDrag({
+    item: { id, index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+    type: "card",
+  });
+  const opacity = isDragging ? 0 : 1;
+  drag(drop(ref));
 
-  const dragEnter = (e, position) => {
-    if (!answered) {
-      setDragging(position);
-      dragOverItem.current = position;
-      console.log(e.target.innerHTML);
-    }
-  };
-
-  const drop = (e) => {
-    if (!answered) {
-      const copyListItems = [...list];
-      const dragItemContent = copyListItems[dragItem.current];
-      copyListItems.splice(dragItem.current, 1);
-      copyListItems.splice(dragOverItem.current, 0, dragItemContent);
-      dragItem.current = null;
-      dragOverItem.current = null;
-      setList(copyListItems);
-      setDragging(-1);
-      setTarget(-1);
-    }
-  };
-
-  const getAnswer = (text, correspondingText) => {
-    const isCorrect = text === correspondingText;
+  const getAnswer = (text) => {
+    const isCorrect = text === correctText;
     if (answered) {
       if (isCorrect) {
         return "correct";
@@ -49,28 +62,37 @@ function ReOrderederableList({ list, setList, answered, correctOrder }) {
   };
 
   return (
-    <>
-      {list &&
-        list.map((item, index) => (
-          <div
-            onDragStart={(e) => dragStart(e, index)}
-            onDragEnter={(e) => dragEnter(e, index)}
-            className={`order-list-card flip-card ${
-              dragging === index ? "correct" : ""
-            } ${targetDrag === index ? "flipped" : ""} ${getAnswer(
-              item,
-              correctOrder[index]
-            )}`}
-            onDragEnd={drop}
-            key={index}
-            draggable
-          >
-            {item}
-          </div>
-        ))}
-    </>
+    <div
+      ref={ref}
+      style={{ opacity }}
+      className={`order-list-card flip-card  ${getAnswer(text)}`}
+    >
+      {text}
+    </div>
   );
-}
+};
+
+export const CardList = ({ cardList, setCardList, answered, correctOrder }) => {
+  const moveCard = (dragIndex, hoverIndex) => {
+    const newArr = moveElement([...cardList], dragIndex, hoverIndex);
+    setCardList(newArr);
+  };
+  return (
+    <div className={"selection-image-div"}>
+      {cardList.map((card, index) => (
+        <Card
+          key={card}
+          index={index}
+          id={card}
+          text={card}
+          moveCard={moveCard}
+          answered={answered}
+          correctText={correctOrder[index]}
+        />
+      ))}
+    </div>
+  );
+};
 
 function OrderList({ submit, shuffledList, correctOrder }) {
   const [list, setList] = useState(shuffledList);
@@ -127,14 +149,18 @@ function OrderList({ submit, shuffledList, correctOrder }) {
             <></>
           )}
 
-          <div className={"selection-image-div"}>
-            <ReOrderederableList
-              list={list}
-              setList={setList}
+          <DndProvider
+            backend={MultiBackend}
+            options={HTML5toTouch}
+            className={"selection-image-div"}
+          >
+            <CardList
+              cardList={list}
+              setCardList={setList}
               answered={answered}
               correctOrder={correctOrder}
             />
-          </div>
+          </DndProvider>
         </div>
         {getButton()}
       </div>
