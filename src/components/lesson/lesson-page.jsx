@@ -229,21 +229,6 @@ function NewLessonPage() {
           })
         ).then((returned_pages) => {
           // returned_pages = LESSON_CONTENT_EXAMPLE;
-          returned_pages = [
-            {
-              content: {
-                correct_order: [
-                  "Preparation",
-                  "Opening",
-                  "Bargaining",
-                  "Closure",
-                ],
-                question: "Order the stages of the negotiation process:",
-              },
-              id: "AtOqJaSUDiEdu6D80YoZ",
-              type: "order_list",
-            },
-          ];
 
           returned_pages.push({
             type: "final",
