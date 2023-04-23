@@ -289,7 +289,6 @@ function NewLessonPage() {
 
   //TODO(eahmad): Make a submit button
   const submit = (correctAnswer, submittedAnswer) => {
-    console.log(correctAnswer, submittedAnswer);
     const temp = user_progress;
 
     if (

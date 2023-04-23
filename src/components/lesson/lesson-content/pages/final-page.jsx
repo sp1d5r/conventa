@@ -35,14 +35,6 @@ function FinalPage({
           >
             <p className={"lesson-content-submit-text"}>Submit</p>
           </button>
-          <button
-            onClick={() => {
-              lessonCompleteNextLesson();
-            }}
-            className={"lesson-submit-button"}
-          >
-            <p className={"lesson-content-submit-text"}>Next Lesson</p>
-          </button>
         </div>
       </div>
     </>
