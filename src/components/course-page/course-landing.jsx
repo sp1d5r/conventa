@@ -6,6 +6,7 @@ import LessonCard from "./lesson-card/lesson-card";
 import CourseProfileCard from "./course-profile-card/course-profile-card";
 import {
   getCourse,
+  getLessonToComplete,
   lessonsLocked,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
@@ -28,22 +29,43 @@ function CourseLanding() {
   });
   const [lessonLocked, setLessonLocked] = useState(false);
   const [loading, setLoad] = useState(true);
+  const [lessonIdToScroll, setLessonIdToScroll] = useState("");
 
   const get_course_information = (course_id) => {
     getCourse(course_id).then((info) => {
       set_course_information(info);
-      setLoad(false);
-      change_color(info.color);
+      const lessonId = [...info.lessons].map((elem) => {
+        return elem._key.path.segments[elem._key.path.segments.length - 1];
+      });
+      getLessonToComplete(lessonId).then((r) => {
+        let i = 0;
+        while (r[i]) {
+          i++;
+        }
+        setLessonIdToScroll(lessonId[i]);
+        change_color(info.color);
+        setLoad(false);
+      });
     });
   };
 
   useEffect(() => {
     lessonsLocked().then((isLocked) => {
-      console.log("here", isLocked);
       setLessonLocked(isLocked);
     });
     get_course_information(course_id);
   }, [course_id]);
+
+  useEffect(() => {
+    if (lessonIdToScroll) {
+      const elem = document.getElementById(lessonIdToScroll);
+      elem.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, [loading, lessonIdToScroll]);
 
   const _get_difficulty = () => {
     if (course_information.difficulty === "1") {
@@ -68,6 +90,7 @@ function CourseLanding() {
     // clean up code
     window.removeEventListener("scroll", onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       const navbar = document.getElementById("navbar");

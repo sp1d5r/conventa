@@ -7,7 +7,7 @@ import SelectionTextPage from "./pages/selection-text-page";
 import SelectionImagePage from "./pages/selection-image-page";
 import BuildSentencePage from "./pages/build-sentence-page";
 import SingleWordPage from "./pages/single-word-page";
-import FlipAndSelect from "./pages/flip-and-select";
+// import FlipAndSelect from "./pages/flip-and-select";
 import MatchCards from "./pages/match-cards-page";
 import CaseStudyPage from "./pages/case-study-page";
 import BinaryClassificationPage from "./pages/binary-classification-page";
@@ -107,12 +107,22 @@ function LessonContent({
     );
   } else if (type === "flip_and_select") {
     return (
-      <FlipAndSelect
+      <MatchCards
         question={content.question}
         mapping={content.mapping}
+        reverseMapping={Object.fromEntries(
+          Object.entries(content.mapping).map(([key, value]) => [value, key])
+        )}
         shuffledValues={shuffle(Object.values(content.mapping))}
         submit={submit}
       />
+      // Changed flip and select due to bugs
+      // <FlipAndSelect
+      //   question={content.question}
+      //   mapping={content.mapping}
+      //   shuffledValues={shuffle(Object.values(content.mapping))}
+      //   submit={submit}
+      // />
     );
   } else if (type === "match_cards") {
     return (

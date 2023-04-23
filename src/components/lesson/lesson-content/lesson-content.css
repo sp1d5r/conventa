@@ -75,6 +75,10 @@
   color: #000000;
 }
 
+.lesson-completed {
+  background-color: var(--green-dark);
+}
+
 .lesson-text-title {
   font-family: "Lexend";
   font-style: normal;
