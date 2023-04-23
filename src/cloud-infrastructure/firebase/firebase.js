@@ -332,6 +332,29 @@ export async function getLessonsCompleted() {
   return lessonCount.data().count;
 }
 
+export async function hasUserCompletedLesson(lessonRef) {
+  const userActivityRef = collection(
+    firestore,
+    `users/${auth.currentUser.uid}/activity`
+  );
+  const lessonActivity = query(
+    userActivityRef,
+    where("lesson_id", "==", lessonRef)
+  );
+  const lessonCount = await getCountFromServer(lessonActivity);
+  return lessonCount.data().count > 0;
+}
+
+export async function getLessonToComplete(lessonRefs) {
+  return Promise.all(
+    lessonRefs.map((lessonRef) => {
+      return hasUserCompletedLesson(lessonRef);
+    })
+  ).then((res) => {
+    return res;
+  });
+}
+
 /* Pages */
 export async function getPageFromID(page_path) {
   const pageId = page_path.split("/")[1];
