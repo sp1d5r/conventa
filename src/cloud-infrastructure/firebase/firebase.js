@@ -363,7 +363,6 @@ export async function getPageFromID(page_path) {
   const pageData = snapshot.data().page;
   // Slight formatting change goes here
   // {type: pageData.type, data: {}}
-  console.log(pageData);
   let data;
   if (pageData.type === "text") {
     data = {
