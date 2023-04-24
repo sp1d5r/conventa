@@ -1,4 +1,4 @@
-![Conventa Banner](./github/banner.png)
+![Conventa Banner](./github/banner.svg)
 # 🚀 Conventa: Empower Your Career with Practical Psychology Skills
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/conventa/LICENSE)
