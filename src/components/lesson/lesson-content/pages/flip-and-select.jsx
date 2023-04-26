@@ -116,6 +116,7 @@ function FlipAndSelect({ question, mapping, submit, shuffledValues }) {
                     toggleSelect={toggleSelectKey}
                     index={index}
                     text={key}
+                    key={index}
                   />
                 );
               })}
@@ -129,6 +130,7 @@ function FlipAndSelect({ question, mapping, submit, shuffledValues }) {
                     toggleSelect={toggleSelectValue}
                     index={index}
                     text={value}
+                    key={index}
                   />
                 );
               })}
