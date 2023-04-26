@@ -5,9 +5,7 @@ function Word({ word, index, selected, answered, pickWord, removeWord }) {
   const wordStyle = selected ? "selected-word" : "unselected-word";
 
   const clickWord = () => {
-    console.log(answered);
     if (!answered) {
-      console.log(selected);
       if (selected) {
         removeWord(index);
       } else {
@@ -35,7 +33,7 @@ function BuildSentencePage({ options, correctAnswer, submit }) {
 
   useEffect(() => {
     setWordsPicked([]);
-    setWordsPicked(options);
+    setWordsNotPicked(options);
     setAnswered(false);
   }, [options]);
 

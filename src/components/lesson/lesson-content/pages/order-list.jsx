@@ -99,7 +99,7 @@ function OrderList({ submit, shuffledList, correctOrder }) {
   const [answered, setAnswered] = useState(false);
 
   useEffect(() => {
-    setAnswered(true);
+    setAnswered(false);
   }, [shuffledList]);
 
   const getButton = () => {
@@ -145,9 +145,9 @@ function OrderList({ submit, shuffledList, correctOrder }) {
             </p>
           </div>
           {answered ? (
-            <div className={"selection-text-top"}>
-              <p>The Correct order was:</p>
-              <p>[{correctOrder.join(", ")}]</p>
+            <div className={"text-top-order-list"}>
+              <p className={"subtext-order-list"}>The Correct order was:</p>
+              <b>{correctOrder.join(", ")}</b>
             </div>
           ) : (
             <></>

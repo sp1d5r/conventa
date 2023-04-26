@@ -75,6 +75,19 @@
   color: #000000;
 }
 
+.text-top-order-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 15%;
+  width: 100%;
+}
+
+.subtext-order-list {
+  margin-bottom: 0;
+}
+
 .lesson-completed {
   background-color: var(--green-dark);
 }

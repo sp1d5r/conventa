@@ -92,6 +92,7 @@ function SelectionTextPage({ question, options, correctAnswer, submit }) {
               <SelectionItem
                 option={option}
                 index={index}
+                key={index}
                 selected={answer === index + 1}
                 correct={index + 1 === correctAnswer}
                 answered={answer}

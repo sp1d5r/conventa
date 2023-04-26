@@ -148,6 +148,7 @@ function BinaryClassificationPage({
                     incorrect={optionOneResult.indexOf(value) === -1}
                     toggleSelect={moveCard}
                     index={index}
+                    key={index}
                     text={value}
                     category={categoryOne}
                   />
@@ -164,6 +165,7 @@ function BinaryClassificationPage({
                     toggleSelect={moveCard}
                     index={index}
                     text={value}
+                    key={index}
                     category={categoryTwo}
                   />
                 );
