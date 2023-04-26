@@ -1,5 +1,5 @@
 /* Question Content */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
 function SelectionItem({
@@ -55,6 +55,10 @@ function SelectionImagePage({
   submit,
 }) {
   const [answer, setAnswer] = useState(null);
+
+  useEffect(() => {
+    setAnswer(null);
+  }, [question, correctAnswer, sources]);
 
   const getButton = () => {
     if (answer !== null) {

@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="">
+    <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/binary-classification-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/binary-classification-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/build-sentence-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/build-sentence-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/flip-and-select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/flip-and-select.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/match-cards-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/match-cards-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/order-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/order-list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/question-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/question-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/selection-image-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/selection-image-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/selection-text-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/selection-text-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/single-word-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/single-word-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,18 +30,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/elijahahmad/e-learning-template/github",
-    "nodejs.jest.jest_package": "/Users/elijahahmad/e-learning-template/node_modules/react-scripts",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/elijahahmad/e-learning-template/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/elijahahmad/e-learning-template/github&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/github" />

@@ -1,5 +1,5 @@
 /* Question Content */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
 function QuestionPage({
@@ -18,6 +18,10 @@ function QuestionPage({
       setAnswered(true);
     }
   };
+
+  useEffect(() => {
+    setAnswer(null);
+  }, [question]);
 
   const getButton = () => {
     if (!viewed) {

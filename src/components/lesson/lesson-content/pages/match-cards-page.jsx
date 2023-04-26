@@ -1,5 +1,5 @@
 /* Question Content */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
 function SelectionCard({
@@ -43,6 +43,15 @@ function MatchCards({
   const [answeredKeys, setAnsweredKeys] = useState([]);
   const [incorrectSet, setIncorrectSet] = useState([]);
   const [selectedHistory, setSelectedHistory] = useState([]);
+
+  useEffect(() => {
+    setSelectedKey("");
+    setSelectedValue("");
+    setAnsweredValues([]);
+    setAnsweredKeys([]);
+    setIncorrectSet([]);
+    setSelectedHistory([]);
+  }, [question]);
 
   const getButton = () => {
     return (

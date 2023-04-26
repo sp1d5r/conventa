@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
 function SingleWordPage({ sentence, word, submit }) {
   const [inputWord, setInputWord] = useState("");
   const [answered, setAnswered] = useState(false);
+
+  useEffect(() => {
+    setAnswered(false);
+  }, [sentence, word]);
 
   const getButton = () => {
     if (answered) {

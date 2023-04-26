@@ -1,5 +1,5 @@
 /* Question Content */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
 function SelectionCard({ index, selected, answered, toggleSelect, text }) {
@@ -28,6 +28,13 @@ function FlipAndSelect({ question, mapping, submit, shuffledValues }) {
   const [selectedValue, setSelectedValue] = useState("");
   const [answeredValues, setAnsweredValues] = useState([]);
   const [answeredKeys, setAnsweredKeys] = useState([]);
+
+  useEffect(() => {
+    setSelectedKey("");
+    setSelectedValue("");
+    setAnsweredKeys([]);
+    setAnsweredValues([]);
+  }, [question, mapping]);
 
   const getButton = () => {
     return (
