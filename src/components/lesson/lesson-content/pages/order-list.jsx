@@ -2,7 +2,7 @@ import "../lesson-content.css";
 import { DndProvider } from "react-dnd";
 import { MultiBackend } from "react-dnd-multi-backend";
 import { HTML5toTouch } from "rdndmb-html5-to-touch";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
 
 function moveElement(array, startIndex, endIndex) {
@@ -97,6 +97,10 @@ export const CardList = ({ cardList, setCardList, answered, correctOrder }) => {
 function OrderList({ submit, shuffledList, correctOrder }) {
   const [list, setList] = useState(shuffledList);
   const [answered, setAnswered] = useState(false);
+
+  useEffect(() => {
+    setAnswered(true);
+  }, [shuffledList]);
 
   const getButton = () => {
     if (answered) {

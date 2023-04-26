@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
 function Word({ word, index, selected, answered, pickWord, removeWord }) {
@@ -32,6 +32,12 @@ function BuildSentencePage({ options, correctAnswer, submit }) {
   const [wordsPicked, setWordsPicked] = useState([]);
   const [wordsNotPicked, setWordsNotPicked] = useState(options);
   const [answered, setAnswered] = useState(false);
+
+  useEffect(() => {
+    setWordsPicked([]);
+    setWordsPicked(options);
+    setAnswered(false);
+  }, [options]);
 
   const pickWord = (index) => {
     if (index < wordsNotPicked.length) {

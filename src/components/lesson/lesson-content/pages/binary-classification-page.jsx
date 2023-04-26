@@ -48,6 +48,14 @@ function BinaryClassificationPage({
   const [answered, setAnswered] = useState(false);
   const [refresh, setRefresh] = useState(false);
 
+  useEffect(() => {
+    setAnswered(false);
+    setCategoryVals({
+      categoryOneVals: [],
+      categoryTwoVals: [],
+    });
+  }, [categoryOne, categoryTwo, optionOneResult, optionTwoResult]);
+
   const getButton = () => {
     if (answered) {
       return (
