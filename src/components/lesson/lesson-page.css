@@ -40,7 +40,8 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .lesson-top {
