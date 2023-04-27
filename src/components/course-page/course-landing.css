@@ -111,6 +111,7 @@
 
   .course-landing-information {
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .course-landing-title {
