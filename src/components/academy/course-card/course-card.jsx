@@ -26,7 +26,7 @@ function CourseCard({ imagePath, title, time, id, locked }) {
 
   return (
     <Link
-      className={`academy-content-course ${locked ? "locked" : ""}`}
+      className={`academy-content-minigame ${locked ? "locked" : ""}`}
       to={getLinkPath()}
       onClick={() => {
         logCourseInteraction();
@@ -34,7 +34,7 @@ function CourseCard({ imagePath, title, time, id, locked }) {
     >
       <div className={"academy-content-course-image"}>
         <img
-          className={"academy-content-course-image-data"}
+          className={"academy-content-minigame-image-data"}
           src={imagePath}
           alt={"Course Notational Data 1"}
         />

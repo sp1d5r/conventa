@@ -63,11 +63,9 @@ function MiniGameCard({ imagePath, title, locked, time, difficulty }) {
 
       {locked ? (
         <>
-          <div className={"academy-content-course-info"}>
-            <button className={"unlock-minigame-button "}>
-              <b className={"locked-text"}>Unlock for 10,000 Gems</b>
-            </button>
-          </div>
+          <button className={"unlock-minigame-button"}>
+            <b className={"locked-text"}>Unlock for 10,000 Gems</b>
+          </button>
         </>
       ) : (
         <>

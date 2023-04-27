@@ -12,7 +12,7 @@ function Roadmap() {
         </p>
         <br />
         <br />
-        <div className={"cost-cards"}>
+        <div className={"cost-cards-roadmap"}>
           <div className={"cost-card"}>
             <div className={"cost-card-heading"}>
               <p className={"cost-card-price"}>23'</p>
