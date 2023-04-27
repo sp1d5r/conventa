@@ -1,26 +1,19 @@
 import React from "react";
 import "./course-card.css";
 import { Link } from "react-router-dom";
-import auth, {
-  logCourseClicked,
-} from "../../../cloud-infrastructure/firebase/firebase";
+import { logCourseClicked } from "../../../cloud-infrastructure/firebase/firebase";
 
 function CourseCard({ imagePath, title, time, id, locked }) {
-  const current_user = auth.currentUser;
   const logCourseInteraction = () => {
     logCourseClicked(id, title);
   };
 
   const getLinkPath = () => {
-    if (current_user) {
-      if (locked) {
-        /* Create a Better Pricing Page */
-        return "/content-locked?reason=lives";
-      } else {
-        return `/course/?course_id=${id}`;
-      }
+    if (locked) {
+      /* Create a Better Pricing Page */
+      return "/content-locked?reason=lives";
     } else {
-      return "/auth";
+      return `/course/?course_id=${id}`;
     }
   };
 

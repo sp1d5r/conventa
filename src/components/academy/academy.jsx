@@ -66,8 +66,6 @@ function Academy() {
       });
   };
 
-  const getLessonsLocked = () => {};
-
   const minigameItems = () => {
     return [
       // {
@@ -141,7 +139,6 @@ function Academy() {
     logAcademyStart();
     getBannerFromFirebase();
     change_color("#E3FFEA");
-    getLessonsLocked();
   }, []);
 
   return (

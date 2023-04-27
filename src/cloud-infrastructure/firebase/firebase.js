@@ -350,9 +350,14 @@ export async function getLessonToComplete(lessonRefs) {
     lessonRefs.map((lessonRef) => {
       return hasUserCompletedLesson(lessonRef);
     })
-  ).then((res) => {
-    return res;
-  });
+  )
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => {
+      console.log("Unable to get Lessons to Complete", err);
+      return [];
+    });
 }
 
 /* Pages */
