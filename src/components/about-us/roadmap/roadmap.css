@@ -15,3 +15,10 @@
   text-align: left;
   color: #000000;
 }
+
+.cost-cards-roadmap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+}
