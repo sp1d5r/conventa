@@ -255,10 +255,10 @@ function NewLessonPage() {
   const goToPosition = (index) => {
     setCurrentPosition(index);
     setCurrentContent(content[index]);
-    logFirebaseEvent("load_page", { page_id: content[index].page_id });
   };
 
   const goForward = () => {
+    logFirebaseEvent("load_page", { page_id: current_content.id });
     const nextIndex = Math.min(content.length - 1, current_position + 1);
     goToPosition(nextIndex);
   };
