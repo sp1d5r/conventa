@@ -33,17 +33,17 @@ Our courses are designed to cover a wide range of topics that are essential for 
 
 We have a growing catalog of courses to help you level up your practical psychology skills. Some of our popular courses include:
 
-1. [Mastering the Art of Negotiation](https://conventa.com/courses/negotiation)
-2. [Unlocking Your Charisma in Business](https://conventa.com/courses/charisma)
+1. [Mastering the Art of Negotiation](https://conventa.com/course/?course_id=ie3su4KTxoxkiNY5S6xX)
+2. [Unlocking Your Charisma in Business](https://conventa.com/course/?course_id=jCn1Ngrr89IyiWMZts9m)
 3. [Conquer Your Fear of Public Speaking](https://conventa.com/courses/public-speaking)
 
 ## 🌟 Get Involved
 
 We'd love for you to be a part of our journey! Here are a few ways you can contribute:
 
-- [Star our GitHub repository](https://github.com/yourusername/conventa/stargazers) and share it with your friends
-- [Report bugs and request features](https://github.com/yourusername/conventa/issues) to help us improve the platform
-- [Contribute content or code](https://github.com/yourusername/conventa/pulls) to make Conventa even better
+- [Star our GitHub repository](https://github.com/sp1d5r/conventa/stargazers) and share it with your friends
+- [Report bugs and request features](https://github.com/sp1d5r/conventa/issues) to help us improve the platform
+- [Contribute content or code](https://github.com/sp1d5r/conventa/pulls) to make Conventa even better
 
 ## 📝 License
 

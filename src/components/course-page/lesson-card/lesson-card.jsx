@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
+import auth, {
   getLesson,
   hasUserCompletedLesson,
 } from "../../../cloud-infrastructure/firebase/firebase";
@@ -9,6 +9,7 @@ import Complete from "../../../assets/home/complete.svg";
 function LessonCard({ lesson_ref, course_id, isLocked }) {
   const [lesson, setLesson] = useState({});
   const [completedLesson, setCompletedLesson] = useState(false);
+  const current_user = auth.currentUser;
 
   const get_lesson_information = useCallback(() => {
     getLesson(lesson_ref).then((item) => {
@@ -48,16 +49,25 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
     get_lesson_information();
   }, [get_lesson_information]);
 
+  const getLinkPath = () => {
+    if (current_user) {
+      if (isLocked) {
+        /* Create a Better Pricing Page */
+        return "/content-locked?reason=lives";
+      } else {
+        return `/lesson/?lesson_id=${lesson.id}&course_id=${course_id}`;
+      }
+    } else {
+      return "/auth";
+    }
+  };
+
   return (
     <Link
       className={`academy-content-minigame ${
         completedLesson ? "lesson-completed" : ""
       }`}
-      to={
-        isLocked
-          ? `/content-locked?reason=lives`
-          : `/lesson/?lesson_id=${lesson.id}&course_id=${course_id}`
-      }
+      to={getLinkPath()}
       id={
         lesson_ref._key.path.segments[lesson_ref._key.path.segments.length - 1]
       }
