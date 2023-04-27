@@ -5,6 +5,7 @@ import {
   createCheckoutSession,
   getCurrentUser,
   getUserClaim,
+  logFirebaseEvent,
 } from "../../cloud-infrastructure/firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -118,6 +119,10 @@ function PricingPageMain() {
       }
     });
   }, [navigator]);
+
+  useEffect(() => {
+    logFirebaseEvent("pricing_page", {});
+  }, []);
 
   return (
     <>

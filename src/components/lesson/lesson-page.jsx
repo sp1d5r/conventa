@@ -7,6 +7,7 @@ import {
   getLessonFromID,
   getPageFromID,
   getUserClaim,
+  logFirebaseEvent,
   lostLife,
   userCompletedLesson,
 } from "../../cloud-infrastructure/firebase/firebase";
@@ -254,6 +255,7 @@ function NewLessonPage() {
   const goToPosition = (index) => {
     setCurrentPosition(index);
     setCurrentContent(content[index]);
+    logFirebaseEvent("load_page", { page_id: content[index].page_id });
   };
 
   const goForward = () => {
@@ -264,6 +266,10 @@ function NewLessonPage() {
   const successGemUpdate = (text) => {
     // TODO:// Handle Success Update
     setGems(gems + 30);
+    logFirebaseEvent("earned_gems", {
+      number_of_gems: 30,
+      page_id: current_content.id,
+    });
   };
 
   const failedGemUpdate = (text) => {
@@ -282,9 +288,10 @@ function NewLessonPage() {
   };
 
   const sendIncorrectAnswer = (submittedAnswer) => {
-    lostLife(current_content.id, submittedAnswer).then((_) =>
-      setLifeLost(!lifeLost)
-    );
+    lostLife(current_content.id, submittedAnswer).then((_) => {
+      setLifeLost(!lifeLost);
+      logFirebaseEvent("lost_life", { page_id: current_content.id });
+    });
   };
 
   //TODO(eahmad): Make a submit button

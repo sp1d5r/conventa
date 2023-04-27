@@ -503,15 +503,22 @@ export async function getDeceptionItems(number_of_games) {
 export function logCourseClicked(id, courseName) {
   logEvent(analytics, "select_course", {
     content_type: "course",
-    content_id: { id },
-    items: [
+    content_id: id,
+    content_name: courseName,
+    items: JSON.stringify([
       {
         name: courseName,
         time: Date.now(),
         session: getSessionId(),
         ip: getIP(),
       },
-    ],
+    ]),
+  });
+}
+
+export function logFirebaseEvent(event_name, information) {
+  logEvent(analytics, event_name, {
+    ...information,
   });
 }
 
