@@ -9,7 +9,7 @@
 }
 
 .user-information {
-  height: calc(20vh * 0.9);
+  /*height: calc(20vh * 0.9);*/
   width: 50%;
   display: flex;
   align-items: center;
@@ -65,6 +65,7 @@
   fill: none;
   stroke-width: 2px;
   stroke-linecap: round;
+  max-height: 100px;
 }
 
 .user-card-welcome-back {
