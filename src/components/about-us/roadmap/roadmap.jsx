@@ -12,8 +12,8 @@ function Roadmap() {
         </p>
         <br />
         <br />
-        <div className={"cost-cards-roadmap"}>
-          <div className={"cost-card"}>
+        <div className={"cost-cards"}>
+          <div className={"cost-card-landing"}>
             <div className={"cost-card-heading"}>
               <p className={"cost-card-price"}>23'</p>
               <p className={"card-description"}>Written content + Minigames</p>
@@ -27,7 +27,7 @@ function Roadmap() {
             </div>
           </div>
 
-          <div className={"cost-card"}>
+          <div className={"cost-card-landing"}>
             <div className={"cost-card-heading"}>
               <p className={"cost-card-price"}>24'</p>
               <p className={"card-description"}>Case Studies</p>
@@ -42,7 +42,7 @@ function Roadmap() {
             </div>
           </div>
 
-          <div className={"cost-card"}>
+          <div className={"cost-card-landing"}>
             <div className={"cost-card-heading"}>
               <p className={"cost-card-price"}>25'</p>
               <p className={"card-description"}>

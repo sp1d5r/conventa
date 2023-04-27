@@ -15,6 +15,16 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #f3fff1 inset !important;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .green-text {
   color: #499b80;
 }

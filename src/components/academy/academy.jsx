@@ -190,7 +190,7 @@ function Academy() {
           <br />
           <div className={"academy-content-section"}>
             <p className={"academy-content-title"}>minigames</p>
-            <div className={"academy-content-section-child-minigame"}>
+            <div className={"academy-content-section-child"}>
               {minigameItems().map((item, index) => {
                 return (
                   <MiniGameCard
@@ -208,7 +208,7 @@ function Academy() {
           <br />
           <div className={"academy-content-section"}>
             <p className={"academy-content-title"}>imitation</p>
-            <div className={"academy-content-section-child-minigame"}>
+            <div className={"academy-content-section-child"}>
               {imitationItems().map((item, index) => {
                 return (
                   <ImitationCard
