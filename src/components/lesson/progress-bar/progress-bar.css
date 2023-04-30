@@ -1,12 +1,13 @@
 .progress-main-div {
   width: 100%;
   height: 15px;
-  background: #d9d9d9;
+  background: #ffffff;
   border-radius: 5px;
+  border: 2px solid black;
 }
 
 .progress-current-div {
   background-color: #0075ff;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 2px;
 }
