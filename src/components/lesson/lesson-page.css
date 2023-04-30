@@ -51,6 +51,10 @@
   align-items: center;
   width: 100%;
   gap: 10px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: var(--green);
 }
 
 .lesson-metadata {
