@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 function CostCard({
   recommended,
   current_plan,
+  locked,
   selected,
   index,
   select,
@@ -34,11 +35,19 @@ function CostCard({
         current_plan >= index ? "locked-card" : ""
       } `}
       onClick={() => {
-        if (current_plan < index) {
+        if (!locked && current_plan < index) {
           select(index);
         }
       }}
     >
+      {locked ? (
+        <div className={"locked-bar"}>
+          <p>Currently Locked</p>
+        </div>
+      ) : (
+        <></>
+      )}
+
       {recommended ? (
         <div className={"recommended-bar"}>
           <p>Recommended</p>
@@ -163,6 +172,7 @@ function PricingPageMain() {
         <div className={"cost-cards-div"}>
           <CostCard
             recommended={false}
+            locked={true}
             selected={selected === 0}
             current_plan={current_plan}
             index={0}
@@ -177,6 +187,7 @@ function PricingPageMain() {
           />
           <CostCard
             recommended={true}
+            locked={true}
             selected={selected === 1}
             current_plan={current_plan}
             index={1}
@@ -191,6 +202,7 @@ function PricingPageMain() {
           />
           <CostCard
             recommended={false}
+            locked={true}
             selected={selected === 2}
             current_plan={current_plan}
             index={2}
@@ -216,10 +228,13 @@ function PricingPageMain() {
         <button
           className={"checkout-button"}
           onClick={() => {
-            goToStripe();
+            console.log("");
+            if (loading) {
+              goToStripe();
+            }
           }}
         >
-          <b>go to checkout</b>
+          <b>Unavailable for now...</b>
         </button>
       </div>
     </>
