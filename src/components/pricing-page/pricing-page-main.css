@@ -32,7 +32,8 @@
   justify-content: center;
 }
 
-.recommended-bar {
+.recommended-bar,
+.locked-bar {
   width: 100%;
   background: #cdffc5;
   border: 2px solid #000000;
@@ -40,6 +41,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+}
+
+.locked-bar {
+  background: #ffc5c5;
 }
 
 .current-plan-bar {
@@ -53,7 +58,8 @@
 }
 
 .recommended-bar > p,
-.current-plan-bar > p {
+.current-plan-bar > p,
+.locked-bar > p {
   font-style: normal;
   font-weight: 700;
   font-size: 12px;

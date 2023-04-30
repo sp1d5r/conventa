@@ -13,7 +13,7 @@ function Login({ changeObjective, initial, size }) {
   const navigate = useNavigate();
 
   // Getting Sign In method from Auth Context
-  const { signIn } = useAuth();
+  const { signIn, signInWithGoogle } = useAuth();
 
   const switch_to_sign_up = () => {
     changeObjective(false);
@@ -43,6 +43,22 @@ function Login({ changeObjective, initial, size }) {
     }
   };
 
+  const successfulCallbackSignup = () => {
+    try {
+      Notification.requestPermission()
+        .then((permission) => {
+          if (permission === "granted") {
+            console.log("Notification permission granted.");
+          }
+        })
+        .catch((err) => {});
+    } catch (err) {
+      console.log("Unable to give notifications", err);
+    } finally {
+      navigate("/introduction");
+    }
+  };
+
   const trySignIn = () => {
     signIn(email, password, successfulCallback, failedCallback);
   };
@@ -56,7 +72,16 @@ function Login({ changeObjective, initial, size }) {
           </div>
           <p className={"auth-title"}>Login</p>
           <p className={"auth-sub-text"}>Brush up on some lessons!</p>
-          <button className={"login-with-google-button"}>
+          <button
+            className={"login-with-google-button"}
+            onClick={() => {
+              signInWithGoogle(
+                successfulCallback,
+                successfulCallbackSignup,
+                failedCallback
+              );
+            }}
+          >
             <img
               src={require("../../../assets/Icons/Google-Line.png")}
               alt={"G"}
