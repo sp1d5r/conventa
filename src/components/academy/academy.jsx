@@ -154,7 +154,7 @@ function Academy() {
         difficulty: 2,
       },
       {
-        imagePath: require("../../assets/minigame-notational/concessions-ladder.png"),
+        imagePath: require("../../assets/minigame-notational/empathy-challenge.png"),
         title: "Empathy Challenge",
         time: 30,
         difficulty: 0,
