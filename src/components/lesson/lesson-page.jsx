@@ -378,7 +378,7 @@ function NewLessonPage() {
                       Exit
                     </Button>
                   ) : (
-                    <></>
+                    <div></div>
                   )}
                   <div className={"lesson-user-data"}>
                     <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
@@ -399,6 +399,7 @@ function NewLessonPage() {
                 lessonCompleteSubmit={lessonCompleteSubmit}
                 lessonCompleteBack={lessonCompleteBack}
                 lessonCompleteNextLesson={lessonCompleteNextLesson}
+                gems={gems}
               />
             </div>
           </div>

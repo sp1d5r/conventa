@@ -134,7 +134,7 @@ function BinaryClassificationPage({
         <div className={"question-content-main"}>
           <div className={"selection-text-top"}>
             <p className={"text-muted-selection"}>
-              Put the cards in the correct category.
+              Click on the cards - Put the cards in the correct category.
             </p>
           </div>
 
