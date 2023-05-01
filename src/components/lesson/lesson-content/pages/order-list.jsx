@@ -94,7 +94,7 @@ export const CardList = ({ cardList, setCardList, answered, correctOrder }) => {
   );
 };
 
-function OrderList({ submit, shuffledList, correctOrder }) {
+function OrderList({ submit, question, shuffledList, correctOrder }) {
   const [list, setList] = useState(shuffledList);
   const [answered, setAnswered] = useState(false);
 
@@ -150,7 +150,9 @@ function OrderList({ submit, shuffledList, correctOrder }) {
               <b>{correctOrder.join(", ")}</b>
             </div>
           ) : (
-            <></>
+            <div className={"text-top-order-list"}>
+              <b>{question}</b>
+            </div>
           )}
 
           <DndProvider
