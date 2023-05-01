@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/minigame-notational/empathy-challenge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/empathy-challenge/empathy-challenge-game.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/empathy-challenge/empathy-challenge.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
