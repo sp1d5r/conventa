@@ -16,6 +16,7 @@ import Banner from "./banner/banner";
 import UserCard from "./user-card/user-card";
 import { change_color } from "../../cloud-infrastructure/utils/color";
 import ImitationCard from "./imitation-card/imitation-card";
+import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 
 function Academy() {
   const [courses, setCourses] = useState([]);
@@ -23,6 +24,7 @@ function Academy() {
   const [banner, setBanner] = useState({});
   const [lessonLocked, setLessonLocked] = useState(false);
   const [accountType, setAccountType] = useState("Upgrade!");
+  const { current_user } = useAuth();
 
   function calculateTruePercentage(boolArr) {
     const trueCount = boolArr.filter((bool) => bool === true).length;
@@ -269,7 +271,7 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     time={item.time}
-                    locked={true || accountType === "Upgrade!"}
+                    locked={!current_user} //&& accountType === "Upgrade!"}
                     difficulty={item.difficulty}
                   />
                 );
@@ -288,10 +290,10 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     locked={
-                      true
-                      // accountType === "Hobbiest" ||
-                      // accountType === "Amateur" ||
-                      // accountType === "Upgrade!"
+                      true ||
+                      accountType === "Hobbiest" ||
+                      accountType === "Amateur" ||
+                      accountType === "Upgrade!"
                     }
                     subtext={item.subtext}
                     difficulty={item.difficulty}
