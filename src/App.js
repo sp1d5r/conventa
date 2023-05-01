@@ -22,6 +22,7 @@ import Introduction from "./components/introduction/introduction";
 import { onMessageListener } from "./cloud-infrastructure/firebase/firebase";
 import NegotiationRoleplay from "./components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay";
 import ConcessionLadder from "./components/minigames/negotiation/concession-ladder/concession-ladder";
+import EmpathyChallenge from "./components/minigames/negotiation/empathy-challenge/empathy-challenge";
 
 function App() {
   onMessageListener()
@@ -66,6 +67,10 @@ function App() {
             <Route
               path={"/minigame/Concession%20Ladder"}
               element={<ConcessionLadder />}
+            />
+            <Route
+              path={"/minigame/Empathy%20Challenge"}
+              element={<EmpathyChallenge />}
             />
             <Route path="/" element={<Landing />} />
           </Routes>
