@@ -48,8 +48,8 @@ function UserCard() {
       return (
         <p className={"user-info-text-p"}>
           Complete only{" "}
-          <span className={"bold"}>{NUMBER_STREAK_REQUIRED - streak}</span>{" "}
-          lessons more to start a streak!
+          <span className={"bold"}>{NUMBER_STREAK_REQUIRED - streak}</span> more
+          lessons to start a streak!
         </p>
       );
     } else {
