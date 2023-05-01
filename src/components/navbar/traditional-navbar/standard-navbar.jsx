@@ -51,7 +51,7 @@ function NavbarStandard() {
   return (
     <>
       <div className={`navbar ${isAboutUs ? "black" : "white"}`} id={"navbar"}>
-        <Link className={"brand"} to={"/"}>
+        <Link className={"brand"} to={current_user ? "/academy" : "/"}>
           <img
             className={"brand-img"}
             src={isAboutUs ? WhiteLogo : Logo}

@@ -368,14 +368,18 @@ function NewLessonPage() {
                   totalPages={content.length}
                 />
                 <div className={"lesson-metadata"}>
-                  <Button
-                    variant={"danger"}
-                    onClick={() => {
-                      navigator(`/course/?course_id=${course_id}`);
-                    }}
-                  >
-                    Exit
-                  </Button>
+                  {current_content.type !== "final" ? (
+                    <Button
+                      variant={"danger"}
+                      onClick={() => {
+                        navigator(`/course/?course_id=${course_id}`);
+                      }}
+                    >
+                      Exit
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
                   <div className={"lesson-user-data"}>
                     <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
 
