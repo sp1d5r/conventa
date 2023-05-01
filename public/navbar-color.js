@@ -69,8 +69,9 @@ function check_nav() {
   } else if (window.location.href.includes("content-locked")) {
     change_color("#ff98b7");
     change_nav("#ff98b7");
-  } else {
+  } else if (window.location.href.endsWith(".net/")) {
     change_color("#ffffff");
+    change_nav("#ffffff");
   }
 }
 

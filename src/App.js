@@ -20,6 +20,8 @@ import ContentLocked from "./components/content-locked/content-locked";
 import PricingPageMain from "./components/pricing-page/pricing-page-main";
 import Introduction from "./components/introduction/introduction";
 import { onMessageListener } from "./cloud-infrastructure/firebase/firebase";
+import NegotiationRoleplay from "./components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay";
+import ConcessionLadder from "./components/minigames/negotiation/concession-ladder/concession-ladder";
 
 function App() {
   onMessageListener()
@@ -56,6 +58,14 @@ function App() {
             <Route
               path="/minigame/Tracking%20Client%20Emotions"
               element={<TrackingClientEmotions />}
+            />
+            <Route
+              path={"/minigame/Negotiation%20Roleplay"}
+              element={<NegotiationRoleplay />}
+            />
+            <Route
+              path={"/minigame/Concession%20Ladder"}
+              element={<ConcessionLadder />}
             />
             <Route path="/" element={<Landing />} />
           </Routes>
