@@ -1,0 +1,36 @@
+.empathy-challenge-statement {
+  width: 80%;
+  margin: auto;
+  background: #fff1fe;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.empathy-challenge-statement > p {
+  font-family: Lexend, serif;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.empathy-challenge-options {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empathy-challenge-option {
+  width: 80%;
+  background: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.empathy-challenge-option > p {
+  font-family: Lexend, serif;
+  margin-bottom: 0;
+}
