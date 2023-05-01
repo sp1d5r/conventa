@@ -1,11 +1,12 @@
 /* Final Content */
 import React from "react";
+import Gems from "../../../../assets/lesson/gem.svg";
 
 function FinalPage({
   lessonTitle,
   lessonCompleteBack,
   lessonCompleteSubmit,
-  lessonCompleteNextLesson,
+  gems,
 }) {
   return (
     <>
@@ -17,6 +18,12 @@ function FinalPage({
             alt={"Congratulations!!"}
           />
           <p className={"lesson-text-title"}>{lessonTitle}</p>
+          <br />
+          <b className={"congrats-text"}>Congratulation - You earned</b>
+          <div className={"user-gems"}>
+            <p className={"amount-of-gems"}>{gems}</p>
+            <img src={Gems} alt={"Gems Earned"} />
+          </div>
         </div>
         <div className={"lesson-final-button-div"}>
           <button

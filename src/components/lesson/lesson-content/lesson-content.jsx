@@ -41,6 +41,7 @@ function LessonContent({
   lessonCompleteSubmit,
   lessonCompleteBack,
   lessonCompleteNextLesson,
+  gems,
 }) {
   if (type === "text") {
     return (
@@ -68,6 +69,7 @@ function LessonContent({
         lessonCompleteSubmit={lessonCompleteSubmit}
         lessonCompleteBack={lessonCompleteBack}
         lessonCompleteNextLesson={lessonCompleteNextLesson}
+        gems={gems}
       />
     );
   } else if (type === "selection_text") {

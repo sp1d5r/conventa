@@ -33,6 +33,10 @@
   display: flex;
 }
 
+.congrats-text {
+  margin-top: 50px;
+}
+
 .red-text {
   color: crimson;
 }
