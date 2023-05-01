@@ -75,6 +75,7 @@ function CourseCard({
               width: `${courseProgress}%`,
               height: "100%",
               borderRadius: 10,
+              outline: "1px solid",
             }}
           />
         </div>
