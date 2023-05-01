@@ -132,6 +132,7 @@
   .cost-cards {
     flex-wrap: nowrap;
     overflow-x: scroll;
+    overflow-y: hidden;
     width: 100%;
     justify-content: flex-start;
   }
