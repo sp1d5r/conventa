@@ -37,12 +37,13 @@ function NegotiationRoleplay() {
       );
     } else if (state === 1) {
       /* This is the game state */
-      return (
-        <NegotiationRoleplayGame
-          setGameState={setState}
-          difficulty={difficulty}
-        />
-      );
+      let time = 60;
+      if (difficulty === 1) {
+        time = 30;
+      } else if (difficulty === 3) {
+        time = 15;
+      }
+      return <NegotiationRoleplayGame setGameState={setState} time={time} />;
       // <CatchALiarGame setGameState={setState} difficulty={difficulty} />;
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
     } else {
