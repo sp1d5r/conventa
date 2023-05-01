@@ -5,6 +5,7 @@ import MiniGameCard from "./minigame-card/minigame-card";
 import {
   getBanner,
   getCourses,
+  getLessonToComplete,
   getUserClaim,
   lessonsLocked,
   logAcademyStart,
@@ -23,6 +24,30 @@ function Academy() {
   const [lessonLocked, setLessonLocked] = useState(false);
   const [accountType, setAccountType] = useState("Upgrade!");
 
+  function calculateTruePercentage(boolArr) {
+    const trueCount = boolArr.filter((bool) => bool === true).length;
+    const total = boolArr.length;
+    const truePercentage = (trueCount / total) * 100;
+
+    return Math.round(truePercentage);
+  }
+
+  const getLessonsCompleteForCourse = async (course) => {
+    const currentCourse = { ...course };
+    const lessonId = [...course.lessons].map((elem) => {
+      return elem._key.path.segments[elem._key.path.segments.length - 1];
+    });
+    await getLessonToComplete(lessonId)
+      .then((r) => {
+        currentCourse["courseProgress"] = calculateTruePercentage(r);
+      })
+      .catch((err) => {
+        console.log("Failed to get number of lessons complete", err);
+        currentCourse["courseProgress"] = 0;
+      });
+    return currentCourse;
+  };
+
   const courseItems = () => {
     getCourses()
       .then((_courses) => {
@@ -30,10 +55,36 @@ function Academy() {
           .then((isLocked) => {
             getUserClaim()
               .then((account) => {
-                setLessonLocked(isLocked);
-                setCourses(_courses);
-                setAccountType(account);
-                setLoading(false);
+                Promise.all(
+                  _courses.map((elem) => {
+                    return getLessonsCompleteForCourse(elem);
+                  })
+                )
+                  .then((updatedCourses) => {
+                    console.log("Courses are here: ", updatedCourses);
+                    setLessonLocked(isLocked);
+                    updatedCourses.sort((a, b) =>
+                      a.courseProgress < b.courseProgress ? 1 : -1
+                    );
+                    setCourses(updatedCourses);
+                    setAccountType(account);
+                    setLoading(false);
+                  })
+                  .catch((err) => {
+                    console.log(
+                      "Failed to get progress for courses: ",
+                      _courses,
+                      err
+                    );
+                    setLessonLocked(isLocked);
+                    setCourses(
+                      _courses.map((elem) => {
+                        return { courseProgress: 0, ...elem };
+                      })
+                    );
+                    setAccountType(account);
+                    setLoading(false);
+                  });
               })
               .catch((err) => {
                 console.log("Error getting Claim", err);
@@ -44,7 +95,11 @@ function Academy() {
           })
           .catch((err) => {
             console.log("Error getting Lesson", err);
-            setCourses(_courses);
+            setCourses(
+              _courses.map((elem) => {
+                return { courseProgress: 0, ...elem };
+              })
+            );
             setLoading(false);
           });
       })
@@ -132,14 +187,14 @@ function Academy() {
         navbar.style.borderBottom = "";
       }
     };
-  }, []);
+  }, []); // eslint-disable-line
 
   useEffect(() => {
     courseItems();
     logAcademyStart();
     getBannerFromFirebase();
     change_color("#E3FFEA");
-  }, []);
+  }, []); // eslint-disable-line
 
   return (
     <div className={"academy-main"}>
@@ -177,6 +232,8 @@ function Academy() {
                     id={item.id}
                     locked={lessonLocked}
                     time={item.time}
+                    courseProgress={item.courseProgress}
+                    color={item.color}
                     key={index}
                   />
                 );

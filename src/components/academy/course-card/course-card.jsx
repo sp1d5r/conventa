@@ -2,8 +2,17 @@ import React from "react";
 import "./course-card.css";
 import { Link } from "react-router-dom";
 import { logCourseClicked } from "../../../cloud-infrastructure/firebase/firebase";
+import Enrolled from "../../../assets/home/complete-course.svg";
 
-function CourseCard({ imagePath, title, time, id, locked }) {
+function CourseCard({
+  imagePath,
+  title,
+  time,
+  id,
+  locked,
+  courseProgress,
+  color,
+}) {
   const logCourseInteraction = () => {
     logCourseClicked(id, title);
   };
@@ -25,6 +34,16 @@ function CourseCard({ imagePath, title, time, id, locked }) {
         logCourseInteraction();
       }}
     >
+      {courseProgress !== 0 ? (
+        <img
+          className={"work-in-progress-tag"}
+          src={Enrolled}
+          alt={"Enrolled"}
+        />
+      ) : (
+        <></>
+      )}
+
       <div className={"academy-content-course-image"}>
         <img
           className={"academy-content-minigame-image-data"}
@@ -48,6 +67,20 @@ function CourseCard({ imagePath, title, time, id, locked }) {
           </>
         )}
       </div>
+      {courseProgress !== 0 ? (
+        <div className={"course-progress-bar-container"}>
+          <div
+            style={{
+              backgroundColor: color,
+              width: `${courseProgress}%`,
+              height: "100%",
+              borderRadius: 10,
+            }}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
     </Link>
   );
 }
