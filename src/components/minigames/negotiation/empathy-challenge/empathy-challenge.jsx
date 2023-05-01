@@ -19,6 +19,7 @@ function EmpathyChallenge() {
   const from_minigame_state = () => {
     if (state === 0) {
       /* This is the intro state */
+
       return (
         <StartMinigame
           setState={setState}
@@ -43,6 +44,7 @@ function EmpathyChallenge() {
       );
     } else if (state === 1) {
       /* This is the game state */
+      console.log("here");
       return (
         <EmpathyChallengeGame setGameState={setState} difficulty={difficulty} />
       );
