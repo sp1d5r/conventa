@@ -269,7 +269,7 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     time={item.time}
-                    locked={accountType === "Upgrade!"}
+                    locked={true || accountType === "Upgrade!"}
                     difficulty={item.difficulty}
                   />
                 );
