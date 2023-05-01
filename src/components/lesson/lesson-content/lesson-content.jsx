@@ -92,8 +92,12 @@ function LessonContent({
   } else if (type === "build_sentence") {
     return (
       <BuildSentencePage
-        options={shuffle(content.split(" "))}
-        correctAnswer={content}
+        options={shuffle(
+          content.split(" ").map((elem) => {
+            return elem.replace(/_/g, " ");
+          })
+        )}
+        correctAnswer={content.replace(/_/g, " ")}
         submit={submit}
       />
     );
