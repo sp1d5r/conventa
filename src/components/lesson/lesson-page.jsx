@@ -196,6 +196,7 @@ function NewLessonPage() {
   const searchParams = useSearchParams()[0];
   const lesson_id = searchParams.get("lesson_id");
   const course_id = searchParams.get("course_id");
+  const [lessonTitle, setLessonTitle] = useState("");
   /* Content information */
   const [content, setContent] = useState([]);
   /* Content that gets shown in the area panel */
@@ -222,6 +223,7 @@ function NewLessonPage() {
       change_color(res.color);
       // TODO:// Get lives lost for today
       getLessonFromID(lesson_id).then((res) => {
+        setLessonTitle(res.title);
         // Inside lessons we should have pages, update content to represent each of these pages
         const pages = res.pages;
         Promise.all(
@@ -374,12 +376,14 @@ function NewLessonPage() {
                       onClick={() => {
                         navigator(`/course/?course_id=${course_id}`);
                       }}
+                      className={"lesson-button"}
                     >
                       Exit
                     </Button>
                   ) : (
                     <div></div>
                   )}
+                  <p className={"lesson-title"}>{lessonTitle}</p>
                   <div className={"lesson-user-data"}>
                     <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
 
