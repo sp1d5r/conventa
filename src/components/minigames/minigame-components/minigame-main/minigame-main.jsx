@@ -2,7 +2,13 @@ import React from "react";
 import "./minigame-main.css";
 import "../shared.css";
 
-function MinigameMain({ title, pauseGame, updateQuestion, children }) {
+function MinigameMain({
+  title,
+  pauseGame,
+  updateQuestion,
+  children,
+  skipable,
+}) {
   return (
     <div>
       <div className={"minigame-main-top"}>
@@ -16,14 +22,18 @@ function MinigameMain({ title, pauseGame, updateQuestion, children }) {
           >
             Pause
           </button>
-          <button
-            className={"skip-button"}
-            onClick={() => {
-              updateQuestion();
-            }}
-          >
-            Skip
-          </button>
+          {skipable ? (
+            <button
+              className={"skip-button"}
+              onClick={() => {
+                updateQuestion();
+              }}
+            >
+              Skip
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       {children}

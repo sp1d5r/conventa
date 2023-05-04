@@ -1,0 +1,47 @@
+.negotiation-game-container {
+  width: min(90%, 600px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 60vh;
+  align-items: center;
+}
+
+.negotiation-header,
+.negotiation-subheader {
+  font-family: lexend;
+  text-decoration: underline;
+}
+
+.negotiation-subheader {
+  text-decoration: none;
+}
+
+.negotiation-header {
+  font-family: lexend;
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+
+.negotiation-text {
+  font-family: "Lexend";
+  line-height: 1.8rem;
+}
+
+.negotiation-button {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: lexend;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  padding: 10px 100px;
+}

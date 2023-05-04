@@ -29,15 +29,19 @@ function PausedScreen({
           <p>{text2}</p>
         </div>
         <div className={"score-info"}>
-          <span className={"card-text"}>
-            <img
-              alt="Actions"
-              src={require("../../../../assets/first-impressions/Action.png")}
-            />
-            <p>
-              Score: <b>{score}</b> / {totalQuestions}
-            </p>
-          </span>
+          {totalQuestions !== 0 ? (
+            <span className={"card-text"}>
+              <img
+                alt="Actions"
+                src={require("../../../../assets/first-impressions/Action.png")}
+              />
+              <p>
+                Score: <b>{score}</b> / {totalQuestions}
+              </p>
+            </span>
+          ) : (
+            <></>
+          )}
         </div>
 
         <div className={"paused-line"} />
