@@ -142,7 +142,7 @@ function MatchCards({
         <div className={"question-content-main"}>
           <div className={"selection-text-top"}>
             <p className={"text-muted-selection"}>
-              Match Cards - till they are all correct
+              Click on the cards you think match
             </p>
             <p className={"selection-question"}>{question}</p>
           </div>
