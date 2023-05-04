@@ -394,7 +394,9 @@ function NewLessonPage() {
                   </div>
                 </div>
               </div>
-              <div></div>
+              <div>
+                <p className={"lesson-title-mobile"}>{lessonTitle}</p>
+              </div>
               <LessonContent
                 content={current_content.content}
                 status={user_progress[current_position]}
