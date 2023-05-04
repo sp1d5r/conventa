@@ -66,6 +66,7 @@ function EffectiveSpeakingGame({
       pauseGame={pressPause}
       updateQuestion={updateQuestion}
       title={"Effective Speaking"}
+      skipable={true}
     >
       <div className={"effective-speaking-game-main"}>
         {

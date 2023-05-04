@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concessions-ladder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/shared.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/home/complete-course.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/home/complete-course.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking-game/effective-speaking-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/game-over-screen/game-over-screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-main/minigame-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-main/minigame-main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-main/minigame-main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/minigame-main/minigame-main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/paused-screen/paused-screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/shared.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/start-screen/start-screen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concession-ladder-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concession-ladder-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concession-ladder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concession-ladder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/empathy-challenge/empathy-challenge-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/empathy-challenge/empathy-challenge-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/slider/negotiation-slider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/timer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/minigame-components/timer/timer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +59,11 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/minigames/minigame-components/slider" />
+      <recent name="$PROJECT_DIR$/src/components/minigames/minigame-components/timer" />
       <recent name="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay" />
       <recent name="$PROJECT_DIR$/src/components/auth/login" />
       <recent name="$PROJECT_DIR$/src/components/auth/signup" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/assets/lesson" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders a navbar link">

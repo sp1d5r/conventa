@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Timer({ initialTime, onFinish }) {
+function Timer({ initialTime, onFinish, isPaused }) {
   const [timeLeft, setTimeLeft] = useState(initialTime);
 
   useEffect(() => {
@@ -10,11 +10,11 @@ function Timer({ initialTime, onFinish }) {
     }
 
     const timer = setTimeout(() => {
-      setTimeLeft(timeLeft - 1);
+      if (!isPaused) setTimeLeft(timeLeft - 1);
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [timeLeft, onFinish]);
+  }, [timeLeft, onFinish, isPaused]);
 
   return <div className="timer">{timeLeft} seconds left</div>;
 }

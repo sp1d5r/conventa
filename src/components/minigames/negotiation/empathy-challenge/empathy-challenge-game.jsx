@@ -4,7 +4,7 @@ import PausedScreen from "../../minigame-components/paused-screen/paused-screen"
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
 
-const NUMBER_OF_QUESTIONS = 10;
+const NUMBER_OF_QUESTIONS = 3;
 
 const empathyChallengeQuestions = [
   {
@@ -155,6 +155,7 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
             console.log("pressed quit");
             setGameState(0);
           }}
+          totalQuestions={0}
         />
       }
       {
@@ -170,6 +171,9 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
             console.log("pressed quit");
             setGameState(0);
           }}
+          gameOverText={
+            "Good Job! Remember to keep in mind what is important to your role."
+          }
         />
       }
       <div className={"empathy-challenge-game-cards"}>

@@ -42,9 +42,14 @@ function ConcessionLadder() {
       );
     } else if (state === 1) {
       /* This is the game state */
-      return (
-        <ConcessionLadderGame setGameState={setState} difficulty={difficulty} />
-      );
+      /* This is the game state */
+      let time = 15;
+      if (difficulty === 1) {
+        time = 10;
+      } else if (difficulty === 3) {
+        time = 5;
+      }
+      return <ConcessionLadderGame setGameState={setState} time={time} />;
       // <CatchALiarGame setGameState={setState} difficulty={difficulty} />;
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;
     } else {

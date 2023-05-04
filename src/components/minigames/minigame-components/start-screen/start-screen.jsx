@@ -14,7 +14,7 @@ function StartMinigame({
 }) {
   const get_last_score = (minigameId) => {
     console.log(minigameId);
-    return "Your last best score has been 250";
+    return "";
   };
 
   return (

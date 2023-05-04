@@ -56,16 +56,18 @@
 .overlay-card {
   min-width: 80vw;
   max-width: 100vw;
-  min-height: 129vh;
+  min-height: 90vh;
   border-radius: 20px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex-direction: column;
   box-sizing: border-box;
   padding: 5%;
 }
 
 .overlay-main-div {
+  left: 0;
   top: 10vh;
   width: 100vw;
   /*height: 129vh;*/
