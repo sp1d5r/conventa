@@ -11,6 +11,7 @@ function FinalPage({
   return (
     <>
       <div className={"lesson-content-div"}>
+        <div className={"end-splash"} />
         <div className="confetti">
           <div className="confetti-piece"></div>
           <div className="confetti-piece"></div>
@@ -35,9 +36,9 @@ function FinalPage({
           <p className={"lesson-text-title"}>{lessonTitle}</p>
           <br />
           <b className={"congrats-text"}>Congratulation - You earned</b>
-          <div className={"user-gems"}>
-            <p className={"amount-of-gems"}>{gems}</p>
-            <img src={Gems} alt={"Gems Earned"} />
+          <div className={"user-gems-final"}>
+            <p className={"amount-of-gems-final"}>{gems}</p>
+            <img className={"gems-final"} src={Gems} alt={"Gems Earned"} />
           </div>
         </div>
         <div className={"lesson-final-button-div"}>
