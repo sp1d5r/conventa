@@ -131,8 +131,6 @@ function LessonContent({
     );
   } else if (type === "flip_and_select") {
     const mapping_new = removeKeysWithDuplicateValues(content.mapping);
-    console.log(JSON.stringify(content.mapping));
-    console.log(JSON.stringify(removeKeysWithDuplicateValues(content.mapping)));
     return (
       <MatchCards
         question={content.question}

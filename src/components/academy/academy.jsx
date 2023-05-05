@@ -229,21 +229,6 @@ function Academy() {
       <div className={"academy-title"}>
         <p>Academy</p>
       </div>
-      <div className="confetti">
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-        <div className="confetti-piece"></div>
-      </div>
 
       {banner && banner.promoMessage && banner.color ? (
         <Banner promoMessage={banner.promoMessage} color={banner.color} />
