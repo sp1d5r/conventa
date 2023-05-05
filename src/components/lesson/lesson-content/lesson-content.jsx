@@ -33,6 +33,24 @@ function shuffle(array) {
   return array;
 }
 
+/* Used for flip and select and match select*/
+function removeKeysWithDuplicateValues(obj) {
+  const result = {};
+  const seenValues = new Set();
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      if (!seenValues.has(value)) {
+        seenValues.add(value);
+        result[key] = value;
+      }
+    }
+  }
+
+  return result;
+}
+
 function LessonContent({
   type,
   content,
@@ -112,14 +130,17 @@ function LessonContent({
       />
     );
   } else if (type === "flip_and_select") {
+    const mapping_new = removeKeysWithDuplicateValues(content.mapping);
+    console.log(JSON.stringify(content.mapping));
+    console.log(JSON.stringify(removeKeysWithDuplicateValues(content.mapping)));
     return (
       <MatchCards
         question={content.question}
-        mapping={content.mapping}
+        mapping={mapping_new}
         reverseMapping={Object.fromEntries(
-          Object.entries(content.mapping).map(([key, value]) => [value, key])
+          Object.entries(mapping_new).map(([key, value]) => [value, key])
         )}
-        shuffledValues={shuffle(Object.values(content.mapping))}
+        shuffledValues={shuffle(Object.values(mapping_new))}
         submit={submit}
       />
       // Changed flip and select due to bugs
@@ -131,14 +152,15 @@ function LessonContent({
       // />
     );
   } else if (type === "match_cards") {
+    const mapping_new = removeKeysWithDuplicateValues(content.mapping);
     return (
       <MatchCards
         question={content.question}
-        mapping={content.mapping}
+        mapping={mapping_new}
         reverseMapping={Object.fromEntries(
-          Object.entries(content.mapping).map(([key, value]) => [value, key])
+          Object.entries(mapping_new).map(([key, value]) => [value, key])
         )}
-        shuffledValues={shuffle(Object.values(content.mapping))}
+        shuffledValues={shuffle(Object.values(mapping_new))}
         submit={submit}
       />
     );

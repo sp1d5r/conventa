@@ -11,6 +11,21 @@ function FinalPage({
   return (
     <>
       <div className={"lesson-content-div"}>
+        <div className="confetti">
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+          <div className="confetti-piece"></div>
+        </div>
         <div className={"lesson-final-main"}>
           <p className={"lesson-text-complete"}>Lesson Complete!</p>
           <img
