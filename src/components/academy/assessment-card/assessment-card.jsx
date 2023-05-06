@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../../../cloud-infrastructure/firebase/firebase";
 import ComingSoon from "../../../assets/home/coming-soon.svg";
+import "./assessment.css";
 
-function ImitationCard({
+function AssessmentCard({
   color,
   imagePath,
   title,
@@ -39,7 +40,7 @@ function ImitationCard({
         /* Create a Better Pricing Page */
         return "/content-locked/";
       } else {
-        return `/minigame/${title}`;
+        return `/assessment/${title}`;
       }
     } else {
       return "/auth";
@@ -52,7 +53,7 @@ function ImitationCard({
       to={getLinkPath()}
       style={{
         backgroundColor: color,
-        border: "1px solid #000000",
+        border: "3px solid #000000",
       }}
     >
       <img
@@ -67,13 +68,13 @@ function ImitationCard({
           alt={"minigame Notational Data 1"}
         />
       </div>
-      <div className={"academy-content-minigame-title"}>
+      <div className={"academy-content-assessment-title"}>
         <p>{title}</p>
       </div>
-      <div className={"academy-content-course-subtext"}>
+      <div className={"academy-assessment-subtext"}>
         <p>{subtext}</p>
       </div>
-      <div className={"academy-content-minigame-info"}>
+      <div className={"academy-content-assessment-info"}>
         {locked ? (
           <b className={"locked-text"}>Locked</b>
         ) : (
@@ -90,4 +91,4 @@ function ImitationCard({
   );
 }
 
-export default ImitationCard;
+export default AssessmentCard;

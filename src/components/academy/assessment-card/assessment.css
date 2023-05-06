@@ -1,0 +1,52 @@
+.academy-content-assessment-info {
+  flex: 1 1;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2% 10%;
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--black);
+}
+
+.academy-content-assessment-info > img {
+  height: 25px;
+}
+
+.academy-content-assessment-title {
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 18px;
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  color: var(--black);
+  font-weight: 700;
+}
+.academy-content-assessment-title > p,
+.academy-assessment-subtext > p,
+.academy-content-assessment-info > p {
+  margin-bottom: 0;
+}
+
+.academy-content-assessment-info > p {
+  margin: 0px 10px;
+}
+
+.academy-assessment-subtext {
+  flex: 1 1;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2% 10%;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--black);
+}

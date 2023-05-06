@@ -15,7 +15,7 @@ import { Breadcrumb } from "react-bootstrap";
 import Banner from "./banner/banner";
 import UserCard from "./user-card/user-card";
 import { change_color } from "../../cloud-infrastructure/utils/color";
-import ImitationCard from "./imitation-card/imitation-card";
+import AssessmentCard from "./assessment-card/assessment-card";
 import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 
 function Academy() {
@@ -164,24 +164,24 @@ function Academy() {
     ];
   };
 
-  const imitationItems = () => {
+  const assessmentItems = () => {
     return [
       {
         imagePath: require("../../assets/minigame-notational/minigame1.png"),
-        title: "John Wick",
-        badges: ["Body Language"],
-        subtext: "Command respect if you're quiet",
+        title: "Negotiation Assessment",
+        badges: ["Negotiation"],
+        subtext: "Simulate a Negotiation ",
         time: 30,
-        difficulty: 0,
-        color: "#ECFFE3",
+        difficulty: 2,
+        color: "#f8b8b8",
       },
       {
         imagePath: require("../../assets/minigame-notational/minigame1.png"),
-        title: "Thomas Shelby",
+        title: "Inspiration Trainer",
         badges: ["Body Language"],
-        subtext: "Remain calm under pressure",
+        subtext: "Inspire a collegue to join you",
         time: 30,
-        difficulty: 0,
+        difficulty: 2,
         color: "#E3FDFF",
       },
     ];
@@ -281,17 +281,16 @@ function Academy() {
           <br />
           <br />
           <div className={"academy-content-section"}>
-            <p className={"academy-content-title"}>imitation</p>
+            <p className={"academy-content-title"}>assessment</p>
             <div className={"academy-content-section-child"}>
-              {imitationItems().map((item, index) => {
+              {assessmentItems().map((item, index) => {
                 return (
-                  <ImitationCard
+                  <AssessmentCard
                     color={item.color}
                     imagePath={item.imagePath}
                     title={item.title}
                     locked={
-                      true ||
-                      accountType === "Hobbiest" ||
+                      (false && accountType === "Hobbiest") ||
                       accountType === "Amateur" ||
                       accountType === "Upgrade!"
                     }
