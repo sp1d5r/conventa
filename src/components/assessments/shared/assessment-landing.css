@@ -1,0 +1,23 @@
+.assessment-landing-div,
+.assessment-landing-div-selected {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.assessment-landing-div-selected {
+  animation: 2s fadeinWhite;
+  background-color: white;
+}
+
+@keyframes fadeinWhite {
+  from {
+    background-color: #f8b8b8;
+  }
+
+  to {
+    background-color: #ffffff;
+  }
+}

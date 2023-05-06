@@ -1,0 +1,173 @@
+.assessment-landing-header,
+.assessment-landing-header-selected {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px 20px 50px;
+  gap: 10px;
+  background-color: #f8b8b8;
+}
+
+.assessment-landing-header-selected {
+  margin: 5px 25px 5px 25px;
+  gap: 0;
+  border-radius: 5px;
+  background: #f8b8b8;
+  border: 3px solid #000000;
+  animation: 2s alternate slidein;
+  width: calc(100vw - 5px);
+}
+
+@keyframes slidein {
+  from {
+    margin: 0px;
+    padding: 20px 50px 20px 50px;
+    gap: 10px;
+    background-color: #f8b8b8;
+    border: 0px solid black;
+  }
+
+  to {
+    margin: 5px 25px 5px 25px;
+    gap: 0;
+    border-radius: 5px;
+    background: #f8b8b8;
+    border: 3px solid #000000;
+  }
+}
+
+.assessment-landing-header-text {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+  justify-content: flex-end;
+
+  color: #ffffff;
+
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.assessment-landing-header-button {
+  cursor: pointer;
+  background: #8c4040;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.assessment-landing-header-button:active,
+.assessment-landing-header-button:focus,
+.assessment-landing-header-button:hover {
+  background: #8c4040;
+  border: 3px solid #000000;
+}
+
+/* Introduction Data  */
+.negotiation-assessment-landing-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+}
+
+.negotiation-landing-img {
+  width: 50%;
+}
+
+.negotiation-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px;
+  width: 50%;
+  height: 80%;
+}
+
+.assessment-landing-intro-subheading {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2rem;
+  /* line-height: 235.02%; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.assessment-landing-text {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 235.02%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+@media only screen and (max-width: 600px) {
+  .assessment-landing-header-text {
+    font-size: 9vw;
+  }
+
+  .assessment-landing-header-selected {
+    margin: 5px;
+  }
+
+  @keyframes slidein {
+    from {
+      margin: 0px;
+      padding: 20px 50px 20px 50px;
+      gap: 10px;
+      background-color: #f8b8b8;
+      border: 0px solid black;
+    }
+
+    to {
+      margin: 5px;
+      gap: 0;
+      border-radius: 5px;
+      background: #f8b8b8;
+      border: 3px solid #000000;
+    }
+  }
+
+  /* Landing intro */
+  .negotiation-landing-img {
+    width: 0;
+    height: 0;
+  }
+
+  .negotiation-instructions {
+    width: 90%;
+  }
+}

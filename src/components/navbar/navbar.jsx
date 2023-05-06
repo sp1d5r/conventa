@@ -12,7 +12,7 @@ function NavBar() {
     final_part === "pricing-page" ||
     final_part === "introduction";
 
-  if (path_name.at(1) === "lesson") {
+  if (path_name.at(1) === "lesson" || path_name.at(1) === "assessment") {
     return <></>;
   } else {
     return <>{back_navigation ? <AuthNavbar /> : <NavbarStandard />}</>;

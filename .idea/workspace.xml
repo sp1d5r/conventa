@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/academy/assessment-card/assessment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/assessments/negotiation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/assessments/negotiation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/assessments/negotiation-assessment/negotiation-assessment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/assessments/negotiation-assessment/negotiation-assessment.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/assessments/shared/assessment-landing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/assessments/shared/assessment-landing.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/imitation-card/imitation-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/assessment-card/assessment-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
