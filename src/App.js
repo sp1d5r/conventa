@@ -23,6 +23,7 @@ import { onMessageListener } from "./cloud-infrastructure/firebase/firebase";
 import NegotiationRoleplay from "./components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay";
 import ConcessionLadder from "./components/minigames/negotiation/concession-ladder/concession-ladder";
 import EmpathyChallenge from "./components/minigames/negotiation/empathy-challenge/empathy-challenge";
+import NegotiationAssessment from "./components/assessments/negotiation-assessment/negotiation-assessment";
 
 function App() {
   onMessageListener()
@@ -40,6 +41,10 @@ function App() {
           <Routes>
             <Route path="/auth" element={<Authenticate />} />
             <Route path="/academy" element={<Academy loggedIn={false} />} />
+            <Route
+              path={"/assessment/Negotiation%20Assessment"}
+              element={<NegotiationAssessment />}
+            />
             <Route path="/course/" element={<CourseLanding />} />
             <Route path="/content-locked/" element={<ContentLocked />} />
             <Route path="/lesson/" element={<NewLessonPage />} />
