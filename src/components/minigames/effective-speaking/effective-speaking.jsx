@@ -6,7 +6,7 @@ import { Form } from "react-bootstrap";
 import EffectiveSpeakingGame from "./effective-speaking-game/effective-speaking-game";
 import GameOverScreen from "../minigame-components/game-over-screen/game-over-screen";
 import FormRange from "react-bootstrap/FormRange";
-import getArrayOfWords from "../../../cloud-infrastructure/openai/openai";
+import { getArrayOfWords } from "../../../cloud-infrastructure/openai/openai";
 
 function EffectiveSpeaking() {
   const [state, setState] = useState(0);

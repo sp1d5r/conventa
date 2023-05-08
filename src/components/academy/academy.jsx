@@ -173,17 +173,17 @@ function Academy() {
         subtext: "Simulate a Negotiation ",
         time: 30,
         difficulty: 2,
-        color: "#f8b8b8",
+        color: "#FFEDED",
       },
-      {
-        imagePath: require("../../assets/minigame-notational/minigame1.png"),
-        title: "Inspiration Trainer",
-        badges: ["Body Language"],
-        subtext: "Inspire a collegue to join you",
-        time: 30,
-        difficulty: 2,
-        color: "#E3FDFF",
-      },
+      // {
+      //   imagePath: require("../../assets/minigame-notational/minigame1.png"),
+      //   title: "Inspiration Trainer",
+      //   badges: ["Body Language"],
+      //   subtext: "Inspire a collegue to join you",
+      //   time: 30,
+      //   difficulty: 2,
+      //   color: "#E3FDFF",
+      // },
     ];
   };
 
@@ -290,9 +290,10 @@ function Academy() {
                     imagePath={item.imagePath}
                     title={item.title}
                     locked={
-                      (false && accountType === "Hobbiest") ||
-                      accountType === "Amateur" ||
-                      accountType === "Upgrade!"
+                      false &&
+                      (accountType === "Hobbiest" ||
+                        accountType === "Amateur" ||
+                        accountType === "Upgrade!")
                     }
                     subtext={item.subtext}
                     difficulty={item.difficulty}
