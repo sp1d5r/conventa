@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/assessments/microphone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/assessments/shared/speech-to-input.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/assessments/shared/speed-to-input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/openai/openai.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/openai/openai.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/assessment-card/assessment-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/assessment-card/assessment-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assessments/negotiation-assessment/negotiation-assessment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assessments/negotiation-assessment/negotiation-assessment.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assessments/negotiation-assessment/negotiation-assessment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assessments/negotiation-assessment/negotiation-assessment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assessments/shared/assessment-landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assessments/shared/assessment-landing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/effective-speaking/effective-speaking.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
