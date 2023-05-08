@@ -53,7 +53,7 @@ function AssessmentCard({
       to={getLinkPath()}
       style={{
         backgroundColor: color,
-        border: "3px solid #000000",
+        border: "2px solid #000000",
       }}
     >
       <img

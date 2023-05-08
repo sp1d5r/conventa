@@ -1,0 +1,17 @@
+.microphone-image {
+  height: 40px;
+  width: 40px;
+}
+
+.microphone-button {
+  padding: 10px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 2050px;
+}
+
+.recording-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
