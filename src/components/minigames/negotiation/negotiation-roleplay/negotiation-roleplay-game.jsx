@@ -12,19 +12,28 @@ function NegotiationRoleplayGame({ setGameState, time }) {
 
   const [role, setRole] = useState(null);
 
-  const carSellerPrompts = [
-    "Highlight the car's excellent maintenance history.",
-    "Mention that you have another interested buyer.",
-    "Offer to include a set of winter tires as part of the deal.",
-  ];
+  const roleplayData = {
+    title: "Car Negotiation Roleplay",
+    description:
+      "Choose a role (Car Seller or Car Buyer) and practice negotiating from that perspective. Periodically, you will be shown prompts related to your role to help you adapt your negotiation strategy.",
+    sellerRole: "Car Seller",
+    buyerRole: "Car Buyer",
+    sellerPrompts: [
+      "Highlight the car's excellent maintenance history.",
+      "Mention that you have another interested buyer.",
+      "Offer to include a set of winter tires as part of the deal.",
+    ],
+    buyerPrompts: [
+      "Bring up a recent price drop in the used car market.",
+      "Point out a minor cosmetic issue with the car.",
+      "Share that you're prepared to close the deal today if the price is right.",
+    ],
+  };
 
-  const carBuyerPrompts = [
-    "Bring up a recent price drop in the used car market.",
-    "Point out a minor cosmetic issue with the car.",
-    "Share that you're prepared to close the deal today if the price is right.",
-  ];
-
-  const prompts = role === "Car Seller" ? carSellerPrompts : carBuyerPrompts;
+  const prompts =
+    role === roleplayData.sellerRole
+      ? roleplayData.sellerPrompts
+      : roleplayData.buyerPrompts;
 
   useEffect(() => {
     if (step > 0 && step <= prompts.length) {
@@ -165,23 +174,19 @@ function NegotiationRoleplayGame({ setGameState, time }) {
         <ScrollToTop />
         {step === 0 ? (
           <div className={"negotiation-game-container"}>
-            <h1 className={"negotiation-header"}>Car Negotiation Roleplay</h1>
-            <p className={"negotiation-text"}>
-              Choose a role (Car Seller or Car Buyer) and practice negotiating
-              from that perspective. Periodically, you will be shown prompts
-              related to your role to help you adapt your negotiation strategy.
-            </p>
+            <h1 className={"negotiation-header"}>{roleplayData.title}</h1>
+            <p className={"negotiation-text"}>{roleplayData.description}</p>
             <button
               className={"negotiation-button"}
-              onClick={() => chooseRole("Car Seller")}
+              onClick={() => chooseRole(roleplayData.sellerRole)}
             >
-              Car Seller
+              {roleplayData.sellerRole}
             </button>
             <button
               className={"negotiation-button"}
-              onClick={() => chooseRole("Car Buyer")}
+              onClick={() => chooseRole(roleplayData.buyerRole)}
             >
-              Car Buyer
+              {roleplayData.buyerRole}
             </button>
           </div>
         ) : step <= prompts.length ? (
