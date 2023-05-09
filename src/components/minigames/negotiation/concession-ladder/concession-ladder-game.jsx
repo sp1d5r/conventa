@@ -45,6 +45,18 @@ function ConcessionLadderGame({ setGameState, time }) {
     },
   ];
 
+  const concessionDetails = {
+    title: "The Office Lease Negotiation",
+    description:
+      "You are representing a growing company that is looking to lease\n" +
+      "              office space. You are negotiating with a property manager who is\n" +
+      "              trying to maximize rental income. You have five points of\n" +
+      "              contention to address during the negotiation: lease length, rent\n" +
+      "              per square foot, security deposit, rent-free period, and parking\n" +
+      "              spaces.",
+    concessionPoints: concessionPoints,
+  };
+
   function getRandomTip() {
     const tips = [
       "Are you making sure to prioritize the most important concession points?",
@@ -69,14 +81,14 @@ function ConcessionLadderGame({ setGameState, time }) {
   }
 
   useEffect(() => {
-    if (step > 0 && step <= concessionPoints.length) {
+    if (step > 0 && step <= concessionDetails.concessionPoints.length) {
       const timer = setTimeout(() => {
         setStep(step + 1);
       }, time * 1000);
 
       return () => clearTimeout(timer);
     }
-  }, [time, step, concessionPoints.length]);
+  }, [time, step, concessionDetails.concessionPoints.length]);
 
   const handleExit = () => {
     setGameState(0);
@@ -180,30 +192,23 @@ function ConcessionLadderGame({ setGameState, time }) {
         <ScrollToTop />
         {step === 0 ? (
           <div className={"concessions-game-container"}>
-            <h3 className={"concessions-header"}>
-              The Office Lease Negotiation
-            </h3>
+            <h3 className={"concessions-header"}>{concessionDetails.title}</h3>
             <p className={"concessions-text"}>
-              You are representing a growing company that is looking to lease
-              office space. You are negotiating with a property manager who is
-              trying to maximize rental income. You have five points of
-              contention to address during the negotiation: lease length, rent
-              per square foot, security deposit, rent-free period, and parking
-              spaces.
+              {concessionDetails.description}
             </p>
             <button onClick={nextConcession} className={"concessions-button"}>
               Start
             </button>
           </div>
-        ) : step <= concessionPoints.length ? (
+        ) : step <= concessionDetails.concessionPoints.length ? (
           <div className={"concessions-game-container"}>
             <h2 className={"concessions-subheader"}>
-              {concessionPoints[step - 1].title}
+              {concessionDetails.concessionPoints[step - 1].title}
             </h2>
             <NegotiationSlider
-              min={concessionPoints[step - 1].min}
-              max={concessionPoints[step - 1].max}
-              step={concessionPoints[step - 1].step}
+              min={concessionDetails.concessionPoints[step - 1].min}
+              max={concessionDetails.concessionPoints[step - 1].max}
+              step={concessionDetails.concessionPoints[step - 1].step}
               value={sliderValue}
               onChange={setSliderValue}
             />

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="" />
+    <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concession-ladder-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/concession-ladder/concession-ladder-game.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +145,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ff9c308e-fd54-4241-b88a-2cd6196e9c8d" name="Default Changelist" comment="" />
+      <changelist id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="" />
       <created>1653826456003</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -176,6 +179,7 @@
       <workItem from="1680639006523" duration="325000" />
       <workItem from="1681370277861" duration="706000" />
       <workItem from="1682366439924" duration="415000" />
+      <workItem from="1683612360843" duration="441000" />
     </task>
     <servers />
   </component>
