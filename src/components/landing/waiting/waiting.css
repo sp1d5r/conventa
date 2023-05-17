@@ -28,6 +28,7 @@
   border: 2px solid black;
   max-height: 75px;
   min-height: 50px;
+  transition: border 0.5s ease;
 }
 
 .intro-button:hover {

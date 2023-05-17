@@ -8,9 +8,9 @@ function Competence() {
       <div className={"spacer"} />
       <div className={"competence"}>
         <h1 className={"intro-text-h1 competence-text"}>
-          <span>Making you</span>
-          <span className={"green-text"}> more competent</span>
-          <span> at all ages!</span>
+          <span>Empower Your </span>
+          <span className={"green-text"}> Career</span>
+          <span> at Any Stage with Us!</span>
         </h1>
         <p className={"intro-text-p competence-text-p"}>
           Learn more about us in our{" "}
@@ -26,24 +26,26 @@ function Competence() {
         </div>
         <div className={"competence-attributes"}>
           <div className={"competence-attribute bottom-outline"}>
-            <p className={"attribute-heading"}>Relationship Skills</p>
+            <p className={"attribute-heading"}>Relationship Savvy</p>
             <p className={"attribute-bottom"}>
-              Learn how to express emotions more effectively and become more
-              compassionate.
+              Discover how to communicate emotions effectively and foster
+              empathy, transforming your professional relationships.
             </p>
           </div>
           <div className={"competence-attribute bottom-outline"}>
-            <p className={"attribute-heading"}>Business Skills</p>
+            <p className={"attribute-heading"}>Business Mastery</p>
             <p className={"attribute-bottom"}>
-              Learn how to become more proficient at work, through speaking,
-              selling and negotiating.
+              Unlock the secrets to workplace excellence, mastering everything
+              from impactful communication to persuasive selling and
+              negotiation.
             </p>
           </div>
           <div className={"competence-attribute"}>
             <p className={"attribute-heading"}>Personal Development</p>
             <p className={"attribute-bottom"}>
-              Use psychological methods to improve performance at sports,
-              memorization and manipulation.
+              Harness the power of psychology to boost performance - from
+              sharpening your memory to understanding the subtle art of
+              influence.
             </p>
           </div>
         </div>

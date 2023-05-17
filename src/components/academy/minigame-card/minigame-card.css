@@ -16,6 +16,7 @@
   animation: boxshadowin 5s;
   text-decoration: none;
   border: 1px solid black;
+  transition: height 0.1s ease;
 }
 
 .academy-content-minigame:hover {

@@ -11,7 +11,7 @@ import Lives from "./lives/lives";
 import TotalGems from "./gems/gems";
 
 function UserCard() {
-  const NUMBER_STREAK_REQUIRED = 5;
+  const NUMBER_STREAK_REQUIRED = 1;
   const [streak, setStreak] = useState(0);
   const [today, setToday] = useState(new Date());
   const [sunday, setSunday] = useState(); // ;)
