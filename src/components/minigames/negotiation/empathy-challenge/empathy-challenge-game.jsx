@@ -1,50 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./empathy-challenge.css";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
+import { getEmpathyMinigameData } from "../../../../cloud-infrastructure/firebase/firebase";
 
-const NUMBER_OF_QUESTIONS = 3;
-
-const empathyChallengeQuestions = [
-  {
-    id: 1,
-    statement: "I'm feeling really stressed about this project deadline.",
-    options: [
-      "Well, you should have started earlier.",
-      "Maybe you should take a break.",
-      "I understand, deadlines can be stressful. How can I help?",
-    ],
-    correctOption: 2,
-  },
-  {
-    id: 2,
-    statement: "I can't believe I lost my job. I don't know what to do.",
-    options: [
-      "That's tough, I'm here for you if you need to talk.",
-      "You'll find something better soon.",
-      "At least you have more free time now.",
-    ],
-    correctOption: 0,
-  },
-  {
-    id: 3,
-    statement: "I'm feeling really overwhelmed with all the work I have to do.",
-    options: [
-      "You should work harder.",
-      "Maybe you should prioritize your tasks and focus on one thing at a time.",
-      "It's not that big of a deal, just relax.",
-    ],
-    correctOption: 1,
-  },
-  // ... more questions
-];
+const NUMBER_OF_QUESTIONS = 5;
 
 function EmpathyChallengeGame({ setGameState, difficulty }) {
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrent] = useState({});
   const [questions, setQuestions] = useState([]);
   const [pause, setPause] = useState(false);
+
+  // new state variable for feedback
+  const [feedback, setFeedback] = useState(null);
+
+  // reference for timeout
+  const timeoutRef = useRef(null);
 
   /* Question Logic */
 
@@ -62,9 +35,10 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
 
   const getQuestions = async () => {
     // Replace this with a function that fetches questions for the Empathy Challenge
-    const fetchedQuestions = empathyChallengeQuestions; //await fetchEmpathyChallengeItems(NUMBER_OF_QUESTIONS);
-    setQuestions(fetchedQuestions);
-    setCurrent(fetchedQuestions[0]);
+    getEmpathyMinigameData(NUMBER_OF_QUESTIONS).then((fetchedQuestions) => {
+      setQuestions(fetchedQuestions);
+      setCurrent(fetchedQuestions[0]);
+    });
   };
 
   const resetGame = () => {
@@ -88,10 +62,16 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
 
   /* ------ RESPONSE ANALYSIS ------- */
   const clickOption = (optionNumber) => {
-    if (optionNumber === currentQuestion.correctOption) {
+    if (feedback !== null) return; // ignore clicks while showing feedback
+    const isCorrect = optionNumber === currentQuestion.correctOption;
+    if (isCorrect) {
       increaseScore();
     }
-    updateQuestion();
+    setFeedback(isCorrect); // show feedback
+    timeoutRef.current = setTimeout(() => {
+      setFeedback(null);
+      updateQuestion();
+    }, 1000); // delay
   };
 
   /* ------ PAUSE SCREEN LOGIC ------ */
@@ -106,6 +86,7 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
   };
 
   const pressPause = () => {
+    clearTimeout(timeoutRef.current);
     if (!pause) {
       showPauseScreen();
     } else {
@@ -176,6 +157,7 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
           }
         />
       }
+
       <div className={"empathy-challenge-game-cards"}>
         <div className={"empathy-challenge-card-main"}>
           <div className={"empathy-challenge-statement"}>
@@ -186,7 +168,14 @@ function EmpathyChallengeGame({ setGameState, difficulty }) {
               currentQuestion.options.map((option, index) => (
                 <div
                   key={index}
-                  className={"empathy-challenge-option"}
+                  className={`empathy-challenge-option ${
+                    feedback !== null &&
+                    (index === currentQuestion.correctOption
+                      ? "correct"
+                      : feedback === false
+                      ? "incorrect"
+                      : "")
+                  }`}
                   onClick={() => {
                     clickOption(index);
                   }}

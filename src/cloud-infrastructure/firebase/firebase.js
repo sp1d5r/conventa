@@ -44,6 +44,7 @@ let ip = null;
 let session_id = null;
 
 const NUMBER_OF_NEGOTIATION_MINIGAMES = 1;
+const NUMBER_OF_EMPATHY_MINIGAMES = 10;
 
 const PRICING_PLANS_MONTHLY = [
   "price_1MDtRwGME0Qq6U11kgSPpAMw", //HOBBYIST_MONTHLY
@@ -536,8 +537,6 @@ export async function getNegotiationMinigameData() {
   const collectionRef = collection(firestore, "negotiation-minigame");
   const snapshot = await getDocs(collectionRef);
 
-  console.log("here");
-
   if (NUMBER_OF_NEGOTIATION_MINIGAMES === 0) {
     throw new Error("No documents found in collection");
   }
@@ -547,6 +546,27 @@ export async function getNegotiationMinigameData() {
   );
   const randomDoc = snapshot.docs[randomIndex];
   const data = { id: randomDoc.id, ...randomDoc.data() };
+
+  return data;
+}
+
+/* Empathy Minigame */
+export async function getEmpathyMinigameData(numberOfGames) {
+  const collectionRef = collection(firestore, "empathy-minigame");
+  const snapshot = await getDocs(collectionRef);
+
+  if (NUMBER_OF_EMPATHY_MINIGAMES === 0) {
+    throw new Error("No documents found in collection");
+  }
+
+  // Shuffle the array of documents
+  const shuffled = snapshot.docs.sort(() => 0.5 - Math.random());
+
+  // Get sub-array of first n elements after shuffled
+  let selected = shuffled.slice(0, numberOfGames);
+
+  // Map over the selected documents and format them
+  let data = selected.map((doc) => ({ id: doc.id, ...doc.data() }));
 
   return data;
 }

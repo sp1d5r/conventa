@@ -13,6 +13,14 @@
   font-weight: bold;
 }
 
+.correct {
+  background-color: #b9ffb9 !important;
+}
+
+.incorrect {
+  background-color: #ffb9b9 !important;
+}
+
 .empathy-challenge-options {
   min-height: 40vh;
   display: flex;
