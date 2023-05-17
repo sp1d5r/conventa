@@ -9,18 +9,19 @@ function Intro() {
       <div className={"intro-div"}>
         <div className={"intro-text"}>
           <h1 className={"intro-text-h1"}>
-            <span>Use Technology to Interactively Learn</span>
-            <span className={"green-text"}> Practical Psychology</span>
+            <span>Use Technology to Interactively Grow</span>
+            <span className={"green-text"}> Your Career</span>
             <span>!</span>
           </h1>
 
           <p className={"intro-text-p"}>
-            From courses ranging from sport psychology to improve performance,
-            negotiating a better salary, and using seduction to get the person
-            of your dreams!
+            Dive into a world where business meets psychology - from mastering
+            negotiation tactics for your next salary discussion, to leveraging
+            psychological principles to drive business growth!
           </p>
           <p className={"intro-text-p"}>
-            It’s better - and more engaging than reading a textbook!
+            Forget about old-school textbooks - this is learning made fun and
+            interactive!
           </p>
 
           <Link to={"/auth"} className={"intro-button"}>

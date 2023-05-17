@@ -65,7 +65,7 @@ function Cost() {
             </p>
           </div>
           <div className={"cost-card-section"}>
-            <p className={"cost-card-text"}>Preview some beta case studies</p>
+            <p className={"cost-card-text"}>Preview some beta assessments</p>
           </div>
         </div>
         <div className={"cost-card-landing"}>
@@ -84,7 +84,7 @@ function Cost() {
             </p>
           </div>
           <div className={"cost-card-section"}>
-            <p className={"cost-card-text"}>Access to all beta case studies</p>
+            <p className={"cost-card-text"}>Access to all beta assessments</p>
           </div>
         </div>
       </div>

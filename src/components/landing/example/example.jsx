@@ -33,7 +33,7 @@ function Example() {
             src={Child}
             alt={"child psychology"}
           />
-          <p className={"example-course-text"}>Child Psychology</p>
+          <p className={"example-course-text"}>Leadership</p>
         </Link>
         <Link className={"example-course-div"} to={"/auth"}>
           <img className={"example-image"} src={Tie} alt={"child psychology"} />
@@ -61,7 +61,7 @@ function Example() {
             src={Baseball}
             alt={"child psychology"}
           />
-          <p className={"example-course-text"}>Sport Psychology</p>
+          <p className={"example-course-text"}>Mind-Body Synergy </p>
         </Link>
         <Link className={"example-course-div"} to={"/auth"}>
           <img

@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/news-room/main-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/news-room/main-icon.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay-game.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/button/button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/button/button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/competence/competence.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/competence/competence.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/cost/cost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/example/example.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/example/example.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/intro/intro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/landing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/waiting/waiting.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +196,9 @@
       <workItem from="1680639006523" duration="325000" />
       <workItem from="1681370277861" duration="706000" />
       <workItem from="1682366439924" duration="415000" />
-      <workItem from="1683612360843" duration="783000" />
+      <workItem from="1683612360843" duration="876000" />
+      <workItem from="1683787836361" duration="6765000" />
+      <workItem from="1684304734924" duration="757000" />
     </task>
     <servers />
   </component>

@@ -125,7 +125,7 @@
   border-radius: 10px;
   background-color: #efefef;
   position: relative;
-  outline: 1px solid black;
+  border: 1px solid black;
   margin: 5px;
 }
 
