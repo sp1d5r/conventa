@@ -43,6 +43,8 @@ const start_time = Date.now();
 let ip = null;
 let session_id = null;
 
+const NUMBER_OF_NEGOTIATION_MINIGAMES = 1;
+
 const PRICING_PLANS_MONTHLY = [
   "price_1MDtRwGME0Qq6U11kgSPpAMw", //HOBBYIST_MONTHLY
   "price_1MDtTUGME0Qq6U11XjxqzOiK", //AMATEUR_MONTHLY
@@ -527,6 +529,26 @@ export function logAcademyStart() {
     content_type: "webpage",
     items: [{ time: Date.now(), session: getSessionId(), ip: getIP() }],
   });
+}
+
+/* Negotiation Minigame */
+export async function getNegotiationMinigameData() {
+  const collectionRef = collection(firestore, "negotiation-minigame");
+  const snapshot = await getDocs(collectionRef);
+
+  console.log("here");
+
+  if (NUMBER_OF_NEGOTIATION_MINIGAMES === 0) {
+    throw new Error("No documents found in collection");
+  }
+
+  const randomIndex = Math.floor(
+    Math.random() * NUMBER_OF_NEGOTIATION_MINIGAMES
+  );
+  const randomDoc = snapshot.docs[randomIndex];
+  const data = { id: randomDoc.id, ...randomDoc.data() };
+
+  return data;
 }
 
 /* Banner */

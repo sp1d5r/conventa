@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay-game.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay-game.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,7 @@
       <workItem from="1682366439924" duration="415000" />
       <workItem from="1683612360843" duration="876000" />
       <workItem from="1683787836361" duration="6765000" />
-      <workItem from="1684304734924" duration="1269000" />
+      <workItem from="1684304734924" duration="2922000" />
     </task>
     <servers />
   </component>

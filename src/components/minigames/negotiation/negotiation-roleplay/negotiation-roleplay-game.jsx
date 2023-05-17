@@ -5,6 +5,7 @@ import ScrollToTop from "../../../routing/scroll-to-top";
 import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
+import { getNegotiationMinigameData } from "../../../../cloud-infrastructure/firebase/firebase";
 
 function NegotiationRoleplayGame({ setGameState, time }) {
   const [step, setStep] = useState(0);
@@ -12,23 +13,20 @@ function NegotiationRoleplayGame({ setGameState, time }) {
 
   const [role, setRole] = useState(null);
 
-  const roleplayData = {
-    title: "Car Negotiation Roleplay",
-    description:
-      "Choose a role (Car Seller or Car Buyer) and practice negotiating from that perspective. Periodically, you will be shown prompts related to your role to help you adapt your negotiation strategy.",
-    sellerRole: "Car Seller",
-    buyerRole: "Car Buyer",
-    sellerPrompts: [
-      "Highlight the car's excellent maintenance history.",
-      "Mention that you have another interested buyer.",
-      "Offer to include a set of winter tires as part of the deal.",
-    ],
-    buyerPrompts: [
-      "Bring up a recent price drop in the used car market.",
-      "Point out a minor cosmetic issue with the car.",
-      "Share that you're prepared to close the deal today if the price is right.",
-    ],
-  };
+  const [roleplayData, setRoleplayData] = useState({
+    title: "Loading...",
+    description: "Loading...",
+    sellerRole: "Loading...",
+    buyerRole: "Loading...",
+    sellerPrompts: [],
+    buyerPrompts: [],
+  });
+
+  useEffect(() => {
+    getNegotiationMinigameData().then((res) => {
+      setRoleplayData(res);
+    });
+  }, []);
 
   const prompts =
     role === roleplayData.sellerRole
