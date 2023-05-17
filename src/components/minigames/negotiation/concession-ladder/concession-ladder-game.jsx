@@ -6,56 +6,17 @@ import ScrollToTop from "../../../routing/scroll-to-top";
 import PausedScreen from "../../minigame-components/paused-screen/paused-screen";
 import GameOverScreen from "../../minigame-components/game-over-screen/game-over-screen";
 import MinigameMain from "../../minigame-components/minigame-main/minigame-main";
+import { getConcessionsLadderMinigameData } from "../../../../cloud-infrastructure/firebase/firebase";
 
 function ConcessionLadderGame({ setGameState, time }) {
   const [step, setStep] = useState(0);
   const [sliderValue, setSliderValue] = useState(0);
   const [pause, setPause] = useState(false);
-
-  const concessionPoints = [
-    {
-      title: "Lease Length (3-5 years)",
-      min: 3,
-      max: 5,
-      step: 1,
-    },
-    {
-      title: "Rent per square foot ($20-$30)",
-      min: 20,
-      max: 30,
-      step: 1,
-    },
-    {
-      title: "Security Deposit (1-3 months)",
-      min: 1,
-      max: 3,
-      step: 1,
-    },
-    {
-      title: "Rent-free period (0-3 months)",
-      min: 0,
-      max: 3,
-      step: 1,
-    },
-    {
-      title: "Parking Spaces (5-15 spots)",
-      min: 5,
-      max: 15,
-      step: 1,
-    },
-  ];
-
-  const concessionDetails = {
-    title: "The Office Lease Negotiation",
-    description:
-      "You are representing a growing company that is looking to lease\n" +
-      "              office space. You are negotiating with a property manager who is\n" +
-      "              trying to maximize rental income. You have five points of\n" +
-      "              contention to address during the negotiation: lease length, rent\n" +
-      "              per square foot, security deposit, rent-free period, and parking\n" +
-      "              spaces.",
-    concessionPoints: concessionPoints,
-  };
+  const [concessionDetails, setConcessionDetails] = useState({
+    title: "Loading",
+    description: "Loading",
+    concessionPoints: [],
+  });
 
   function getRandomTip() {
     const tips = [
@@ -81,14 +42,29 @@ function ConcessionLadderGame({ setGameState, time }) {
   }
 
   useEffect(() => {
-    if (step > 0 && step <= concessionDetails.concessionPoints.length) {
+    if (
+      concessionDetails &&
+      step > 0 &&
+      step <= concessionDetails.concessionPoints.length
+    ) {
       const timer = setTimeout(() => {
         setStep(step + 1);
       }, time * 1000);
 
       return () => clearTimeout(timer);
     }
-  }, [time, step, concessionDetails.concessionPoints.length]);
+  }, [time, step, concessionDetails]);
+
+  useEffect(() => {
+    getConcessionsLadderMinigameData()
+      .then((fetchedDetails) => {
+        console.log("here");
+        setConcessionDetails({ ...fetchedDetails });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const handleExit = () => {
     setGameState(0);

@@ -571,6 +571,40 @@ export async function getEmpathyMinigameData(numberOfGames) {
   return data;
 }
 
+/* Concessions Ladder Minigame */
+async function fetchConcessionPointData(ref) {
+  const docSnap = await getDoc(ref);
+
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    console.log("No such document!");
+  }
+}
+
+export async function getConcessionsLadderMinigameData() {
+  const collectionRef = collection(firestore, "concession-ladder-minigame");
+  const snapshot = await getDocs(collectionRef);
+
+  if (snapshot.empty) {
+    throw new Error("No documents found in collection");
+  }
+
+  const randomIndex = Math.floor(Math.random() * snapshot.size);
+  const randomDoc = snapshot.docs[randomIndex];
+  const data = { id: randomDoc.id, ...randomDoc.data() };
+
+  // Fetch concession points data
+  const concessionPointsData = await Promise.all(
+    data.concessionPoints.map(fetchConcessionPointData)
+  );
+
+  return {
+    ...data,
+    concessionPoints: concessionPointsData,
+  };
+}
+
 /* Banner */
 export async function getBanner() {
   const bannersRef = collection(firestore, "banner");
