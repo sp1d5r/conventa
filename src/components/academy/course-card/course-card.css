@@ -126,7 +126,7 @@
   background-color: #efefef;
   position: relative;
   border: 1px solid black;
-  margin: 5px;
+  margin: 0px 0px 10px 0px;
 }
 
 @media screen and (max-width: 900px) {
