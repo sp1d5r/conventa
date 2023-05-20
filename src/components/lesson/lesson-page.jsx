@@ -18,6 +18,7 @@ import { change_color } from "../../cloud-infrastructure/utils/color";
 import { Button } from "react-bootstrap";
 import Gems from "../../assets/lesson/gem.svg";
 import Lives from "../academy/user-card/lives/lives";
+import VideoPlayer from "./video-player/video-player";
 
 // const LESSON_CONTENT_EXAMPLE = [
 //   {
@@ -209,6 +210,7 @@ function NewLessonPage() {
   /* Navigation */
   const navigator = useNavigate();
   /* Lives Information */
+  const [showVideo, setShowVideo] = useState(false);
   const [lifeLost, setLifeLost] = useState(false);
   /* Gems Information */
   const [gems, setGems] = useState(0);
@@ -290,10 +292,15 @@ function NewLessonPage() {
   };
 
   const sendIncorrectAnswer = (submittedAnswer) => {
+    setShowVideo(true);
     lostLife(current_content.id, submittedAnswer).then((_) => {
       setLifeLost(!lifeLost);
       logFirebaseEvent("lost_life", { page_id: current_content.id });
     });
+  };
+
+  const lifeLostAnimationEnd = () => {
+    setShowVideo(false);
   };
 
   //TODO(eahmad): Make a submit button
@@ -360,6 +367,12 @@ function NewLessonPage() {
       ) : (
         <>
           <div className={"lesson-landing-main"}>
+            {showVideo && (
+              <VideoPlayer
+                // videoSrc="../../../assets/heart_died.mp4" // Replace with the path to your video file
+                onVideoEnded={lifeLostAnimationEnd}
+              />
+            )}
             <div className={"lesson-landing-content-section"}>
               <div className={"lesson-top"}>
                 <ProgressBar
@@ -397,6 +410,7 @@ function NewLessonPage() {
               <div>
                 <p className={"lesson-title-mobile"}>{lessonTitle}</p>
               </div>
+
               <LessonContent
                 content={current_content.content}
                 status={user_progress[current_position]}

@@ -94,6 +94,16 @@ export const CardList = ({ cardList, setCardList, answered, correctOrder }) => {
   );
 };
 
+function arraysEqual(a, b) {
+  if (a.length !== b.length) return false;
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false;
+  }
+
+  return true;
+}
+
 function OrderList({ submit, question, shuffledList, correctOrder }) {
   const [list, setList] = useState(shuffledList);
   const [answered, setAnswered] = useState(false);
@@ -109,7 +119,7 @@ function OrderList({ submit, question, shuffledList, correctOrder }) {
           <div className={"lesson-content-button-div"}>
             <button
               onClick={() => {
-                submit(true, "hello");
+                submit(arraysEqual(list, correctOrder), list);
               }}
               className={"lesson-submit-button"}
             >
