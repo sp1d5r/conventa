@@ -1,13 +1,16 @@
 /* Text Content */
 import React from "react";
 import "../lesson-content.css";
-
+import ReactMarkdown from "react-markdown";
+// {content}
 function TextPage({ content, viewed, submit }) {
   return (
     <>
       <div className={"lesson-content-div"}>
         <div className={"lesson-content-main"}>
-          <p className={"lesson-text"}>{content}</p>
+          <ReactMarkdown className={"lesson-text"}>
+            {content.replace(/!!!/gi, "\n &nbsp;")}
+          </ReactMarkdown>
         </div>
         {viewed ? (
           <></>

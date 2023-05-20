@@ -66,6 +66,8 @@
   letter-spacing: 0.02em;
   color: #000000;
   text-align: left;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .lesson-text-complete {
