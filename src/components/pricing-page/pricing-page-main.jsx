@@ -42,7 +42,7 @@ function CostCard({
     >
       {locked ? (
         <div className={"locked-bar"}>
-          <p>Currently Locked</p>
+          <p>Currently Free</p>
         </div>
       ) : (
         <></>

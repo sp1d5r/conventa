@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/lesson/video-player/video-player.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/order-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/order-list.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
