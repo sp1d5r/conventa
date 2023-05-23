@@ -39,7 +39,7 @@
 }
 
 .assessment-landing-header-text {
-  font-family: "Lexend";
+  font-family: "Lexend", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 60px;
@@ -68,14 +68,13 @@
   background: #8c4040;
   border: 3px solid #000000;
   border-radius: 5px;
-  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   display: flex;
   align-items: center;
-
+  font-family: "Lexend", serif;
   color: #ffffff;
 }
 
@@ -112,7 +111,7 @@
 }
 
 .assessment-landing-intro-subheading {
-  font-family: "Lexend";
+  font-family: "Lexend", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 1.2rem;
@@ -124,7 +123,7 @@
 }
 
 .assessment-landing-text {
-  font-family: "Lexend";
+  font-family: "Lexend", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -137,7 +136,7 @@
 
 .assessment-landing-intro-button,
 .assessment-landing-intro-button:focus {
-  font-family: "Lexend";
+  font-family: "Lexend", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -187,7 +186,7 @@
 
   text-align: left;
   font-size: 1rem;
-  font-family: Lexend, serif;
+  font-family: "Lexend", serif;
   font-weight: 500;
 }
 
@@ -244,7 +243,7 @@
   padding: 5px;
   border-radius: 5px;
   border: 3px solid #cbdfff;
-  font-family: "Lexend";
+  font-family: "Lexend", serif;
   font-size: 0.8rem;
 }
 
@@ -363,7 +362,7 @@
 
 .initialisation-bold {
   font-size: 0.9rem;
-  font-family: Lexend;
+  font-family: "Lexend", serif;
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   margin: 10px;
