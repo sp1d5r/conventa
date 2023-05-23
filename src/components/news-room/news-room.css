@@ -329,6 +329,7 @@
 }
 
 .button-color-change {
+  margin: 0;
   animation: infinite 14s colorchange;
 }
 
