@@ -91,7 +91,7 @@
 
 @media screen and (max-width: 900px) {
   .academy-content-section-child {
-    width: 100%;
+    width: calc(100% - 15px);
     border: none;
     grid-template-rows: 100%;
     grid-template-columns: repeat(auto-fit, 216px);
@@ -99,6 +99,7 @@
     grid-auto-flow: column;
     overflow-x: scroll;
     padding: 10px;
+    margin-left: 15px;
   }
 
   .academy-content-section-child-minigame {
@@ -110,6 +111,10 @@
     overflow-x: scroll;
     height: 400px;
     padding: 10px;
+  }
+
+  .academy-content {
+    padding: 0;
   }
 }
 

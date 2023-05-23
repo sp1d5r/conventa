@@ -3,6 +3,7 @@
   margin: auto;
   min-height: 20vh;
   margin-bottom: 5%;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -109,6 +110,7 @@
   .user-card-div {
     width: 100%;
     flex-wrap: wrap;
+    padding: 5%;
   }
 
   .user-info-text {
@@ -117,5 +119,9 @@
 
   .user-info-text-p {
     font-size: 1rem;
+  }
+
+  .academy-content-title {
+    padding: 0% 5%;
   }
 }
