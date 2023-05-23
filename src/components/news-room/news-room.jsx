@@ -32,14 +32,12 @@ function NewsRoom() {
       {/*<NewsStories />*/}
       <div className={"article-of-day-div after-intro-animation"}>
         <div className={"article-of-day-tracker"}>
-          <button className="logout-button-white button-color-change">
-            2023-04-12
-          </button>
-          <b className="article-day-text">Daily Paper: 2023-05-12</b>
+          <button className="logout-button-white button-color-change"></button>
+          <b className="article-day-text">
+            Daily Paper: {new Date().toLocaleDateString()}
+          </b>
 
-          <button className="logout-button-white button-color-change">
-            2023-04-13
-          </button>
+          <button className="logout-button-white button-color-change"></button>
         </div>
         <div className={"article-day-main"}>
           <div className="news-paper-today">
