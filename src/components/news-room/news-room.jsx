@@ -4,6 +4,26 @@ import NewsHeading from "./news-heading/news-heading";
 // import NewsStories from "./news-stories/news-stories";
 import Image from "../../assets/news-room/main-icon.svg";
 
+function NewsRoomCard({ backgroundColor, title, description, link }) {
+  return (
+    <div
+      className="news-room-card"
+      style={{ backgroundColor: backgroundColor }}
+      onClick={() => {
+        window.location.href = link;
+      }}
+    >
+      <h3 className={"card-main-text-bold"}>{title}</h3>
+      <p className={"article-of-day-light"}>
+        {description.substring(0, window.innerWidth < 700 ? 70 : 180) + "..."}
+      </p>
+      <a className={"underline"} href={"/"}>
+        Read more
+      </a>
+    </div>
+  );
+}
+
 function NewsRoom() {
   return (
     <div>
@@ -44,6 +64,67 @@ function NewsRoom() {
           <div className={"article-of-day-image"}>
             <img src={Image} alt={"Mind body connection"} />
           </div>
+        </div>
+        <div className="news-room-card-grid">
+          <NewsRoomCard
+            title={"Mastering the Mind-Body Connection for Business Success"}
+            description={
+              "Discover the power of a harmonious mind-body connection to\n" +
+              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
+              "              potential, increase focus, and cultivate resilience for a thriving\n" +
+              "              and successful business experience."
+            }
+            link={"/article?id=1"}
+            backgroundColor={"#e3fffb"}
+          />
+
+          <NewsRoomCard
+            title={"Mastering the Mind-Body Connection for Business Success"}
+            description={
+              "Discover the power of a harmonious mind-body connection to\n" +
+              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
+              "              potential, increase focus, and cultivate resilience for a thriving\n" +
+              "              and successful business experience."
+            }
+            link={"/article?id=1"}
+            backgroundColor={"#e3fdff"}
+          />
+
+          <NewsRoomCard
+            title={"Mastering the Mind-Body Connection for Business Success"}
+            description={
+              "Discover the power of a harmonious mind-body connection to\n" +
+              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
+              "              potential, increase focus, and cultivate resilience for a thriving\n" +
+              "              and successful business experience."
+            }
+            link={"/article?id=1"}
+            backgroundColor={"#fff"}
+          />
+
+          <NewsRoomCard
+            title={"Mastering the Mind-Body Connection for Business Success"}
+            description={
+              "Discover the power of a harmonious mind-body connection to\n" +
+              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
+              "              potential, increase focus, and cultivate resilience for a thriving\n" +
+              "              and successful business experience."
+            }
+            link={"/article?id=1"}
+            backgroundColor={"#e9e3ff"}
+          />
+
+          <NewsRoomCard
+            title={"Mastering the Mind-Body Connection for Business Success"}
+            description={
+              "Discover the power of a harmonious mind-body connection to\n" +
+              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
+              "              potential, increase focus, and cultivate resilience for a thriving\n" +
+              "              and successful business experience."
+            }
+            link={"/article?id=1"}
+            backgroundColor={"#f5e3ff"}
+          />
         </div>
       </div>
     </div>
