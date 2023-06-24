@@ -2,7 +2,7 @@
 import React from "react";
 import "../lesson-content.css";
 
-function CaseStudyPage({ caseStudy, content, submit }) {
+function CaseStudyPage({ caseStudy, content, submit, feedbackButton }) {
   return (
     <>
       <div className={"lesson-content-div"}>
@@ -17,6 +17,7 @@ function CaseStudyPage({ caseStudy, content, submit }) {
           <p className={"case-study-text"}>{content}</p>
         </div>
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button onClick={submit} className={"lesson-submit-button"}>
             <p className={"lesson-content-submit-text"}>Continue</p>
           </button>

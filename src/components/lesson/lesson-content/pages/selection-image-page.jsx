@@ -53,6 +53,7 @@ function SelectionImagePage({
   options,
   correctAnswer,
   submit,
+  feedbackButton,
 }) {
   const [answer, setAnswer] = useState(null);
 
@@ -65,6 +66,7 @@ function SelectionImagePage({
       return (
         <>
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => {
                 submit(answer === correctAnswer, answer);
@@ -79,6 +81,7 @@ function SelectionImagePage({
     } else {
       return (
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => setAnswer(10)}
             className={"lesson-submit-button"}

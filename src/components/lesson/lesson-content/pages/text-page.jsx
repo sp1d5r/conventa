@@ -2,8 +2,8 @@
 import React from "react";
 import "../lesson-content.css";
 import ReactMarkdown from "react-markdown";
-// {content}
-function TextPage({ content, viewed, submit }) {
+
+function TextPage({ content, viewed, submit, feedbackButton }) {
   return (
     <>
       <div className={"lesson-content-div"}>
@@ -16,6 +16,7 @@ function TextPage({ content, viewed, submit }) {
           <></>
         ) : (
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button onClick={submit} className={"lesson-submit-button"}>
               <p className={"lesson-content-submit-text"}>Continue</p>
             </button>

@@ -104,7 +104,13 @@ function arraysEqual(a, b) {
   return true;
 }
 
-function OrderList({ submit, question, shuffledList, correctOrder }) {
+function OrderList({
+  submit,
+  question,
+  shuffledList,
+  correctOrder,
+  feedbackButton,
+}) {
   const [list, setList] = useState(shuffledList);
   const [answered, setAnswered] = useState(false);
 
@@ -117,6 +123,7 @@ function OrderList({ submit, question, shuffledList, correctOrder }) {
       return (
         <>
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => {
                 submit(arraysEqual(list, correctOrder), list);
@@ -131,9 +138,9 @@ function OrderList({ submit, question, shuffledList, correctOrder }) {
     } else {
       return (
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => {
-              console.log("Pressed submit");
               setAnswered(true);
             }}
             className={"lesson-submit-button"}

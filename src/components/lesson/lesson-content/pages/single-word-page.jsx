@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../lesson-content.css";
 
-function SingleWordPage({ sentence, word, submit }) {
+function SingleWordPage({ sentence, word, submit, feedbackButton }) {
   const [inputWord, setInputWord] = useState("");
   const [answered, setAnswered] = useState(false);
 
@@ -14,6 +14,7 @@ function SingleWordPage({ sentence, word, submit }) {
       return (
         <>
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => {
                 submit(
@@ -31,6 +32,7 @@ function SingleWordPage({ sentence, word, submit }) {
     } else {
       return (
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => {
               setAnswered(true);

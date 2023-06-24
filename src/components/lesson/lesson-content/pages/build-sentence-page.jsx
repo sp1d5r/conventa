@@ -26,7 +26,7 @@ function Word({ word, index, selected, answered, pickWord, removeWord }) {
   );
 }
 
-function BuildSentencePage({ options, correctAnswer, submit }) {
+function BuildSentencePage({ options, correctAnswer, submit, feedbackButton }) {
   const [wordsPicked, setWordsPicked] = useState([]);
   const [wordsNotPicked, setWordsNotPicked] = useState(options);
   const [answered, setAnswered] = useState(false);
@@ -64,6 +64,7 @@ function BuildSentencePage({ options, correctAnswer, submit }) {
       return (
         <>
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => {
                 submit(
@@ -81,6 +82,7 @@ function BuildSentencePage({ options, correctAnswer, submit }) {
     } else {
       return (
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => {
               setAnswered(true);
