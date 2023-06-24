@@ -412,6 +412,8 @@ function NewLessonPage() {
               </div>
 
               <LessonContent
+                pageId={current_content.page_id}
+                lessonId={lesson_id}
                 content={current_content.content}
                 status={user_progress[current_position]}
                 type={current_content.type}

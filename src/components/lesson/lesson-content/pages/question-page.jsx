@@ -9,6 +9,7 @@ function QuestionPage({
   viewed,
   submit,
   explanation,
+  feedbackButton,
 }) {
   const [answered, setAnswered] = useState(false);
   const [answer, setAnswer] = useState(null);
@@ -29,6 +30,7 @@ function QuestionPage({
         return (
           <>
             <div className={"lesson-content-button-div"}>
+              {feedbackButton}
               <button
                 onClick={() => {
                   submit(answer === correctAnswer, answer);
@@ -43,6 +45,7 @@ function QuestionPage({
       } else {
         return (
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => checkAnswer()}
               className={"lesson-submit-button"}

@@ -12,6 +12,7 @@ import MatchCards from "./pages/match-cards-page";
 import CaseStudyPage from "./pages/case-study-page";
 import BinaryClassificationPage from "./pages/binary-classification-page";
 import OrderList from "./pages/order-list";
+import FeedbackButton from "./pages/feedback-button/feedback-button";
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -60,13 +61,18 @@ function LessonContent({
   lessonCompleteBack,
   lessonCompleteNextLesson,
   gems,
+  pageId,
+  lessonId,
 }) {
+  const feedbackButton = <FeedbackButton pageId={pageId} lessonId={lessonId} />;
+
   if (type === "text") {
     return (
       <TextPage
         content={content}
         viewed={status !== "" && status !== "furthest"}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "question") {
@@ -78,6 +84,7 @@ function LessonContent({
         viewed={status !== "" && status !== "furthest"}
         submit={submit}
         explanation={content.explanation}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "final") {
@@ -97,6 +104,7 @@ function LessonContent({
         options={content.questions}
         correctAnswer={content.answer}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "selection_image") {
@@ -107,6 +115,7 @@ function LessonContent({
         options={content.questions.map((elem) => elem.content)}
         correctAnswer={content.answer}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "build_sentence") {
@@ -119,6 +128,7 @@ function LessonContent({
         )}
         correctAnswer={content.replace(/_/g, " ")}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "single_word") {
@@ -127,6 +137,7 @@ function LessonContent({
         sentence={content.sentence}
         word={content.word}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "flip_and_select") {
@@ -140,6 +151,7 @@ function LessonContent({
         )}
         shuffledValues={shuffle(Object.values(mapping_new))}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
       // Changed flip and select due to bugs
       // <FlipAndSelect
@@ -160,6 +172,7 @@ function LessonContent({
         )}
         shuffledValues={shuffle(Object.values(mapping_new))}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "case_study") {
@@ -168,6 +181,7 @@ function LessonContent({
         content={content.story}
         caseStudy={content.title}
         submit={submit}
+        feedbackButton={feedbackButton}
       />
     );
   } else if (type === "binary_classifier") {
@@ -181,6 +195,7 @@ function LessonContent({
         allShuffled={shuffle(
           content.category_one_options.concat(content.category_two_options)
         )}
+        feedbackButton={feedbackButton}
       ></BinaryClassificationPage>
     );
   } else if (type === "order_list") {
@@ -190,6 +205,7 @@ function LessonContent({
         shuffledList={shuffle([...content.correct_order])}
         question={content.question}
         correctOrder={content.correct_order}
+        feedbackButton={feedbackButton}
       />
     );
   } else {

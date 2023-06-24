@@ -36,6 +36,7 @@ function MatchCards({
   reverseMapping,
   submit,
   shuffledValues,
+  feedbackButton,
 }) {
   const [selectedKey, setSelectedKey] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
@@ -57,6 +58,7 @@ function MatchCards({
     return (
       <>
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => {
               submit(incorrectSet.length === 0, selectedHistory);

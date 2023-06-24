@@ -40,6 +40,7 @@ function BinaryClassificationPage({
   optionOneResult,
   optionTwoResult,
   allShuffled,
+  feedbackButton,
 }) {
   const [categoryVals, setCategoryVals] = useState({
     categoryOneVals: [],
@@ -61,6 +62,7 @@ function BinaryClassificationPage({
       return (
         <>
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => {
                 submit(
@@ -88,6 +90,7 @@ function BinaryClassificationPage({
     } else {
       return (
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => {
               setAnswered(true);

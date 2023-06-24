@@ -41,7 +41,13 @@ function SelectionItem({
   );
 }
 
-function SelectionTextPage({ question, options, correctAnswer, submit }) {
+function SelectionTextPage({
+  question,
+  options,
+  correctAnswer,
+  submit,
+  feedbackButton,
+}) {
   const [answer, setAnswer] = useState(null);
 
   useEffect(() => {
@@ -53,6 +59,7 @@ function SelectionTextPage({ question, options, correctAnswer, submit }) {
       return (
         <>
           <div className={"lesson-content-button-div"}>
+            {feedbackButton}
             <button
               onClick={() => {
                 submit(answer === correctAnswer, answer);
@@ -67,6 +74,7 @@ function SelectionTextPage({ question, options, correctAnswer, submit }) {
     } else {
       return (
         <div className={"lesson-content-button-div"}>
+          {feedbackButton}
           <button
             onClick={() => setAnswer(10)}
             className={"lesson-submit-button"}
