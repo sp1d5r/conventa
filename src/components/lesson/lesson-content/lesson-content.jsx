@@ -63,8 +63,11 @@ function LessonContent({
   gems,
   pageId,
   lessonId,
+  courseId,
 }) {
-  const feedbackButton = <FeedbackButton pageId={pageId} lessonId={lessonId} />;
+  const feedbackButton = (
+    <FeedbackButton pageId={pageId} lessonId={lessonId} courseId={courseId} />
+  );
 
   if (type === "text") {
     return (
