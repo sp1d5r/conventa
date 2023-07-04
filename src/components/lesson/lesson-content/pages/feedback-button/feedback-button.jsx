@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../lesson-content.css";
 import "./feedback-button.css";
 import Comments from "../../../../../assets/Icons/Comments.png";
 import CloseBlack from "../../../../../assets/Icons/CloseBlack.png";
+import { sendFeedback } from "../../../../../cloud-infrastructure/firebase/firebase";
 
-function FeedbackButton({ pageId, lessonId }) {
+function FeedbackButton({ pageId, lessonId, courseId }) {
   const [pressed, setPressed] = useState(true);
   const [feedbackComment, setFeedbackComment] = useState("");
-
-  useEffect(() => {
-    console.log(feedbackComment);
-  }, [feedbackComment]);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   if (pressed) {
     return (
@@ -37,6 +36,22 @@ function FeedbackButton({ pageId, lessonId }) {
             so now I can diagnose problems appropriately
           </p>
 
+          {success ? (
+            <div className={"answer-word correct"}>
+              <p>Thank you for your feedback!</p>
+            </div>
+          ) : (
+            <></>
+          )}
+
+          {error !== "" ? (
+            <div className={"answer-word incorrect"}>
+              Failed to send... Check your connection?
+            </div>
+          ) : (
+            <></>
+          )}
+
           <textarea
             className={"feedback-textarea"}
             onChange={(e) => {
@@ -46,6 +61,9 @@ function FeedbackButton({ pageId, lessonId }) {
           <div
             className={"feedback-cancel-button"}
             onClick={() => {
+              setError("");
+              setSuccess(false);
+              setFeedbackComment("");
               setPressed(!pressed);
             }}
           >
@@ -56,7 +74,25 @@ function FeedbackButton({ pageId, lessonId }) {
             ></img>
           </div>
           <div className={"lesson-content-button-div"}>
-            <button onClick={() => {}} className={"lesson-submit-button"}>
+            <button
+              onClick={() => {
+                const res = sendFeedback(
+                  pageId,
+                  lessonId,
+                  courseId,
+                  feedbackComment
+                );
+                res
+                  .then((output) => {
+                    setSuccess(true);
+                    console.log(output);
+                  })
+                  .catch((err) => {
+                    setError(err);
+                  });
+              }}
+              className={"lesson-submit-button"}
+            >
               <p className={"lesson-content-submit-text"}>Send Feedback!</p>
             </button>
           </div>

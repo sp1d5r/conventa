@@ -682,3 +682,17 @@ export const onMessageListener = () =>
       resolve(payload);
     });
   });
+
+/* Feedback */
+
+export const sendFeedback = async (pageId, lessonId, courseId, feedback) => {
+  const payload = {
+    pageId: pageId,
+    lessonId: lessonId,
+    courseId: courseId,
+    feedback: feedback,
+    userId: auth.currentUser.uid,
+  };
+
+  return await addDoc(collection(firestore, `feedback`), { ...payload });
+};
