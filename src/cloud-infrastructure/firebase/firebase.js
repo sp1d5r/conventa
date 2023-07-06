@@ -297,32 +297,71 @@ export async function lostLife(pageId, selectedOption) {
 
 /* Courses */
 export async function getCourses() {
-  const courseCollection = collection(firestore, "courses");
-  const courseItems = await getDocs(courseCollection);
-  const courses = courseItems.docs.map((doc) => {
-    return { id: doc.id, ...doc.data() };
-  });
-  return courses;
+  const cachedData = localStorage.getItem("allCourses");
+
+  if (cachedData) {
+    // Use the cached data instead of making a new request
+    return JSON.parse(cachedData);
+  } else {
+    const courseCollection = collection(firestore, "courses");
+    const courseItems = await getDocs(courseCollection);
+    const courses = courseItems.docs.map((doc) => {
+      return { id: doc.id, ...doc.data() };
+    });
+    localStorage.setItem("allCourses", JSON.stringify(courses));
+    return courses;
+  }
 }
 
 export async function getCourse(id) {
-  const courseDoc = doc(firestore, "courses", id);
-  const courseItems = await getDoc(courseDoc);
-  return courseItems.data();
+  const cachedData = localStorage.getItem(`courses/${id}`);
+
+  if (cachedData) {
+    // Use the cached data instead of making a new request
+    console.log("cached data is here", JSON.parse(cachedData));
+    return JSON.parse(cachedData);
+  } else {
+    const courseDoc = doc(firestore, "courses", id);
+    const courseItems = await getDoc(courseDoc);
+    const courseData = courseItems.data();
+    courseData.lessons = courseData.lessons.map((res) => res.id);
+    console.log("Course Items", courseData);
+    localStorage.setItem(`courses/${id}`, JSON.stringify(courseData));
+    return courseData;
+  }
 }
 
 /* Lessons */
 export async function getLesson(lesson_ref) {
-  const lesson_id = lesson_ref.id;
-  const lessonDoc = doc(firestore, "lessons", lesson_id);
-  const lessonItems = await getDoc(lessonDoc);
-  return { id: lesson_id, ...lessonItems.data() };
+  console.log(lesson_ref);
+  const cachedData = localStorage.getItem(`lesson/${lesson_ref.id}`);
+
+  if (cachedData) {
+    // Use the cached data instead of making a new request
+    return JSON.parse(cachedData);
+  } else {
+    const lesson_id = lesson_ref.id;
+    const lessonDoc = doc(firestore, "lessons", lesson_id);
+    const lessonItems = await getDoc(lessonDoc);
+    const lessonData = { id: lesson_id, ...lessonItems.data() };
+    localStorage.setItem(`lesson/${lesson_ref.id}`, JSON.stringify(lessonData));
+    return lessonData;
+  }
 }
 
 export async function getLessonFromID(lesson_id) {
-  const lessonDoc = doc(firestore, "lessons", lesson_id);
-  const lessonItems = await getDoc(lessonDoc);
-  return { id: lesson_id, ...lessonItems.data() };
+  const cachedData = localStorage.getItem(`lesson/${lesson_id}`);
+
+  if (cachedData) {
+    // Use the cached data instead of making a new request
+    return JSON.parse(cachedData);
+  } else {
+    const lessonDoc = doc(firestore, "lessons", lesson_id);
+    const lessonItems = await getDoc(lessonDoc);
+    const lessonData = { id: lesson_id, ...lessonItems.data() };
+    localStorage.setItem(`lesson/${lesson_id}`, JSON.stringify(lessonData));
+    return lessonData;
+  }
 }
 
 export async function getLessonsCompleted() {
@@ -335,17 +374,25 @@ export async function getLessonsCompleted() {
   return lessonCount.data().count;
 }
 
-export async function hasUserCompletedLesson(lessonRef) {
+export async function hasUserCompletedLesson(lessonId) {
   const userActivityRef = collection(
     firestore,
     `users/${auth.currentUser.uid}/activity`
   );
   const lessonActivity = query(
     userActivityRef,
-    where("lesson_id", "==", lessonRef)
+    where("lesson_id", "==", lessonId)
   );
-  const lessonCount = await getCountFromServer(lessonActivity);
-  return lessonCount.data().count > 0;
+  return getCountFromServer(lessonActivity)
+    .then((lessonCount) => {
+      return lessonCount.data().count > 0;
+    })
+    .catch((error) => {
+      // Handle any errors that occurred during the promise execution
+      console.error("Error retrieving lesson count:", error);
+      // Return a default value or throw the error to be handled by the caller
+      return 0;
+    });
 }
 
 export async function getLessonToComplete(lessonRefs) {
@@ -365,123 +412,131 @@ export async function getLessonToComplete(lessonRefs) {
 
 /* Pages */
 export async function getPageFromID(page_path) {
-  const pageId = page_path.split("/")[1];
-  const pageDoc = doc(firestore, "pages", page_path.split("/")[1]);
-  const snapshot = await getDoc(pageDoc);
-  const pageData = snapshot.data().page;
-  // Slight formatting change goes here
-  // {type: pageData.type, data: {}}
-  let data;
-  if (pageData.type === "text") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: pageData.data,
-    };
-  } else if (pageData.type === "question") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
+  const cachedData = localStorage.getItem(page_path);
+
+  if (cachedData) {
+    // Use the cached data instead of making a new request
+    return JSON.parse(cachedData);
+  } else {
+    const pageId = page_path.split("/")[1];
+    const pageDoc = doc(firestore, "pages", page_path.split("/")[1]);
+    const snapshot = await getDoc(pageDoc);
+    const pageData = snapshot.data().page;
+    // Slight formatting change goes here
+    // {type: pageData.type, data: {}}
+    let data;
+    if (pageData.type === "text") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: pageData.data,
+      };
+    } else if (pageData.type === "question") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          question: pageData.question,
+          questions: pageData.questions,
+          answer: parseInt(pageData.answer),
+          explanation: pageData.explanation,
+        },
+      };
+    } else if (pageData.type === "selection_image") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          question: pageData.question,
+          questions: pageData.questions,
+          answer: parseInt(pageData.answer),
+        },
+      };
+    } else if (pageData.type === "build_sentence") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: pageData.data,
+      };
+    } else if (pageData.type === "single_word") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          sentence: pageData.sentence,
+          word: pageData.word,
+        },
+      };
+    } else if (pageData.type === "selection_text") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          question: pageData.question,
+          questions: pageData.questions,
+          answer: parseInt(pageData.answer),
+        },
+      };
+    } else if (pageData.type === "selection_image") {
+      data = {
+        id: pageId,
+        type: pageData.type,
         question: pageData.question,
         questions: pageData.questions,
         answer: parseInt(pageData.answer),
-        explanation: pageData.explanation,
-      },
-    };
-  } else if (pageData.type === "selection_image") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        question: pageData.question,
-        questions: pageData.questions,
-        answer: parseInt(pageData.answer),
-      },
-    };
-  } else if (pageData.type === "build_sentence") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: pageData.data,
-    };
-  } else if (pageData.type === "single_word") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        sentence: pageData.sentence,
-        word: pageData.word,
-      },
-    };
-  } else if (pageData.type === "selection_text") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        question: pageData.question,
-        questions: pageData.questions,
-        answer: parseInt(pageData.answer),
-      },
-    };
-  } else if (pageData.type === "selection_image") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      question: pageData.question,
-      questions: pageData.questions,
-      answer: parseInt(pageData.answer),
-    };
-  } else if (pageData.type === "match_cards") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        mapping: { ...pageData.mapping },
-      },
-    };
-  } else if (pageData.type === "flip_and_select") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        mapping: { ...pageData.mapping },
-      },
-    };
-  } else if (pageData.type === "case_study") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        story: pageData.story,
-        title: pageData.title,
-      },
-    };
-  } else if (pageData.type === "order_list") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        question: pageData.question,
-        correct_order: pageData.correct_order,
-      },
-    };
-  } else if (pageData.type === "binary_classifier") {
-    data = {
-      id: pageId,
-      type: pageData.type,
-      content: {
-        question: pageData.question,
-        category_one: Object.keys(pageData.mapping)[0],
-        category_two: Object.keys(pageData.mapping)[1],
-        category_one_options:
-          pageData.mapping[Object.keys(pageData.mapping)[0]],
-        category_two_options:
-          pageData.mapping[Object.keys(pageData.mapping)[1]],
-      },
-    };
+      };
+    } else if (pageData.type === "match_cards") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          mapping: { ...pageData.mapping },
+        },
+      };
+    } else if (pageData.type === "flip_and_select") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          mapping: { ...pageData.mapping },
+        },
+      };
+    } else if (pageData.type === "case_study") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          story: pageData.story,
+          title: pageData.title,
+        },
+      };
+    } else if (pageData.type === "order_list") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          question: pageData.question,
+          correct_order: pageData.correct_order,
+        },
+      };
+    } else if (pageData.type === "binary_classifier") {
+      data = {
+        id: pageId,
+        type: pageData.type,
+        content: {
+          question: pageData.question,
+          category_one: Object.keys(pageData.mapping)[0],
+          category_two: Object.keys(pageData.mapping)[1],
+          category_one_options:
+            pageData.mapping[Object.keys(pageData.mapping)[0]],
+          category_two_options:
+            pageData.mapping[Object.keys(pageData.mapping)[1]],
+        },
+      };
+    }
+    localStorage.setItem(page_path, JSON.stringify(data));
+    return data;
   }
-  return data;
 }
 
 /* Minigames*/
