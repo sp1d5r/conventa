@@ -46,7 +46,7 @@ function CourseCard({
 
       <div className={"academy-content-course-image"}>
         <img
-          className={"academy-content-minigame-image-data"}
+          className={"academy-content-minigame-image-data offline-caching-img"}
           src={imagePath}
           alt={"Course Notational Data 1"}
         />

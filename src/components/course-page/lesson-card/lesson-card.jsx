@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import auth, {
-  getLesson,
+  getLessonFromID,
   hasUserCompletedLesson,
 } from "../../../cloud-infrastructure/firebase/firebase";
 import Complete from "../../../assets/home/complete.svg";
 
-function LessonCard({ lesson_ref, course_id, isLocked }) {
+function LessonCard({ lesson_id, course_id, isLocked }) {
   const [lesson, setLesson] = useState({});
   const [completedLesson, setCompletedLesson] = useState(false);
   const current_user = auth.currentUser;
 
   const get_lesson_information = useCallback(() => {
-    getLesson(lesson_ref).then((item) => {
+    getLessonFromID(lesson_id).then((item) => {
       hasUserCompletedLesson(item.id)
         .then((hasCompleted) => {
           setCompletedLesson(hasCompleted);
@@ -23,7 +23,7 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
         });
       setLesson(item);
     });
-  }, [lesson_ref]);
+  }, [lesson_id]);
 
   const _get_difficulty = () => {
     if (lesson.difficulty === "1") {
@@ -55,7 +55,7 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
         /* Create a Better Pricing Page */
         return "/content-locked?reason=lives";
       } else {
-        return `/lesson/?lesson_id=${lesson.id}&course_id=${course_id}`;
+        return `/lesson/?lesson_id=${lesson_id}&course_id=${course_id}`;
       }
     } else {
       return "/auth";
@@ -68,9 +68,7 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
         completedLesson ? "lesson-completed" : ""
       }`}
       to={getLinkPath()}
-      id={
-        lesson_ref._key.path.segments[lesson_ref._key.path.segments.length - 1]
-      }
+      id={lesson_id}
     >
       {completedLesson ? (
         <img
@@ -83,7 +81,7 @@ function LessonCard({ lesson_ref, course_id, isLocked }) {
       )}
       <div className={"academy-content-minigame-image"}>
         <img
-          className={"academy-content-minigame-image-data"}
+          className={"academy-content-minigame-image-data offline-caching-img"}
           src={lesson.thumbnail}
           alt={"minigame Notational Data 1"}
         />

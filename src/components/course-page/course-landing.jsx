@@ -6,7 +6,9 @@ import LessonCard from "./lesson-card/lesson-card";
 import CourseProfileCard from "./course-profile-card/course-profile-card";
 import {
   getCourse,
+  getLessonFromID,
   getLessonToComplete,
+  getPageFromID,
   lessonsLocked,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
@@ -34,9 +36,7 @@ function CourseLanding() {
   const get_course_information = (course_id) => {
     getCourse(course_id).then((info) => {
       set_course_information(info);
-      const lessonId = [...info.lessons].map((elem) => {
-        return elem._key.path.segments[elem._key.path.segments.length - 1];
-      });
+      const lessonId = [...info.lessons];
       getLessonToComplete(lessonId).then((r) => {
         let i = 0;
         while (r[i]) {
@@ -46,6 +46,23 @@ function CourseLanding() {
         change_color(info.color);
         setLoad(false);
       });
+
+      for (const lesson_id of info.lessons) {
+        getLessonFromID(lesson_id).then((res) => {
+          const pages = res.pages;
+          Promise.all(
+            pages.map((page) => {
+              return getPageFromID(page);
+            })
+          )
+            .then((res) => {
+              console.log("Completed the page", res);
+            })
+            .catch((res) => {
+              console.log("Unable to cache pages for lesson :", lesson_id);
+            });
+        });
+      }
     });
   };
 
@@ -140,10 +157,10 @@ function CourseLanding() {
 
             <div className={"academy-content-section-child-minigame"}>
               {course_information &&
-                course_information.lessons?.map((lesson_ref, index) => {
+                course_information.lessons?.map((lesson_id, index) => {
                   return (
                     <LessonCard
-                      lesson_ref={lesson_ref}
+                      lesson_id={lesson_id}
                       course_id={course_id}
                       key={index}
                       isLocked={lessonLocked}

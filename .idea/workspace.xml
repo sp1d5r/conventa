@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/offline-mode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/placeholder-image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/feedback-button/feedback-button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/pages/feedback-button/feedback-button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-page/lesson-card/lesson-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/lesson-card/lesson-card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +190,7 @@
       <workItem from="1684304734924" duration="7425000" />
       <workItem from="1684686306377" duration="7870000" />
       <workItem from="1687627401979" duration="4964000" />
-      <workItem from="1688491057592" duration="1086000" />
+      <workItem from="1688491057592" duration="7699000" />
     </task>
     <servers />
   </component>
