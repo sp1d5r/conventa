@@ -24,6 +24,7 @@ import NegotiationRoleplay from "./components/minigames/negotiation/negotiation-
 import ConcessionLadder from "./components/minigames/negotiation/concession-ladder/concession-ladder";
 import EmpathyChallenge from "./components/minigames/negotiation/empathy-challenge/empathy-challenge";
 import NegotiationAssessment from "./components/assessments/negotiation-assessment/negotiation-assessment";
+import Article from "./components/article/article";
 
 function App() {
   onMessageListener()
@@ -41,6 +42,7 @@ function App() {
           <Routes>
             <Route path="/auth" element={<Authenticate />} />
             <Route path="/academy" element={<Academy loggedIn={false} />} />
+            <Route path={"/article"} element={<Article />} />
             <Route
               path={"/assessment/Negotiation%20Assessment"}
               element={<NegotiationAssessment />}

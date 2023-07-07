@@ -55,7 +55,7 @@ function NewsRoom() {
               potential, increase focus, and cultivate resilience for a thriving
               and successful business experience.
             </p>
-            <a className={"underline"} href={"/"}>
+            <a className={"underline"} href={"/article?id=1"}>
               Read more
             </a>
           </div>
