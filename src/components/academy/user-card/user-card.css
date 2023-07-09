@@ -1,8 +1,5 @@
 .user-card-div {
-  width: 100%;
-  margin: auto;
   min-height: 20vh;
-  margin-bottom: 5%;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -45,12 +42,39 @@
 }
 
 .streak-information {
-  width: 50%;
   height: 90%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 0% 5%;
+}
+
+.lessons-complete {
+  position: relative;
+  width: 90%;
+  height: 25px;
+  background-color: white;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+
+.lesson-complete-text {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateX(-100%) translateY(-50%);
+  width: 60%;
+  font-weight: 600;
+}
+
+.lesson-progress-bar {
+  background-color: #c5e5ff;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
 }
 
 .border-right {
@@ -88,6 +112,9 @@
   vertical-align: baseline;
   border-radius: 0.25rem;
   background-color: #0d6efd;
+  height: 25px;
+  align-items: center;
+  display: flex;
 }
 
 .user-button-badge:hover {

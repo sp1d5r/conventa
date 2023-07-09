@@ -4,20 +4,93 @@
   display: flex;
   justify-content: left;
   flex-direction: column;
+  align-items: center;
 }
 
 .academy-title {
   min-height: 5vh;
   width: 90%;
   padding-bottom: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
   text-align: left;
   font-weight: 700;
   font-size: 50px;
   color: var(--white);
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
     2px 2px 0 #000;
+}
+
+.academy-title > p {
+  margin-bottom: 0;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background: #e3fffb;
+  }
+  10% {
+    background: #e3fdff;
+  }
+  20% {
+    background: #e3ebff;
+  }
+  30% {
+    background: #e9e3ff;
+  }
+  40% {
+    background: #e9e3ff;
+  }
+  50% {
+    background: #f5e3ff;
+  }
+  60% {
+    background: #f5e3ff;
+  }
+  70% {
+    background: #f5e3ff;
+  }
+  80% {
+    background: #ffe3ec;
+  }
+  90% {
+    background: #ffe3e3;
+  }
+  100% {
+    background: #ffede3;
+  }
+}
+
+.skeleton-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0)
+  );
+  background-size: 200% auto;
+  animation: skeleton-loading 1.5s linear infinite;
+}
+
+.skeleton-loading-color {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0)
+  );
+  background-size: 200% auto;
+  animation: skeleton-loading 1.5s linear infinite;
 }
 
 .academy-content {
@@ -89,6 +162,21 @@
   transition: height 5s ease;
 }
 
+.academy-heading-title {
+  display: flex;
+  flex-direction: column;
+  width: max(50vh, 300px);
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.academy-heading {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
 @media screen and (max-width: 900px) {
   .academy-content-section-child {
     width: calc(100% - 15px);
@@ -115,6 +203,12 @@
 
   .academy-content {
     padding: 0;
+    padding-top: 30px;
+  }
+
+  .academy-heading-title {
+    padding-bottom: 0px;
+    padding-left: 0px;
   }
 }
 

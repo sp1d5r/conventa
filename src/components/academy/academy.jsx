@@ -10,13 +10,13 @@ import {
   lessonsLocked,
   logAcademyStart,
 } from "../../cloud-infrastructure/firebase/firebase";
-import Loading from "../loading/loading";
 import { Breadcrumb } from "react-bootstrap";
 import Banner from "./banner/banner";
 import UserCard from "./user-card/user-card";
 import { change_color } from "../../cloud-infrastructure/utils/color";
 import AssessmentCard from "./assessment-card/assessment-card";
 import { useAuth } from "../../cloud-infrastructure/firebase/auth";
+import SkeletonCard from "./skeleton-card/skeleton-card";
 
 function Academy() {
   const [courses, setCourses] = useState([]);
@@ -218,16 +218,25 @@ function Academy() {
 
   return (
     <div className={"academy-main"}>
-      <div className={"course-breadcrumbs"}>
-        <Breadcrumb className={"lesson-breadcrumb-bar"}>
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item active={true} href="/academy/">
-            Academy
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </div>
-      <div className={"academy-title"}>
-        <p>Academy</p>
+      <div className={"academy-heading"}>
+        <div className={"academy-heading-title"}>
+          {window.innerWidth < 100 ? (
+            <div className={"course-breadcrumbs"}>
+              <Breadcrumb className={"lesson-breadcrumb-bar"}>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item active={true} href="/academy/">
+                  Academy
+                </Breadcrumb.Item>
+              </Breadcrumb>
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className={"academy-title"}>
+            <p>Academy</p>
+          </div>
+        </div>
+        <UserCard isLoading={loading} />
       </div>
 
       {banner && banner.promoMessage && banner.color ? (
@@ -235,75 +244,83 @@ function Academy() {
       ) : (
         <></>
       )}
-      {loading ? (
-        <Loading />
-      ) : (
-        <div className={"academy-content"}>
-          <UserCard />
+      <div className={"academy-content"}>
+        <div className={"academy-content-section"}>
+          <p className={"academy-content-title"}>courses</p>
+          <div className={"academy-content-section-child"}>
+            {}
 
-          <div className={"academy-content-section"}>
-            <p className={"academy-content-title"}>courses</p>
-            <div className={"academy-content-section-child"}>
-              {courses.map((item, index) => {
-                return (
-                  <CourseCard
-                    imagePath={item.thumbnail}
-                    title={item.courseName}
-                    id={item.id}
-                    locked={lessonLocked}
-                    time={item.time}
-                    courseProgress={item.courseProgress}
-                    color={item.color}
-                    key={index}
-                  />
-                );
-              })}
-            </div>
-          </div>
-          <br />
-          <br />
-          <div className={"academy-content-section"}>
-            <p className={"academy-content-title"}>minigames</p>
-            <div className={"academy-content-section-child"}>
-              {minigameItems().map((item, index) => {
-                return (
-                  <MiniGameCard
-                    imagePath={item.imagePath}
-                    title={item.title}
-                    time={item.time}
-                    locked={!current_user} //&& accountType === "Upgrade!"}
-                    difficulty={item.difficulty}
-                  />
-                );
-              })}
-            </div>
-          </div>
-          <br />
-          <br />
-          <div className={"academy-content-section"}>
-            <p className={"academy-content-title"}>assessment</p>
-            <div className={"academy-content-section-child"}>
-              {assessmentItems().map((item, index) => {
-                return (
-                  <AssessmentCard
-                    color={item.color}
-                    imagePath={item.imagePath}
-                    title={item.title}
-                    locked={
-                      false &&
-                      (accountType === "Hobbiest" ||
-                        accountType === "Amateur" ||
-                        accountType === "Upgrade!")
-                    }
-                    subtext={item.subtext}
-                    difficulty={item.difficulty}
-                  />
-                );
-              })}
-            </div>
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
+                  return <SkeletonCard />;
+                })
+              : courses.map((item, index) => {
+                  return (
+                    <CourseCard
+                      imagePath={item.thumbnail}
+                      title={item.courseName}
+                      id={item.id}
+                      locked={lessonLocked}
+                      time={item.time}
+                      courseProgress={item.courseProgress}
+                      color={item.color}
+                      key={index}
+                    />
+                  );
+                })}
           </div>
         </div>
-      )}
+        <br />
+        <br />
+        <div className={"academy-content-section"}>
+          <p className={"academy-content-title"}>minigames</p>
+          <div className={"academy-content-section-child"}>
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
+                  return <SkeletonCard />;
+                })
+              : minigameItems().map((item, index) => {
+                  return (
+                    <MiniGameCard
+                      imagePath={item.imagePath}
+                      title={item.title}
+                      time={item.time}
+                      locked={!current_user} //&& accountType === "Upgrade!"}
+                      difficulty={item.difficulty}
+                    />
+                  );
+                })}
+          </div>
+        </div>
+        <br />
+        <br />
+        <div className={"academy-content-section"}>
+          <p className={"academy-content-title"}>assessment</p>
+          <div className={"academy-content-section-child"}>
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
+                  return <SkeletonCard />;
+                })
+              : assessmentItems().map((item, index) => {
+                  return (
+                    <AssessmentCard
+                      color={item.color}
+                      imagePath={item.imagePath}
+                      title={item.title}
+                      locked={
+                        false &&
+                        (accountType === "Hobbiest" ||
+                          accountType === "Amateur" ||
+                          accountType === "Upgrade!")
+                      }
+                      subtext={item.subtext}
+                      difficulty={item.difficulty}
+                    />
+                  );
+                })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

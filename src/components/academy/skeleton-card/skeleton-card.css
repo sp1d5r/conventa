@@ -1,0 +1,162 @@
+.skeleton-template {
+  background: var(--white);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  height: 350px;
+  aspect-ratio: 5 / 7;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  -webkit-animation: boxshadowin 5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: boxshadowin 5s; /* Firefox < 16 */
+  -ms-animation: boxshadowin 5s; /* Internet Explorer */
+  -o-animation: boxshadowin 5s; /* Opera < 12.1 */
+  animation: boxshadowin 5s;
+  text-decoration: none;
+  border: 1px solid black;
+  transition: height 0.1s ease;
+}
+
+@keyframes rainbow-swift {
+  0% {
+    background: #e3fffb;
+  }
+  10% {
+    background: #e3fdff;
+  }
+  20% {
+    background: #e3ebff;
+  }
+  30% {
+    background: #e9e3ff;
+  }
+  40% {
+    background: #e9e3ff;
+  }
+  50% {
+    background: #f5e3ff;
+  }
+  60% {
+    background: #f5e3ff;
+  }
+  70% {
+    background: #f5e3ff;
+  }
+  80% {
+    background: #ffe3ec;
+  }
+  90% {
+    background: #ffe3e3;
+  }
+  100% {
+    background: #ffede3;
+  }
+}
+
+@keyframes rainbow-swift-darker {
+  0% {
+    background: #79ffec;
+  }
+  10% {
+    background: #79f5ff;
+  }
+  20% {
+    background: #799fff;
+  }
+  30% {
+    background: #9679ff;
+  }
+  40% {
+    background: #9679ff;
+  }
+  50% {
+    background: #cf79ff;
+  }
+  60% {
+    background: #cf79ff;
+  }
+  70% {
+    background: #cf79ff;
+  }
+  80% {
+    background: #ff79a4;
+  }
+  90% {
+    background: #ff7979;
+  }
+  100% {
+    background: #ffa979;
+  }
+}
+
+.skeleton-loading-color {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0)
+  );
+  background-size: 200% auto;
+  animation: rainbow-swift 1.5s linear infinite;
+}
+
+@keyframes skeleton-loading-dark {
+  0% {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.skeleton-loading-color-darker {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0)
+  );
+  background-size: 200% auto;
+  animation: skeleton-loading-dark 1.5s linear infinite;
+}
+
+.skeleton-div {
+  width: 100%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.main-text {
+  height: 50px;
+}
+
+.bottom-div {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .academy-content-minigame {
+    height: 300px;
+  }
+
+  .academy-content-minigame-title > p {
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+
+  .academy-content-minigame-info > img {
+    height: 20px;
+  }
+
+  .academy-content-minigame:hover {
+    height: 320px;
+  }
+}
