@@ -4,7 +4,7 @@
 
 .streak-day {
   height: calc(20vh * 0.7);
-  border: 2px solid lightslategray;
+  border: 2px solid black;
   border-radius: 20px;
   width: 50px;
   display: flex;
@@ -13,6 +13,7 @@
   flex-direction: column;
   margin: 2px;
   min-height: 120px;
+  background-color: white;
 }
 
 .yellow-streak {
@@ -36,7 +37,7 @@
 
 @media only screen and (max-width: 700px) {
   .streak-day {
-    width: 30px;
+    width: 13vw;
   }
 
   .streak-day-text {

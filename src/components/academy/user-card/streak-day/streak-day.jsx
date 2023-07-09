@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./streak-day.css";
 import { userStreakForDay } from "../../../../cloud-infrastructure/firebase/firebase";
 
-function StreakDay({ day, date }) {
+function StreakDay({ day, date, isLoading }) {
   const [streak, setStreak] = useState(false);
   const [today, setToday] = useState(false);
   useEffect(() => {
@@ -19,10 +19,11 @@ function StreakDay({ day, date }) {
       <div
         className={`streak-day ${today ? "yellow-streak" : ""}  ${
           streak ? "blue-streak" : ""
-        }`}
+        } 
+        ${isLoading ? " skeleton-loading " : ""} 
+        `}
       >
         <p className={`${today ? "text-bold" : ""} streak-day-text`}>{day}</p>
-        <p className={`${today ? "text-bold" : ""} streak-day-text`}>Ψ</p>
       </div>
     </>
   );
