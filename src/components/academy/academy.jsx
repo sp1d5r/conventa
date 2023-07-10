@@ -236,7 +236,7 @@ function Academy() {
             <p>Academy</p>
           </div>
         </div>
-        <UserCard isLoading={loading} />
+        <UserCard isLoading={true} />
       </div>
 
       {banner && banner.promoMessage && banner.color ? (
@@ -250,7 +250,7 @@ function Academy() {
           <div className={"academy-content-section-child"}>
             {}
 
-            {loading
+            {true
               ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
                   return <SkeletonCard />;
                 })
