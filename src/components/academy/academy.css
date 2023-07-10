@@ -166,16 +166,50 @@
 .academy-heading-title {
   display: flex;
   flex-direction: column;
-  width: max(50vh, 300px);
   align-items: flex-start;
   justify-content: center;
+  height: 100qh;
+}
+
+.dedicated-tag {
+  font-weight: 600;
+  color: #004d0c;
 }
 
 .academy-heading {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
+  padding: 2% 5%;
+
+  animation: loading-flash 8s ease-in-out infinite;
+}
+
+@keyframes loading-flash {
+  0%,
+  50% {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(227, 255, 234),
+      rgba(203, 255, 216, 0)
+    );
+  }
+  25%,
+  75% {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(227, 255, 234),
+      rgba(203, 255, 216, 0.5)
+    );
+  }
+  100% {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(227, 255, 234),
+      rgba(203, 255, 216, 0.2)
+    );
+  }
 }
 
 @media screen and (max-width: 900px) {

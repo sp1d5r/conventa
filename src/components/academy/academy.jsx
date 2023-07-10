@@ -232,11 +232,10 @@ function Academy() {
           ) : (
             <></>
           )}
-          <div className={"academy-title"}>
-            <p>Academy</p>
-          </div>
+          <p className={"academy-title"}>Academy</p>
+          <p className={"dedicated-tag"}>Dedicated to Nadia ♥</p>
         </div>
-        <UserCard isLoading={true} />
+        <UserCard isLoading={loading} />
       </div>
 
       {banner && banner.promoMessage && banner.color ? (
@@ -250,7 +249,7 @@ function Academy() {
           <div className={"academy-content-section-child"}>
             {}
 
-            {true
+            {loading
               ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
                   return <SkeletonCard />;
                 })
