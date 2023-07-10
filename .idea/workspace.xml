@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/article/icons8-copy-link-80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/article/icons8-facebook-150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/article/icons8-linkedin-150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Icons/article/icons8-twitter-150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/academy/skeleton-card/skeleton-card.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/academy/skeleton-card/skeleton-card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/academy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/streak-day/streak-day.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/streak-day/streak-day.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/streak-day/streak-day.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/streak-day/streak-day.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/article/article.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/article.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/article/article.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/article.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
