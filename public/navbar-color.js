@@ -52,7 +52,7 @@ function check_nav() {
   if (window.location.href.includes("First%20Impressions")) {
     change_color("#B7F6FF");
   } else if (window.location.href.includes("academy")) {
-    change_color("#E3FFEA");
+    change_color("#CBFFD8");
   } else if (window.location.href.includes("Catch%20a%20Liar")) {
     change_color("#FFB7B7");
   } else if (window.location.href.includes("Tracking%20Client%20Emotions")) {
