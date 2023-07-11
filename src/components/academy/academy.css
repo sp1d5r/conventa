@@ -191,23 +191,23 @@
   50% {
     background-image: linear-gradient(
       to bottom,
-      rgb(227, 255, 234),
-      rgba(203, 255, 216, 0)
+      rgb(203, 255, 216),
+      rgba(203, 255, 247, 0)
     );
   }
   25%,
   75% {
     background-image: linear-gradient(
       to bottom,
-      rgb(227, 255, 234),
-      rgba(203, 255, 216, 0.5)
+      rgb(203, 255, 216),
+      rgba(203, 255, 247, 0.8)
     );
   }
   100% {
     background-image: linear-gradient(
       to bottom,
-      rgb(227, 255, 234),
-      rgba(203, 255, 216, 0.2)
+      rgb(203, 255, 216),
+      rgba(203, 255, 247, 0)
     );
   }
 }

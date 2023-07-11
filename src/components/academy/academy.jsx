@@ -213,7 +213,7 @@ function Academy() {
     courseItems();
     logAcademyStart();
     getBannerFromFirebase();
-    change_color("#E3FFEA");
+    change_color("#CBFFD8");
   }, []); // eslint-disable-line
 
   return (
