@@ -135,7 +135,7 @@
   }
 
   .user-card-div {
-    width: 100%;
+    width: 90vw;
     flex-wrap: wrap;
     padding: 5%;
   }
