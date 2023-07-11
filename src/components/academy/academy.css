@@ -191,15 +191,15 @@
   100% {
     background-image: linear-gradient(
       to bottom,
-      rgb(203, 255, 216),
+      rgba(203, 255, 247, 0),
       rgba(203, 255, 247, 0)
     );
   }
   50% {
     background-image: linear-gradient(
       to bottom,
-      rgb(203, 255, 216),
-      rgba(203, 255, 247, 1)
+      rgba(203, 255, 247, 0),
+      rgba(203, 255, 247, 0.5)
     );
   }
 }

@@ -16,6 +16,7 @@
   flex-direction: row;
   flex-wrap: wrap-reverse;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .lesson-landing-body-markdown {
@@ -56,6 +57,7 @@
   border-radius: 5px;
   background-color: var(--green);
   z-index: 1;
+  animation: 0.5s ease-in fadeInLesson;
 }
 
 .lesson-metadata {
@@ -90,6 +92,56 @@
   width: 100px;
   border: 2px solid black;
 }
+
+/* Lesson Intro Pages */
+.lesson-intro-page {
+  width: 100%;
+  text-align: left;
+  padding: 20% 10%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  animation: 1.5s ease-in fadeInLesson;
+}
+
+@keyframes fadeInLesson {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.lesson-intro-action {
+  font-weight: 600;
+  color: grey;
+  text-decoration: underline;
+}
+
+.lesson-intro-action:hover {
+  color: #428b3d;
+}
+
+.lesson-intro-page > img {
+  height: 300px;
+  width: 300px;
+}
+
+.lesson-intro-page > p {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0;
+  letter-spacing: 0.05rem;
+}
+
+.lesson-intro-title {
+  font-family: Lexend, serif;
+  font-weight: 600;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 700px) {
   .lesson-landing-content-section {
     min-height: 100vh;
