@@ -34,7 +34,12 @@
   position: absolute;
   left: 50%;
   padding: 5%;
-  background: white;
+  background: #e3ffea;
+  outline: 2px solid black;
+}
+
+.side-body > * {
+  animation: 2s fadein;
 }
 
 .side-section {
@@ -49,11 +54,13 @@
 .auth-text {
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 2.5rem;
   line-height: 36px;
   color: #343030;
   width: 100%;
   text-align: left;
+  margin: 0;
+  font-family: "Lexend", serif;
 }
 
 .auth-text,
@@ -77,10 +84,11 @@
   align-items: center;
   padding: 10px;
   gap: 20px;
-  min-width: min(90%, 420px);
+  width: min(90%, 420px);
   flex: none;
   order: 1;
   flex-grow: 0;
+  animation: 2s fadein;
 }
 
 .login-with-google-button {
@@ -109,7 +117,7 @@
 }
 
 .login-with-google-button:hover {
-  background-color: #cdffc5;
+  background-color: #e3ffea;
 }
 
 .login-with-google-button > p {
@@ -128,17 +136,21 @@
 .auth-divider > p {
   font-size: 0.7rem;
   margin: 0;
+  flex: 1;
+  letter-spacing: 0.05rem;
 }
 
 .auth-divider > div {
   width: 40%;
-  outline: 1px solid #4e4e4e;
+  border: 1.5px solid #4e4e4e;
   height: 0;
+  flex: 1;
 }
 
 .auth-form {
   min-width: 320px;
   text-align: left;
+  width: 95%;
 }
 
 .auth-form-title {
@@ -191,7 +203,7 @@
   font-weight: 700;
   font-size: 1rem;
   text-decoration-line: underline;
-  color: #128200;
+  color: #499b80;
 }
 
 .auth-button {
@@ -199,13 +211,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px 100px;
+  padding: 10px 50px;
   margin: 15px 0px;
   gap: 26px;
   width: 80%;
   height: 50px;
-  background: #cdffc5;
-  border: 1px solid #000000;
+  background: #e3ffea;
+  border: 2px solid #000000;
   border-radius: 10px;
 }
 
@@ -220,9 +232,14 @@
 @media only screen and (max-width: 700px) {
   .login-section {
     width: 100vw;
+    padding: 40px 0px;
   }
 
   .login-body {
     width: 80vw;
+  }
+
+  .login-home {
+    align-items: flex-start;
   }
 }
