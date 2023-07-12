@@ -87,25 +87,25 @@ function PricingPageMain() {
     createCheckoutSession(current_user.uid, selected, monthly).then((r) => {});
   };
 
-  const getPrice = () => {
-    if (monthly) {
-      if (selected === 0) {
-        return 3;
-      } else if (selected === 1) {
-        return 5;
-      } else {
-        return 15;
-      }
-    } else {
-      if (selected === 0) {
-        return 15;
-      } else if (selected === 1) {
-        return 30;
-      } else {
-        return 100;
-      }
-    }
-  };
+  // const getPrice = () => {
+  //   if (monthly) {
+  //     if (selected === 0) {
+  //       return 3;
+  //     } else if (selected === 1) {
+  //       return 5;
+  //     } else {
+  //       return 15;
+  //     }
+  //   } else {
+  //     if (selected === 0) {
+  //       return 15;
+  //     } else if (selected === 1) {
+  //       return 30;
+  //     } else {
+  //       return 100;
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
     getCurrentUser().then((res) => {
@@ -216,25 +216,25 @@ function PricingPageMain() {
             ]}
           />
         </div>
-        <div className={"recipet"}>
-          <p>
-            total:{" "}
-            <span className={"bold"}>
-              £{getPrice()}.00 {monthly ? "per month" : "per year"}
-            </span>
-          </p>
-        </div>
+        {/*<div className={"recipet"}>*/}
+        {/*  <p>*/}
+        {/*    total:{" "}*/}
+        {/*    <span className={"bold"}>*/}
+        {/*      £{getPrice()}.00 {monthly ? "per month" : "per year"}*/}
+        {/*    </span>*/}
+        {/*  </p>*/}
+        {/*</div>*/}
 
         <button
           className={"checkout-button"}
           onClick={() => {
-            console.log("");
+            window.location.href = "/academy";
             if (loading) {
               goToStripe();
             }
           }}
         >
-          <b>Unavailable for now...</b>
+          <p>Enjoy for free!</p>
         </button>
       </div>
     </>
