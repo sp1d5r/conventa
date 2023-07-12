@@ -454,17 +454,3 @@ function NewLessonPage() {
 }
 
 export default NewLessonPage;
-
-/*
-<div className={"lesson-breadcrumbs"}>
-
-            <Breadcrumb className={"lesson-breadcrumb-bar"}>
-              <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-              <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
-              <Breadcrumb.Item href={`/course/?course_id=${course_id}`}>
-                {course.courseName}
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>{lesson.title}</Breadcrumb.Item>
-            </Breadcrumb>
-          </div>
-* */
