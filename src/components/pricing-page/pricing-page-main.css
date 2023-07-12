@@ -15,8 +15,8 @@
   align-items: center;
   width: 100%;
   margin: 5% 0%;
-  min-height: 500px;
   padding: 15px;
+  gap: 15px;
 }
 
 .cost-card,
@@ -26,11 +26,12 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 46px 34px;
-  gap: 30px;
+  gap: 15px;
   border: 2px solid #000000;
   border-radius: 5px;
   width: 28%;
   justify-content: center;
+  flex: 1;
 }
 
 .recommended-bar,
@@ -117,9 +118,14 @@
   padding: 5px 100px;
   gap: 15px;
   width: 100%;
-  background: #cdffc5;
+  background: #e3ffea;
   border: 2px solid #000000;
   border-radius: 10px;
+}
+
+.checkout-button > p {
+  margin: 0;
+  font-family: "Lexend", serif;
 }
 
 /* Stripe Overlay */
@@ -158,6 +164,7 @@
   .cost-cards-div {
     overflow-x: scroll;
     overflow-y: hidden;
+    min-height: 0;
   }
 
   .cost-card,
@@ -172,9 +179,15 @@
 
   .cost-heading {
     padding-top: 2vh;
+    padding: 30px 15px;
   }
 
   .cost-card-property {
     width: 150px;
+  }
+
+  .pricing-page-main {
+    padding: 10% 2%;
+    width: 100vw;
   }
 }
