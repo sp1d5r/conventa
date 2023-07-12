@@ -3,7 +3,6 @@ import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 import "../login-signup.css";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
-import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
 import LoginImages from "../images/images";
 
 function Login({ changeObjective, initial, size }) {
@@ -67,9 +66,6 @@ function Login({ changeObjective, initial, size }) {
     <div className={"login-home"}>
       <div className={"login-section"}>
         <div className={"auth-form-main"}>
-          <div className={"auth-title"}>
-            <img src={GreenLogo} alt={"Conventa"} />
-          </div>
           <p className={"auth-title"}>Login</p>
           <p className={"auth-sub-text"}>Brush up on some lessons!</p>
           <button
@@ -154,7 +150,7 @@ function Login({ changeObjective, initial, size }) {
                 switch_to_sign_up();
               }}
             >
-              Create an Account
+              <p>Create an Account</p>
             </span>
           </p>
         </div>

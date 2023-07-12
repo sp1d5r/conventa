@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 import "../login-signup.css";
-import GreenLogo from "../../../assets/Icons/Logo-Green.svg";
 import { Alert } from "react-bootstrap";
 import LoginImages from "../images/images";
 import { useNavigate } from "react-router-dom";
@@ -77,9 +76,6 @@ function SignIn({ changeObjective, initial, size }) {
     <div className={"login-home"}>
       <div className={"login-section"}>
         <div className={"auth-form-main"}>
-          <div className={"auth-title"}>
-            <img src={GreenLogo} alt={"Conventa"} />
-          </div>
           <p className={"auth-title"}>Sign Up</p>
           <p className={"auth-sub-text"}>Equip yourself for anything.</p>
           <button
