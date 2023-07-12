@@ -12,7 +12,6 @@ import {
   lessonsLocked,
 } from "../../cloud-infrastructure/firebase/firebase";
 import Loading from "../loading/loading";
-import { Breadcrumb } from "react-bootstrap";
 import { change_color } from "../../cloud-infrastructure/utils/color";
 
 function CourseLanding() {
@@ -119,15 +118,6 @@ function CourseLanding() {
 
   return (
     <div className={"course-landing-main"}>
-      <div className={"course-breadcrumbs"}>
-        <Breadcrumb className={"lesson-breadcrumb-bar"}>
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/academy/">Academy</Breadcrumb.Item>
-          <Breadcrumb.Item active href={`/course/?course_id=`}>
-            {course_information.courseName}
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </div>
       <div className={"course-landing-information"}>
         <div className={"course-landing-title"}>
           {course_information.courseName}

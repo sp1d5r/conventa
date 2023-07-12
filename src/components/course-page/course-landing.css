@@ -19,7 +19,6 @@
   line-height: 1.2;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .course-content-lessons {
@@ -36,6 +35,7 @@
 
 .course-landing-information {
   display: flex;
+  padding: 50px 0px;
 }
 
 .course-landing-content-section {
@@ -86,8 +86,8 @@
   display: flex;
   width: 15%;
   align-items: center;
-  height: 100px;
   justify-content: space-evenly;
+  margin: 15px;
 }
 
 .course-landing-time > p,
@@ -113,6 +113,7 @@
   .course-landing-information {
     flex-wrap: wrap;
     justify-content: center;
+    padding: 20px 0px;
   }
 
   .course-landing-title {
