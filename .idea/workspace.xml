@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/testing/testing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/testing/testing.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/landing/cost/cost.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/landing/cost/cost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pricing-page/pricing-page-main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
