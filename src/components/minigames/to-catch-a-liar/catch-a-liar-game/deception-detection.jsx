@@ -22,11 +22,11 @@ import MinigameMain from "../../minigame-components/minigame-main/minigame-main"
 
 const loopTimes = (difficulty) => {
   if (difficulty === 1) {
-    return 2;
+    return 3;
   } else if (difficulty === 2) {
-    return 1;
+    return 2;
   } else {
-    return 0;
+    return 1;
   }
 };
 
@@ -257,48 +257,47 @@ function DeceptionDetection({ setGameState, difficulty }) {
             </div>
           </div>
         }
-        <div className={"first-impressions-card-main"}>
-          <div className={"first-impressions-image"}>
-            <MinigameVideo
-              src={currentQuestion.videoUrl}
-              id="first-impressions-images"
-              alt="Girl in a jacket"
-              updateQuestions={updateQuestion}
-              loopTimes={videoLoopValues}
-              pause={pause}
-            />
-            <div className={"overlay-source"}>
-              <p style={{ paddingRight: 20 }}>
-                {currentQuestion ? currentQuestion.source : ""}
-              </p>
-            </div>
-          </div>
-          <div className={"first-impressions-infobox"}>
-            <div className={"infobox-left"}>
-              <div className={"inline-objects"}>
-                <p>{goodAdvice.current}</p>
-              </div>
-              <div className={"inline-objects"}></div>
-            </div>
-            <div className={"infobox-left"}>
-              <div className={"inline-objects"}>
-                <p>{}</p>
-              </div>
-              <div className={"inline-objects"}>
-                <img
-                  alt="Actions"
-                  src={require("../../../../assets/first-impressions/Action.png")}
-                />
-                <p>
-                  Score: <b>{score}</b> / {5}
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className={"deception-detection-video-container"}>
+          <MinigameVideo
+            src={currentQuestion.videoUrl}
+            id={currentQuestion.videoUrl}
+            alt="Girl in a jacket"
+            updateQuestions={updateQuestion}
+            loopTimes={videoLoopValues}
+            pause={pause}
+          />
+          {/*<div className={"overlay-source"}>*/}
+          {/*  <p style={{ paddingRight: 20 }}>*/}
+          {/*    {currentQuestion ? currentQuestion.source : ""}*/}
+          {/*  </p>*/}
+          {/*</div>*/}
+          {/*// <div className={"first-impressions-infobox"}>*/}
+          {/*//   <div className={"infobox-left"}>*/}
+          {/*//     <div className={"inline-objects"}>*/}
+          {/*//       <p>{goodAdvice.current}</p>*/}
+          {/*//     </div>*/}
+          {/*//     <div className={"inline-objects"}></div>*/}
+          {/*//   </div>*/}
+          {/*//   <div className={"infobox-left"}>*/}
+          {/*//     <div className={"inline-objects"}>*/}
+          {/*//       <p>{}</p>*/}
+          {/*//     </div>*/}
+          {/*//     <div className={"inline-objects"}>*/}
+          {/*//       <img*/}
+          {/*/!*        alt="Actions"*!/*/}
+          {/*/!*        src={require("../../../../assets/first-impressions/Action.png")}*!/*/}
+          {/*/!*      />*!/*/}
+          {/*/!*      <p>*!/*/}
+          {/*/!*        Score: <b>{score}</b> / {5}*!/*/}
+          {/*/!*      </p>*!/*/}
+          {/*/!*    </div>*!/*/}
+          {/*/!*  </div>*!/*/}
+          {/*/!*</div>*!/*/}
         </div>
-        <div className={"first-impressions-cards-right"}>
+        <div className={"deception-detection-controls"}>
           <div
-            className={"first-impressions-card-right"}
+            className={"deception-detection-option"}
+            style={{ background: "#9fe28d" }}
             onClick={() => {
               clickOption(true);
             }}
@@ -306,7 +305,8 @@ function DeceptionDetection({ setGameState, difficulty }) {
             <p>Truth</p>
           </div>
           <div
-            className={"first-impressions-card-right"}
+            className={"deception-detection-option"}
+            style={{ background: "#e28d8d" }}
             onClick={() => {
               clickOption(false);
             }}
