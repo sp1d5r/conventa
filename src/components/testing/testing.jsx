@@ -47,7 +47,7 @@ const MinigameVideo = ({ src, alt, loopTimes, pause, updateQuestions }) => {
     if (videoState.loopsRemaining === 0) {
       return (
         <div className={"minigame-transition-div"}>
-          No more loops remaining!
+          It's Decision Time!
           <button className={"minigame-buttons"} onClick={updateQuestions}>
             <img src={Skip} alt={"play"} />
           </button>
@@ -128,7 +128,7 @@ function Testing({ testing }) {
   });
 
   return (
-    <div>
+    <div style={{ padding: 20 }}>
       {testing ? (
         <div>
           <p>We're testing components here</p>

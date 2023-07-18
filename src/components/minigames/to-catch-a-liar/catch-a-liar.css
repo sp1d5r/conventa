@@ -27,3 +27,49 @@
   font-size: 20px;
   height: 20%;
 }
+
+.deception-detection-video-container {
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deception-detection-controls {
+  display: flex;
+  width: 30%;
+  gap: 5px;
+  padding: 10% 5px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.deception-detection-option {
+  max-width: 40vw;
+  width: 100%;
+  height: 15vh;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.deception-detection-option > p {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .deception-detection-video-container {
+    width: 90%;
+    height: 50vh;
+  }
+
+  .deception-detection-controls {
+    width: 90%;
+  }
+}
