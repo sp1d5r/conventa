@@ -38,7 +38,11 @@ function CatchALiar() {
     } else if (state === 1) {
       /* This is the game state */
       return (
-        <DeceptionDetection setGameState={setState} difficulty={difficulty} />
+        <DeceptionDetection
+          color={"#ffb7b7"}
+          setGameState={setState}
+          difficulty={difficulty}
+        />
       );
       // <CatchALiarGame setGameState={setState} difficulty={difficulty} />;
       // <FirstImpressionsGame setGameState={setState} difficulty={difficulty}/>;

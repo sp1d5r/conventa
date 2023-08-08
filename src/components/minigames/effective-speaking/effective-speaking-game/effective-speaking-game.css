@@ -9,19 +9,33 @@
 .effective-speaking-timer-svg {
   height: 100%;
   width: 50%;
+}
+
+.effective-speaking-timer-div {
   display: flex;
   justify-content: center;
   align-items: center;
-
   flex-direction: column;
+  height: 150px;
 }
 
 .effective-speaking-list-group-divs {
   width: 40%;
+  color: #9cc6ff;
 }
 
 .effective-speaking-list-group {
   width: 100%;
+}
+
+.microphone-div {
+  height: 6em;
+  width: 6em;
+  margin: 10px;
+  aspect-ratio: 1;
+  background: red;
+  border: 2px solid black;
+  border-radius: 400px;
 }
 
 @media screen and (max-width: 600px) {

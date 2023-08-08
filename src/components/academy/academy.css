@@ -125,6 +125,8 @@
   font-size: 20px;
   text-align: left;
   color: var(--black);
+  font-weight: 600;
+  font-family: "Lexend", serif;
 }
 
 .academy-content-section-child,

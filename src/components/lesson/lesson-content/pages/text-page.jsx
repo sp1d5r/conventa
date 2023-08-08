@@ -9,7 +9,7 @@ function TextPage({ content, viewed, submit, feedbackButton }) {
       <div className={"lesson-content-div"}>
         <div className={"lesson-content-main"}>
           <ReactMarkdown className={"lesson-text"}>
-            {content.replace(/!!!/gi, "\n")}
+            {content.replace(/!!!/gi, "\n \n")}
           </ReactMarkdown>
         </div>
         {viewed ? (

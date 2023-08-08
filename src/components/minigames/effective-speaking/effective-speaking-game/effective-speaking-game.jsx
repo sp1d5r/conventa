@@ -16,6 +16,7 @@ function EffectiveSpeakingGame({
   const [paused, setPause] = useState(false);
   const secondsPerTopic = timer / topics.length;
   const [topicsShown, setTopicsShown] = useState(0);
+  const [instructions, setInstructions] = useState(true);
 
   /* ------ PAUSE SCREEN LOGIC ------ */
   const hidePauseScreen = () => {
@@ -52,7 +53,8 @@ function EffectiveSpeakingGame({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!paused) {
+      if (!paused && !instructions) {
+        setInstructions(false);
         setTopicsShown(0);
         setTopicTime((topicTime) => updateTopicTime(topicTime));
       }
@@ -107,43 +109,50 @@ function EffectiveSpeakingGame({
           />
         }
 
+        <p>Topic Name: {topicName}</p>
         <div className={"effective-speaking-timer-svg"}>
-          <p>Topic Name: {topicName}</p>
-          <svg className="circular-loader" viewBox="25 25 50 50">
-            {/* circumference 62.8*/}
-            <circle
-              className="loader-path"
-              cx="50"
-              cy="50"
-              r="20"
-              fill="none"
-              stroke={"#ededed"}
-              strokeWidth={"5px"}
-            ></circle>
-            <circle
-              className="loader-path"
-              cx="50"
-              cy="50"
-              r="20"
-              fill="none"
-              stroke="#3483eb"
-              strokeDasharray={20 * Math.PI * 2}
-              strokeDashoffset={
-                20 * Math.PI * 2 * ((timer - topicTime) / timer)
-              }
-            ></circle>
-            <text
-              x="50"
-              y="55"
-              fontFamily={"Lexend"}
-              fill={"#000000"}
-              fontSize={"15px"}
-              textAnchor={"middle"}
-            >
-              {topicTime}
-            </text>
-          </svg>
+          <div style={{ display: "flex" }}>
+            <div className={"effective-speaking-timer-div "}>
+              <svg className="circular-loader" viewBox="50 50 50 50">
+                {/* circumference 62.8*/}
+
+                <circle
+                  className="loader-path"
+                  cx="75"
+                  cy="75"
+                  r="20"
+                  fill="none"
+                  stroke={"#000000"}
+                  strokeWidth={"4px"}
+                ></circle>
+                <circle
+                  className="loader-path"
+                  cx="75"
+                  cy="75"
+                  r="20"
+                  fill="none"
+                  stroke="#9cc6ff"
+                  strokeDasharray={20 * Math.PI * 2}
+                  strokeDashoffset={
+                    20 * Math.PI * 2 * ((timer - topicTime) / timer)
+                  }
+                ></circle>
+                <text
+                  x="75"
+                  y="80"
+                  fontFamily={"Lexend"}
+                  fill={"#000000"}
+                  fontSize={"15px"}
+                  textAnchor={"middle"}
+                >
+                  {topicTime}
+                </text>
+              </svg>
+            </div>
+            <div className={"microphone-div"}></div>
+          </div>
         </div>
+
         <div className={"effective-speaking-list-group-divs"}>
           <p>Incorporate the words below in the speech below:</p>
           <ListGroup className={"effective-speaking-list-group"}>

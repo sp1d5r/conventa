@@ -17,7 +17,7 @@ function SelectionItem({
   };
 
   const styling = () => {
-    const selection_option = "selection-option ";
+    const selection_option = "selection-option ease-in ";
     if (answered) {
       const text_selected = selected ? "selected-" : "";
       if (correct) {

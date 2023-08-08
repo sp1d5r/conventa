@@ -14,6 +14,7 @@ function Lives({ lifeLost = false, redirect = false }) {
     // get lives lost
     getLives().then((res) => {
       console.log("result", res);
+      console.log("redirect", redirect);
       setLivesLost(res);
       if (redirect && res >= 3) {
         navigate("/content-locked?reason=lives");

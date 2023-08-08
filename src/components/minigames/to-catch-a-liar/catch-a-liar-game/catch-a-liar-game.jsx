@@ -385,21 +385,24 @@ function CatchALiarGame({ setGameState, difficulty }) {
           </div>
         </div>
         <div className={"first-impressions-cards-right"}>
-          <div
-            className={"first-impressions-card-right"}
-            onClick={() => {
-              clickOption(true);
-            }}
-          >
-            <p>Truth</p>
-          </div>
-          <div
-            className={"first-impressions-card-right"}
-            onClick={() => {
-              clickOption(false);
-            }}
-          >
-            <p>Lie</p>
+          <div></div>
+          <div className={"catch-a-liar-options"}>
+            <div
+              className={"first-impressions-card-right"}
+              onClick={() => {
+                clickOption(true);
+              }}
+            >
+              <p>Truth</p>
+            </div>
+            <div
+              className={"first-impressions-card-right"}
+              onClick={() => {
+                clickOption(false);
+              }}
+            >
+              <p>Lie</p>
+            </div>
           </div>
         </div>
       </div>

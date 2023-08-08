@@ -6,6 +6,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  max-width: 900px;
+  margin: auto;
 }
 
 .lesson-content-main {
@@ -14,6 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 800px;
+  margin: auto;
 }
 
 .input-text-lesson {
@@ -62,12 +66,12 @@
   font-size: 15px;
   line-height: 30px;
   display: flex;
-  align-items: center;
   letter-spacing: 0.02em;
   color: #000000;
   text-align: left;
   flex-direction: column;
   align-items: flex-start;
+  gap: 10px;
 }
 
 .lesson-text > pre {
@@ -196,11 +200,14 @@
 .underlined-text-page {
   font-family: "Lexend", serif;
   font-style: normal;
-  font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   text-align: center;
   color: #000000;
+}
+
+.selection-option-text {
+  text-align: left;
 }
 
 .underlined-text-page {
@@ -244,6 +251,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   gap: 10px;
+  padding: 10px 0px;
 }
 
 .selection-image-option {
@@ -293,8 +301,7 @@
   align-items: center;
   font-family: "Lexend";
   font-style: normal;
-  font-weight: 700;
-  font-size: 11px;
+  font-size: 0.8rem;
   color: #000000;
 }
 
@@ -380,12 +387,27 @@
   flex-grow: 0;
 }
 
+@keyframes fadeInFromBelow {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .answer-word {
   width: 100%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  animation: fadeInFromBelow 0.5s forwards; /* 0.5s duration, adjust as needed */
+  opacity: 0; /* set initial opacity to 0 so it starts as invisible */
 }
 
 .answer-word > p {
@@ -495,12 +517,6 @@
 /* Order List */
 .dragable-card:hover {
   color: white;
-}
-
-.dragable-card::selection,
-.dragable-card:active,
-.dragable-card:focus {
-  display: red;
 }
 
 .order-list-card {

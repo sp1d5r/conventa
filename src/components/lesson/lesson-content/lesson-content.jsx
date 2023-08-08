@@ -52,6 +52,28 @@ function removeKeysWithDuplicateValues(obj) {
   return result;
 }
 
+/* Preprocess Context for Build a Sentance. */
+function preprocessContent(content) {
+  let words = content.split(" ");
+
+  for (let i = 1; i < words.length; i++) {
+    // Rule 1: if a word is "and", it should be combined with the word before
+    if (words[i] === "and") {
+      words[i - 1] += "_" + words[i];
+      words[i] = "";
+    }
+
+    // Rule 2: if a word starts with a capital letter and isn't at the start of the string, it should be joined with the word before
+    else if (words[i][0] === words[i][0].toUpperCase()) {
+      words[i - 1] += "_" + words[i];
+      words[i] = "";
+    }
+  }
+
+  // Join the words back together, and remove any remaining blank strings
+  return words.filter((word) => word !== "").join(" ");
+}
+
 function LessonContent({
   type,
   content,
@@ -122,14 +144,15 @@ function LessonContent({
       />
     );
   } else if (type === "build_sentence") {
+    let processedContent = preprocessContent(content);
     return (
       <BuildSentencePage
         options={shuffle(
-          content.split(" ").map((elem) => {
+          processedContent.split(" ").map((elem) => {
             return elem.replace(/_/g, " ");
           })
         )}
-        correctAnswer={content.replace(/_/g, " ")}
+        correctAnswer={processedContent.replace(/_/g, " ")}
         submit={submit}
         feedbackButton={feedbackButton}
       />
