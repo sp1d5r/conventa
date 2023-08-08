@@ -8,11 +8,12 @@ function MinigameMain({
   updateQuestion,
   children,
   skipable,
+  color,
 }) {
   return (
-    <div>
-      <div className={"minigame-main-top"}>
-        <p className={"minigame-main-title"}>{title}</p>
+    <div className={"minigame-main"}>
+      <div className={"minigame-main-top"} style={{ backgroundColor: color }}>
+        <p>{title}</p>
         <div className={"minigame-main-button"}>
           <button
             className={"pause-button"}

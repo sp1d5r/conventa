@@ -14,12 +14,15 @@ function EffectiveSpeaking() {
   const [topic, setTopic] = useState("Something");
   const [topicTime, setTopicTime] = useState(60);
   const [topics, setTopics] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const setGameState = (gameState) => {
     if (gameState === 1) {
+      setLoading(true);
       getArrayOfWords(topic, difficulty).then((res) => {
         setTopics(res);
         setState(gameState);
+        setLoading(false);
       });
     } else {
       setState(gameState);
@@ -40,6 +43,22 @@ function EffectiveSpeaking() {
           }
           example={"A topic on Cloud Infrastructure."}
         >
+          {loading ? (
+            <div
+              className={"loading-effective-speaking"}
+              style={{ backgroundColor: "#b8b7ff" }}
+            >
+              <p className={"loading-main-text "}>
+                AI Generating Related Words...
+              </p>
+              <p> This might take a while... </p>
+              <div className="loader">
+                <div className="bar skeleton-loading-color"></div>
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
           <Form>
             <Form.Label>Select Topic Name</Form.Label>
             <Form.Control

@@ -1,12 +1,19 @@
 .minigame-main-top {
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
-  margin-bottom: 2%;
+  justify-content: space-around;
+  padding: 10px;
+  padding-bottom: 2%;
+  border-bottom: 3px solid black;
+  flex-wrap: wrap;
 }
 
-.minigame-main-title {
-  width: 100%;
+.minigame-main {
+  height: 55em;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.minigame-main-top > p:nth-child(1) {
   font-weight: 700;
   font-size: 2.2rem;
   text-align: center;
@@ -15,8 +22,6 @@
   font-family: "Lexend", serif;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
     2px 2px 0 #000;
-  border-bottom: 2px solid black;
-  padding: 10px;
 }
 
 .minigame-main-button {
@@ -57,5 +62,9 @@
 @media screen and (max-width: 600px) {
   .minigame-main-button {
     justify-content: space-evenly;
+  }
+
+  .minigame-main-top > p:nth-child(1) {
+    font-size: 2rem;
   }
 }

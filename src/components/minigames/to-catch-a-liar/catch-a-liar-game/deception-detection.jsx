@@ -43,7 +43,7 @@ const QUOTES = [
 
 const NUMBER_OF_QUESTIONS = 10;
 
-function DeceptionDetection({ setGameState, difficulty }) {
+function DeceptionDetection({ color, setGameState, difficulty }) {
   const questions = useRef({});
   const timeSpent = useRef(0);
   const answerTime = useRef(2); // this is the amount of time the answer propt shows up for
@@ -51,8 +51,10 @@ function DeceptionDetection({ setGameState, difficulty }) {
   const goodAdvice = useRef("Good Luck Pal"); // what the advice prompt is currently showing
   const initialise = true;
   const [currentQuestion, setCurrent] = useState({});
-  const [correctPrompt, setCorrectPrompt] = useState("");
-  const [answerText, setAnswerText] = useState("");
+  const [correctPrompt, setCorrectPrompt] = useState(
+    "Watch the clip and look for signs of deception."
+  );
+  const [answerText, setAnswerText] = useState("Ready?");
   const videoLoopValues = loopTimes(difficulty);
   const [pause, setPause] = useState(false);
 
@@ -207,6 +209,7 @@ function DeceptionDetection({ setGameState, difficulty }) {
 
   return (
     <MinigameMain
+      color={color}
       pauseGame={pressPause}
       updateQuestion={updateQuestion}
       title={"Deception Detection"}
@@ -248,15 +251,6 @@ function DeceptionDetection({ setGameState, difficulty }) {
         />
       }
       <div className={"first-impressions-game-cards"}>
-        {
-          /* This is the Answer Popup */
-          <div id="answer-message" className="answer-message hidden">
-            <div className={"answer-card"}>
-              <p className={"answer-card-text"}>{answerText}</p>
-              <p className={""}>{correctPrompt}</p>
-            </div>
-          </div>
-        }
         <div className={"deception-detection-video-container"}>
           <MinigameVideo
             src={currentQuestion.videoUrl}
@@ -266,52 +260,44 @@ function DeceptionDetection({ setGameState, difficulty }) {
             loopTimes={videoLoopValues}
             pause={pause}
           />
-          {/*<div className={"overlay-source"}>*/}
-          {/*  <p style={{ paddingRight: 20 }}>*/}
-          {/*    {currentQuestion ? currentQuestion.source : ""}*/}
-          {/*  </p>*/}
-          {/*</div>*/}
-          {/*// <div className={"first-impressions-infobox"}>*/}
-          {/*//   <div className={"infobox-left"}>*/}
-          {/*//     <div className={"inline-objects"}>*/}
-          {/*//       <p>{goodAdvice.current}</p>*/}
-          {/*//     </div>*/}
-          {/*//     <div className={"inline-objects"}></div>*/}
-          {/*//   </div>*/}
-          {/*//   <div className={"infobox-left"}>*/}
-          {/*//     <div className={"inline-objects"}>*/}
-          {/*//       <p>{}</p>*/}
-          {/*//     </div>*/}
-          {/*//     <div className={"inline-objects"}>*/}
-          {/*//       <img*/}
-          {/*/!*        alt="Actions"*!/*/}
-          {/*/!*        src={require("../../../../assets/first-impressions/Action.png")}*!/*/}
-          {/*/!*      />*!/*/}
-          {/*/!*      <p>*!/*/}
-          {/*/!*        Score: <b>{score}</b> / {5}*!/*/}
-          {/*/!*      </p>*!/*/}
-          {/*/!*    </div>*!/*/}
-          {/*/!*  </div>*!/*/}
-          {/*/!*</div>*!/*/}
         </div>
         <div className={"deception-detection-controls"}>
-          <div
-            className={"deception-detection-option"}
-            style={{ background: "#9fe28d" }}
-            onClick={() => {
-              clickOption(true);
-            }}
-          >
-            <p>Truth</p>
+          <div className={"deception-detection-answer-card"}>
+            <p className={"answer-card-text"}>{answerText}</p>
+            <div>
+              <p>why?</p>
+              <p className={""}>{correctPrompt}</p>
+            </div>
           </div>
-          <div
-            className={"deception-detection-option"}
-            style={{ background: "#e28d8d" }}
-            onClick={() => {
-              clickOption(false);
-            }}
-          >
-            <p>Lie</p>
+
+          <div className={"deception-detection-information"}>
+            <p>{goodAdvice.current}</p>
+            <div className={"deception-detection-score"}>
+              <p className={"outline"}>
+                <b>{score}</b> / {5}
+              </p>
+            </div>
+          </div>
+
+          <div className={"deception-detection-options"}>
+            <div
+              className={"deception-detection-option"}
+              style={{ background: "#9fe28d" }}
+              onClick={() => {
+                clickOption(true);
+              }}
+            >
+              <p>Truth</p>
+            </div>
+            <div
+              className={"deception-detection-option"}
+              style={{ background: "#e28d8d" }}
+              onClick={() => {
+                clickOption(false);
+              }}
+            >
+              <p>Lie</p>
+            </div>
           </div>
         </div>
       </div>

@@ -29,25 +29,32 @@
 }
 
 .deception-detection-video-container {
-  width: 70%;
+  width: 90%;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 900px;
 }
 
 .deception-detection-controls {
   display: flex;
   width: 30%;
   gap: 5px;
-  padding: 10% 5px;
-  align-items: flex-end;
+  padding: 20px;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  max-width: 500px;
 }
-
+.deception-detection-options {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
 .deception-detection-option {
   max-width: 40vw;
-  width: 100%;
+  width: 50%;
   height: 15vh;
   border: 2px solid black;
   border-radius: 20px;
@@ -59,8 +66,64 @@
   font-size: 18px;
 }
 
+.deception-detection-information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Lexend", serif;
+  width: 100%;
+}
+
+.deception-detection-score {
+  color: #fff;
+  font-family: Lexend, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .deception-detection-option > p {
   margin: 0;
+}
+
+/* Answer Card */
+.deception-detection-answer-card {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.deception-detection-answer-card > p {
+  color: #000;
+  font-family: Lexend;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.deception-detection-answer-card > div {
+  text-align: left;
+}
+
+.deception-detection-answer-card > div > p:nth-child(1) {
+  color: #8f8f8f;
+  font-family: Lexend, serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.deception-detection-answer-card > div > p:nth-child(2) {
+  color: #000;
+  font-family: Lexend, serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 @media screen and (max-width: 600px) {

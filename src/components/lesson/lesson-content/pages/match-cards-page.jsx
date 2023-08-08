@@ -18,7 +18,7 @@ function SelectionCard({
   return (
     <div
       key={index}
-      className={`larger flip-card ${selected ? "flipped" : ""} ${
+      className={`larger ease-in flip-card ${selected ? "flipped" : ""} ${
         answered ? "answered" : ""
       } ${incorrect ? "incorrect" : ""}`}
       onClick={() => {
