@@ -297,37 +297,49 @@ export async function lostLife(pageId, selectedOption) {
 
 /* Courses */
 export async function getCourses() {
-  const cachedData = localStorage.getItem("allCourses");
-
-  if (cachedData) {
-    // Use the cached data instead of making a new request
-    return JSON.parse(cachedData);
-  } else {
+  try {
     const courseCollection = collection(firestore, "courses");
     const courseItems = await getDocs(courseCollection);
     const courses = courseItems.docs.map((doc) => {
       return { id: doc.id, ...doc.data() };
     });
+
     localStorage.setItem("allCourses", JSON.stringify(courses));
     return courses;
+  } catch (error) {
+    console.error("Error fetching courses:", error);
+
+    const cachedData = localStorage.getItem("allCourses");
+    if (cachedData) {
+      return JSON.parse(cachedData);
+    } else {
+      throw new Error("Failed to fetch courses and no cached data available.");
+    }
   }
 }
 
 export async function getCourse(id) {
-  const cachedData = localStorage.getItem(`courses/${id}`);
-
-  if (cachedData) {
-    // Use the cached data instead of making a new request
-    console.log("cached data is here", JSON.parse(cachedData));
-    return JSON.parse(cachedData);
-  } else {
+  try {
     const courseDoc = doc(firestore, "courses", id);
     const courseItems = await getDoc(courseDoc);
     const courseData = courseItems.data();
     courseData.lessons = courseData.lessons.map((res) => res.id);
+
     console.log("Course Items", courseData);
     localStorage.setItem(`courses/${id}`, JSON.stringify(courseData));
     return courseData;
+  } catch (error) {
+    console.error("Error fetching course:", error);
+
+    const cachedData = localStorage.getItem(`courses/${id}`);
+    if (cachedData) {
+      console.log("cached data is here", JSON.parse(cachedData));
+      return JSON.parse(cachedData);
+    } else {
+      throw new Error(
+        `Failed to fetch course with ID ${id} and no cached data available.`
+      );
+    }
   }
 }
 
@@ -350,17 +362,24 @@ export async function getLesson(lesson_ref) {
 }
 
 export async function getLessonFromID(lesson_id) {
-  const cachedData = localStorage.getItem(`lesson/${lesson_id}`);
-
-  if (cachedData) {
-    // Use the cached data instead of making a new request
-    return JSON.parse(cachedData);
-  } else {
+  try {
     const lessonDoc = doc(firestore, "lessons", lesson_id);
     const lessonItems = await getDoc(lessonDoc);
     const lessonData = { id: lesson_id, ...lessonItems.data() };
+
     localStorage.setItem(`lesson/${lesson_id}`, JSON.stringify(lessonData));
     return lessonData;
+  } catch (error) {
+    console.error("Error fetching lesson data:", error);
+
+    const cachedData = localStorage.getItem(`lesson/${lesson_id}`);
+    if (cachedData) {
+      return JSON.parse(cachedData);
+    } else {
+      throw new Error(
+        `Failed to fetch lesson data for ID ${lesson_id} and no cached data available.`
+      );
+    }
   }
 }
 
@@ -526,18 +545,12 @@ export function getPagefromRetrievedJSON(pageData, pageId) {
 
 /* Pages */
 export async function getPageFromID(page_path) {
-  const cachedData = localStorage.getItem(page_path);
-
-  if (cachedData) {
-    // Use the cached data instead of making a new request
-    return JSON.parse(cachedData);
-  } else {
+  try {
     const pageId = page_path.split("/")[1];
-    const pageDoc = doc(firestore, "pages", page_path.split("/")[1]);
+    const pageDoc = doc(firestore, "pages", pageId);
     const snapshot = await getDoc(pageDoc);
     const pageData = snapshot.data().page;
-    // Slight formatting change goes here
-    // {type: pageData.type, data: {}}
+
     let data;
     if (pageData.type === "text") {
       data = {
@@ -648,8 +661,18 @@ export async function getPageFromID(page_path) {
         },
       };
     }
+
     localStorage.setItem(page_path, JSON.stringify(data));
     return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+
+    const cachedData = localStorage.getItem(page_path);
+    if (cachedData) {
+      return JSON.parse(cachedData);
+    } else {
+      throw new Error("Failed to fetch data and no cached data available.");
+    }
   }
 }
 
