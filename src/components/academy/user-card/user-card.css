@@ -109,7 +109,7 @@
   align-items: center;
   display: flex;
   border: 2px solid black;
-  background: #4a5bb5;
+  background: #356adc;
   color: white;
   font-size: 0.8rem;
   padding: 10px 20px;
@@ -118,7 +118,7 @@
 
 .user-button-badge:hover {
   color: white;
-  background-color: #76bcff;
+  border: 2px solid #356adc;
 }
 
 /* If the display is less than 600 it's a mobile device*/

@@ -5,7 +5,8 @@ import {
   addGemsToUser,
   getCourse,
   getLessonFromID,
-  getPagefromRetrievedJSON,
+  getPageFromID,
+  // getPagefromRetrievedJSON,
   getUserClaim,
   logFirebaseEvent,
   lostLife,
@@ -67,53 +68,53 @@ function NewLessonPage() {
         const pages = res.pages;
 
         // TESTING BEGIN
-        let returned_pages;
-        returned_pages = pages.map((page) => {
-          return getPagefromRetrievedJSON(page, "test");
-        });
-
-        returned_pages.push({
-          type: "final",
-          content: {
-            title: res.title,
-          },
-        });
-
-        setContent(returned_pages);
-        setCurrentContent(returned_pages[0]);
-        setProgress(
-          returned_pages.map((_) => {
-            return "";
-          })
-        );
-        setLoading(false);
+        // let returned_pages;
+        // returned_pages = pages.map((page) => {
+        //   return getPagefromRetrievedJSON(page, "test");
+        // });
+        //
+        // returned_pages.push({
+        //   type: "final",
+        //   content: {
+        //     title: res.title,
+        //   },
+        // });
+        //
+        // setContent(returned_pages);
+        // setCurrentContent(returned_pages[0]);
+        // setProgress(
+        //   returned_pages.map((_) => {
+        //     return "";
+        //   })
+        // );
+        // setLoading(false);
 
         // TESTING END
 
         // UNCOMMENT FOR PRODUCTION
-        // Promise.all(
-        //   pages.map((page) => {
-        //     return getPageFromID(page);
-        //   })
-        // ).then((returned_pages) => {
-        //   // returned_pages = LESSON_CONTENT_EXAMPLE;
-        //
-        //   returned_pages.push({
-        //     type: "final",
-        //     content: {
-        //       title: res.title,
-        //     },
-        //   });
-        //
-        //   setContent(returned_pages);
-        //   setCurrentContent(returned_pages[0]);
-        //   setProgress(
-        //     returned_pages.map((_) => {
-        //       return "";
-        //     })
-        //   );
-        //   setLoading(false);
-        // });
+        Promise.all(
+          pages.map((page) => {
+            return getPageFromID(page);
+          })
+        ).then((returned_pages) => {
+          // returned_pages = LESSON_CONTENT_EXAMPLE;
+
+          returned_pages.push({
+            type: "final",
+            content: {
+              title: res.title,
+            },
+          });
+
+          setContent(returned_pages);
+          setCurrentContent(returned_pages[0]);
+          setProgress(
+            returned_pages.map((_) => {
+              return "";
+            })
+          );
+          setLoading(false);
+        });
       });
     });
     // eslint-disable-next-line

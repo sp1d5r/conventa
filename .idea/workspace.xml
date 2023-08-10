@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/placeholder-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/placeholder-image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +187,6 @@
       <workItem from="1684686306377" duration="7870000" />
       <workItem from="1687627401979" duration="4964000" />
       <workItem from="1688491057592" duration="7699000" />
-      <workItem from="1691313488557" duration="5310000" />
     </task>
     <servers />
   </component>
