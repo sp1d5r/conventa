@@ -18,17 +18,24 @@ function NewsHeading() {
     <div className={"news-room-heading"}>
       <div className="scrolling-text">
         <p>
-          Breaking News: Local entrepreneur disrupts market using innovative
-          mind-body techniques... Studies show employees practicing mindfulness
-          boast 20% productivity boost... Upcoming webinar: Harnessing the power
-          of psychology for business success... Tips to enhance negotiation
-          skills using body language... Body-Mind Harmony: The secret weapon of
-          successful CEOs... Latest research reveals strong correlation between
-          mental well-being and business performance... The psychology behind
-          successful marketing strategies... Tune in for our exclusive interview
-          with renowned psychologist turned entrepreneur... Exploring the role
-          of mental resilience in start-up success... Join our live session on
-          practical psychology for boosting sales...
+          Breaking News: Overcoming Procrastination: Expert tips on boosting
+          productivity and seizing the day... The Wisdom of Stoicism: How
+          ancient philosophies can bring modern contentment... Burnout Alert:
+          Identifying the signs and steps to rejuvenate your passion and
+          purpose... Unlocking Inner Motivation: Techniques to rediscover your
+          drive and ambition... Embracing Minimalism: Simplifying your life for
+          enhanced focus and clarity... The Power of Habit: Small changes for
+          significant transformations in daily routines... Mindfulness Matters:
+          Embracing the present moment for a life of fulfillment... Stoic
+          Strategies: Navigating life's challenges with a balanced
+          perspective... Combatting Burnout: Daily practices to ensure you stay
+          at the top of your game... The Science of Motivation: Why we do what
+          we do and how to do it better... Practical Stoicism: Adapting ancient
+          wisdom for contemporary challenges... Overcome Procrastination: Steps
+          to jump-start your journey and accomplish your goals... Revive and
+          Thrive: Strategies to counter burnout and reclaim your zest for
+          life... Staying Motivated: Harnessing internal and external drivers
+          for long-term success...
         </p>
       </div>
       <div className={"news-room-heading-annimation"}>
@@ -51,17 +58,24 @@ function NewsHeading() {
 
       <div className="scrolling-text">
         <p>
-          Breaking News: Local entrepreneur disrupts market using innovative
-          mind-body techniques... Studies show employees practicing mindfulness
-          boast 20% productivity boost... Upcoming webinar: Harnessing the power
-          of psychology for business success... Tips to enhance negotiation
-          skills using body language... Body-Mind Harmony: The secret weapon of
-          successful CEOs... Latest research reveals strong correlation between
-          mental well-being and business performance... The psychology behind
-          successful marketing strategies... Tune in for our exclusive interview
-          with renowned psychologist turned entrepreneur... Exploring the role
-          of mental resilience in start-up success... Join our live session on
-          practical psychology for boosting sales...
+          Breaking News: Overcoming Procrastination: Expert tips on boosting
+          productivity and seizing the day... The Wisdom of Stoicism: How
+          ancient philosophies can bring modern contentment... Burnout Alert:
+          Identifying the signs and steps to rejuvenate your passion and
+          purpose... Unlocking Inner Motivation: Techniques to rediscover your
+          drive and ambition... Embracing Minimalism: Simplifying your life for
+          enhanced focus and clarity... The Power of Habit: Small changes for
+          significant transformations in daily routines... Mindfulness Matters:
+          Embracing the present moment for a life of fulfillment... Stoic
+          Strategies: Navigating life's challenges with a balanced
+          perspective... Combatting Burnout: Daily practices to ensure you stay
+          at the top of your game... The Science of Motivation: Why we do what
+          we do and how to do it better... Practical Stoicism: Adapting ancient
+          wisdom for contemporary challenges... Overcome Procrastination: Steps
+          to jump-start your journey and accomplish your goals... Revive and
+          Thrive: Strategies to counter burnout and reclaim your zest for
+          life... Staying Motivated: Harnessing internal and external drivers
+          for long-term success...
         </p>
       </div>
     </div>

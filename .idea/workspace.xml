@@ -6,6 +6,9 @@
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-heading/news-heading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
