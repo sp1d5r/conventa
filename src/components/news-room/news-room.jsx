@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NewsHeading from "./news-heading/news-heading";
 // import NewsHeadline from "./news-headline/news-headline";
 // import NewsStories from "./news-stories/news-stories";
 import Image from "../../assets/news-room/main-icon.svg";
 
-function NewsRoomCard({ backgroundColor, title, description, link }) {
+function NewsRoomCard({
+  backgroundColor,
+  backgroundImage,
+  title,
+  description,
+  link,
+}) {
   return (
     <div
       className="news-room-card"
-      style={{ backgroundColor: backgroundColor }}
+      style={{
+        backgroundImage: `linear-gradient(to top, ${backgroundColor}, transparent), url(${backgroundImage})`,
+        backgroundColor: backgroundColor,
+      }}
       onClick={() => {
         window.location.href = link;
       }}
     >
       <h3 className={"card-main-text-bold"}>{title}</h3>
-      <p className={"article-of-day-light"}>
-        {description.substring(0, window.innerWidth < 700 ? 70 : 180) + "..."}
-      </p>
+      {/*<p className={"article-of-day-light"}>*/}
+      {/*  {description.substring(0, window.innerWidth < 700 ? 70 : 180) + "..."}*/}
+      {/*</p>*/}
       <a className={"underline"} href={"/"}>
         Read more
       </a>
@@ -25,6 +34,8 @@ function NewsRoomCard({ backgroundColor, title, description, link }) {
 }
 
 function NewsRoom() {
+  useEffect(() => {}, []);
+
   return (
     <div>
       <NewsHeading />
@@ -71,6 +82,9 @@ function NewsRoom() {
               "              revolutionize your entrepreneurial journey. Unlock your full\n" +
               "              potential, increase focus, and cultivate resilience for a thriving\n" +
               "              and successful business experience."
+            }
+            backgroundImage={
+              "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
             }
             link={"/article?id=1"}
             backgroundColor={"#e3fffb"}
