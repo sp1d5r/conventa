@@ -248,7 +248,7 @@ function Academy() {
 
             {loading
               ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
-                  return <SkeletonCard />;
+                  return <SkeletonCard key={index} />;
                 })
               : courses.map((item, index) => {
                   return (
@@ -273,7 +273,7 @@ function Academy() {
           <div className={"academy-content-section-child"}>
             {loading
               ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
-                  return <SkeletonCard />;
+                  return <SkeletonCard key={index} />;
                 })
               : minigameItems().map((item, index) => {
                   return (
@@ -283,6 +283,7 @@ function Academy() {
                       time={item.time}
                       locked={!current_user} //&& accountType === "Upgrade!"}
                       difficulty={item.difficulty}
+                      key={index}
                     />
                   );
                 })}
@@ -295,7 +296,7 @@ function Academy() {
           <div className={"academy-content-section-child"}>
             {loading
               ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
-                  return <SkeletonCard />;
+                  return <SkeletonCard key={index} />;
                 })
               : assessmentItems().map((item, index) => {
                   return (
@@ -311,6 +312,7 @@ function Academy() {
                       }
                       subtext={item.subtext}
                       difficulty={item.difficulty}
+                      key={index}
                     />
                   );
                 })}

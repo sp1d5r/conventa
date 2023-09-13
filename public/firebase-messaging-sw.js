@@ -7,6 +7,8 @@ importScripts(
   "https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js"
 );
 
+console.log("Service workers");
+
 // Set Firebase configuration, once available
 self.addEventListener("fetch", () => {
   const urlParams = new URLSearchParams(location.search);

@@ -1,6 +1,6 @@
 import { collection, deleteDoc, doc, setDoc } from "firebase/firestore";
 import { getToken, onMessage } from "firebase/messaging";
-import { messaging, firestore, firebaseConfig } from "../firebase";
+import { firebaseConfig, firestore, messaging } from "../firebase";
 
 const LOCAL_STORAGE_KEY = "userNotificationToken";
 
@@ -47,27 +47,65 @@ export async function addUserNotificationToken(userId, currentToken) {
   // Save the new token to local storage
   setTokenToLocalStorage(currentToken);
 }
+//
+// export const getOrRegisterServiceWorker = () => {
+//   if ("serviceWorker" in navigator) {
+//     console.log("Registering a service worker!");
+//     return window.navigator.serviceWorker
+//       .getRegistration("/notifications-push-notification-scope")
+//       .then((serviceWorker) => {
+//         console.log("Registered service worker", serviceWorker);
+//         if (serviceWorker) return serviceWorker;
+//         const firebaseConfigParams = new URLSearchParams(
+//           firebaseConfig
+//         ).toString();
+//         return window.navigator.serviceWorker.register(
+//           `/firebase-messaging-sw.js?firebaseConfig=${firebaseConfigParams}`,
+//           {
+//             scope: "/",
+//           }
+//         );
+//       });
+//   }
+//   throw new Error("The browser doesn`t support service worker.");
+// };
 
 export const getOrRegisterServiceWorker = () => {
   if ("serviceWorker" in navigator) {
-    console.log("Registering a service worker!");
+    console.log("Attempting to register a service worker!");
+
     return window.navigator.serviceWorker
-      .getRegistration("/notifications-push-notification-scope")
-      .then((serviceWorker) => {
-        console.log("Registered service worker", serviceWorker);
-        if (serviceWorker) return serviceWorker;
-        const firebaseConfigParams = new URLSearchParams(
-          firebaseConfig
-        ).toString();
-        return window.navigator.serviceWorker.register(
-          `/firebase-messaging-sw.js?firebaseConfig=${firebaseConfigParams}`,
-          {
-            scope: "/e-learning-template",
-          }
-        );
+      .register("/sw.js", { scope: "/" })
+      .then((registration) => {
+        console.log("Service worker registered!");
+
+        // Check if the service worker became active.
+        if (registration.active) {
+          registration.active.postMessage({
+            type: "SET_FIREBASE_CONFIG",
+            config: firebaseConfig,
+          });
+        } else {
+          // If the registration has a waiting service worker, then it's in the middle of an update.
+          // We can wait for an update to finish by listening for the "statechange" event.
+          registration.waiting.onstatechange = function () {
+            if (this.state === "activated") {
+              registration.active.postMessage({
+                type: "SET_FIREBASE_CONFIG",
+                config: firebaseConfig,
+              });
+            }
+          };
+        }
+        return registration;
+      })
+      .catch((error) => {
+        console.error("Service worker registration failed:", error);
+        throw new Error("Service worker registration failed");
       });
+  } else {
+    throw new Error("The browser doesn't support service workers.");
   }
-  throw new Error("The browser doesn`t support service worker.");
 };
 
 export async function updateUserNotificationToken(
@@ -118,9 +156,9 @@ export const removeToken = async (uid, currentToken) => {
   await deleteDoc(tokenDocRef);
 };
 
-export const onMessageListener = () =>
-  new Promise((resolve) => {
-    onMessage(messaging, (payload) => {
-      resolve(payload);
-    });
+export const onMessageListener = (handleMessage) => {
+  return onMessage(messaging, (payload) => {
+    handleMessage(payload);
+    console.log("messages", payload);
   });
+};

@@ -46,25 +46,22 @@ function UserCard({ isLoading }) {
     setSaturday(cleanDate(curr.setDate(first + 6)));
 
     if (current_user && current_user.uid) {
-      console.log("Current User UID Done", current_user.uid);
       getLessonsCompletedForDay(current_user.uid, cleanDate(new Date())).then(
         (res) => {
-          console.log("Lessons completed for day", res);
           setStreak(res);
         }
       );
       getLessonsCompleted(current_user.uid).then((res) => {
         setLessonsCompleted(res);
       });
+      getUserClaim().then((res) => {
+        let r = res;
+        if (res === "Hobbiest" || res === "Amateur") {
+          r = res + " ^";
+        }
+        setRole(r);
+      });
     }
-    getUserClaim().then((res) => {
-      let r = res;
-      console.log("User Claim", res);
-      if (res === "Hobbiest" || res === "Amateur") {
-        r = res + " ^";
-      }
-      setRole(r);
-    });
     // eslint-disable-next-line
   }, [current_user]);
 

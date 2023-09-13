@@ -1,7 +1,7 @@
 import "./App.css";
 import "./animations.css";
 import NavBar from "./components/navbar/navbar";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./components/footer/footer";
 import Landing from "./components/landing/landing";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -29,11 +29,17 @@ import Article from "./components/article/article";
 import Testing from "./components/testing/testing";
 
 function App() {
-  onMessageListener()
-    .then((payload) => {
-      console.log(payload);
-    })
-    .catch((err) => console.log("failed: ", err));
+  useEffect(() => {
+    const unsubscribe = onMessageListener((payload) => {
+      console.log("Foreground message received", payload);
+      // Handle the foreground notification, e.g., show a custom notification or update some state
+    });
+
+    // Cleanup the listener on component unmount
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
     <AuthProvider>

@@ -14,11 +14,8 @@ function Lives({ lifeLost = false, redirect = false }) {
 
   useEffect(() => {
     // get lives lost
-    console.log(current_user);
     if (current_user && current_user.uid) {
       getLives(current_user.uid).then((res) => {
-        console.log("result", res);
-        console.log("redirect", redirect);
         setLivesLost(res);
         if (redirect && res >= 3) {
           navigate("/content-locked?reason=lives");
@@ -35,8 +32,8 @@ function Lives({ lifeLost = false, redirect = false }) {
     for (let red = 0; red < 3 - livesLost; red++) {
       hearts.push(RedHeart);
     }
-    return hearts.map((heart) => {
-      return <img src={heart} alt={"life "} />;
+    return hearts.map((heart, index) => {
+      return <img src={heart} alt={"life "} key={index} />;
     });
   };
 
