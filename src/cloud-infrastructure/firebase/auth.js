@@ -28,13 +28,15 @@ export default function AuthProvider({ children }) {
 
   const auth_user = auth.currentUser;
 
-  function successfulSignIn(userCredential, success_callback) {
+  function successfulSignIn(userCredential, success_callback, failed_callback) {
     console.log("Singed in");
-    updateUserNotificationToken(userCredential.user.uid, success_callback).then(
-      (r) => {
-        console.log("Completed user update.");
-      }
-    );
+    updateUserNotificationToken(
+      userCredential.user.uid,
+      success_callback,
+      failed_callback
+    ).then((r) => {
+      console.log("Completed user update.");
+    });
     setCurrentUser(userCredential);
   }
 
@@ -42,7 +44,7 @@ export default function AuthProvider({ children }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        successfulSignIn(userCredential, success_callback);
+        successfulSignIn(userCredential, success_callback, failed_callback);
       })
       .catch((error) => {
         const errorCode = error.code;

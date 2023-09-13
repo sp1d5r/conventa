@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/about-us.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-us/history/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/history/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-us/history/history.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/history/history.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/about-us/strengths/strengths.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/about-us/strengths/strengths.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/notifications/notifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/notifications/notifications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
