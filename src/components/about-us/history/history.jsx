@@ -5,6 +5,7 @@ import History from "../../../assets/about-us/history-conventa.svg";
 function HistoryAboutUs() {
   return (
     <>
+      <div className={"spacer border-bottom"} />
       <div className={"history-about-us-div"}>
         <div className={"left-hand-text"}>
           <h1 className={"intro-text-h1"}>
