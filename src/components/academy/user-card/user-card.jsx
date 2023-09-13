@@ -9,6 +9,7 @@ import {
 import Lives from "./lives/lives";
 import { Link } from "react-router-dom";
 import TotalGems from "./gems/gems";
+import { useAuth } from "../../../cloud-infrastructure/firebase/auth";
 
 function UserCard({ isLoading }) {
   const NUMBER_STREAK_REQUIRED = 1;
@@ -24,6 +25,7 @@ function UserCard({ isLoading }) {
   const [lessons_completed, setLessonsCompleted] = useState(0);
   // const current_user = auth.currentUser;
   const [role, setRole] = useState("Upgrade!");
+  const { current_user } = useAuth();
 
   const cleanDate = (date) => {
     const temp = new Date(date);
@@ -33,7 +35,7 @@ function UserCard({ isLoading }) {
 
   useEffect(() => {
     var curr = new Date(); // get current date
-    setToday(cleanDate(curr.getDate()));
+    setToday(cleanDate(curr));
     var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
     setSunday(cleanDate(curr.setDate(first)));
     setMonday(cleanDate(curr.setDate(first + 1)));
@@ -42,13 +44,19 @@ function UserCard({ isLoading }) {
     setThursday(cleanDate(curr.setDate(first + 4)));
     setFriday(cleanDate(curr.setDate(first + 5)));
     setSaturday(cleanDate(curr.setDate(first + 6)));
-    getLessonsCompletedForDay(today).then((res) => {
-      setStreak(res);
-    });
-    getLessonsCompleted().then((res) => {
-      setLessonsCompleted(res);
-    });
 
+    if (current_user && current_user.uid) {
+      console.log("Current User UID Done", current_user.uid);
+      getLessonsCompletedForDay(current_user.uid, cleanDate(new Date())).then(
+        (res) => {
+          console.log("Lessons completed for day", res);
+          setStreak(res);
+        }
+      );
+      getLessonsCompleted(current_user.uid).then((res) => {
+        setLessonsCompleted(res);
+      });
+    }
     getUserClaim().then((res) => {
       let r = res;
       console.log("User Claim", res);
@@ -58,7 +66,7 @@ function UserCard({ isLoading }) {
       setRole(r);
     });
     // eslint-disable-next-line
-  }, []);
+  }, [current_user]);
 
   return (
     <>
@@ -67,7 +75,7 @@ function UserCard({ isLoading }) {
           <div className={"streak-information"}>
             {today && sunday && (
               <StreakDay
-                today={today.getTime() === sunday.getTime()}
+                today={cleanDate(new Date()).getTime() === sunday.getTime()}
                 day={"Su"}
                 date={sunday}
                 isLoading={isLoading}
@@ -75,7 +83,7 @@ function UserCard({ isLoading }) {
             )}
             {today && monday && (
               <StreakDay
-                today={today.getTime() === monday.getTime()}
+                today={cleanDate(new Date()).getTime() === monday.getTime()}
                 day={"Mo"}
                 date={monday}
                 isLoading={isLoading}
@@ -83,7 +91,7 @@ function UserCard({ isLoading }) {
             )}
             {tuesday && (
               <StreakDay
-                today={today.getTime() === tuesday.getTime()}
+                today={cleanDate(new Date()).getTime() === tuesday.getTime()}
                 day={"Tu"}
                 date={tuesday}
                 isLoading={isLoading}
@@ -91,7 +99,7 @@ function UserCard({ isLoading }) {
             )}
             {today && wednesday && (
               <StreakDay
-                today={today.getTime() === wednesday.getTime()}
+                today={cleanDate(new Date()).getTime() === wednesday.getTime()}
                 day={"We"}
                 date={wednesday}
                 isLoading={isLoading}
@@ -99,7 +107,7 @@ function UserCard({ isLoading }) {
             )}
             {today && thursday && (
               <StreakDay
-                today={today.getTime() === thursday.getTime()}
+                today={cleanDate(new Date()).getTime() === thursday.getTime()}
                 day={"Th"}
                 date={thursday}
                 isLoading={isLoading}
@@ -107,7 +115,7 @@ function UserCard({ isLoading }) {
             )}
             {today && friday && (
               <StreakDay
-                today={today.getTime() === friday.getTime()}
+                today={cleanDate(new Date()).getTime() === friday.getTime()}
                 day={"Fr"}
                 date={friday}
                 isLoading={isLoading}
@@ -115,7 +123,7 @@ function UserCard({ isLoading }) {
             )}
             {today && saturday && (
               <StreakDay
-                today={today.getTime() === saturday.getTime()}
+                today={cleanDate(new Date()).getTime() === saturday.getTime()}
                 day={"Sa"}
                 date={saturday}
                 isLoading={isLoading}
@@ -129,7 +137,9 @@ function UserCard({ isLoading }) {
           >
             <div
               className={"lesson-progress-bar"}
-              style={{ width: `${(streak / NUMBER_STREAK_REQUIRED) * 100}%` }}
+              style={{
+                width: `${Math.min(1, streak / NUMBER_STREAK_REQUIRED) * 100}%`,
+              }}
             ></div>
             <div className={"lesson-complete-text"}>
               {lessons_completed} Lessons Completed

@@ -153,8 +153,6 @@ export async function getUserClaim() {
 /* User Information */
 export async function userCompletedLesson(lesson_id) {
   const date = new Date();
-  // Set time to 00:00:00
-  date.setHours(0, 0, 0, 0);
   const activityDocRef = await addDoc(
     collection(firestore, `users/${auth.currentUser.uid}/activity`),
     {
@@ -165,13 +163,19 @@ export async function userCompletedLesson(lesson_id) {
   return activityDocRef;
 }
 
-export async function getLessonsCompletedForDay(date) {
-  date.setHours(0, 0, 0, 0);
-  const userActivityRef = collection(
-    firestore,
-    `users/${auth.currentUser.uid}/activity`
+export async function getLessonsCompletedForDay(uid, date) {
+  // Define the start and end of the day in timestamps
+  const startOfDay = new Date(date);
+  startOfDay.setHours(0, 0, 0, 0);
+  const endOfDay = new Date(date);
+  endOfDay.setHours(23, 59, 59, 999);
+
+  const userActivityRef = collection(firestore, `users/${uid}/activity`);
+  const q = query(
+    userActivityRef,
+    where("date", ">=", startOfDay.getTime()),
+    where("date", "<=", endOfDay.getTime())
   );
-  const q = query(userActivityRef, where("date", "==", date.getTime()));
   const querySnapshot = await getDocs(q);
   let entries = 0;
   querySnapshot.forEach((doc) => {
@@ -181,10 +185,10 @@ export async function getLessonsCompletedForDay(date) {
   return entries;
 }
 
-export async function userStreakForDay(date) {
+export async function userStreakForDay(uid, date) {
   // Set time to 00:00:00
-  const entries = await getLessonsCompletedForDay(date);
-  return entries >= 5;
+  const entries = await getLessonsCompletedForDay(uid, date);
+  return entries >= 1;
 }
 
 export function getCurrentUser() {
@@ -235,7 +239,7 @@ export async function addGemsToUser(
   successUpdate,
   failedUpdate
 ) {
-  getUserGems().then((amount) => {
+  getUserGems(auth.currentUser.uid).then((amount) => {
     const userDoc = doc(firestore, "users", auth.currentUser.uid);
     const newGems = amount + numberOfGems;
     Promise.all([
@@ -383,11 +387,8 @@ export async function getLessonFromID(lesson_id) {
   }
 }
 
-export async function getLessonsCompleted() {
-  const userActivityRef = collection(
-    firestore,
-    `users/${auth.currentUser.uid}/activity`
-  );
+export async function getLessonsCompleted(uid) {
+  const userActivityRef = collection(firestore, `users/${uid}/activity`);
   const lessonActivity = query(userActivityRef, where("lesson_id", "!=", ""));
   const lessonCount = await getCountFromServer(lessonActivity);
   return lessonCount.data().count;
