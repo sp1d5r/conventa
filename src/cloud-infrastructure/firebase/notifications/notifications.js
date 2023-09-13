@@ -14,7 +14,7 @@ function setTokenToLocalStorage(token) {
 
 async function removeUserNotificationToken(userId, token) {
   const tokenDocRef = doc(
-    collection(firestore, `users/${userId}/tokens`),
+    collection(firestore, `notifications/${userId}/tokens`),
     token
   );
 
@@ -36,7 +36,7 @@ export async function addUserNotificationToken(userId, currentToken) {
 
   // Save the new token to Firestore
   const tokenDocRef = doc(
-    collection(firestore, `users/${userId}/tokens`),
+    collection(firestore, `notifications/${userId}/tokens`),
     currentToken
   );
   await setDoc(tokenDocRef, {
@@ -70,7 +70,11 @@ export const getOrRegisterServiceWorker = () => {
   throw new Error("The browser doesn`t support service worker.");
 };
 
-export async function updateUserNotificationToken(userId, successCallback) {
+export async function updateUserNotificationToken(
+  userId,
+  successCallback,
+  failed_callback
+) {
   getOrRegisterServiceWorker().then((serviceWorkerRegistration) => {
     getToken(messaging, {
       vapidKey: process.env.REACT_APP_VAPID_KEY,
@@ -84,6 +88,7 @@ export async function updateUserNotificationToken(userId, successCallback) {
               successCallback();
             })
             .catch((err) => {
+              failed_callback(err);
               console.error(err);
             });
         } else {
@@ -107,7 +112,7 @@ export const getMessagingToken = async () => {
 
 export const removeToken = async (uid, currentToken) => {
   const tokenDocRef = doc(
-    collection(firestore, `users/${uid}/tokens`),
+    collection(firestore, `notifications/${uid}/tokens`),
     currentToken
   );
   await deleteDoc(tokenDocRef);

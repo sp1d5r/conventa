@@ -63,7 +63,6 @@ function Academy() {
                   })
                 )
                   .then((updatedCourses) => {
-                    console.log("Courses are here: ", updatedCourses);
                     setLessonLocked(isLocked);
                     updatedCourses.sort((a, b) =>
                       a.courseProgress < b.courseProgress ? 1 : -1
