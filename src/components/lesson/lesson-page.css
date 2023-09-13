@@ -97,7 +97,7 @@
 .lesson-intro-page {
   width: 100%;
   text-align: left;
-  padding: 20% 10%;
+  padding: min(20%, 100px) min(10%, 50px);
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
