@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .left-hand-text {
@@ -19,6 +21,10 @@
   align-items: center;
 }
 
+.right-hand-image > img {
+  width: 80%;
+}
+
 .text-left {
   text-align: left;
 }
@@ -27,7 +33,7 @@
   font-family: "Lexend";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
   text-align: center;
   letter-spacing: 0.02em;

@@ -11,7 +11,7 @@ import Roadmap from "./roadmap/roadmap";
 function AboutUs() {
   const current_user = auth.currentUser;
   return (
-    <div>
+    <div className={"about-us-main"}>
       <img
         className={"about-us-landing"}
         src={window.innerWidth < 700 ? AboutUsLandingMobile : AboutUsLanding}
