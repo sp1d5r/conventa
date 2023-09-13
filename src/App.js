@@ -20,7 +20,7 @@ import EffectiveSpeaking from "./components/minigames/effective-speaking/effecti
 import ContentLocked from "./components/content-locked/content-locked";
 import PricingPageMain from "./components/pricing-page/pricing-page-main";
 import Introduction from "./components/introduction/introduction";
-import { onMessageListener } from "./cloud-infrastructure/firebase/firebase";
+import { onMessageListener } from "./cloud-infrastructure/firebase/notifications/notifications";
 import NegotiationRoleplay from "./components/minigames/negotiation/negotiation-roleplay/negotiation-roleplay";
 import ConcessionLadder from "./components/minigames/negotiation/concession-ladder/concession-ladder";
 import EmpathyChallenge from "./components/minigames/negotiation/empathy-challenge/empathy-challenge";

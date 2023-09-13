@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./course-landing.css";
+import { Helmet } from "react-helmet";
 
 import LessonCard from "./lesson-card/lesson-card";
 import CourseProfileCard from "./course-profile-card/course-profile-card";
@@ -118,6 +119,20 @@ function CourseLanding() {
 
   return (
     <div className={"course-landing-main"}>
+      <Helmet>
+        <title>{course_information.courseName} | Your App Name</title>
+        <meta
+          name="description"
+          content={`Learn about ${course_information.courseName} in this course. Duration: ${course_information.time} minutes. Difficulty: ${course_information.difficulty}.`}
+        />
+        <meta property="og:title" content={course_information.courseName} />
+        <meta
+          property="og:description"
+          content={`Learn about ${course_information.courseName} in this course. Duration: ${course_information.time} minutes. Difficulty: ${course_information.difficulty}.`}
+        />
+        <meta property="og:image" content={course_information.thumbnail} />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <div className={"course-landing-information"}>
         <div className={"course-landing-title"}>
           {course_information.courseName}

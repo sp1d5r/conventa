@@ -1,5 +1,5 @@
 /* eslint-disable */
-// Scripts for firebase and firebase messaging
+// Scripts for notifications and notifications messaging
 importScripts(
   "https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"
 );
@@ -23,7 +23,7 @@ const defaultConfig = {
 
 firebase.initializeApp(self.firebaseConfig || defaultConfig);
 
-// Retrieve firebase messaging
+// Retrieve notifications messaging
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(function (payload) {
