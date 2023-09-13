@@ -821,3 +821,26 @@ export const sendFeedback = async (pageId, lessonId, courseId, feedback) => {
 
   return await addDoc(collection(firestore, `feedback`), { ...payload });
 };
+
+export const testNotifications = async () => {
+  const now = new Date(new Date().getTime() - 20 * 60 * 1000);
+  const startTime = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+  const endTime = new Date(now.getTime() + 30 * 60 * 1000);
+
+  const notificationRef = collection(firestore, `notifications/`);
+  const q = query(
+    notificationRef,
+    where("notificationTime", ">=", startTime),
+    where("notificationTime", "<=", endTime),
+    where("notificationSent", "==", false)
+  );
+  const querySnapshot = await getDocs(q);
+
+  console.log(`It's empty! ${startTime} ${endTime}`);
+
+  if (querySnapshot.empty) console.log(`It's empty! ${startTime} ${endTime}`);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+};
