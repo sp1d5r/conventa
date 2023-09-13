@@ -1,5 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
-import auth, { createUserDoc, updateUserNotificationToken } from "./firebase";
+import auth, { createUserDoc } from "./firebase";
+import {
+  getMessagingToken,
+  removeToken,
+  updateUserNotificationToken,
+} from "./notifications/notifications";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -177,7 +182,14 @@ export default function AuthProvider({ children }) {
       });
   }
 
-  function signOutUser(signedOutSuccessful) {
+  async function signOutUser(signedOutSuccessful) {
+    const currentToken = getMessagingToken(); // Assuming 'messaging' is initialized
+    if (currentToken) {
+      removeToken(current_user.uid, currentToken).then(() => {
+        console.log("Removed Token Successfully");
+      });
+    }
+
     signOut(auth)
       .then(() => {
         // Sign-out successful.

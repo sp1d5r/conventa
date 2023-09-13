@@ -106,7 +106,6 @@ function Academy() {
           });
       })
       .catch(() => {
-        console.log("here");
         setLoading(false);
       });
   };
@@ -114,7 +113,6 @@ function Academy() {
   const getBannerFromFirebase = () => {
     getBanner()
       .then((_banner) => {
-        console.log("here");
         setBanner(_banner);
       })
       .catch((err) => {

@@ -14,12 +14,12 @@ import {
   where,
 } from "firebase/firestore";
 import { getAnalytics, logEvent } from "firebase/analytics";
-import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { getMessaging } from "firebase/messaging";
 import { getAuth } from "firebase/auth";
 import axios from "axios";
 import md5 from "../utils/md5";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
@@ -31,10 +31,10 @@ const firebaseConfig = {
 
 /* Initialise Firebase */
 const app = initializeApp(firebaseConfig);
-const firestore = getFirestore(app);
+export const firestore = getFirestore(app);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-const messaging = getMessaging(app);
+export const messaging = getMessaging(app);
 
 export default auth;
 
@@ -197,9 +197,9 @@ export function getCurrentUser() {
 }
 
 /* Gems */
-export async function getUserGems() {
+export async function getUserGems(uid) {
   // get user data
-  const userDoc = doc(firestore, "users", auth.currentUser.uid);
+  const userDoc = doc(firestore, "users", uid);
   return getDoc(userDoc)
     .then((e) => {
       // console.log("user info", e.data())
@@ -252,10 +252,10 @@ export async function addGemsToUser(
 }
 
 /* Lives */
-export async function getLives() {
+export async function getLives(uid) {
   const date = new Date();
   date.setHours(0, 0, 0, 0);
-  const livesRef = collection(firestore, `users/${auth.currentUser.uid}/lives`);
+  const livesRef = collection(firestore, `users/${uid}/lives`);
   const q = query(livesRef, where("date", ">=", date.getTime()));
   const querySnapshot = await getDocs(q);
   let entries = 0;
@@ -806,74 +806,6 @@ export async function getBanner() {
   });
   return banner[0];
 }
-
-async function addUserNotificationToken(userId, currentToken) {
-  // Add a document that gives the current token
-  console.log("Updating notifications");
-  return await setDoc(doc(collection(firestore, `notifications/`), userId), {
-    notification_token: currentToken,
-  });
-}
-
-export const getOrRegisterServiceWorker = () => {
-  if ("serviceWorker" in navigator) {
-    console.log("Registering a service worker!");
-    return window.navigator.serviceWorker
-      .getRegistration("/firebase-push-notification-scope")
-      .then((serviceWorker) => {
-        console.log("Registered service worker", serviceWorker);
-        if (serviceWorker) return serviceWorker;
-        const firebaseConfigParams = new URLSearchParams(
-          firebaseConfig
-        ).toString();
-        return window.navigator.serviceWorker.register(
-          `/firebase-messaging-sw.js?firebaseConfig=${firebaseConfigParams}`,
-          {
-            scope: "/e-learning-template",
-          }
-        );
-      });
-  }
-  throw new Error("The browser doesn`t support service worker.");
-};
-
-export async function updateUserNotificationToken(userId, successCallback) {
-  getOrRegisterServiceWorker().then((serviceWorkerRegistration) => {
-    getToken(messaging, {
-      vapidKey: process.env.REACT_APP_VAPID_KEY,
-      serviceWorkerRegistration,
-    })
-      .then((currentToken) => {
-        if (currentToken) {
-          console.log("Updating the notifications entry");
-          addUserNotificationToken(userId, currentToken)
-            .then((_) => {
-              successCallback();
-            })
-            .catch((err) => {
-              console.error(err);
-            });
-        } else {
-          // Show permission request UI
-          console.log(
-            "No registration token available. Request permission to generate one."
-          );
-          successCallback();
-        }
-      })
-      .catch((err) => {
-        console.log("An error occurred while retrieving token. ", err);
-        successCallback();
-      });
-  });
-}
-
-export const onMessageListener = () =>
-  new Promise((resolve) => {
-    onMessage(messaging, (payload) => {
-      resolve(payload);
-    });
-  });
 
 /* Feedback */
 
