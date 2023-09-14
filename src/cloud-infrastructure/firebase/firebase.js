@@ -151,13 +151,14 @@ export async function getUserClaim() {
 }
 
 /* User Information */
-export async function userCompletedLesson(lesson_id) {
+export async function userCompletedLesson(lesson_id, course_id) {
   const date = new Date();
   const activityDocRef = await addDoc(
     collection(firestore, `users/${auth.currentUser.uid}/activity`),
     {
       date: date.getTime(),
       lesson_id: lesson_id,
+      course_id: course_id,
     }
   );
   return activityDocRef;

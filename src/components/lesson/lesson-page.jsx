@@ -199,7 +199,7 @@ function NewLessonPage() {
 
   const updateUserInfoLessonComplete = async () => {
     // TODO:// Add the gems earned to the current user
-    return userCompletedLesson(lesson_id);
+    return userCompletedLesson(lesson_id, course_id);
   };
 
   const lessonCompleteSubmit = () => {
