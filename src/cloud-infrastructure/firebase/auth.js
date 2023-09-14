@@ -28,6 +28,8 @@ export default function AuthProvider({ children }) {
 
   const auth_user = auth.currentUser;
 
+  useEffect(() => {}, [current_user]);
+
   function successfulSignIn(userCredential, success_callback, failed_callback) {
     console.log("Singed in");
     updateUserNotificationToken(
@@ -35,9 +37,9 @@ export default function AuthProvider({ children }) {
       success_callback,
       failed_callback
     ).then((r) => {
+      setCurrentUser({ ...userCredential });
       console.log("Completed user update.");
     });
-    setCurrentUser(userCredential);
   }
 
   function signIn(email, password, success_callback, failed_callback) {

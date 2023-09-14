@@ -33,6 +33,36 @@ const defaultConfig = {
 let firebaseConfig = {};
 let messaging; // Declare it here but initialize it later
 
+self.addEventListener("notificationclick", (event) => {
+  const clickedNotification = event.notification;
+  clickedNotification.close();
+
+  // The data from the notification:
+  const courseId =
+    clickedNotification.data && clickedNotification.data.courseId;
+
+  // Check if courseId exists, if not redirect to academy URL
+  const targetUrl = courseId ? `/course/?course_id=${courseId}` : "/academy";
+
+  clients.openWindow(targetUrl);
+});
+
+// self.addEventListener('push', function(event) {
+//   var payload = event.data ? event.data.json() : {};
+//   console.log(payload);
+//
+//   var options = {
+//     body: payload.notification.body || 'Conventa Reminder!',
+//     icon: payload.notification.image,
+//     image: payload.notification.image,
+//     // other options like icon, image, actions, etc.
+//   };
+//
+//   event.waitUntil(
+//       self.registration.showNotification(payload.notification.title || 'Conventa', options)
+//   );
+// });
+
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SET_FIREBASE_CONFIG") {
     firebaseConfig = event.data.config;
@@ -47,7 +77,9 @@ self.addEventListener("message", (event) => {
 
       const notificationTitle = payload.notification.title;
       const notificationOptions = {
-        body: payload.notification.body,
+        body: payload.notification.body || "Conventa Reminder!",
+        icon: payload.notification.image,
+        image: payload.notification.image,
       };
 
       self.registration

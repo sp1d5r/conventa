@@ -211,7 +211,7 @@ function Academy() {
     logAcademyStart();
     getBannerFromFirebase();
     change_color("#CBFFD8");
-  }, []); // eslint-disable-line
+  }, [current_user]); // eslint-disable-line
 
   return (
     <div className={"academy-main"}>
@@ -232,7 +232,9 @@ function Academy() {
           <p className={"academy-title"}>Academy</p>
           <p className={"dedicated-tag"}>Dedicated to Nadia ♥</p>
         </div>
-        <UserCard isLoading={loading} />
+        {current_user && current_user.uid && (
+          <UserCard isLoading={loading} key={current_user} />
+        )}
       </div>
 
       {banner && banner.promoMessage && banner.color ? (

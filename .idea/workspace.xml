@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/firebase-messaging-sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/firebase-messaging-sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/placeholder-image.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/placeholder-image.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/notifications/notifications.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/notifications/notifications.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/lives/lives.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/lives/lives.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/user-card/user-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
