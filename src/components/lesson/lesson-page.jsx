@@ -12,7 +12,6 @@ import {
   lostLife,
   userCompletedLesson,
 } from "../../cloud-infrastructure/firebase/firebase";
-import Loading from "../loading/loading";
 import ProgressBar from "./progress-bar/progress-bar";
 import LessonContent from "./lesson-content/lesson-content";
 import { change_color } from "../../cloud-infrastructure/utils/color";
@@ -20,6 +19,7 @@ import { Button } from "react-bootstrap";
 import Gems from "../../assets/lesson/gem.svg";
 import Lives from "../academy/user-card/lives/lives";
 import VideoPlayer from "./video-player/video-player";
+import LoadingScreen from "../globals/loading-screen/loading-screen";
 
 // const LESSON_CONTENT_EXAMPLE =
 
@@ -29,7 +29,10 @@ function NewLessonPage() {
     */
   const searchParams = useSearchParams()[0];
   const lesson_id = searchParams.get("lesson_id");
+  const lesson_name = searchParams.get("lesson_name");
   const course_id = searchParams.get("course_id");
+  const color = searchParams.get("color");
+
   const [lesson, setLesson] = useState({});
   const [lessonTitle, setLessonTitle] = useState("");
   /* Content information */
@@ -227,87 +230,85 @@ function NewLessonPage() {
   return (
     <div className={"course-landing-main"}>
       {loading ? (
-        <Loading />
+        <LoadingScreen color={color} title={lesson_name} />
       ) : (
-        <>
-          <div className={"lesson-landing-main"}>
-            {showVideo && (
-              <VideoPlayer
-                // videoSrc="../../../assets/heart_died.mp4" // Replace with the path to your video file
-                onVideoEnded={lifeLostAnimationEnd}
-              />
-            )}
-            {isIntroScreen ? (
-              <div className={"lesson-intro-page"}>
-                <img src={lesson.thumbnail} alt={"hello"} />
-                <p className={"lesson-intro-title"}>{lesson.title}</p>
-                <p>{lesson.description}</p>
-                <p
-                  className={"lesson-intro-action"}
-                  onClick={() => {
-                    setIntroScreen(false);
-                  }}
-                >
-                  Tap to continue
-                </p>
-              </div>
-            ) : (
-              <div className={"lesson-landing-content-section"}>
-                <div className={"lesson-top"}>
-                  <ProgressBar
-                    currentProgress={Math.min(
-                      current_position + 1,
-                      content.length
-                    )}
-                    totalPages={content.length}
-                  />
-                  <div className={"lesson-metadata"}>
-                    {current_content.type !== "final" ? (
-                      <Button
-                        variant={"danger"}
-                        onClick={() => {
-                          navigator(`/course/?course_id=${course_id}`);
-                        }}
-                        className={"lesson-button"}
-                      >
-                        Exit
-                      </Button>
-                    ) : (
-                      <div></div>
-                    )}
-                    <p className={"lesson-title"}>{lesson.title}</p>
-                    <div className={"lesson-user-data"}>
-                      {console.log("user claim", userClaim)}
-                      <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
+        <div className={"lesson-landing-main"}>
+          {showVideo && (
+            <VideoPlayer
+              // videoSrc="../../../assets/heart_died.mp4" // Replace with the path to your video file
+              onVideoEnded={lifeLostAnimationEnd}
+            />
+          )}
+          {isIntroScreen ? (
+            <div className={"lesson-intro-page"}>
+              <img src={lesson.thumbnail} alt={"hello"} />
+              <p className={"lesson-intro-title"}>{lesson.title}</p>
+              <p>{lesson.description}</p>
+              <p
+                className={"lesson-intro-action"}
+                onClick={() => {
+                  setIntroScreen(false);
+                }}
+              >
+                Tap to continue
+              </p>
+            </div>
+          ) : (
+            <div className={"lesson-landing-content-section"}>
+              <div className={"lesson-top"}>
+                <ProgressBar
+                  currentProgress={Math.min(
+                    current_position + 1,
+                    content.length
+                  )}
+                  totalPages={content.length}
+                />
+                <div className={"lesson-metadata"}>
+                  {current_content.type !== "final" ? (
+                    <Button
+                      variant={"danger"}
+                      onClick={() => {
+                        navigator(`/course/?course_id=${course_id}`);
+                      }}
+                      className={"lesson-button"}
+                    >
+                      Exit
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                  <p className={"lesson-title"}>{lesson.title}</p>
+                  <div className={"lesson-user-data"}>
+                    {console.log("user claim", userClaim)}
+                    <Lives lifeLost={lifeLost} redirect={userClaim === ""} />
 
-                      <div className={"user-gems"}>
-                        <p className={"amount-of-gems"}>{gems}</p>
-                        <img src={Gems} alt={"Gems Earned"} />
-                      </div>
+                    <div className={"user-gems"}>
+                      <p className={"amount-of-gems"}>{gems}</p>
+                      <img src={Gems} alt={"Gems Earned"} />
                     </div>
                   </div>
                 </div>
-                <div>
-                  <p className={"lesson-title-mobile"}>{lessonTitle}</p>
-                </div>
-
-                <LessonContent
-                  pageId={current_content.id}
-                  lessonId={lesson_id}
-                  courseId={course_id}
-                  content={current_content.content}
-                  status={user_progress[current_position]}
-                  type={current_content.type}
-                  submit={submit}
-                  lessonCompleteSubmit={lessonCompleteSubmit}
-                  lessonCompleteBack={lessonCompleteBack}
-                  lessonCompleteNextLesson={lessonCompleteNextLesson}
-                  gems={gems}
-                />
               </div>
-            )}
-          </div>
-        </>
+              <div>
+                <p className={"lesson-title-mobile"}>{lessonTitle}</p>
+              </div>
+
+              <LessonContent
+                pageId={current_content.id}
+                lessonId={lesson_id}
+                courseId={course_id}
+                content={current_content.content}
+                status={user_progress[current_position]}
+                type={current_content.type}
+                submit={submit}
+                lessonCompleteSubmit={lessonCompleteSubmit}
+                lessonCompleteBack={lessonCompleteBack}
+                lessonCompleteNextLesson={lessonCompleteNextLesson}
+                gems={gems}
+              />
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
