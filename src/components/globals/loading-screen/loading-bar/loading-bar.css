@@ -1,0 +1,59 @@
+.loading-bar {
+  width: min(100%, 250px);
+  height: 20px;
+  border-radius: 20px;
+  background-color: white;
+  border: 2px solid black;
+  position: relative;
+}
+
+/* Moving Component */
+.loading-bar > div {
+  height: calc(100% + 4px);
+  width: 20%;
+  background-color: #61dafb;
+  border: 2px solid black;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border-radius: 20px;
+  animation: swing 2s ease-in-out infinite alternate; /* Adding the swinging animation */
+}
+
+@keyframes swing {
+  0% {
+    left: 0;
+    background: #e3fffb;
+  }
+  10% {
+    background: #e3fdff;
+  }
+  20% {
+    background: #e3ebff;
+  }
+  30% {
+    background: #e9e3ff;
+  }
+  40% {
+    background: #e9e3ff;
+  }
+  50% {
+    background: #f5e3ff;
+  }
+  60% {
+    background: #f5e3ff;
+  }
+  70% {
+    background: #f5e3ff;
+  }
+  80% {
+    background: #ffe3ec;
+  }
+  90% {
+    background: #ffe3e3;
+  }
+  100% {
+    left: calc(100% - 20%);
+    background: #ffede3;
+  }
+}

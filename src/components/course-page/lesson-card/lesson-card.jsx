@@ -6,7 +6,7 @@ import auth, {
 } from "../../../cloud-infrastructure/firebase/firebase";
 import Complete from "../../../assets/home/complete.svg";
 
-function LessonCard({ lesson_id, course_id, isLocked }) {
+function LessonCard({ lesson_id, course_id, isLocked, color }) {
   const [lesson, setLesson] = useState({});
   const [completedLesson, setCompletedLesson] = useState(false);
   const current_user = auth.currentUser;
@@ -55,7 +55,12 @@ function LessonCard({ lesson_id, course_id, isLocked }) {
         /* Create a Better Pricing Page */
         return "/content-locked?reason=lives";
       } else {
-        return `/lesson/?lesson_id=${lesson_id}&course_id=${course_id}`;
+        return `/lesson/?lesson_name=${
+          lesson.title
+        }&lesson_id=${lesson_id}&course_id=${course_id}&color=${color.replace(
+          "#",
+          "%23"
+        )}`;
       }
     } else {
       return "/auth";

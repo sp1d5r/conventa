@@ -169,6 +169,7 @@ function CourseLanding() {
                       course_id={course_id}
                       key={index}
                       isLocked={lessonLocked}
+                      color={course_information.color}
                     />
                   );
                 })}

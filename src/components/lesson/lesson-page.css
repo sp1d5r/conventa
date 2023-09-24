@@ -58,6 +58,8 @@
   background-color: var(--green);
   z-index: 1;
   animation: 0.5s ease-in fadeInLesson;
+  position: sticky;
+  top: 20px;
 }
 
 .lesson-metadata {
