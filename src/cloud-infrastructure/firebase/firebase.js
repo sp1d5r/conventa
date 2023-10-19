@@ -305,6 +305,7 @@ export async function getCourses() {
   try {
     const courseCollection = collection(firestore, "courses");
     const courseItems = await getDocs(courseCollection);
+
     const courses = courseItems.docs.map((doc) => {
       return { id: doc.id, ...doc.data() };
     });
