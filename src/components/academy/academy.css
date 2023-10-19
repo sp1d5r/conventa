@@ -137,7 +137,7 @@
   padding-left: 5%;
   border-left: 2px solid #777;
   display: inline-grid;
-  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: min-content;
   grid-template-rows: 100%;
   grid-auto-flow: column;
   overflow-x: scroll;
@@ -211,7 +211,8 @@
     width: calc(100% - 15px);
     border: none;
     grid-template-rows: 100%;
-    grid-template-columns: repeat(auto-fit, 216px);
+    grid-template-columns: min-content;
+
     row-gap: 10px;
     grid-auto-flow: column;
     overflow-x: scroll;

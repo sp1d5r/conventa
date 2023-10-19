@@ -2,60 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/globals/loading-screen/loading-bar/loading-bar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/globals/loading-screen/loading-bar/loading-bar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/globals/loading-screen/loading-screen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/globals/loading-screen/loading-screen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/globals/loading.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/deception-detection/deception-detection-game.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/deception-detection/deception-detection-game.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/empathy-challenge/empathy-challange-results.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/empathy-challenge/empathy-challenge-game.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/empathy-challenge/empathy-challenge.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/negotiation-roleplay/negotiation-choice.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/negotiation-roleplay/negotiation-game.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/negotiation-roleplay/negotiation-results.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/negotiation-roleplay/negotiation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/procrastination-lab/procrastination-identification.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/procrastination-lab/procrastination-results.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/procrastination-lab/procrastination-solution.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/procrastination-lab/procrastination.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/speech-to-text/speech-to-text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/main-game-components/speech-to-text/speech-to-text.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigame-video/minigame-video.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigame-video/minigame-video.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/MINIGAME-TEMPLATE.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/assets/AI.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/assets/Brain Microphone.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/assets/Green Tick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/assets/Red Cross.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/assets/artificial-intelligence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/catch-a-liar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/empathy-challenge.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/buttons/base-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/buttons/base-button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/loading-screen/loading-bar/loading-bar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/loading-screen/loading-bar/loading-bar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/loading-screen/loading-screen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/loading-screen/loading-screen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/minigame.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/minigame.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/pause-screen/pause-animation/pause-animation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/pause-screen/pause-animation/pause-animation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/pause-screen/pause-screen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigame/pause-screen/pause-screen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/minigames.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/negotiation-minigame.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/minigames/procrastination-minigame.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/navbar/navbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/navbar/navbar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/minigames-new/components/navbar/traditional-navbar/standard-navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/academy/featured-card/featured-card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/academy/featured-card/featured-card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/course-page/lesson-card/lesson-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/lesson-card/lesson-card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-content/lesson-content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lesson/lesson-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/academy.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/academy.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/course-card/course-card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/academy/minigame-card/minigame-card.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,18 +29,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/elijahahmad/e-learning-template/src/components/globals",
-    "nodejs.jest.jest_package": "/Users/elijahahmad/e-learning-template/node_modules/react-scripts",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/elijahahmad/e-learning-template/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/elijahahmad/e-learning-template/src/components/globals&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/globals" />
@@ -237,7 +192,8 @@
       <workItem from="1684686306377" duration="7870000" />
       <workItem from="1687627401979" duration="4964000" />
       <workItem from="1688491057592" duration="7699000" />
-      <workItem from="1695551844724" duration="1669000" />
+      <workItem from="1695551844724" duration="2214000" />
+      <workItem from="1696780937181" duration="8465000" />
     </task>
     <servers />
   </component>

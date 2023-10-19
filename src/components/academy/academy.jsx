@@ -17,6 +17,7 @@ import { change_color } from "../../cloud-infrastructure/utils/color";
 import AssessmentCard from "./assessment-card/assessment-card";
 import { useAuth } from "../../cloud-infrastructure/firebase/auth";
 import SkeletonCard from "./skeleton-card/skeleton-card";
+import FeaturedCard from "./featured-card/featured-card";
 
 function Academy() {
   const [courses, setCourses] = useState([]);
@@ -244,7 +245,7 @@ function Academy() {
       )}
       <div className={"academy-content"}>
         <div className={"academy-content-section"}>
-          <p className={"academy-content-title"}>courses</p>
+          <p className={"academy-content-title"}>All Courses</p>
           <div className={"academy-content-section-child"}>
             {}
 
@@ -257,6 +258,7 @@ function Academy() {
                     <CourseCard
                       imagePath={item.thumbnail}
                       title={item.courseName}
+                      description={item.description}
                       id={item.id}
                       locked={lessonLocked}
                       time={item.time}
@@ -266,6 +268,111 @@ function Academy() {
                     />
                   );
                 })}
+          </div>
+        </div>
+        <br />
+        <br />
+        <FeaturedCard />
+        <br />
+        <br />
+
+        {/* Business Psychology */}
+        <div className={"academy-content-section"}>
+          <p className={"academy-content-title"}>Business Psychology</p>
+          <div className={"academy-content-section-child"}>
+            {}
+
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
+                  return <SkeletonCard key={index} />;
+                })
+              : courses
+                  .filter((item) => {
+                    return item.tags.includes("Business Psychology");
+                  })
+                  .map((item, index) => {
+                    return (
+                      <CourseCard
+                        imagePath={item.thumbnail}
+                        title={item.courseName}
+                        description={item.description}
+                        id={item.id}
+                        locked={lessonLocked}
+                        time={item.time}
+                        courseProgress={item.courseProgress}
+                        color={item.color}
+                        key={index}
+                      />
+                    );
+                  })}
+          </div>
+        </div>
+        <br />
+        <br />
+
+        {/* Relationship Psychology */}
+        <div className={"academy-content-section"}>
+          <p className={"academy-content-title"}>Relationship Psychology</p>
+          <div className={"academy-content-section-child"}>
+            {}
+
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
+                  return <SkeletonCard key={index} />;
+                })
+              : courses
+                  .filter((item) => {
+                    return item.tags.includes("Relationship Psychology");
+                  })
+                  .map((item, index) => {
+                    return (
+                      <CourseCard
+                        imagePath={item.thumbnail}
+                        title={item.courseName}
+                        description={item.description}
+                        id={item.id}
+                        locked={lessonLocked}
+                        time={item.time}
+                        courseProgress={item.courseProgress}
+                        color={item.color}
+                        key={index}
+                      />
+                    );
+                  })}
+          </div>
+        </div>
+        <br />
+        <br />
+
+        {/* */}
+        <div className={"academy-content-section"}>
+          <p className={"academy-content-title"}>Theories</p>
+          <div className={"academy-content-section-child"}>
+            {}
+
+            {loading
+              ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => {
+                  return <SkeletonCard key={index} />;
+                })
+              : courses
+                  .filter((item) => {
+                    return item.tags.includes("Theories");
+                  })
+                  .map((item, index) => {
+                    return (
+                      <CourseCard
+                        imagePath={item.thumbnail}
+                        title={item.courseName}
+                        description={item.description}
+                        id={item.id}
+                        locked={lessonLocked}
+                        time={item.time}
+                        courseProgress={item.courseProgress}
+                        color={item.color}
+                        key={index}
+                      />
+                    );
+                  })}
           </div>
         </div>
         <br />
