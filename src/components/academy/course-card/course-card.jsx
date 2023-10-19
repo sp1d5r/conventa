@@ -62,6 +62,7 @@ function CourseCard({
           flex: 2,
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
         }}
       >
         {courseProgress !== 0 ? (
