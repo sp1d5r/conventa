@@ -517,8 +517,6 @@
 
 /* Grid item */
 .news-room-card {
-}
-.news-room-card {
   text-align: left;
   font-family: "Lexend", serif;
   border: 1px solid black;
@@ -532,7 +530,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* ensures the content is positioned at the bottom */
-  padding: 20px; /* give some space for the content */
 }
 
 .news-room-card:hover {

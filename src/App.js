@@ -50,7 +50,7 @@ function App() {
           <Routes>
             <Route path="/auth" element={<Authenticate />} />
             <Route path="/academy" element={<Academy loggedIn={false} />} />
-            <Route path={"/article"} element={<Article />} />
+            <Route path={"/article/"} element={<Article />} />
             <Route
               path={"/assessment/Negotiation%20Assessment"}
               element={<NegotiationAssessment />}
