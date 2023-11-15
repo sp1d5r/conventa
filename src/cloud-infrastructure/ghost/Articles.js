@@ -3,7 +3,7 @@ import GhostContentAPI from "@tryghost/content-api";
 // Create API instance with site credentials
 const api = new GhostContentAPI({
   url: "https://conventa.ghost.io",
-  key: "6f90554dcd615af8572be811fe",
+  key: process.env.REACT_APP_GHOST_KEY,
   version: "v5.0",
 });
 
