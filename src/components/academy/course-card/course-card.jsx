@@ -58,7 +58,6 @@ function CourseCard({
       <div
         style={{
           height: "100%",
-          backgroundColor: "white",
           flex: 2,
           display: "flex",
           flexDirection: "column",

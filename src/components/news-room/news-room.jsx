@@ -1,40 +1,65 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NewsHeading from "./news-heading/news-heading";
 // import NewsHeadline from "./news-headline/news-headline";
 // import NewsStories from "./news-stories/news-stories";
 import Image from "../../assets/news-room/main-icon.svg";
+import { getPosts } from "../../cloud-infrastructure/ghost/Articles";
 
-function NewsRoomCard({
-  backgroundColor,
-  backgroundImage,
-  title,
-  description,
-  link,
-}) {
+function NewsRoomCard({ article, backgroundColor }) {
+  console.log(article.feature_image);
   return (
     <div
       className="news-room-card"
       style={{
-        backgroundImage: `linear-gradient(to top, ${backgroundColor}, transparent), url(${backgroundImage})`,
-        backgroundColor: backgroundColor,
+        position: "relative",
+        overflow: "hidden",
+        backgroundImage: `linear-gradient(to top, ${backgroundColor}, transparent), url(${article.feature_image})`,
       }}
       onClick={() => {
-        window.location.href = link;
+        window.location.href = `/article?id=${article.id}`;
       }}
     >
-      <h3 className={"card-main-text-bold"}>{title}</h3>
-      {/*<p className={"article-of-day-light"}>*/}
-      {/*  {description.substring(0, window.innerWidth < 700 ? 70 : 180) + "..."}*/}
-      {/*</p>*/}
-      <a className={"underline"} href={"/"}>
-        Read more
-      </a>
+      <img
+        src={article.feature_image}
+        alt={article.feature_image_alt}
+        style={{
+          position: "absolute",
+          zIndex: 0,
+          top: 0,
+          left: 0,
+          height: "45%",
+          objectFit: "cover",
+        }}
+      />
+      <div style={{ backgroundColor: "white", zIndex: 1, padding: 20 }}>
+        <h3 className={"card-main-text-bold"} style={{ zIndex: 1 }}>
+          {article.title}
+        </h3>
+        <p className={"article-of-day-light"} style={{ zIndex: 1 }}>
+          {article.excerpt.substring(0, window.innerWidth < 700 ? 70 : 180) +
+            "..."}
+        </p>
+        <a
+          className={"underline"}
+          href={`/article?id=${article.id}`}
+          style={{ zIndex: 1 }}
+        >
+          Read more
+        </a>
+      </div>
     </div>
   );
 }
 
 function NewsRoom() {
-  useEffect(() => {}, []);
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    getPosts().then((res) => {
+      setArticles([...res]);
+      console.log(res);
+    });
+  }, []);
 
   return (
     <div>
@@ -75,68 +100,10 @@ function NewsRoom() {
           </div>
         </div>
         <div className="news-room-card-grid">
-          <NewsRoomCard
-            title={"Mastering the Mind-Body Connection for Business Success"}
-            description={
-              "Discover the power of a harmonious mind-body connection to\n" +
-              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
-              "              potential, increase focus, and cultivate resilience for a thriving\n" +
-              "              and successful business experience."
-            }
-            backgroundImage={
-              "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
-            }
-            link={"/article?id=1"}
-            backgroundColor={"#e3fffb"}
-          />
-
-          <NewsRoomCard
-            title={"Mastering the Mind-Body Connection for Business Success"}
-            description={
-              "Discover the power of a harmonious mind-body connection to\n" +
-              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
-              "              potential, increase focus, and cultivate resilience for a thriving\n" +
-              "              and successful business experience."
-            }
-            link={"/article?id=1"}
-            backgroundColor={"#e3fdff"}
-          />
-
-          <NewsRoomCard
-            title={"Mastering the Mind-Body Connection for Business Success"}
-            description={
-              "Discover the power of a harmonious mind-body connection to\n" +
-              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
-              "              potential, increase focus, and cultivate resilience for a thriving\n" +
-              "              and successful business experience."
-            }
-            link={"/article?id=1"}
-            backgroundColor={"#fff"}
-          />
-
-          <NewsRoomCard
-            title={"Mastering the Mind-Body Connection for Business Success"}
-            description={
-              "Discover the power of a harmonious mind-body connection to\n" +
-              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
-              "              potential, increase focus, and cultivate resilience for a thriving\n" +
-              "              and successful business experience."
-            }
-            link={"/article?id=1"}
-            backgroundColor={"#e9e3ff"}
-          />
-
-          <NewsRoomCard
-            title={"Mastering the Mind-Body Connection for Business Success"}
-            description={
-              "Discover the power of a harmonious mind-body connection to\n" +
-              "              revolutionize your entrepreneurial journey. Unlock your full\n" +
-              "              potential, increase focus, and cultivate resilience for a thriving\n" +
-              "              and successful business experience."
-            }
-            link={"/article?id=1"}
-            backgroundColor={"#f5e3ff"}
-          />
+          {articles &&
+            articles.map((article, index) => {
+              return <NewsRoomCard article={article} key={index} />;
+            })}
         </div>
       </div>
     </div>
