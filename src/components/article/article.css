@@ -38,6 +38,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .article-image {
@@ -80,10 +81,10 @@
 }
 
 .article-share-buttons {
-  width: 90%;
   display: flex;
   justify-content: flex-end;
   gap: 5px;
+  margin: 20px;
 }
 
 .article-share-icon {
@@ -212,6 +213,12 @@
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.6em;
+}
+
+.gh-canvas > p > a {
+  text-decoration: underline;
+  font-weight: 600;
+  color: #598063;
 }
 
 .gh-content > ul,

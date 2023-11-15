@@ -57,9 +57,10 @@ function Article() {
         <p className={"article-heading"}>{article.title}</p>
         <p className={"article-subheading"}>{article.excerpt}</p>
         <div className={"article-tags"}>
-          {/*{article.tags && article.tags.map((elem) => {*/}
-          {/*  return <div className={"article-tag"}>{elem}</div>;*/}
-          {/*})}*/}
+          {article.tags &&
+            article.tags.map((elem) => {
+              return <div className={"article-tag"}>{elem.name}</div>;
+            })}
         </div>
       </div>
 
@@ -119,16 +120,17 @@ function Article() {
         <></>
       )}
 
-      <div className={"article-end"}>
-        <div className={"article-rate-article-div"}>
-          <p>Rate this Article:</p>
-          <div style={{ height: 20, width: 20, backgroundColor: "red" }}></div>
-          <div style={{ height: 20, width: 20, backgroundColor: "red" }}></div>
-          <div style={{ height: 20, width: 20, backgroundColor: "red" }}></div>
-          <div style={{ height: 20, width: 20, backgroundColor: "red" }}></div>
-          <div style={{ height: 20, width: 20, backgroundColor: "red" }}></div>
-        </div>
-      </div>
+      {/*{article && article.authors && <div style={{width: "500px", display: "flex", gap: 10, justifyContent: "center", alignItems: "center", margin: 20}}>*/}
+      {/*  <div style={{height: 50, width: 50, border: "2px solid black", borderRadius: 50}} >*/}
+      {/*  </div>*/}
+      {/*  <div style={{display: "flex", flexDirection: "column", gap:1, textAlign: "left"}}>*/}
+      {/*    <h4 className="gh-article-author-name"><a href="/author/al/">{article.authors[0].name}</a></h4>*/}
+      {/*    <div className="gh-article-meta-content">*/}
+      {/*      <time className="gh-article-meta-date" dateTime="2023-11-15">Nov 15, 2023</time>*/}
+      {/*      <span className="gh-article-meta-length"><span className="bull">—</span> 2 min read</span>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>}*/}
     </div>
   ) : (
     <></>
