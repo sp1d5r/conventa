@@ -4,6 +4,9 @@
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/ghost/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/ghost/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/article/article.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/article.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/article/article.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/article.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

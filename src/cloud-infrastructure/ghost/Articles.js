@@ -18,7 +18,9 @@ export async function getPosts() {
 }
 
 export async function getSinglePost(id) {
-  return await api.posts.read({ id: id }).catch((err) => {
-    console.log(err);
-  });
+  return await api.posts
+    .read({ id: id, include: "tags,authors" })
+    .catch((err) => {
+      console.log(err);
+    });
 }
