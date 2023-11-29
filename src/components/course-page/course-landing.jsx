@@ -120,7 +120,7 @@ function CourseLanding() {
   return (
     <div className={"course-landing-main"}>
       <Helmet>
-        <title>{course_information.courseName} | Your App Name</title>
+        <title>{course_information.courseName} | Conventa</title>
         <meta
           name="description"
           content={`Learn about ${course_information.courseName} in this course. Duration: ${course_information.time} minutes. Difficulty: ${course_information.difficulty}.`}

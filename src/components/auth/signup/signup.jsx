@@ -30,6 +30,15 @@ function SignIn({ changeObjective, initial, size }) {
   };
 
   const successfulCallback = () => {
+    if (window.trackEvent) {
+      console.log("Lead Generated");
+      window.trackEvent("Lead", {
+        email: email,
+      });
+    } else {
+      console.error("Failed to update pixel");
+    }
+
     try {
       Notification.requestPermission()
         .then((permission) => {
