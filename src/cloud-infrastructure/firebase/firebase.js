@@ -113,6 +113,14 @@ export async function createCheckoutSession(uid, plan_selected, isMonthly) {
     price_id = PRICING_PLANS_YEARLY[plan_selected];
   }
   // console.log(price_id, plan_selected * is_annual - 1);
+  if (window.trackEvent) {
+    window.trackEvent("InitiateCheckout", {
+      currency: "GBP",
+      value: price_id,
+    });
+  } else {
+    console.log("problem here");
+  }
   const sessionDocRef = await addDoc(
     collection(firestore, `users/${uid}/checkout_sessions`),
     {

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c389d948-c575-4568-9d37-22401233de82" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/ghost/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/ghost/Articles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/article/article.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/article.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/article/article.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/article/article.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-room/news-room.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cloud-infrastructure/firebase/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/signup/signup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/course-page/course-landing.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +22,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="29q2mfOUI0tU4n71pFYfscPr7iB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -28,7 +35,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;facebook-ad&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/elijahahmad/e-learning-template/src/components/globals&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs.jest.jest_package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/react-scripts&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/elijahahmad/e-learning-template/node_modules/prettier&quot;,
@@ -56,7 +68,6 @@
   <component name="RunManager" selected="Jest.renders a navbar link">
     <configuration name="renders a navbar link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -190,6 +201,8 @@
       <workItem from="1688491057592" duration="7699000" />
       <workItem from="1695551844724" duration="2214000" />
       <workItem from="1696780937181" duration="8643000" />
+      <workItem from="1701272997885" duration="2322000" />
+      <workItem from="1701285609203" duration="1627000" />
     </task>
     <servers />
   </component>
